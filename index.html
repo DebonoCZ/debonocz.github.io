@@ -1,14 +1,548 @@
 <!DOCTYPE html>
 <html lang="cs">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Byty Drobovice</title>
-  </head>
-<body>
-    <h1>Byty Drobovice</h1>
-  <p>Stránka se připravuje...</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preload" as="font" type="font/ttf" href="assets/fonts/MonaSansExpanded-Regular.ttf" crossorigin />
+  <link rel="preload" as="font" type="font/ttf" href="assets/fonts/MonaSansExpanded-Medium.ttf" crossorigin />
+  <link rel="preload" as="image" href="assets/hero-exterior.jpg" fetchpriority="high" />
+  <title>Byty Drobovice — 7 jednotek v centru obce | Kolaudace Q2 2027</title>
+  <meta name="description" content="Polyfunkční objekt v Drobovicích — 3 byty 2+kk až 3+kk a 4 ateliéry. Energetická třída B, prémiové standardy, kolaudace Q2 2027. Klidná náves, 20 min do Kutné Hory, 75 min do Prahy." />
+  <meta name="keywords" content="byty Drobovice, byty Čáslavsko, novostavba Středočeský kraj, byt 2+kk, byt 3+kk, ateliér, energetická třída B, Drobovice 142, kolaudace 2027" />
+  <meta name="author" content="STAVBARTA s.r.o." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#1A4639" />
+  <meta name="color-scheme" content="light" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="canonical" href="https://bytydrobovice.cz/" />
+
+  <!-- Favicons & manifest -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="mask-icon" href="favicon.svg" color="#1A4639" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bytydrobovice.cz/" />
+  <meta property="og:title" content="Byty Drobovice — 7 jednotek v centru obce | Kolaudace Q2 2027" />
+  <meta property="og:description" content="Polyfunkční objekt v Drobovicích — 3 byty 2+kk až 3+kk a 4 ateliéry. Energetická třída B, prémiové standardy, kolaudace Q2 2027. Klidná náves, 20 min do Kutné Hory, 75 min do Prahy." />
+  <meta property="og:image" content="https://bytydrobovice.cz/assets/hero-exterior.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Byty Drobovice — exteriér" />
+  <meta property="og:site_name" content="Byty Drobovice" />
+  <meta property="og:locale" content="cs_CZ" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Byty Drobovice — 7 jednotek v centru obce | Kolaudace Q2 2027" />
+  <meta name="twitter:description" content="Polyfunkční objekt v Drobovicích — 3 byty 2+kk až 3+kk a 4 ateliéry. Energetická třída B, prémiové standardy, kolaudace Q2 2027. Klidná náves, 20 min do Kutné Hory, 75 min do Prahy." />
+  <meta name="twitter:image" content="https://bytydrobovice.cz/assets/hero-exterior.jpg" />
+
+  <link rel="stylesheet" href="styles/v3.css?v=1" />
+</head>
+<body data-page="home">
+
+  <div id="page-loader" class="page-loader is-loading" aria-hidden="true">
+    <div class="page-loader__mark">
+      <img src="assets/logo-mark.svg" alt="" />
+    </div>
+  </div>
+  <noscript><style>#page-loader{display:none;}</style></noscript>
+
+  <!-- HERO ===================================================== -->
+  <header class="hero hero--cover hero--carousel" data-hero-carousel>
+    <div class="hero__photos" aria-hidden="true">
+      <div class="hero__photo is-active" style="background-image:url('assets/hero-exterior.jpg');"></div>
+      <div class="hero__photo hero__photo--slot">
+        <image-slot id="life-1" src="assets/photos/exterior-1.webp" placeholder="Rodina v zahradě" fit="cover"></image-slot>
+      </div>
+      <div class="hero__photo hero__photo--slot">
+        <image-slot id="life-2" src="assets/photos/obyvak-1.webp" placeholder="Ranní káva na balkóně" fit="cover"></image-slot>
+      </div>
+      <div class="hero__photo hero__photo--slot">
+        <image-slot id="life-wide" src="assets/photos/kuchyne.webp" placeholder="Náves při západu slunce" fit="cover"></image-slot>
+      </div>
+      <div class="hero__photo hero__photo--slot">
+        <image-slot id="life-3" src="assets/photos/loznice-1.webp" placeholder="Rybník na návsi" fit="cover"></image-slot>
+      </div>
+      <div class="hero__photo hero__photo--slot">
+        <image-slot id="life-4" src="assets/photos/detsky-1.webp" placeholder="Procházka v lese" fit="cover"></image-slot>
+      </div>
+      <div class="hero__photo hero__photo--slot">
+        <image-slot id="life-tall" src="assets/photos/loznice-3.webp" placeholder="Sousedské setkání u rybníka" fit="cover"></image-slot>
+      </div>
+      <div class="hero__photos-overlay"></div>
+    </div>
+    <div class="hero-meta hero-meta--stack" data-reveal>
+      <span class="hero-badge">Kolaudace Q2 2027</span>
+      <span class="crumb">Drobovice 142 · Středočeský kraj</span>
+    </div>
+    <div data-reveal data-delay="1">
+      <h1 class="display">Probuďte se <em>mezi stromy.</em></h1>
+    </div>
+    <div class="hero__bottom" data-reveal data-delay="2">
+      <p class="hero__sub">
+        7&nbsp;klidných domovů v&nbsp;drobovické návsi. Ráno vás vzbudí slunce, ne&nbsp;městský ruch — a&nbsp;přesto je město za&nbsp;rohem.
+      </p>
+      <div class="hero__ctas">
+        <a class="btn btn-primary btn-xl" href="/byty">
+          Vybrat jednotku <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-ghost btn-xl" href="/o-projektu">
+          O projektu
+        </a>
+      </div>
+    </div>
+
+    <!-- Carousel controls — full-width along bottom edge -->
+    <div class="hero-carousel__controls" data-reveal data-delay="3">
+      <div class="hero-carousel__navs">
+        <button class="hero-carousel__nav" data-dir="prev" type="button" aria-label="Předchozí foto">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button class="hero-carousel__nav" data-dir="next" type="button" aria-label="Další foto">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="hero-carousel__bars" role="tablist" aria-label="Foto v galerii">
+        <button class="hero-carousel__bar is-active" type="button" data-idx="0" aria-label="Foto 1"><span class="hero-carousel__fill"></span></button>
+        <button class="hero-carousel__bar" type="button" data-idx="1" aria-label="Foto 2"><span class="hero-carousel__fill"></span></button>
+        <button class="hero-carousel__bar" type="button" data-idx="2" aria-label="Foto 3"><span class="hero-carousel__fill"></span></button>
+        <button class="hero-carousel__bar" type="button" data-idx="3" aria-label="Foto 4"><span class="hero-carousel__fill"></span></button>
+        <button class="hero-carousel__bar" type="button" data-idx="4" aria-label="Foto 5"><span class="hero-carousel__fill"></span></button>
+        <button class="hero-carousel__bar" type="button" data-idx="5" aria-label="Foto 6"><span class="hero-carousel__fill"></span></button>
+        <button class="hero-carousel__bar" type="button" data-idx="6" aria-label="Foto 7"><span class="hero-carousel__fill"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO BLOCK ============================================== -->
+  <section class="section bg-rose has-tree">
+    <aside class="tree-watermark" data-tree-watermark
+           style="right:-10vw;top:-4vw;width:min(70vw,640px);opacity:0.08;"></aside>
+    <div class="section-inner">
+      <div class="intro-split">
+        <div class="intro-split__copy">
+          <div data-reveal>
+            <p class="eyebrow">01 — Místo, kde se zpomalí čas</p>
+            <h2 class="display" style="margin-top:24px;">Tady se vrátíte <em>k pomalému</em> dýchání.</h2>
+          </div>
+          <div data-reveal data-delay="1">
+            <p class="lead">
+              Drobně řezaná hmota, lamely, sedlová střecha. Dům, který do návsi zapadne, jako by tam stál vždycky. Žádná „developerská“ architektura.
+            </p>
+          </div>
+          <div class="row" data-reveal data-delay="2">
+            <a class="btn btn-dark btn-xl" href="/byty">
+              Vybrat byt <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+        <div class="intro-split__photo" data-reveal data-delay="2">
+          <image-slot id="intro-photo" src="assets/photos/intro-photo.webp" placeholder="Exteriér / detail fasády — vizualizace" radius="28" style="width:100%;height:100%;"></image-slot>
+        </div>
+      </div>
+
+      <div class="minigrid" data-reveal data-delay="3">
+        <div class="minigrid__cell"><span class="n">7</span><span class="l">Jednotek</span></div>
+        <div class="minigrid__cell"><span class="n">3</span><span class="l">Byty 3+kk – 4+kk</span></div>
+        <div class="minigrid__cell"><span class="n">4</span><span class="l">Ateliéry / studia</span></div>
+        <div class="minigrid__cell"><span class="n">B</span><span class="l">Energetická třída</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE ================================================== -->
+  <div class="marquee bg-cream">
+    <div class="marquee__track" aria-hidden="true">
+      <span>ráno v trávě</span><span>vůně deště</span><span>klid</span><span>doma</span><span>okno do zahrady</span><span>příroda za rohem</span><span>20 minut do města</span>
+      <span>ráno v trávě</span><span>vůně deště</span><span>klid</span><span>doma</span><span>okno do zahrady</span><span>příroda za rohem</span><span>20 minut do města</span>
+    </div>
+  </div>
+
+  <!-- ROZCESTNÍK PODSTRÁNEK ==================================== -->
+  <section class="section bg-cream">
+    <div class="section-inner">
+      <div class="s-head">
+        <div data-reveal>
+          <p class="eyebrow">02 — Rozcestník</p>
+          <h2 class="display" style="margin-top:24px;">Co vás <em>zajímá?</em></h2>
+        </div>
+        <div data-reveal data-delay="1">
+          <p class="lead">Začněte tam, kde to v hlavě nejvíc bublá — projekt, lokalita, byty, peníze.</p>
+        </div>
+      </div>
+
+      <div class="nav-grid">
+        <a class="nav-tile is-rose" href="/o-projektu" data-reveal>
+          <span class="n">01 — O projektu</span>
+          <h3 class="t">Dům, který do návsi <em>patří.</em></h3>
+          <span class="arrow-circle" aria-hidden="true">→</span>
+        </a>
+        <a class="nav-tile is-sky" href="/lokalita" data-reveal data-delay="1">
+          <span class="n">02 — Lokalita</span>
+          <h3 class="t">Klid <em>za dveřmi</em>, město za rohem.</h3>
+          <span class="arrow-circle" aria-hidden="true">→</span>
+        </a>
+        <a class="nav-tile is-butter" href="/byty" data-reveal data-delay="2">
+          <span class="n">03 — Byty a ateliéry</span>
+          <h3 class="t">Sedm domovů, <em>jeden je</em> váš.</h3>
+          <span class="arrow-circle" aria-hidden="true">→</span>
+        </a>
+        <a class="nav-tile is-sage" href="/standardy" data-reveal data-delay="3">
+          <span class="n">04 — Standardy</span>
+          <h3 class="t">Materiály, na&nbsp;které <em>se těšíte.</em></h3>
+          <span class="arrow-circle" aria-hidden="true">→</span>
+        </a>
+        <a class="nav-tile is-lime" href="/financovani" data-reveal data-delay="4">
+          <span class="n">05 — Financování</span>
+          <h3 class="t">Doplatíte <em>až po kolaudaci.</em></h3>
+          <span class="arrow-circle" aria-hidden="true">→</span>
+        </a>
+        <a class="nav-tile is-forest" href="/galerie" data-reveal data-delay="5">
+          <span class="n">06 — Galerie</span>
+          <h3 class="t">Vizualizace <em>a&nbsp;atmosféra.</em></h3>
+          <span class="arrow-circle" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ŽIVOT V DROBOVICÍCH ===================================== -->
+  <section class="section bg-sage">
+    <div class="section-inner">
+      <div class="s-head">
+        <div data-reveal>
+          <p class="eyebrow">Život tady</p>
+          <h2 class="display" style="margin-top:24px;">Bude to <em>vypadat</em> nějak takhle.</h2>
+        </div>
+        <div data-reveal data-delay="1">
+          <p class="lead">Ranní káva na balkóně, děti na zahradě, sousedské pozdravení u rybníka. Doplňte fotky ze stavby, z lokality, z vašeho života na vsi.</p>
+        </div>
+      </div>
+
+      <div class="photo-rail" data-reveal aria-label="Carousel fotografií ze života v Drobovicích">
+        <div class="photo-rail__track">
+          <div class="photo-rail__item photo-rail__item--wide photo-rail__item--up">
+            <img src="assets/photos/exterior-1.webp" alt="Exteriér — pohled od příjezdové cesty" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--down">
+            <img src="assets/photos/obyvak-1.webp" alt="Obývací pokoj s jídelnou a výhledem" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--up">
+            <img src="assets/photos/chodba.webp" alt="Vstupní chodba se zelenou stěnou" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--wide photo-rail__item--down">
+            <img src="assets/photos/detsky-1.webp" alt="Dětský pokoj" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--up">
+            <img src="assets/photos/loznice-1.webp" alt="Ložnice" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--wide photo-rail__item--down">
+            <img src="assets/photos/exterior-2.webp" alt="Exteriér — zahradní strana" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--up">
+            <img src="assets/photos/koupelna.webp" alt="Koupelna" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--wide photo-rail__item--down">
+            <img src="assets/photos/pokoj-1.webp" alt="Pokoj s výhledem do zeleně" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--up">
+            <img src="assets/photos/detsky-2.webp" alt="Dětský pokoj" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <!-- duplikát pro plynulé scrollování -->
+          <div class="photo-rail__item photo-rail__item--wide photo-rail__item--up" aria-hidden="true">
+            <img src="assets/photos/exterior-1.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--down" aria-hidden="true">
+            <img src="assets/photos/obyvak-1.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--up" aria-hidden="true">
+            <img src="assets/photos/chodba.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--wide photo-rail__item--down" aria-hidden="true">
+            <img src="assets/photos/detsky-1.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--up" aria-hidden="true">
+            <img src="assets/photos/loznice-1.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--wide photo-rail__item--down" aria-hidden="true">
+            <img src="assets/photos/exterior-2.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--up" aria-hidden="true">
+            <img src="assets/photos/koupelna.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--wide photo-rail__item--down" aria-hidden="true">
+            <img src="assets/photos/pokoj-1.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="photo-rail__item photo-rail__item--up" aria-hidden="true">
+            <img src="assets/photos/detsky-2.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-l" data-reveal data-delay="1">
+        <a class="btn btn-dark btn-xl" href="/lokalita">
+          Prohlédnout lokalitu <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-ghost" href="/galerie">Galerie</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKALITA TEASER ========================================== -->
+  <section class="section bg-sky">
+    <div class="section-inner">
+      <div class="s-head">
+        <div data-reveal>
+          <p class="eyebrow">03 — Lokalita</p>
+          <h2 class="display" style="margin-top:24px;">Když chcete <em>oboje.</em></h2>
+        </div>
+        <div data-reveal data-delay="1">
+          <p class="lead">Drobovice leží mezi poli, lesy a&nbsp;rybníky kousek od&nbsp;Čáslavi. Tichá náves s&nbsp;kapličkou, kohouti místo budíku, a&nbsp;přesto Praha za&nbsp;70&nbsp;minut.</p>
+        </div>
+      </div>
+
+      <div class="loc-teaser mt-l">
+        <div class="loc-teaser__copy" data-reveal>
+          <p class="lead">
+            Vesnice, kde se ještě zdraví na&nbsp;ulici. Děti si hrají na&nbsp;návsi, ne&nbsp;na&nbsp;parkovišti. Po&nbsp;práci dojdete k&nbsp;rybníku, na&nbsp;procházku do&nbsp;lesa nebo na&nbsp;pivo do&nbsp;hospody — všechno do&nbsp;pár minut.
+          </p>
+          <p class="lead">
+            A&nbsp;když potřebujete město: do&nbsp;Čáslavi (Kaufland, obchody) jste za&nbsp;minutu, do&nbsp;centra Prahy za&nbsp;70&nbsp;minut po&nbsp;D1.
+          </p>
+
+          <div class="loc-mini">
+            <div class="loc-mini__cell"><span class="n">1<span class="u">min</span></span><span class="l">Čáslav · Kaufland</span></div>
+            <div class="loc-mini__cell"><span class="n">70<span class="u">min</span></span><span class="l">Centrum Prahy</span></div>
+            <div class="loc-mini__cell"><span class="n">3<span class="u">min</span></span><span class="l">Obchod a&nbsp;hospoda</span></div>
+          </div>
+
+          <div class="row" style="margin-top:32px;">
+            <a class="btn btn-dark btn-xl" href="/lokalita">
+              Prozkoumat lokalitu <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="loc-photos" data-reveal data-delay="1">
+          <image-slot id="loc-nature-1" src="assets/photos/obyvak-3.webp" placeholder="Příroda v okolí Drobovic — pole, rybník, les" radius="24"></image-slot>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVELOPER ================================================ -->
+  <section class="section bg-forest" id="developer">
+    <div class="section-inner">
+      <div class="s-head">
+        <div data-reveal>
+          <p class="eyebrow" style="color:var(--lime);">04 — Developer</p>
+          <h2 class="display" style="margin-top:24px;">STAVBARTA. <em>Rodinná firma,</em> která to staví sama.</h2>
+        </div>
+        <div data-reveal data-delay="1">
+          <p class="lead" style="color:color-mix(in oklab,var(--cream) 92%,transparent);">
+            Žádná developerská spekulace ani anonymní fond. Stavíme vlastní firmou, vlastními lidmi — od&nbsp;základů po&nbsp;předání klíčů. Sedmým rokem v&nbsp;regionu, mezi Čáslaví, Kutnou Horou a&nbsp;Prahou.
+          </p>
+        </div>
+      </div>
+
+      <div class="dev-hero">
+        <div class="dev-hero__photo" data-reveal>
+          <image-slot id="dev-company-photo" src="assets/photos/exterior-2.webp" placeholder="Foto týmu / stavby / techniky STAVBARTA" radius="24"></image-slot>
+        </div>
+        <div class="dev-hero__copy" data-reveal data-delay="1">
+          <p class="dev-hero__intro">
+            Začínali jsme se&nbsp;dvěma lidmi a&nbsp;jednou dodávkou. Dnes pod&nbsp;naší značkou rostou rodinné domy i&nbsp;polyfunkční objekty na&nbsp;Čáslavsku a&nbsp;Kutnohorsku. Dům v&nbsp;Drobovicích stavíme od&nbsp;základů — bez subdodavatelské loterie.
+          </p>
+          <ul class="dev-points">
+            <li><span class="n">01</span><span>Sedmým rokem stavíme v&nbsp;regionu, bez jediné nedokončené stavby.</span></li>
+            <li><span class="n">02</span><span>Vlastní parta zedníků, dodavatelé prověření léty.</span></li>
+            <li><span class="n">03</span><span>Stavbu vede přímo majitel — klienti znají Dominika osobně.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <article class="founder-card" data-reveal>
+        <div class="founder-card__avatar">
+          <image-slot id="dev-dominik-photo" src="assets/dominik-barta.jpg" placeholder="Portrét: Dominik Bárta" radius="20"></image-slot>
+        </div>
+        <div class="founder-card__copy">
+          <p class="eyebrow" style="color:var(--lime);">Zakladatel a&nbsp;jednatel</p>
+          <h3 class="display" style="color:var(--cream);margin:14px 0 28px;">Dominik <em>Bárta</em></h3>
+          <p class="founder-card__quote">
+            „Drobovice nejsou jen další projekt — vyrostl jsem přímo tady. Vím, jak má dům na&nbsp;téhle návsi stát. Na&nbsp;stavbě mě v&nbsp;gumákách nenajdete — od&nbsp;toho mám parťáky; já hlídám, aby výsledek dával smysl. Když si&nbsp;nevíte rady, volejte přímo mně."
+          </p>
+          <dl class="founder-card__contact">
+            <div>
+              <dt>Telefon</dt>
+              <dd><a href="tel:+420776442644">+420&nbsp;776&nbsp;442&nbsp;644</a></dd>
+            </div>
+            <div>
+              <dt>E‑mail</dt>
+              <dd><a href="mailto:dominik@stavbarta.cz">dominik@stavbarta.cz</a></dd>
+            </div>
+          </dl>
+          <div class="row" style="margin-top:36px;">
+            <a class="btn btn-primary btn-xl" href="/kontakt" data-contact-open>
+              Domluvit schůzku <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-ghost btn-xl" href="/o-projektu" style="color:var(--cream);border-color:color-mix(in oklab,var(--cream) 30%,transparent);">
+              Více o&nbsp;firmě
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- UNIT DETAIL MODAL ======================================= -->
+  <div class="unit-modal" id="unit-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="unit-modal__card" role="document">
+      <button class="unit-modal__close" aria-label="Zavřít detail jednotky">×</button>
+      <div class="unit-modal__body-inner"></div>
+    </div>
+  </div>
+
+  <script src="assets/image-slot.js"></script>
+  <script src="data/units.js"></script>
+  <script src="assets/site.js?v=1"></script>
+  <script>
+    // Hero carousel — crossfade + Ken Burns + progress bars
+    (function () {
+      const root = document.querySelector('[data-hero-carousel]');
+      if (!root) return;
+      const photos = Array.from(root.querySelectorAll('.hero__photo'));
+      const bars   = Array.from(root.querySelectorAll('.hero-carousel__bar'));
+      const navs   = Array.from(root.querySelectorAll('.hero-carousel__nav'));
+      if (!photos.length || !bars.length) return;
+
+      const DURATION = 6000;
+      let current = 0;
+      let timer = null;
+      let paused = false;
+
+      function show(idx) {
+        const next = ((idx % photos.length) + photos.length) % photos.length;
+        photos.forEach((p, i) => p.classList.toggle('is-active', i === next));
+        bars.forEach((b, i) => {
+          b.classList.remove('is-active', 'is-done');
+          if (i < next) b.classList.add('is-done');
+        });
+        // force reflow before re-applying active so the fill animation restarts
+        void bars[next].offsetWidth;
+        bars[next].classList.add('is-active');
+        current = next;
+      }
+      function step() { show(current + 1); schedule(); }
+      function schedule() {
+        clearTimeout(timer);
+        if (paused) return;
+        timer = setTimeout(step, DURATION);
+      }
+      navs.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          show(current + (btn.dataset.dir === 'next' ? 1 : -1));
+          schedule();
+        });
+      });
+      bars.forEach((b, i) => {
+        b.addEventListener('click', () => { show(i); schedule(); });
+      });
+      // Pause only when hovering the controls themselves (not the whole hero).
+      const controls = root.querySelector('.hero-carousel__controls');
+      if (controls) {
+        controls.addEventListener('mouseenter', () => { paused = true; clearTimeout(timer); });
+        controls.addEventListener('mouseleave', () => { paused = false; schedule(); });
+      }
+      document.addEventListener('visibilitychange', () => {
+        paused = document.hidden;
+        if (paused) clearTimeout(timer); else schedule();
+      });
+      // honour reduced motion: keep first slide, no auto-advance
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+      schedule();
+    })();
+  </script>
+
+  <!-- Strukturovaná data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "name": "Byty Drobovice",
+    "description": "Polyfunkční objekt v centru Drobovic — 3 byty a 4 ateliéry, energetická třída B, kolaudace Q2 2027.",
+    "url": "https://bytydrobovice.cz",
+    "image": [
+      "https://bytydrobovice.cz/assets/hero-exterior.jpg",
+      "https://bytydrobovice.cz/assets/exterior.jpg"
+    ],
+    "numberOfAccommodationUnits": 7,
+    "yearBuilt": "2027",
+    "petsAllowed": true,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Drobovice 142",
+      "postalCode": "285 22",
+      "addressLocality": "Drobovice",
+      "addressRegion": "Středočeský kraj",
+      "addressCountry": "CZ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.9043,
+      "longitude": 15.4017
+    },
+    "telephone": "+420 776 442 644",
+    "email": "info@stavbarta.cz",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Energetická třída B", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Tepelné čerpadlo", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Rekuperace", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Klimatizace", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Optika 1 Gbps", "value": true }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "STAVBARTA s.r.o.",
+    "url": "https://bytydrobovice.cz",
+    "logo": "https://bytydrobovice.cz/assets/logo-drobovice-forest.svg",
+    "foundingDate": "1987",
+    "description": "Stavební firma se zaměřením na novostavby a rekonstrukce ve Středočeském kraji.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Čáslav",
+      "addressRegion": "Středočeský kraj",
+      "addressCountry": "CZ"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+420 776 442 644",
+      "email": "info@stavbarta.cz",
+      "contactType": "sales",
+      "availableLanguage": ["cs"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Byty Drobovice",
+    "url": "https://bytydrobovice.cz",
+    "inLanguage": "cs-CZ",
+    "publisher": { "@type": "Organization", "name": "STAVBARTA s.r.o." }
+  }
+  </script>
+  <script src="assets/cookie-consent.js"></script>
 </body>
-</html>html></p></h1>
-</body></title>
-  </head>
+</html>

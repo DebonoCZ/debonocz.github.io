@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /uploads/
+Disallow: /screenshots/
+Disallow: /*-print.html$
+
+Sitemap: https://bytydrobovice.cz/sitemap.xml
