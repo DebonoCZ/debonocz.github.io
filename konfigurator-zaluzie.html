@@ -68,7 +68,17 @@
   .sim-bar{display:flex;gap:12px;padding:9px 12px;background:#fff;border-top:1px solid var(--border);flex-wrap:wrap}
   .sim-bar label{flex:1;min-width:130px;font-size:11.5px;color:var(--gray);font-weight:600}
   .sim-bar label b{color:var(--ink)}
-  .sim-bar input[type=range]{width:100%;accent-color:var(--red);margin-top:2px;height:22px}
+  .sim-bar input[type=range]{width:100%;margin-top:2px}
+
+  /* vlastní vzhled sliderů — velký palec, spolehlivé tažení na dotyku */
+  input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;height:30px;--fill:50%;touch-action:none;cursor:pointer}
+  input[type=range]::-webkit-slider-runnable-track{height:7px;border-radius:4px;
+    background:linear-gradient(to right,var(--red) var(--fill),#e4e6e9 var(--fill))}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;
+    background:#fff;border:8px solid var(--red);margin-top:-9.5px;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+  input[type=range]::-moz-range-track{height:7px;border-radius:4px;background:#e4e6e9}
+  input[type=range]::-moz-range-progress{height:7px;border-radius:4px;background:var(--red)}
+  input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:#fff;border:7px solid var(--red);box-shadow:0 1px 4px rgba(0,0,0,.25)}
 
   /* ---------- cards ---------- */
   .panel{padding:10px 10px 120px;display:flex;flex-direction:column;gap:10px}
@@ -116,7 +126,7 @@
   .dim .lbl{font-size:12.5px;margin-bottom:3px;color:var(--gray)}
   .dim .lbl b{color:var(--ink)}
   .dim-line{display:flex;align-items:center;gap:10px}
-  .dim-line input[type=range]{flex:1;accent-color:var(--red);height:24px}
+  .dim-line input[type=range]{flex:1}
   .dim-line input[type=number]{width:78px;padding:8px 5px;text-align:center;font-size:15px;border:1.5px solid #f3c4c0;border-radius:8px;outline:none}
   .pole-line{display:flex;align-items:center;gap:8px;margin-top:4px}
   .pole-line .lb{font-size:12.5px;color:var(--gray)}
@@ -806,15 +816,15 @@ function renderWindows(){
           <div class="dim">
             <div class="lbl"><b>Šířka</b> · ${MIN_W}–${maxW.toLocaleString('cs-CZ')} mm</div>
             <div class="dim-line">
-              <input type="range" min="${MIN_W}" max="${maxW}" value="${win.w}" oninput="setWinDim(${i},'w',this.value)">
-              <input type="number" value="${win.w}" onchange="setWinDim(${i},'w',this.value)">
+              <input type="range" min="${MIN_W}" max="${maxW}" step="10" value="${win.w}" oninput="setWinDimLive(${i},'w',this.value)" onchange="update()">
+              <input type="number" id="wnum${i}w" value="${win.w}" onchange="setWinDim(${i},'w',this.value)">
             </div>
           </div>
           <div class="dim">
             <div class="lbl"><b>Výška</b> · ${MIN_H}–${m.maxH.toLocaleString('cs-CZ')} mm</div>
             <div class="dim-line">
-              <input type="range" min="${MIN_H}" max="${m.maxH}" value="${win.h}" oninput="setWinDim(${i},'h',this.value)">
-              <input type="number" value="${win.h}" onchange="setWinDim(${i},'h',this.value)">
+              <input type="range" min="${MIN_H}" max="${m.maxH}" step="10" value="${win.h}" oninput="setWinDimLive(${i},'h',this.value)" onchange="update()">
+              <input type="number" id="wnum${i}h" value="${win.h}" onchange="setWinDim(${i},'h',this.value)">
             </div>
           </div>
           <div class="pole-line">
@@ -925,6 +935,16 @@ function setWinDim(i,dim,val){
   state.active=i;
   update();
 }
+function setWinDimLive(i,dim,val){    // během tažení slideru — bez překreslení karty
+  const win=state.windows[i], m=MODELS[state.model];
+  let v=parseInt(val,10)||0;
+  if(dim==='w') win.w=clamp(v,MIN_W,maxWidth(win));
+  else win.h=clamp(v,MIN_H,m.maxH);
+  state.active=i;
+  const num=$('wnum'+i+dim); if(num) num.value=(dim==='w'?win.w:win.h);
+  build3D(); renderPrice();
+  if(state.view==='facade') renderFacade();
+}
 function setWinSections(i,n){
   const win=state.windows[i];
   win.sections=n;
@@ -1014,10 +1034,48 @@ function submitInquiry(e){
   cart.length=0; renderPrice();
 }
 
+/* =============== SLIDERY: výplň dráhy + tažení na dotyku ===============
+   iOS Safari umí chytit nativní slider jen přesně za palec — přebíráme
+   dotykové ovládání: prst kdekoliv na dráze slider plynule táhne. */
+function sliderFill(el){
+  const min=+el.min||0, max=+el.max||100;
+  el.style.setProperty('--fill',((el.value-min)/(max-min)*100)+'%');
+}
+function refreshSliders(){document.querySelectorAll('input[type=range]').forEach(sliderFill)}
+document.addEventListener('input',e=>{
+  if(e.target&&e.target.matches&&e.target.matches('input[type=range]')) sliderFill(e.target);
+});
+let touchSlider=null;
+function sliderFromTouch(el,t){
+  const r=el.getBoundingClientRect(), pad=14;
+  const f=clamp((t.clientX-r.left-pad)/(r.width-2*pad),0,1);
+  const min=+el.min||0, max=+el.max||100, step=+el.step||1;
+  const v=clamp(Math.round((min+f*(max-min))/step)*step,min,max);
+  if(String(v)!==el.value){el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}))}
+}
+document.addEventListener('touchstart',e=>{
+  const el=e.target&&e.target.closest?e.target.closest('input[type=range]'):null;
+  if(!el) return;
+  touchSlider=el;
+  sliderFromTouch(el,e.touches[0]);
+  e.preventDefault();
+},{passive:false});
+document.addEventListener('touchmove',e=>{
+  if(!touchSlider) return;
+  sliderFromTouch(touchSlider,e.touches[0]);
+  e.preventDefault();
+},{passive:false});
+document.addEventListener('touchend',()=>{
+  if(!touchSlider) return;
+  touchSlider.dispatchEvent(new Event('change',{bubbles:true}));
+  touchSlider=null;
+});
+
 /* =============== UPDATE =============== */
 function update(){
   renderMount(); renderWindows(); renderModels(); renderColors();
   renderControls(); renderElektro(); renderAcc(); renderSvc(); renderPrice();
+  refreshSliders();
   build3D();
   if(state.view==='facade') renderFacade();
 }
