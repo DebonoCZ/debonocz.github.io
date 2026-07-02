@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Konfigurátor předokenních žaluzií — DEMO</title>
+<title>Konfigurátor předokenních žaluzií NEVA — DEMO</title>
 <style>
   :root{
     --red:#d92b1f; --red-dark:#b8231a;
@@ -42,14 +42,14 @@
   /* ---------- preview ---------- */
   .preview-wrap{background:#fff}
   @media(min-width:960px){.preview-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}}
-  .preview{position:relative;background:linear-gradient(#dfe6ec,#eef1f3)}
-  .preview svg{display:block;width:100%;height:auto}
+  .preview{position:relative}
+  .preview svg{display:block;width:100%;height:auto;touch-action:pan-y}
   .float-chip{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.92);border-radius:12px;
-    padding:9px 14px;font-size:13.5px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,.10);display:flex;align-items:center;gap:7px}
-  .sun-btn{position:absolute;top:14px;left:14px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);
+    padding:9px 14px;font-size:13.5px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,.10);display:flex;align-items:center;gap:7px;pointer-events:none}
+  .night-btn{position:absolute;top:14px;left:14px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);
     box-shadow:0 2px 10px rgba(0,0,0,.10);display:flex;align-items:center;justify-content:center;font-size:20px}
-  .sim-bar{display:flex;gap:18px;padding:12px 16px;background:#fff;border-top:1px solid var(--border);flex-wrap:wrap}
-  .sim-bar label{flex:1;min-width:170px;font-size:12.5px;color:var(--gray);font-weight:600}
+  .sim-bar{display:flex;gap:16px;padding:12px 16px;background:#fff;border-top:1px solid var(--border);flex-wrap:wrap}
+  .sim-bar label{flex:1;min-width:150px;font-size:12.5px;color:var(--gray);font-weight:600}
   .sim-bar label b{color:var(--ink)}
   .sim-bar input[type=range]{width:100%;accent-color:var(--red);margin-top:4px}
 
@@ -68,6 +68,8 @@
   .opt-row .t{font-size:16.5px;font-weight:600}
   .opt-row.sel .t{color:var(--red)}
   .opt-row .d{font-size:13.5px;color:var(--gray);margin-top:3px;line-height:1.35}
+  .badge{display:inline-block;background:#eef7ee;color:#2e7d32;border:1px solid #cde5cd;font-size:11.5px;font-weight:700;
+    border-radius:7px;padding:2px 8px;margin-left:6px;vertical-align:2px}
 
   .seg{display:flex;gap:10px}
   .seg button{flex:1;padding:13px 6px;border:1.5px solid var(--border);border-radius:12px;background:#fbfbfc;font-size:15px;font-weight:500}
@@ -85,11 +87,13 @@
   .dim-line input[type=number]:focus{border-color:var(--red)}
 
   /* swatches */
-  .swatches{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
-  .swatch{display:flex;flex-direction:column;align-items:center;gap:9px;font-size:14px;color:#555;background:none}
-  .swatch .dot{width:66px;height:66px;border-radius:50%;border:3px solid transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:14px 8px;justify-items:center}
+  .swatch{display:flex;flex-direction:column;align-items:center;gap:7px;background:none}
+  .swatch .dot{width:54px;height:54px;border-radius:50%;border:3px solid transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
   .swatch.sel .dot{border-color:var(--red)}
-  .swatch.sel{color:var(--red);font-weight:600}
+  .swatch .code{font-size:12px;font-weight:700;color:#555}
+  .swatch .nm{font-size:11px;color:#a0a4ab;margin-top:-4px}
+  .swatch.sel .code{color:var(--red)}
   .dot.wheel{background:conic-gradient(#f44,#fa0,#ff4,#4c4,#4cf,#44f,#c4f,#f44)}
 
   /* accessories */
@@ -106,6 +110,7 @@
 
   .warn{margin-top:12px;font-size:13.5px;color:#a15c00;background:#fff7e8;border:1px solid #f4dfb5;border-radius:10px;padding:10px 12px;display:none}
   .warn.show{display:block}
+  .note{margin-top:12px;font-size:13px;color:#7a8088;background:#f4f6f8;border-radius:10px;padding:10px 12px}
 
   /* qty + price */
   .qty-line{display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -149,7 +154,7 @@
 <body>
 
 <header>
-  <div class="logo"><b>ŽALU<span>X</span></b><small>předokenní žaluzie · DEMO</small></div>
+  <div class="logo"><b>ŽALU<span>X</span></b><small>předokenní žaluzie NEVA · DEMO</small></div>
   <div class="hdr-right">
     <div class="chip">CS ▾</div>
     <button class="cart-btn" onclick="openCart()" aria-label="Poptávkový košík">
@@ -164,11 +169,14 @@
   <!-- ======================= PREVIEW ======================= -->
   <div class="preview-wrap">
     <div class="preview">
-      <svg id="scene" viewBox="0 0 900 620" role="img" aria-label="Vizualizace předokenní žaluzie"></svg>
-      <button class="sun-btn" id="sunBtn" onclick="toggleNight()" title="Den / večer">☀️</button>
-      <div class="float-chip">🪟 Živá vizualizace</div>
+      <svg id="scene" viewBox="0 0 900 660" role="img" aria-label="Vizualizace předokenní žaluzie"></svg>
+      <button class="night-btn" id="nightBtn" onclick="toggleNight()" title="Den / noc">🌙</button>
+      <div class="float-chip">☀️ Táhněte sluncem po obloze</div>
     </div>
     <div class="sim-bar">
+      <label>Poloha slunce: <b id="sunVal">poledne</b>
+        <input type="range" id="sunRange" min="0" max="100" value="62" oninput="onSun(this.value)">
+      </label>
       <label>Vytažení žaluzie: <b id="dropVal">100 %</b>
         <input type="range" id="dropRange" min="0" max="100" value="100" oninput="onSim()">
       </label>
@@ -182,13 +190,21 @@
   <div class="panel">
 
     <div class="card">
-      <h2>Model</h2>
-      <div id="modelList"></div>
+      <h2>Box</h2>
+      <div id="mountList"></div>
     </div>
 
     <div class="card">
-      <h2>Montáž</h2>
-      <div class="seg" id="mountSeg"></div>
+      <h2>Dělení žaluzie</h2>
+      <p class="hint">Široké sestavy se dělí na více polí se společným boxem</p>
+      <div class="seg" id="sectionSeg"></div>
+      <div class="note" id="sectionNote"></div>
+    </div>
+
+    <div class="card">
+      <h2>Typ žaluzie</h2>
+      <p class="hint">Lamely ze sortimentu NEVA</p>
+      <div id="modelList"></div>
     </div>
 
     <div class="card">
@@ -207,11 +223,25 @@
           <input type="number" id="hNum" onchange="setDim('height',this.value)">
         </div>
       </div>
-      <p class="price-note" style="text-align:left;margin-top:10px">Rozměry v mm. Plocha: <b id="areaLbl"></b></p>
+      <p class="price-note" style="text-align:left;margin-top:10px">
+        Rozměry v mm. Plocha: <b id="areaLbl"></b> · <span id="perSectionLbl"></span></p>
+    </div>
+
+    <div class="card">
+      <h2>Ovládání</h2>
+      <div id="controlList"></div>
+      <div class="warn" id="crankWarn">⚠️ Pro plochu pole nad 4,5 m² doporučujeme motorové ovládání — klika by šla ztuha.</div>
+    </div>
+
+    <div class="card" id="accCard" style="display:none">
+      <h2>Příslušenství</h2>
+      <p class="hint">Lze vybrat více možností</p>
+      <div id="accList"></div>
     </div>
 
     <div class="card">
       <h2>Barva lamel</h2>
+      <p class="hint">Vzorník NEVA — ilustrační výběr</p>
       <div class="swatches" id="slatColors"></div>
     </div>
 
@@ -219,18 +249,6 @@
       <h2>Vodicí lišty a box</h2>
       <div class="seg" id="frameSeg" style="margin-bottom:16px"></div>
       <div class="swatches" id="frameColors" style="display:none"></div>
-    </div>
-
-    <div class="card">
-      <h2>Ovládání</h2>
-      <div id="controlList"></div>
-      <div class="warn" id="crankWarn">⚠️ Pro plochu nad 4,5 m² doporučujeme motorové ovládání — klika by šla ztuha.</div>
-    </div>
-
-    <div class="card" id="accCard" style="display:none">
-      <h2>Příslušenství</h2>
-      <p class="hint">Lze vybrat více možností</p>
-      <div id="accList"></div>
     </div>
 
     <div class="card">
@@ -267,79 +285,89 @@
   </div>
 </div>
 
-<p class="demo-note">DEMO prototyp konfigurátoru · žádná data se nikam neodesílají · ceny i produkty jsou ilustrační</p>
+<p class="demo-note">DEMO prototyp konfigurátoru · žádná data se nikam neodesílají · ceny, rozsahy i vzorník jsou ilustrační</p>
 
 <script>
-/* =============== KATALOG (v produkci z CMS / API) =============== */
+/* =============== KATALOG (v produkci z CMS / ceníku NEVA) =============== */
 const MODELS = {
-  z90:{name:'Lamela Z-90', desc:'Zalomený profil s těsněním — nejlepší zatemnění i útlum hluku', pitch:80,  base:3200, maxW:4000, maxH:3400},
-  c80:{name:'Lamela C-80', desc:'Bombírovaný profil — tichý chod, skvělý poměr cena/výkon',      pitch:72,  base:2900, maxW:3500, maxH:3200},
-  s90:{name:'Lamela S-90', desc:'Plochý designový profil — moderní minimalistický vzhled',        pitch:84,  base:3400, maxW:4000, maxH:3400},
+  z90:{name:'Z-90', desc:'Zalomená lamela 90 mm s těsněním — nejlepší zatemnění i útlum hluku', pitch:80, base:3200, maxW:4000, maxH:3400},
+  z70:{name:'Z-70', desc:'Užší zalomená lamela 70 mm — pro menší okna a jemnější rastr',        pitch:62, base:3000, maxW:3000, maxH:3000},
+  c80:{name:'C-80', desc:'Bombírovaná lamela 80 mm — univerzální klasika, tichý chod',          pitch:72, base:2900, maxW:3500, maxH:3200},
+  c65:{name:'C-65', desc:'Bombírovaná lamela 65 mm — subtilní paket, nižší nadpraží',           pitch:58, base:2800, maxW:3000, maxH:2800},
+  s90:{name:'S-90', desc:'Plochá designová lamela 90 mm — minimalistický vzhled',               pitch:84, base:3400, maxW:4000, maxH:3400},
 };
 const MOUNTS = {
-  facade:{name:'Na fasádu',  desc:'přiznaný box', factor:1.00},
-  plaster:{name:'Pod omítku', desc:'skrytý box',   factor:1.15},
-  reveal:{name:'Do ostění',  desc:'',             factor:1.05},
+  visible:{name:'Přiznaný box',        desc:'Viditelný hliníkový box v barvě žaluzie, montáž na fasádu či do ostění', factor:1.00, badge:''},
+  plaster:{name:'Podomítkový box',     desc:'Skrytý box zapravený do zateplení — čistá fasáda bez viditelné techniky', factor:1.15, badge:'vlastní výroba'},
 };
-const RALS = {
-  '7016':{name:'Antracitová 7016', hex:'#383e42'},
-  '9006':{name:'Stříbrná 9006',    hex:'#a5a8a6'},
-  '9007':{name:'Šedý hliník 9007', hex:'#8f8f8c'},
-  '8014':{name:'Hnědá 8014',       hex:'#49392d'},
-  '9016':{name:'Bílá 9016',        hex:'#f1f0ea'},
-};
+const MAX_TOTAL_W = 6500;
+const RALS = [
+  {id:'9016', code:'RAL 9016', name:'bílá',            hex:'#f1f0ea'},
+  {id:'1015', code:'RAL 1015', name:'slonová kost',    hex:'#e6d9c4'},
+  {id:'7035', code:'RAL 7035', name:'světle šedá',     hex:'#d7dbd6'},
+  {id:'9006', code:'RAL 9006', name:'stříbrná',        hex:'#a5a8a6'},
+  {id:'9007', code:'RAL 9007', name:'šedý hliník',     hex:'#8f8f8c'},
+  {id:'7039', code:'RAL 7039', name:'křemenná šedá',   hex:'#6b665e'},
+  {id:'db703',code:'DB 703',   name:'antracit metal.', hex:'#4a4d52'},
+  {id:'7016', code:'RAL 7016', name:'antracitová',     hex:'#383e42'},
+  {id:'8014', code:'RAL 8014', name:'sépiová hnědá',   hex:'#49392d'},
+  {id:'9005', code:'RAL 9005', name:'černá',           hex:'#131516'},
+];
+const RAL = Object.fromEntries(RALS.map(r=>[r.id,r]));
 const CONTROLS = {
-  crank:{name:'Klika',                     desc:'Manuální ovládání převodovkou', price:0,    icon:'crank'},
-  motorSwitch:{name:'Motor + vypínač',     desc:'Elektromotor ovládaný nástěnným vypínačem', price:2500, icon:'switch'},
-  motorRemote:{name:'Motor + dálkové ovládání', desc:'Elektromotor s rádiovým přijímačem', price:3200, icon:'remote'},
+  crank:{name:'Klika',                          desc:'Manuální ovládání převodovkou', price:0,    icon:'🔧'},
+  motorSwitch:{name:'Motor + vypínač',          desc:'Elektromotor ovládaný nástěnným vypínačem', price:2500, icon:'🔘'},
+  motorRemote:{name:'Motor + dálkové ovládání', desc:'Elektromotor s rádiovým přijímačem', price:3200, icon:'📱'},
 };
 const ACCESSORIES = {
-  situo1:{name:'Dálkový ovladač 1-kanálový',        price:990,  icon:'🎛️', controls:['motorRemote']},
-  situo5:{name:'Dálkový ovladač 5-kanálový',        price:1890, icon:'🎚️', controls:['motorRemote']},
-  wall:{name:'Nástěnný vypínač',                    price:790,  icon:'🔘', controls:['motorSwitch','motorRemote']},
+  situo1:{name:'Dálkový ovladač 1-kanálový',         price:990,  icon:'🎛️', controls:['motorRemote']},
+  situo5:{name:'Dálkový ovladač 5-kanálový',         price:1890, icon:'🎚️', controls:['motorRemote']},
+  wall:{name:'Nástěnný vypínač',                     price:790,  icon:'🔘', controls:['motorSwitch','motorRemote']},
   hub:{name:'Chytrá domácnost — centrální jednotka', price:4990, icon:'📡', controls:['motorRemote']},
+  sunSensor:{name:'Sluneční čidlo (automatika)',     price:1590, icon:'🌤️', controls:['motorSwitch','motorRemote']},
 };
 const SERVICES = {
   survey:{name:'Zaměření technikem', desc:'Přesné zaměření otvorů u vás doma', price:0,   per:'zdarma'},
   install:{name:'Montáž',            desc:'Odborná montáž naším týmem',        price:1500,per:'za kus'},
   delivery:{name:'Doprava',          desc:'Cena se počítá dle vzdálenosti',    price:690, per:'paušál (demo)'},
 };
-const MIN_W=600, MIN_H=600;
+const MIN_W=600, MIN_H=600, SECTION_PRICE=600;
 
 /* =============== STAV =============== */
 const state = {
-  model:'z90', mount:'facade',
+  mount:'visible', sections:1, model:'z90',
   width:1200, height:1400,
   slatColor:'7016', slatCustom:'#d92b1f',
   frameMode:'same', frameColor:'7016', frameCustom:'#d92b1f',
   control:'motorRemote',
-  acc:{situo1:1, situo5:0, wall:0, hub:0},
+  acc:Object.fromEntries(Object.keys(ACCESSORIES).map(k=>[k,k==='situo1'?1:0])),
   svc:{survey:true, install:true, delivery:false},
   qty:1,
-  drop:1, tilt:30, night:false,
+  drop:1, tilt:30, sun:.62, night:false,
 };
 const cart = [];
 
 /* =============== HELPERS =============== */
 const $ = id => document.getElementById(id);
 const czk = n => n.toLocaleString('cs-CZ') + ' Kč';
-function shade(hex,f){ // f<0 tmavší, f>0 světlejší
-  const n=parseInt(hex.slice(1),16);
-  const c=v=>Math.max(0,Math.min(255,Math.round(v+(f>0?(255-v)*f:v*f))));
-  return '#'+[(n>>16)&255,(n>>8)&255,n&255].map(c).map(v=>v.toString(16).padStart(2,'0')).join('');
-}
-const slatHex  = () => state.slatColor==='custom' ? state.slatCustom : RALS[state.slatColor].hex;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function hex2rgb(h){const n=parseInt(h.slice(1),16);return[(n>>16)&255,(n>>8)&255,n&255]}
+function rgb2hex(r){return '#'+r.map(v=>Math.round(clamp(v,0,255)).toString(16).padStart(2,'0')).join('')}
+function mix(a,b,f){const A=hex2rgb(a),B=hex2rgb(b);return rgb2hex(A.map((v,i)=>v+(B[i]-v)*f))}
+function shade(hex,f){return f>0?mix(hex,'#ffffff',f):mix(hex,'#000000',-f)}
+const slatHex  = () => state.slatColor==='custom' ? state.slatCustom : RAL[state.slatColor].hex;
 const frameHex = () => state.frameMode==='same' ? slatHex()
-                     : (state.frameColor==='custom' ? state.frameCustom : RALS[state.frameColor].hex);
-const slatName  = () => state.slatColor==='custom' ? 'vlastní '+state.slatCustom : RALS[state.slatColor].name;
-const frameName = () => state.frameMode==='same' ? 'stejná jako lamely'
-                      : (state.frameColor==='custom' ? 'vlastní '+state.frameCustom : RALS[state.frameColor].name);
+                     : (state.frameColor==='custom' ? state.frameCustom : RAL[state.frameColor].hex);
+const colName = (id,custom) => id==='custom' ? 'vlastní '+custom : RAL[id].code+' '+RAL[id].name;
+const maxWidth = () => Math.min(MODELS[state.model].maxW*state.sections, MAX_TOTAL_W);
 
 /* =============== CENA =============== */
 function unitPrice(s=state){
   const m=MODELS[s.model];
   const area=Math.max(1.2,(s.width/1000)*(s.height/1000));
-  let p=m.base*area*MOUNTS[s.mount].factor + CONTROLS[s.control].price;
+  let p=m.base*area*MOUNTS[s.mount].factor;
+  p+=(s.sections-1)*SECTION_PRICE;
+  p+=CONTROLS[s.control].price*s.sections;      // motor / převodovka pro každé pole
   return Math.round(p/10)*10;
 }
 function totalPrice(s=state){
@@ -352,39 +380,57 @@ function totalPrice(s=state){
 
 /* =============== SVG SCÉNA =============== */
 function modelIcon(key){
-  if(key==='z90') return '<svg width="58" height="42" viewBox="0 0 58 42">'+
+  const shape=key[0];
+  if(shape==='z') return '<svg width="58" height="42" viewBox="0 0 58 42">'+
     [0,1,2,3].map(i=>`<path d="M8 ${7+i*9} l14 4 l14 -4 l14 4" fill="none" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
-  if(key==='c80') return '<svg width="58" height="42" viewBox="0 0 58 42">'+
+  if(shape==='c') return '<svg width="58" height="42" viewBox="0 0 58 42">'+
     [0,1,2,3].map(i=>`<path d="M8 ${9+i*9} q21 -6 42 0" fill="none" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
   return '<svg width="58" height="42" viewBox="0 0 58 42">'+
     [0,1,2,3].map(i=>`<line x1="8" y1="${8+i*9}" x2="50" y2="${8+i*9}" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
-}
-function ctrlIcon(key){
-  if(key==='crank') return '🔧'; if(key==='switch') return '🔘'; return '📱';
 }
 function dimChip(x,y,text){
   const w=text.length*8.5+22;
   return `<g><rect x="${x-w/2}" y="${y-15}" width="${w}" height="30" rx="8" fill="#fff" filter="url(#soft)"/>
     <text x="${x}" y="${y+5}" text-anchor="middle" font-size="15" font-weight="700" fill="#1c1e21">${text}</text></g>`;
 }
+const SKY_H=180;
 function renderScene(){
   const m=MODELS[state.model];
-  const s=Math.min(430/state.width, 330/state.height);         // px na mm
+  const s=Math.min(430/state.width, 320/state.height);          // px na mm
   const winW=state.width*s, winH=state.height*s;
-  const cx=450, top=140;
+  const cx=450, top=270;
   const wx=cx-winW/2, wy=top;
   const railW=Math.max(7,25*s*2.2);
   const boxH=Math.max(24,Math.min(52,300*s));
   const fc=frameHex(), sc=slatHex();
-  const night=state.night;
+  const night=state.night, t=state.sun;
 
-  const facade=night?'#b9bec7':'#e9e6df', facade2=night?'#a7adb8':'#dcd8cf';
-  const glassA=night?'#2b3644':'#bcd3e2', glassB=night?'#42556b':'#dbe9f2';
-  const glow=night?'#ffd98a':'none';
+  // slunce: poloha, teplota světla, směr stínů
+  const noon=Math.sin(Math.PI*t);                 // 1 v poledne, 0 na krajích
+  const warm=1-noon;                              // ráno/večer teplé světlo
+  const sunX=80+740*t, sunY=SKY_H-30-noon*110;
+  const shDx=(0.5-t)*110;                         // slunce vlevo → stín vpravo
+  const shDy=8+warm*20;
+  const shOp=night?.06:.10+noon*.10;
+
+  // barvy scény
+  let skyTop, skyHor, facade;
+  if(night){ skyTop='#141b28'; skyHor='#2e3b52'; facade='#aab0bb'; }
+  else{
+    skyTop=mix('#8fc0e6','#5d84b8',warm*.45);
+    skyHor=mix('#d6e8f4','#f4b877',warm*.75);
+    facade=mix('#eae7e0',warm>.55?'#eecf9f':'#f3ddb8',warm*.4);
+  }
+  const facade2=shade(facade,-.07);
+  const glassA=night?'#2b3644':mix('#bcd3e2','#d8b98a',warm*.3);
+  const glassB=night?'#42556b':mix('#dbe9f2','#f0d3a6',warm*.3);
 
   let svg=`<defs>
     <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".18"/></filter>
+    <filter id="blur6"><feGaussianBlur stdDeviation="5"/></filter>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${skyTop}"/><stop offset="1" stop-color="${skyHor}"/></linearGradient>
     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${facade}"/><stop offset="1" stop-color="${facade2}"/></linearGradient>
+    <radialGradient id="sung"><stop offset="0" stop-color="${night?'#e8edf5':'#ffe9a8'}"/><stop offset=".55" stop-color="${night?'#dfe6f2':'#ffd24d'}"/><stop offset="1" stop-color="${night?'#dfe6f2':'#ffd24d'}" stop-opacity="0"/></radialGradient>
     <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${glassB}"/><stop offset=".55" stop-color="${glassA}"/><stop offset="1" stop-color="${glassB}"/></linearGradient>
     <linearGradient id="slat" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="${shade(sc,.28)}"/><stop offset=".5" stop-color="${sc}"/><stop offset="1" stop-color="${shade(sc,-.25)}"/>
@@ -392,47 +438,76 @@ function renderScene(){
     <linearGradient id="boxg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(fc,.22)}"/><stop offset="1" stop-color="${shade(fc,-.2)}"/></linearGradient>
   </defs>`;
 
-  // fasáda + stín ostění
-  svg+=`<rect width="900" height="620" fill="url(#wall)"/>`;
-  if(!night) svg+=`<ellipse cx="450" cy="640" rx="430" ry="60" fill="#000" opacity=".05"/>`;
-  svg+=`<rect x="${wx-14}" y="${wy-14}" width="${winW+28}" height="${winH+28}" rx="4" fill="${shade(facade2,-.18)}"/>`;
+  // obloha + slunce/měsíc (tažné)
+  svg+=`<rect width="900" height="${SKY_H}" fill="url(#sky)"/>`;
+  if(night) svg+=`<circle cx="120" cy="46" r="2" fill="#fff" opacity=".8"/><circle cx="300" cy="70" r="1.6" fill="#fff" opacity=".7"/>
+    <circle cx="520" cy="38" r="1.8" fill="#fff" opacity=".75"/><circle cx="700" cy="86" r="1.5" fill="#fff" opacity=".6"/><circle cx="820" cy="52" r="2" fill="#fff" opacity=".8"/>`;
+  svg+=`<g id="sunHandle" style="cursor:grab">
+    <circle cx="${sunX}" cy="${sunY}" r="52" fill="url(#sung)" opacity="${night?.5:.9}"/>
+    <circle cx="${sunX}" cy="${sunY}" r="21" fill="${night?'#e8edf5':'#ffd24d'}"/>
+    ${night?`<circle cx="${sunX+8}" cy="${sunY-6}" r="17" fill="${skyTop}"/>`:''}
+  </g>`;
+  // atika / římsa domu
+  svg+=`<rect x="0" y="${SKY_H-8}" width="900" height="14" fill="${shade(facade,-.28)}"/>`;
+  // fasáda
+  svg+=`<rect x="0" y="${SKY_H+6}" width="900" height="${660-SKY_H-6}" fill="url(#wall)"/>`;
+  // stín atiky na fasádě dle slunce
+  svg+=`<rect x="0" y="${SKY_H+6}" width="900" height="${6+shDy}" fill="#000" opacity="${shOp}"/>`;
 
-  // okno
+  // vržený stín celé žaluzie na fasádu
+  const bx=wx-8-railW-2, bw=winW+16+railW*2+4, boxY=wy-10-boxH;
+  svg+=`<g filter="url(#blur6)" opacity="${shOp+.06}">
+    <rect x="${bx+shDx}" y="${boxY+shDy}" width="${bw}" height="${boxH+winH+26}" fill="#000"/>
+  </g>`;
+
+  // ostění + okno
+  svg+=`<rect x="${wx-14}" y="${wy-14}" width="${winW+28}" height="${winH+28}" rx="4" fill="${shade(facade2,-.18)}"/>`;
   svg+=`<rect x="${wx-8}" y="${wy-8}" width="${winW+16}" height="${winH+16}" rx="3" fill="${night?'#3c4148':'#4a4f55'}"/>`;
   svg+=`<rect x="${wx}" y="${wy}" width="${winW}" height="${winH}" fill="url(#glass)"/>`;
   svg+=`<line x1="${cx}" y1="${wy}" x2="${cx}" y2="${wy+winH}" stroke="${night?'#3c4148':'#4a4f55'}" stroke-width="6"/>`;
   if(night) svg+=`<rect x="${wx}" y="${wy}" width="${winW}" height="${winH}" fill="#ffb54d" opacity=".28"/>`;
+  else svg+=`<circle cx="${wx+winW*clamp(t,.15,.85)}" cy="${wy+winH*.3}" r="${winW*.18}" fill="#fff" opacity="${.14+noon*.1}"/>`;
 
-  // vodicí lišty
+  // parapet
+  svg+=`<rect x="${wx-16}" y="${wy+winH+8}" width="${winW+32}" height="9" rx="2" fill="${shade(facade,.3)}"/>
+    <rect x="${wx-16+shDx*.35}" y="${wy+winH+17}" width="${winW+32}" height="${5+shDy*.5}" fill="#000" opacity="${shOp}" filter="url(#blur6)"/>`;
+
+  // vodicí lišty krajní
   svg+=`<rect x="${wx-8-railW}" y="${wy-8}" width="${railW}" height="${winH+16}" rx="3" fill="${shade(fc,-.12)}"/>`;
   svg+=`<rect x="${wx+winW+8}" y="${wy-8}" width="${railW}" height="${winH+16}" rx="3" fill="${shade(fc,-.12)}"/>`;
 
   // lamely
   const pitchPx=Math.max(5,m.pitch*s);
-  const open=state.tilt/90;                       // 0 zavřeno, 1 otevřeno
+  const open=state.tilt/90;
   const slatH=Math.max(2,pitchPx*(1-open*.82));
   const dropPx=winH*state.drop;
   const slatX=wx-8-railW+2, slatW=winW+16+railW*2-4;
-  let y=wy-4;
-  let slats='';
+  const glow=night?'#ffd98a':'none';
+  let y=wy-4, slats='';
   while(y+slatH<=wy+dropPx){
     if(night&&open>0.12) slats+=`<rect x="${slatX+3}" y="${y+slatH}" width="${slatW-6}" height="${Math.max(1,pitchPx-slatH-1)}" fill="${glow}" opacity=".5"/>`;
-    slats+=`<rect x="${slatX}" y="${y}" width="${slatW}" height="${slatH}" rx="${state.model==='c80'?slatH/2.4:1.5}" fill="url(#slat)"/>`;
-    if(state.model==='z90'&&slatH>5) slats+=`<line x1="${slatX}" y1="${y+slatH*.55}" x2="${slatX+slatW}" y2="${y+slatH*.55}" stroke="${shade(sc,-.35)}" stroke-width="1"/>`;
+    slats+=`<rect x="${slatX}" y="${y}" width="${slatW}" height="${slatH}" rx="${state.model[0]==='c'?slatH/2.4:1.5}" fill="url(#slat)"/>`;
+    if(state.model[0]==='z'&&slatH>5) slats+=`<line x1="${slatX}" y1="${y+slatH*.55}" x2="${slatX+slatW}" y2="${y+slatH*.55}" stroke="${shade(sc,-.35)}" stroke-width="1"/>`;
     y+=pitchPx;
   }
   svg+=slats;
-  // paket vytažených lamel pod boxem
+  // paket vytažených lamel
   const packH=(1-state.drop)*Math.min(46,winH*.16);
   if(packH>1.5) svg+=`<rect x="${slatX}" y="${wy-6}" width="${slatW}" height="${packH}" rx="2" fill="url(#slat)" opacity=".95"/>`;
 
+  // mezilišty dělených polí
+  const midW=Math.max(6,railW*.8);
+  for(let i=1;i<state.sections;i++){
+    const mx=wx+i*(winW/state.sections)-midW/2;
+    svg+=`<rect x="${mx}" y="${wy-8}" width="${midW}" height="${winH+16}" rx="2" fill="${shade(fc,-.12)}"/>`;
+  }
+
   // box
-  const bx=wx-8-railW-2, bw=winW+16+railW*2+4;
   if(state.mount==='plaster'){
-    svg+=`<rect x="${bx}" y="${wy-10-boxH}" width="${bw}" height="${boxH}" rx="3" fill="${facade}" stroke="${shade(facade2,-.25)}" stroke-dasharray="6 5" stroke-width="2"/>`;
-    svg+=`<text x="${cx}" y="${wy-10-boxH/2+4}" text-anchor="middle" font-size="12.5" fill="#8a8f98">skrytý box pod omítkou</text>`;
+    svg+=`<rect x="${bx}" y="${boxY}" width="${bw}" height="${boxH}" rx="3" fill="${facade}" stroke="${shade(facade2,-.25)}" stroke-dasharray="6 5" stroke-width="2"/>`;
+    svg+=`<text x="${cx}" y="${boxY+boxH/2+4}" text-anchor="middle" font-size="12.5" fill="#8a8f98">skrytý box pod omítkou</text>`;
   }else{
-    svg+=`<rect x="${bx}" y="${wy-10-boxH}" width="${bw}" height="${boxH}" rx="5" fill="url(#boxg)" filter="url(#soft)"/>`;
+    svg+=`<rect x="${bx}" y="${boxY}" width="${bw}" height="${boxH}" rx="5" fill="url(#boxg)" filter="url(#soft)"/>`;
   }
 
   // klika
@@ -442,47 +517,94 @@ function renderScene(){
   }
 
   // kóty
-  svg+=`<line x1="${wx}" y1="${wy+winH+38}" x2="${wx+winW}" y2="${wy+winH+38}" stroke="#565b62" stroke-width="1.6"/>
-    <line x1="${wx}" y1="${wy+winH+30}" x2="${wx}" y2="${wy+winH+46}" stroke="#565b62" stroke-width="1.6"/>
-    <line x1="${wx+winW}" y1="${wy+winH+30}" x2="${wx+winW}" y2="${wy+winH+46}" stroke="#565b62" stroke-width="1.6"/>`;
-  svg+=dimChip(cx,wy+winH+38,(state.width/1000).toLocaleString('cs-CZ')+' m');
+  svg+=`<line x1="${wx}" y1="${wy+winH+44}" x2="${wx+winW}" y2="${wy+winH+44}" stroke="#565b62" stroke-width="1.6"/>
+    <line x1="${wx}" y1="${wy+winH+36}" x2="${wx}" y2="${wy+winH+52}" stroke="#565b62" stroke-width="1.6"/>
+    <line x1="${wx+winW}" y1="${wy+winH+36}" x2="${wx+winW}" y2="${wy+winH+52}" stroke="#565b62" stroke-width="1.6"/>`;
+  svg+=dimChip(cx,wy+winH+44,(state.width/1000).toLocaleString('cs-CZ')+' m'+(state.sections>1?` / ${state.sections} pole`:''));
   const hx=wx+winW+8+railW+26;
   svg+=`<line x1="${hx}" y1="${wy}" x2="${hx}" y2="${wy+winH}" stroke="#565b62" stroke-width="1.6"/>
     <line x1="${hx-8}" y1="${wy}" x2="${hx+8}" y2="${wy}" stroke="#565b62" stroke-width="1.6"/>
     <line x1="${hx-8}" y1="${wy+winH}" x2="${hx+8}" y2="${wy+winH}" stroke="#565b62" stroke-width="1.6"/>`;
-  svg+=dimChip(Math.min(hx+8,860),wy+winH/2,(state.height/1000).toLocaleString('cs-CZ')+' m');
+  svg+=dimChip(Math.min(hx+8,858),wy+winH/2,(state.height/1000).toLocaleString('cs-CZ')+' m');
 
   $('scene').innerHTML=svg;
 }
 
+/* =============== TAŽENÍ SLUNCE =============== */
+let dragSun=false;
+function svgX(e){
+  const r=$('scene').getBoundingClientRect();
+  return (e.clientX-r.left)*(900/r.width);
+}
+function svgY(e){
+  const r=$('scene').getBoundingClientRect();
+  return (e.clientY-r.top)*(900/r.width);
+}
+$('scene').addEventListener('pointerdown',e=>{
+  if(svgY(e)<SKY_H+20){
+    dragSun=true;
+    $('scene').setPointerCapture(e.pointerId);
+    setSun((svgX(e)-80)/740);
+    e.preventDefault();
+  }
+});
+$('scene').addEventListener('pointermove',e=>{if(dragSun){setSun((svgX(e)-80)/740);e.preventDefault()}});
+$('scene').addEventListener('pointerup',()=>dragSun=false);
+$('scene').addEventListener('pointercancel',()=>dragSun=false);
+function sunLabel(t){
+  const h=Math.round(6+t*14);          // 6:00–20:00
+  return t>.42&&t<.58?'poledne':`${h}:00`;
+}
+function setSun(t){
+  state.sun=clamp(t,0,1);
+  $('sunRange').value=Math.round(state.sun*100);
+  $('sunVal').textContent=sunLabel(state.sun);
+  renderScene();
+}
+function onSun(v){setSun(v/100)}
+
 /* =============== RENDER UI =============== */
+function renderMount(){
+  $('mountList').innerHTML=Object.entries(MOUNTS).map(([k,m])=>`
+    <button class="opt-row ${state.mount===k?'sel':''}" onclick="state.mount='${k}';update()">
+      <span class="thumb">${k==='visible'
+        ?'<svg width="58" height="42" viewBox="0 0 58 42"><rect x="8" y="6" width="42" height="10" rx="3" fill="#4a5158"/><rect x="12" y="18" width="34" height="20" rx="2" fill="#c9d4dc"/><rect x="10" y="18" width="3" height="20" fill="#4a5158"/><rect x="45" y="18" width="3" height="20" fill="#4a5158"/></svg>'
+        :'<svg width="58" height="42" viewBox="0 0 58 42"><rect x="8" y="6" width="42" height="10" rx="3" fill="none" stroke="#9aa3ab" stroke-width="2" stroke-dasharray="4 3"/><rect x="12" y="18" width="34" height="20" rx="2" fill="#c9d4dc"/><rect x="10" y="18" width="3" height="20" fill="#4a5158"/><rect x="45" y="18" width="3" height="20" fill="#4a5158"/></svg>'}</span>
+      <span><span class="t">${m.name}</span>${m.badge?`<span class="badge">✔ ${m.badge}</span>`:''}<div class="d">${m.desc}</div></span>
+    </button>`).join('');
+}
+function renderSections(){
+  $('sectionSeg').innerHTML=[1,2,3].map(n=>`
+    <button class="${state.sections===n?'sel':''}" onclick="setSections(${n})">${n} ${n===1?'pole':'pole'}</button>`).join('');
+  const m=MODELS[state.model];
+  $('sectionNote').innerHTML=state.sections===1
+    ?`Jedno pole do šířky ${m.maxW.toLocaleString('cs-CZ')} mm (lamela ${m.name}). Širší sestavu rozdělte na více polí.`
+    :`${state.sections} pole se společným boxem a mezilištami — celkem až ${maxWidth().toLocaleString('cs-CZ')} mm. Každé pole má vlastní pohon.`;
+}
 function renderModels(){
   $('modelList').innerHTML=Object.entries(MODELS).map(([k,m])=>`
     <button class="opt-row ${state.model===k?'sel':''}" onclick="setModel('${k}')">
       <span class="thumb">${modelIcon(k)}</span>
-      <span><span class="t">${m.name}</span><div class="d">${m.desc}</div></span>
+      <span><span class="t">Lamela ${m.name}</span><div class="d">${m.desc}</div></span>
     </button>`).join('');
 }
-function renderMount(){
-  $('mountSeg').innerHTML=Object.entries(MOUNTS).map(([k,m])=>`
-    <button class="${state.mount===k?'sel':''}" onclick="state.mount='${k}';update()">${m.name}</button>`).join('');
-}
 function renderDims(){
-  const m=MODELS[state.model];
-  $('wMinLbl').textContent=MIN_W+' mm'; $('wMaxLbl').textContent=m.maxW+' mm';
+  const m=MODELS[state.model], maxW=maxWidth();
+  $('wMinLbl').textContent=MIN_W+' mm'; $('wMaxLbl').textContent=maxW.toLocaleString('cs-CZ')+' mm';
   $('hMinLbl').textContent=MIN_H+' mm'; $('hMaxLbl').textContent=m.maxH+' mm';
-  $('wRange').min=MIN_W; $('wRange').max=m.maxW; $('wRange').value=state.width;
+  $('wRange').min=MIN_W; $('wRange').max=maxW; $('wRange').value=state.width;
   $('hRange').min=MIN_H; $('hRange').max=m.maxH; $('hRange').value=state.height;
   $('wNum').value=state.width; $('hNum').value=state.height;
   $('areaLbl').textContent=((state.width/1000)*(state.height/1000)).toLocaleString('cs-CZ',{maximumFractionDigits:2})+' m²';
+  $('perSectionLbl').textContent=state.sections>1?`šířka pole: ${Math.round(state.width/state.sections).toLocaleString('cs-CZ')} mm`:'';
 }
 function swatchHTML(sel,customHex,onPick,onCustom){
-  return Object.entries(RALS).map(([k,c])=>`
-    <button class="swatch ${sel===k?'sel':''}" onclick="${onPick}('${k}')">
-      <span class="dot" style="background:${c.hex}"></span>${c.name.split(' ')[1]||c.name}<br>${c.name.split(' ')[0]}
+  return RALS.map(c=>`
+    <button class="swatch ${sel===c.id?'sel':''}" onclick="${onPick}('${c.id}')">
+      <span class="dot" style="background:${c.hex}"></span><span class="code">${c.code}</span><span class="nm">${c.name}</span>
     </button>`).join('')+`
     <button class="swatch ${sel==='custom'?'sel':''}" onclick="${onCustom}()">
-      <span class="dot wheel" style="${sel==='custom'?`background:${customHex}`:''}"></span>Vlastní
+      <span class="dot wheel" style="${sel==='custom'?`background:${customHex}`:''}"></span><span class="code">RAL</span><span class="nm">na přání</span>
     </button>`;
 }
 function renderColors(){
@@ -491,16 +613,16 @@ function renderColors(){
     <button class="${state.frameMode==='same'?'sel':''}" onclick="state.frameMode='same';update()">Stejná jako lamely</button>
     <button class="${state.frameMode==='own'?'sel':''}" onclick="state.frameMode='own';update()">Jiná barva</button>`;
   const fc=$('frameColors');
-  fc.style.display=state.frameMode==='own'?'flex':'none';
+  fc.style.display=state.frameMode==='own'?'grid':'none';
   if(state.frameMode==='own') fc.innerHTML=swatchHTML(state.frameColor,state.frameCustom,'pickFrame','customFrame');
 }
 function renderControls(){
   $('controlList').innerHTML=Object.entries(CONTROLS).map(([k,c])=>`
     <button class="opt-row ${state.control===k?'sel':''}" onclick="setControl('${k}')">
-      <span class="thumb" style="font-size:26px">${ctrlIcon(c.icon)}</span>
-      <span><span class="t">${c.name}</span><div class="d">${c.desc}${c.price?` · +${czk(c.price)}/ks`:''}</div></span>
+      <span class="thumb" style="font-size:26px">${c.icon}</span>
+      <span><span class="t">${c.name}</span><div class="d">${c.desc}${c.price?` · +${czk(c.price)}/pole`:''}</div></span>
     </button>`).join('');
-  const area=(state.width/1000)*(state.height/1000);
+  const area=(state.width/state.sections/1000)*(state.height/1000);
   $('crankWarn').classList.toggle('show',state.control==='crank'&&area>4.5);
 }
 function renderAcc(){
@@ -535,16 +657,20 @@ function renderPrice(){
 /* =============== AKCE =============== */
 function setModel(k){
   state.model=k;
-  const m=MODELS[k];
-  state.width=Math.min(state.width,m.maxW);
-  state.height=Math.min(state.height,m.maxH);
+  state.width=Math.min(state.width,maxWidth());
+  state.height=Math.min(state.height,MODELS[k].maxH);
+  update();
+}
+function setSections(n){
+  state.sections=n;
+  state.width=Math.min(state.width,maxWidth());
   update();
 }
 function setDim(dim,val){
   const m=MODELS[state.model];
   let v=parseInt(val,10)||0;
-  if(dim==='width') v=Math.max(MIN_W,Math.min(m.maxW,v)), state.width=v;
-  else v=Math.max(MIN_H,Math.min(m.maxH,v)), state.height=v;
+  if(dim==='width') state.width=clamp(v,MIN_W,maxWidth());
+  else state.height=clamp(v,MIN_H,m.maxH);
   update();
 }
 function pickSlat(k){state.slatColor=k;update()}
@@ -575,7 +701,7 @@ function onSim(){
 }
 function toggleNight(){
   state.night=!state.night;
-  $('sunBtn').textContent=state.night?'🌙':'☀️';
+  $('nightBtn').textContent=state.night?'☀️':'🌙';
   renderScene();
 }
 
@@ -597,12 +723,13 @@ function renderCart(){
     const accs=Object.entries(it.acc).filter(([k,v])=>v>0).map(([k,v])=>`${v}× ${ACCESSORIES[k].name}`).join(', ');
     const svcs=Object.entries(it.svc).filter(([k,v])=>v).map(([k])=>SERVICES[k].name).join(', ');
     return `<div class="cart-item">
-      <div class="head"><span>${it.qty}× ${MODELS[it.model].name}</span><button onclick="removeItem(${i})">Odebrat</button></div>
+      <div class="head"><span>${it.qty}× NEVA — lamela ${MODELS[it.model].name}</span><button onclick="removeItem(${i})">Odebrat</button></div>
       <ul>
         <li>Rozměr <b>${it.width} × ${it.height} mm</b></li>
-        <li>Montáž <b>${MOUNTS[it.mount].name}</b></li>
-        <li>Barva lamel <b>${it.slatColor==='custom'?'vlastní '+it.slatCustom:RALS[it.slatColor].name}</b></li>
-        <li>Lišty a box <b>${it.frameMode==='same'?'stejná jako lamely':(it.frameColor==='custom'?'vlastní '+it.frameCustom:RALS[it.frameColor].name)}</b></li>
+        <li>Box <b>${MOUNTS[it.mount].name}</b></li>
+        <li>Dělení <b>${it.sections} pole</b></li>
+        <li>Barva lamel <b>${colName(it.slatColor,it.slatCustom)}</b></li>
+        <li>Lišty a box <b>${it.frameMode==='same'?'stejná jako lamely':colName(it.frameColor,it.frameCustom)}</b></li>
         <li>Ovládání <b>${CONTROLS[it.control].name}</b></li>
         ${accs?`<li>Příslušenství <b>${accs}</b></li>`:''}
         ${svcs?`<li>Služby <b>${svcs}</b></li>`:''}
@@ -632,9 +759,10 @@ function submitInquiry(e){
 
 /* =============== UPDATE =============== */
 function update(){
-  renderModels(); renderMount(); renderDims(); renderColors();
+  renderMount(); renderSections(); renderModels(); renderDims(); renderColors();
   renderControls(); renderAcc(); renderSvc(); renderPrice(); renderScene();
 }
+$('sunVal').textContent=sunLabel(state.sun);
 update();
 </script>
 </body>
