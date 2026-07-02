@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <title>Konfigurátor předokenních žaluzií NEVA — DEMO</title>
+<script src="assets/three.min.js"></script>
 <style>
   :root{
-    --red:#d92b1f; --red-dark:#b8231a;
+    --red:#d92b1f; --red-dark:#b8231a; --neva:#e30613;
     --ink:#1c1e21; --gray:#8a8f98; --gray-light:#f4f5f7;
     --border:#e6e8eb; --card:#ffffff;
-    --radius:14px;
+    --radius:12px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
@@ -20,141 +21,171 @@
 
   /* ---------- header ---------- */
   header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--border);
-    display:flex;align-items:center;justify-content:space-between;padding:12px 18px;gap:12px}
+    display:flex;align-items:center;justify-content:space-between;padding:8px 14px;gap:10px}
   .logo{display:flex;flex-direction:column;line-height:1.05}
-  .logo b{font-size:22px;letter-spacing:.5px}
+  .logo b{font-size:19px;letter-spacing:.5px}
   .logo b span{color:var(--red)}
-  .logo small{font-size:10.5px;color:var(--gray);letter-spacing:.3px}
-  .hdr-right{display:flex;align-items:center;gap:10px}
-  .chip{border:1px solid #f3c4c0;border-radius:10px;padding:7px 12px;font-size:14px;color:#444;background:#fff}
-  .cart-btn{display:flex;align-items:center;gap:7px;font-size:16px;font-weight:600;padding:7px 10px;border-radius:10px}
-  .cart-btn:hover{background:var(--gray-light)}
-  .cart-btn svg{width:24px;height:24px}
-  #cartCount{min-width:22px;text-align:center}
+  .logo small{font-size:9.5px;color:var(--gray);letter-spacing:.3px}
+  .hdr-right{display:flex;align-items:center;gap:8px}
+  .chip{border:1px solid #f3c4c0;border-radius:9px;padding:5px 10px;font-size:13px;color:#444;background:#fff}
+  .cart-btn{display:flex;align-items:center;gap:6px;font-size:15px;font-weight:600;padding:6px 8px;border-radius:9px}
+  .cart-btn svg{width:22px;height:22px}
+
+  /* brand strip */
+  .brands{display:flex;align-items:center;justify-content:center;gap:18px;padding:7px 12px;background:#fff;border-bottom:1px solid var(--border);flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:8px}
+  .brand .txt{line-height:1.1}
+  .brand .txt b{font-size:12px;display:block}
+  .brand .txt small{font-size:10px;color:var(--gray)}
 
   /* ---------- layout ---------- */
-  .layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:0}
+  .layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr}
+  @media(max-width:959px){
+    header{position:static}
+    .preview-wrap{position:sticky;top:0;z-index:35;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+  }
   @media(min-width:960px){
-    .layout{grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:28px;padding:24px 24px 120px}
-    .preview-wrap{position:sticky;top:76px;align-self:start}
+    .layout{grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:24px;padding:20px 24px 120px}
+    .preview-wrap{position:sticky;top:64px;align-self:start}
   }
 
   /* ---------- preview ---------- */
   .preview-wrap{background:#fff}
   @media(min-width:960px){.preview-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}}
-  .preview{position:relative}
-  .preview svg{display:block;width:100%;height:auto;touch-action:pan-y}
-  .float-chip{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.92);border-radius:12px;
-    padding:9px 14px;font-size:13.5px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,.10);display:flex;align-items:center;gap:7px;pointer-events:none}
-  .night-btn{position:absolute;top:14px;left:14px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);
-    box-shadow:0 2px 10px rgba(0,0,0,.10);display:flex;align-items:center;justify-content:center;font-size:20px}
-  .sim-bar{display:flex;gap:16px;padding:12px 16px;background:#fff;border-top:1px solid var(--border);flex-wrap:wrap}
-  .sim-bar label{flex:1;min-width:150px;font-size:12.5px;color:var(--gray);font-weight:600}
+  .preview{position:relative;background:linear-gradient(#eef0f3,#e3e6ea)}
+  #gl{display:block;width:100%;touch-action:none;cursor:grab}
+  #facadeSvg{display:none;width:100%;height:auto;touch-action:pan-y}
+  .view-tabs{position:absolute;top:10px;left:50%;transform:translateX(-50%);display:flex;background:rgba(255,255,255,.94);
+    border-radius:11px;box-shadow:0 2px 10px rgba(0,0,0,.12);overflow:hidden}
+  .view-tabs button{padding:8px 14px;font-size:13px;font-weight:600;color:var(--gray)}
+  .view-tabs button.sel{background:var(--red);color:#fff}
+  .night-btn{position:absolute;top:10px;left:10px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);
+    box-shadow:0 2px 8px rgba(0,0,0,.12);display:none;align-items:center;justify-content:center;font-size:17px}
+  .dim-chip{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.92);
+    border-radius:10px;padding:6px 12px;font-size:12.5px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.10);white-space:nowrap}
+  .hint-360{position:absolute;top:52px;right:10px;background:rgba(28,30,33,.75);color:#fff;border-radius:9px;
+    padding:5px 9px;font-size:11px;pointer-events:none}
+  .sim-bar{display:flex;gap:12px;padding:9px 12px;background:#fff;border-top:1px solid var(--border);flex-wrap:wrap}
+  .sim-bar label{flex:1;min-width:130px;font-size:11.5px;color:var(--gray);font-weight:600}
   .sim-bar label b{color:var(--ink)}
-  .sim-bar input[type=range]{width:100%;accent-color:var(--red);margin-top:4px}
+  .sim-bar input[type=range]{width:100%;accent-color:var(--red);margin-top:2px;height:22px}
 
   /* ---------- cards ---------- */
-  .panel{padding:16px 14px 130px;display:flex;flex-direction:column;gap:18px}
-  @media(min-width:960px){.panel{padding:0 0 40px}}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px}
-  .card h2{text-align:center;font-size:21px;color:#9aa0a8;font-weight:700;margin-bottom:16px}
-  .card .hint{text-align:center;color:#b6bac0;font-size:14px;margin:-8px 0 14px}
+  .panel{padding:10px 10px 120px;display:flex;flex-direction:column;gap:10px}
+  @media(min-width:960px){.panel{padding:0 0 40px;gap:14px}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px 12px}
+  .card h2{text-align:center;font-size:16.5px;color:#9aa0a8;font-weight:700;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px}
+  .card .hint{text-align:center;color:#b6bac0;font-size:12.5px;margin:-6px 0 10px}
 
-  .opt-row{display:flex;align-items:center;gap:14px;width:100%;text-align:left;border:1.5px solid var(--border);
-    border-radius:12px;padding:12px;margin-bottom:10px;background:#fbfbfc;transition:border-color .15s}
+  .opt-row{display:flex;align-items:center;gap:11px;width:100%;text-align:left;border:1.5px solid var(--border);
+    border-radius:10px;padding:9px 10px;margin-bottom:8px;background:#fbfbfc;transition:border-color .15s}
   .opt-row:last-child{margin-bottom:0}
   .opt-row.sel{border-color:var(--red);background:#fff}
-  .opt-row .thumb{width:74px;height:56px;border-radius:8px;background:#eef0f2;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .opt-row .t{font-size:16.5px;font-weight:600}
+  .opt-row .thumb{width:56px;height:44px;border-radius:7px;background:#eef0f2;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:21px}
+  .opt-row .t{font-size:14.5px;font-weight:600}
   .opt-row.sel .t{color:var(--red)}
-  .opt-row .d{font-size:13.5px;color:var(--gray);margin-top:3px;line-height:1.35}
-  .badge{display:inline-block;background:#eef7ee;color:#2e7d32;border:1px solid #cde5cd;font-size:11.5px;font-weight:700;
-    border-radius:7px;padding:2px 8px;margin-left:6px;vertical-align:2px}
+  .opt-row .d{font-size:12px;color:var(--gray);margin-top:2px;line-height:1.3}
+  .badge{display:inline-block;background:#eef7ee;color:#2e7d32;border:1px solid #cde5cd;font-size:10px;font-weight:700;
+    border-radius:6px;padding:1px 6px;margin-left:5px;vertical-align:2px}
 
-  .seg{display:flex;gap:10px}
-  .seg button{flex:1;padding:13px 6px;border:1.5px solid var(--border);border-radius:12px;background:#fbfbfc;font-size:15px;font-weight:500}
+  .seg{display:flex;gap:7px}
+  .seg button{flex:1;padding:9px 4px;border:1.5px solid var(--border);border-radius:9px;background:#fbfbfc;font-size:13.5px;font-weight:500}
   .seg button.sel{border-color:var(--red);color:var(--red);font-weight:700;background:#fff}
 
-  /* dimensions */
-  .dim{margin-bottom:22px}
-  .dim:last-child{margin-bottom:0}
-  .dim .lbl{font-size:15px;margin-bottom:8px}
-  .dim .lbl b{font-weight:700}
-  .dim .lbl span{color:#b6bac0}
-  .dim-line{display:flex;align-items:center;gap:16px}
-  .dim-line input[type=range]{flex:1;accent-color:var(--red)}
-  .dim-line input[type=number]{width:96px;padding:12px 8px;text-align:center;font-size:17px;border:1.5px solid #f3c4c0;border-radius:10px;outline:none}
-  .dim-line input[type=number]:focus{border-color:var(--red)}
+  .note{margin-top:9px;font-size:12px;color:#7a8088;background:#f4f6f8;border-radius:9px;padding:8px 10px;line-height:1.4}
+  .note.ok{color:#2e7d32;background:#f0f7f0}
+  .note.warn2{color:#a15c00;background:#fff7e8}
+  .warn{margin-top:9px;font-size:12px;color:#a15c00;background:#fff7e8;border:1px solid #f4dfb5;border-radius:9px;padding:8px 10px;display:none}
+  .warn.show{display:block}
+
+  /* windows */
+  .win-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .win-head span{font-size:13px;color:var(--gray)}
+  .stepper{display:flex;align-items:center;border:1px solid #f3c4c0;border-radius:9px;overflow:hidden;background:#fff}
+  .stepper button{width:36px;height:34px;font-size:19px;color:var(--red)}
+  .stepper button:disabled{color:#ccc}
+  .stepper span{width:38px;text-align:center;font-size:15px;font-weight:600}
+  .win-row{border:1.5px solid var(--border);border-radius:10px;margin-bottom:8px;background:#fbfbfc;overflow:hidden}
+  .win-row.sel{border-color:var(--red);background:#fff}
+  .win-row .head{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px 12px;text-align:left}
+  .win-row .head .t{font-size:14px;font-weight:700}
+  .win-row.sel .head .t{color:var(--red)}
+  .win-row .head .s{font-size:12px;color:var(--gray)}
+  .win-body{padding:2px 12px 12px}
+  .dim{margin-bottom:10px}
+  .dim .lbl{font-size:12.5px;margin-bottom:3px;color:var(--gray)}
+  .dim .lbl b{color:var(--ink)}
+  .dim-line{display:flex;align-items:center;gap:10px}
+  .dim-line input[type=range]{flex:1;accent-color:var(--red);height:24px}
+  .dim-line input[type=number]{width:78px;padding:8px 5px;text-align:center;font-size:15px;border:1.5px solid #f3c4c0;border-radius:8px;outline:none}
+  .pole-line{display:flex;align-items:center;gap:8px;margin-top:4px}
+  .pole-line .lb{font-size:12.5px;color:var(--gray)}
+  .pole-line .seg{flex:1}
+  .pole-line .seg button{padding:7px 4px;font-size:12.5px}
 
   /* swatches */
-  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:14px 8px;justify-items:center}
-  .swatch{display:flex;flex-direction:column;align-items:center;gap:7px;background:none}
-  .swatch .dot{width:54px;height:54px;border-radius:50%;border:3px solid transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(62px,1fr));gap:10px 4px;justify-items:center}
+  .swatch{display:flex;flex-direction:column;align-items:center;gap:4px;background:none}
+  .swatch .dot{width:42px;height:42px;border-radius:50%;border:2.5px solid transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
   .swatch.sel .dot{border-color:var(--red)}
-  .swatch .code{font-size:12px;font-weight:700;color:#555}
-  .swatch .nm{font-size:11px;color:#a0a4ab;margin-top:-4px}
+  .swatch .code{font-size:10.5px;font-weight:700;color:#555}
+  .swatch .nm{font-size:9.5px;color:#a0a4ab;margin-top:-2px;text-align:center}
   .swatch.sel .code{color:var(--red)}
   .dot.wheel{background:conic-gradient(#f44,#fa0,#ff4,#4c4,#4cf,#44f,#c4f,#f44)}
 
   /* accessories */
-  .acc-row{display:flex;align-items:center;gap:14px;border:1.5px solid var(--border);border-radius:12px;padding:12px;margin-bottom:10px;background:#fbfbfc}
+  .acc-row{display:flex;align-items:center;gap:11px;border:1.5px solid var(--border);border-radius:10px;padding:9px 10px;margin-bottom:8px;background:#fbfbfc}
   .acc-row.active{border-color:var(--red);background:#fff}
-  .acc-row .thumb{width:64px;height:64px;border-radius:8px;background:#eef0f2;flex:none;display:flex;align-items:center;justify-content:center;font-size:26px}
-  .acc-row .t{font-size:15.5px;font-weight:600}
+  .acc-row .thumb{width:46px;height:46px;border-radius:7px;background:#eef0f2;flex:none;display:flex;align-items:center;justify-content:center;font-size:21px}
+  .acc-row .t{font-size:13.5px;font-weight:600}
   .acc-row.active .t{color:var(--red)}
-  .acc-row .p{font-size:13px;color:var(--gray);margin-top:2px}
-  .stepper{display:flex;align-items:center;border:1px solid #f3c4c0;border-radius:10px;overflow:hidden;margin-top:8px;width:max-content;background:#fff}
-  .stepper button{width:40px;height:38px;font-size:20px;color:var(--red)}
-  .stepper button:disabled{color:#ccc}
-  .stepper span{width:44px;text-align:center;font-size:16px;font-weight:600}
+  .acc-row .p{font-size:11.5px;color:var(--gray)}
+  .acc-row .stepper{margin-top:5px}
+  .acc-row .stepper button{width:32px;height:30px;font-size:17px}
+  .acc-row .stepper span{width:32px;font-size:14px}
 
-  .warn{margin-top:12px;font-size:13.5px;color:#a15c00;background:#fff7e8;border:1px solid #f4dfb5;border-radius:10px;padding:10px 12px;display:none}
-  .warn.show{display:block}
-  .note{margin-top:12px;font-size:13px;color:#7a8088;background:#f4f6f8;border-radius:10px;padding:10px 12px}
-
-  /* qty + price */
-  .qty-line{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .price-line{margin-top:14px;padding-top:14px;border-top:1px dashed var(--border);display:flex;align-items:baseline;justify-content:space-between}
-  .price-line .val{font-size:22px;font-weight:800}
-  .price-note{font-size:12px;color:#b6bac0;text-align:right;margin-top:4px}
+  /* price */
+  .price-line{margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .price-line .val{font-size:18px;font-weight:800;text-align:right}
+  .price-note{font-size:11px;color:#b6bac0;margin-top:4px;line-height:1.4}
 
   /* bottom bar */
-  .bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
-    border-top:1px solid var(--border);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:14px}
-  .bottom-bar .sum{font-size:13px;color:var(--gray)}
-  .bottom-bar .sum b{display:block;font-size:18px;color:var(--ink)}
-  .btn-primary{background:var(--red);color:#fff;font-size:17px;font-weight:700;padding:15px 26px;border-radius:12px;box-shadow:0 4px 14px rgba(217,43,31,.35)}
+  .bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+    border-top:1px solid var(--border);padding:9px 12px calc(9px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .bottom-bar .sum{font-size:11px;color:var(--gray);line-height:1.25}
+  .bottom-bar .sum b{display:block;font-size:15px;color:var(--ink);white-space:nowrap}
+  .btn-primary{background:var(--red);color:#fff;font-size:15px;font-weight:700;padding:13px 20px;border-radius:11px;box-shadow:0 4px 14px rgba(217,43,31,.35);white-space:nowrap}
   .btn-primary:active{background:var(--red-dark)}
 
   /* modal */
   .modal-bg{position:fixed;inset:0;background:rgba(20,22,25,.5);z-index:60;display:none;align-items:flex-end;justify-content:center}
   @media(min-width:700px){.modal-bg{align-items:center}}
   .modal-bg.open{display:flex}
-  .modal{background:#fff;width:100%;max-width:560px;max-height:88vh;overflow:auto;border-radius:18px 18px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom))}
-  @media(min-width:700px){.modal{border-radius:18px}}
-  .modal h3{font-size:20px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
-  .modal h3 button{font-size:26px;color:var(--gray);line-height:1}
-  .cart-item{border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:12px}
-  .cart-item .head{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15.5px}
-  .cart-item .head button{color:var(--red);font-size:13.5px;font-weight:600}
-  .cart-item ul{list-style:none;margin-top:8px;font-size:13.5px;color:#555;line-height:1.7}
-  .cart-item ul b{float:right;color:var(--ink)}
-  .cart-total{display:flex;justify-content:space-between;font-size:18px;font-weight:800;padding:12px 2px;border-top:2px solid var(--ink);margin-top:6px}
-  .form{margin-top:18px;display:flex;flex-direction:column;gap:10px}
-  .form input,.form textarea{width:100%;padding:13px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;outline:none;resize:vertical}
+  .modal{background:#fff;width:100%;max-width:560px;max-height:88vh;overflow:auto;border-radius:16px 16px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}
+  @media(min-width:700px){.modal{border-radius:16px}}
+  .modal h3{font-size:18px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .modal h3 button{font-size:24px;color:var(--gray);line-height:1}
+  .cart-item{border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:10px}
+  .cart-item .head{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px}
+  .cart-item .head button{color:var(--red);font-size:12.5px;font-weight:600}
+  .cart-item ul{list-style:none;margin-top:6px;font-size:12.5px;color:#555;line-height:1.65}
+  .cart-item ul b{float:right;color:var(--ink);text-align:right}
+  .cart-total{display:flex;justify-content:space-between;font-size:15.5px;font-weight:800;padding:10px 2px;border-top:2px solid var(--ink);margin-top:4px;gap:10px}
+  .form{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+  .form input,.form textarea{width:100%;padding:11px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;outline:none;resize:vertical}
   .form input:focus,.form textarea:focus{border-color:var(--red)}
-  .empty{text-align:center;color:var(--gray);padding:30px 0}
-  .thanks{text-align:center;padding:34px 10px}
-  .thanks .ok{font-size:44px}
-  .thanks p{color:var(--gray);margin-top:8px;line-height:1.5}
+  .empty{text-align:center;color:var(--gray);padding:26px 0;font-size:14px}
+  .thanks{text-align:center;padding:30px 10px}
+  .thanks .ok{font-size:40px}
+  .thanks p{color:var(--gray);margin-top:8px;line-height:1.5;font-size:13.5px}
 
-  .demo-note{max-width:1200px;margin:0 auto;padding:10px 18px;font-size:12px;color:#b6bac0;text-align:center}
+  .demo-note{max-width:1200px;margin:0 auto;padding:8px 16px;font-size:11px;color:#b6bac0;text-align:center}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo"><b>ŽALU<span>X</span></b><small>předokenní žaluzie NEVA · DEMO</small></div>
+  <div class="logo"><b>ŽALU<span>X</span></b><small>konfigurátor předokenních žaluzií · DEMO</small></div>
   <div class="hdr-right">
     <div class="chip">CS ▾</div>
     <button class="cart-btn" onclick="openCart()" aria-label="Poptávkový košík">
@@ -164,20 +195,37 @@
   </div>
 </header>
 
+<div class="brands">
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 34 34"><rect width="34" height="34" rx="7" fill="#e30613"/><path d="M8 25V9h4l8 10V9h4v16h-4l-8-10v10z" fill="#fff"/></svg>
+    <div class="txt"><b>NEVA</b><small>výrobce žaluzií</small></div>
+  </div>
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 34 34"><rect width="34" height="34" rx="7" fill="#2b3138"/><rect x="6" y="8" width="22" height="8" rx="2" fill="#fff"/><rect x="8" y="18" width="3" height="9" fill="#fff"/><rect x="23" y="18" width="3" height="9" fill="#fff"/></svg>
+    <div class="txt"><b>Podomítkové boxy</b><small>vlastní výroba</small></div>
+  </div>
+</div>
+
 <div class="layout">
 
   <!-- ======================= PREVIEW ======================= -->
   <div class="preview-wrap">
-    <div class="preview">
-      <svg id="scene" viewBox="0 0 900 660" role="img" aria-label="Vizualizace předokenní žaluzie"></svg>
+    <div class="preview" id="previewBox">
+      <canvas id="gl"></canvas>
+      <svg id="facadeSvg" viewBox="0 0 900 660" role="img" aria-label="Vizualizace na fasádě"></svg>
+      <div class="view-tabs">
+        <button id="tab3d" class="sel" onclick="setView('3d')">3D detail</button>
+        <button id="tabFas" onclick="setView('facade')">Na fasádě</button>
+      </div>
       <button class="night-btn" id="nightBtn" onclick="toggleNight()" title="Den / noc">🌙</button>
-      <div class="float-chip">☀️ Táhněte sluncem po obloze</div>
+      <div class="dim-chip" id="dimChip"></div>
+      <div class="hint-360" id="hint360">↻ táhněte pro otočení</div>
     </div>
     <div class="sim-bar">
-      <label>Poloha slunce: <b id="sunVal">poledne</b>
+      <label id="sunLab" style="display:none">Slunce: <b id="sunVal">poledne</b>
         <input type="range" id="sunRange" min="0" max="100" value="62" oninput="onSun(this.value)">
       </label>
-      <label>Vytažení žaluzie: <b id="dropVal">100 %</b>
+      <label>Vytažení: <b id="dropVal">100 %</b>
         <input type="range" id="dropRange" min="0" max="100" value="100" oninput="onSim()">
       </label>
       <label>Naklopení lamel: <b id="tiltVal">30°</b>
@@ -192,39 +240,26 @@
     <div class="card">
       <h2>Box</h2>
       <div id="mountList"></div>
+      <div class="note" id="mountNote"></div>
     </div>
 
     <div class="card">
-      <h2>Dělení žaluzie</h2>
-      <p class="hint">Široké sestavy se dělí na více polí se společným boxem</p>
-      <div class="seg" id="sectionSeg"></div>
-      <div class="note" id="sectionNote"></div>
+      <h2>Okna a rozměry</h2>
+      <div class="win-head">
+        <span>Počet oken</span>
+        <div class="stepper">
+          <button onclick="winCount(-1)" id="winMinus">−</button><span id="winCountVal">1</span><button onclick="winCount(1)">+</button>
+        </div>
+      </div>
+      <div id="winList"></div>
     </div>
 
     <div class="card">
-      <h2>Typ žaluzie</h2>
-      <p class="hint">Lamely ze sortimentu NEVA</p>
+      <h2>Typ žaluzie
+        <svg width="21" height="21" viewBox="0 0 34 34"><rect width="34" height="34" rx="7" fill="#e30613"/><path d="M8 25V9h4l8 10V9h4v16h-4l-8-10v10z" fill="#fff"/></svg>
+      </h2>
+      <p class="hint">Lamely ze sortimentu výrobce NEVA</p>
       <div id="modelList"></div>
-    </div>
-
-    <div class="card">
-      <h2>Rozměry</h2>
-      <div class="dim">
-        <div class="lbl"><b>Šířka:</b> <span>rozsah od <b id="wMinLbl"></b> do <b id="wMaxLbl"></b></span></div>
-        <div class="dim-line">
-          <input type="range" id="wRange" oninput="setDim('width',this.value)">
-          <input type="number" id="wNum" onchange="setDim('width',this.value)">
-        </div>
-      </div>
-      <div class="dim">
-        <div class="lbl"><b>Výška:</b> <span>rozsah od <b id="hMinLbl"></b> do <b id="hMaxLbl"></b></span></div>
-        <div class="dim-line">
-          <input type="range" id="hRange" oninput="setDim('height',this.value)">
-          <input type="number" id="hNum" onchange="setDim('height',this.value)">
-        </div>
-      </div>
-      <p class="price-note" style="text-align:left;margin-top:10px">
-        Rozměry v mm. Plocha: <b id="areaLbl"></b> · <span id="perSectionLbl"></span></p>
     </div>
 
     <div class="card">
@@ -233,9 +268,14 @@
       <div class="warn" id="crankWarn">⚠️ Pro plochu pole nad 4,5 m² doporučujeme motorové ovládání — klika by šla ztuha.</div>
     </div>
 
+    <div class="card" id="elektroCard" style="display:none">
+      <h2>Příprava elektřiny</h2>
+      <p class="hint">Motory potřebují přívod 230 V ke každému oknu</p>
+      <div id="elektroList"></div>
+    </div>
+
     <div class="card" id="accCard" style="display:none">
       <h2>Příslušenství</h2>
-      <p class="hint">Lze vybrat více možností</p>
       <div id="accList"></div>
     </div>
 
@@ -247,33 +287,23 @@
 
     <div class="card">
       <h2>Vodicí lišty a box</h2>
-      <div class="seg" id="frameSeg" style="margin-bottom:16px"></div>
+      <div class="seg" id="frameSeg" style="margin-bottom:12px"></div>
       <div class="swatches" id="frameColors" style="display:none"></div>
     </div>
 
     <div class="card">
       <h2>Služby</h2>
-      <p class="hint">Lze vybrat více možností</p>
+      <div class="note ok" style="margin:0 0 8px">📐 <b>Zaměření technikem — vždy zdarma.</b> Provádí se u každé zakázky kvůli ověření přesných rozměrů před výrobou.</div>
       <div id="svcList"></div>
-    </div>
-
-    <div class="card">
-      <h2>Počet kusů</h2>
-      <div class="qty-line">
-        <span style="font-size:15px;color:var(--gray)">Stejná konfigurace pro více oken</span>
-        <div class="stepper">
-          <button onclick="setQty(-1)" id="qtyMinus">−</button><span id="qtyVal">1</span><button onclick="setQty(1)">+</button>
-        </div>
-      </div>
-      <div class="price-line"><span>Orientační cena</span><span class="val" id="priceVal"></span></div>
-      <p class="price-note">Demonstrační ceny vč. DPH — pouze pro ukázku prototypu.</p>
+      <div class="price-line"><span style="font-size:13px;color:var(--gray)">Orientační cena</span><span class="val" id="priceVal"></span></div>
+      <p class="price-note">Cenové rozmezí bude upřesněno na základě finální kalkulace po bezplatném zaměření. Demonstrační ceny vč. DPH.</p>
     </div>
 
   </div>
 </div>
 
 <div class="bottom-bar">
-  <div class="sum">Orientační cena<b id="priceBar"></b></div>
+  <div class="sum">Orientačně<b id="priceBar"></b></div>
   <button class="btn-primary" onclick="addToCart()">Přidat do poptávky</button>
 </div>
 
@@ -285,21 +315,22 @@
   </div>
 </div>
 
-<p class="demo-note">DEMO prototyp konfigurátoru · žádná data se nikam neodesílají · ceny, rozsahy i vzorník jsou ilustrační</p>
+<p class="demo-note">DEMO prototyp · žádná data se nikam neodesílají · ceny, rozsahy i vzorník jsou ilustrační · žaluzie NEVA, podomítkové boxy vlastní výroby</p>
 
 <script>
 /* =============== KATALOG (v produkci z CMS / ceníku NEVA) =============== */
 const MODELS = {
-  z90:{name:'Z-90', desc:'Zalomená lamela 90 mm s těsněním — nejlepší zatemnění i útlum hluku', pitch:80, base:3200, maxW:4000, maxH:3400},
-  z70:{name:'Z-70', desc:'Užší zalomená lamela 70 mm — pro menší okna a jemnější rastr',        pitch:62, base:3000, maxW:3000, maxH:3000},
-  c80:{name:'C-80', desc:'Bombírovaná lamela 80 mm — univerzální klasika, tichý chod',          pitch:72, base:2900, maxW:3500, maxH:3200},
-  c65:{name:'C-65', desc:'Bombírovaná lamela 65 mm — subtilní paket, nižší nadpraží',           pitch:58, base:2800, maxW:3000, maxH:2800},
-  s90:{name:'S-90', desc:'Plochá designová lamela 90 mm — minimalistický vzhled',               pitch:84, base:3400, maxW:4000, maxH:3400},
+  z90:{name:'Z-90', desc:'Zalomená lamela 90 mm s těsněním — nejlepší zatemnění i útlum hluku', pitch:80, slatW:90, base:3200, maxW:4000, maxH:3400},
+  z70:{name:'Z-70', desc:'Užší zalomená lamela 70 mm — pro menší okna a jemnější rastr',        pitch:62, slatW:70, base:3000, maxW:3000, maxH:3000},
+  c80:{name:'C-80', desc:'Bombírovaná lamela 80 mm — univerzální klasika, tichý chod',          pitch:72, slatW:80, base:2900, maxW:3500, maxH:3200},
+  c65:{name:'C-65', desc:'Bombírovaná lamela 65 mm — subtilní paket, nižší nadpraží',           pitch:58, slatW:65, base:2800, maxW:3000, maxH:2800},
+  s90:{name:'S-90', desc:'Plochá designová lamela 90 mm — minimalistický vzhled',               pitch:84, slatW:90, base:3400, maxW:4000, maxH:3400},
 };
 const MOUNTS = {
-  visible:{name:'Přiznaný box',        desc:'Viditelný hliníkový box v barvě žaluzie, montáž na fasádu či do ostění', factor:1.00, badge:''},
-  plaster:{name:'Podomítkový box',     desc:'Skrytý box zapravený do zateplení — čistá fasáda bez viditelné techniky', factor:1.15, badge:'vlastní výroba'},
+  visible:{name:'Přiznaný box', desc:'Viditelný hliníkový box montovaný před okno', factor:1.00, badge:''},
+  plaster:{name:'Podomítkový box', desc:'Skrytý box v nadpraží nad oknem, zapravený do fasády', factor:1.15, badge:'vlastní výroba'},
 };
+const BOX_MM = 250;                     // výška boxu
 const MAX_TOTAL_W = 6500;
 const RALS = [
   {id:'9016', code:'RAL 9016', name:'bílá',            hex:'#f1f0ea'},
@@ -315,35 +346,38 @@ const RALS = [
 ];
 const RAL = Object.fromEntries(RALS.map(r=>[r.id,r]));
 const CONTROLS = {
-  crank:{name:'Klika',                          desc:'Manuální ovládání převodovkou', price:0,    icon:'🔧'},
-  motorSwitch:{name:'Motor + vypínač',          desc:'Elektromotor ovládaný nástěnným vypínačem', price:2500, icon:'🔘'},
+  crank:{name:'Klika', desc:'Manuální ovládání převodovkou', price:0, icon:'🔧'},
+  motorSwitch:{name:'Motor + vypínač', desc:'Elektromotor ovládaný nástěnným vypínačem', price:2500, icon:'🔘'},
   motorRemote:{name:'Motor + dálkové ovládání', desc:'Elektromotor s rádiovým přijímačem', price:3200, icon:'📱'},
 };
+const ELEKTRO = {
+  ready:{name:'Přívod je připraven', desc:'Kabel 230 V u každého okna už máme', icon:'✅', price:0},
+  need:{name:'Potřebuji zajistit přípravu', desc:'Elektroinstalaci k oknům zajistí montážní tým', icon:'⚡', price:800},
+  unknown:{name:'Nevím / poradíte mi', desc:'Ověříme a navrhneme řešení při bezplatném zaměření', icon:'💬', price:0},
+};
 const ACCESSORIES = {
-  situo1:{name:'Dálkový ovladač 1-kanálový',         price:990,  icon:'🎛️', controls:['motorRemote']},
-  situo5:{name:'Dálkový ovladač 5-kanálový',         price:1890, icon:'🎚️', controls:['motorRemote']},
-  wall:{name:'Nástěnný vypínač',                     price:790,  icon:'🔘', controls:['motorSwitch','motorRemote']},
+  situo1:{name:'Dálkový ovladač 1-kanálový', price:990, icon:'🎛️', controls:['motorRemote']},
+  situo5:{name:'Dálkový ovladač 5-kanálový', price:1890, icon:'🎚️', controls:['motorRemote']},
+  wall:{name:'Nástěnný vypínač', price:790, icon:'🔘', controls:['motorSwitch','motorRemote']},
   hub:{name:'Chytrá domácnost — centrální jednotka', price:4990, icon:'📡', controls:['motorRemote']},
-  sunSensor:{name:'Sluneční čidlo (automatika)',     price:1590, icon:'🌤️', controls:['motorSwitch','motorRemote']},
+  sunSensor:{name:'Sluneční čidlo (automatika)', price:1590, icon:'🌤️', controls:['motorSwitch','motorRemote']},
 };
 const SERVICES = {
-  survey:{name:'Zaměření technikem', desc:'Přesné zaměření otvorů u vás doma', price:0,   per:'zdarma'},
-  install:{name:'Montáž',            desc:'Odborná montáž naším týmem',        price:1500,per:'za kus'},
-  delivery:{name:'Doprava',          desc:'Cena se počítá dle vzdálenosti',    price:690, per:'paušál (demo)'},
+  install:{name:'Montáž', desc:'Odborná montáž naším týmem', price:1500, per:'za okno', icon:'🛠️'},
+  delivery:{name:'Doprava', desc:'Cena se počítá dle vzdálenosti', price:690, per:'paušál (demo)', icon:'🚚'},
 };
 const MIN_W=600, MIN_H=600, SECTION_PRICE=600;
 
 /* =============== STAV =============== */
 const state = {
-  mount:'visible', sections:1, model:'z90',
-  width:1200, height:1400,
+  mount:'visible', model:'z90',
+  windows:[{w:1200,h:1400,sections:1}], active:0,
   slatColor:'7016', slatCustom:'#d92b1f',
   frameMode:'same', frameColor:'7016', frameCustom:'#d92b1f',
-  control:'motorRemote',
+  control:'motorRemote', elektro:'unknown',
   acc:Object.fromEntries(Object.keys(ACCESSORIES).map(k=>[k,k==='situo1'?1:0])),
-  svc:{survey:true, install:true, delivery:false},
-  qty:1,
-  drop:1, tilt:30, sun:.62, night:false,
+  svc:{install:true, delivery:false},
+  drop:1, tilt:30, sun:.62, night:false, view:'3d',
 };
 const cart = [];
 
@@ -359,61 +393,240 @@ const slatHex  = () => state.slatColor==='custom' ? state.slatCustom : RAL[state
 const frameHex = () => state.frameMode==='same' ? slatHex()
                      : (state.frameColor==='custom' ? state.frameCustom : RAL[state.frameColor].hex);
 const colName = (id,custom) => id==='custom' ? 'vlastní '+custom : RAL[id].code+' '+RAL[id].name;
-const maxWidth = () => Math.min(MODELS[state.model].maxW*state.sections, MAX_TOTAL_W);
+const aw = () => state.windows[state.active];
+const maxWidth = win => Math.min(MODELS[state.model].maxW*win.sections, MAX_TOTAL_W);
 
-/* =============== CENA =============== */
-function unitPrice(s=state){
+/* =============== CENA (rozmezí) =============== */
+function windowPrice(win,s=state){
   const m=MODELS[s.model];
-  const area=Math.max(1.2,(s.width/1000)*(s.height/1000));
+  const area=Math.max(1.2,(win.w/1000)*(win.h/1000));
   let p=m.base*area*MOUNTS[s.mount].factor;
-  p+=(s.sections-1)*SECTION_PRICE;
-  p+=CONTROLS[s.control].price*s.sections;      // motor / převodovka pro každé pole
-  return Math.round(p/10)*10;
+  p+=(win.sections-1)*SECTION_PRICE;
+  p+=CONTROLS[s.control].price*win.sections;
+  return p;
 }
-function totalPrice(s=state){
-  let t=unitPrice(s)*s.qty;
+function totalMid(s=state){
+  let t=0;
+  for(const win of s.windows) t+=windowPrice(win,s);
   for(const k in s.acc) t+=s.acc[k]*ACCESSORIES[k].price;
-  if(s.svc.install) t+=SERVICES.install.price*s.qty;
+  if(s.control!=='crank'&&s.elektro==='need') t+=ELEKTRO.need.price*s.windows.length;
+  if(s.svc.install) t+=SERVICES.install.price*s.windows.length;
   if(s.svc.delivery) t+=SERVICES.delivery.price;
   return t;
 }
+const r100=n=>Math.round(n/100)*100;
+function priceRange(s=state){const t=totalMid(s);return [r100(t*.92), r100(t*1.15)]}
+const rangeTxt = s => {const[a,b]=priceRange(s);return `${a.toLocaleString('cs-CZ')} – ${b.toLocaleString('cs-CZ')} Kč`}
 
-/* =============== SVG SCÉNA =============== */
-function modelIcon(key){
-  const shape=key[0];
-  if(shape==='z') return '<svg width="58" height="42" viewBox="0 0 58 42">'+
-    [0,1,2,3].map(i=>`<path d="M8 ${7+i*9} l14 4 l14 -4 l14 4" fill="none" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
-  if(shape==='c') return '<svg width="58" height="42" viewBox="0 0 58 42">'+
-    [0,1,2,3].map(i=>`<path d="M8 ${9+i*9} q21 -6 42 0" fill="none" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
-  return '<svg width="58" height="42" viewBox="0 0 58 42">'+
-    [0,1,2,3].map(i=>`<line x1="8" y1="${8+i*9}" x2="50" y2="${8+i*9}" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
+/* ====================================================================
+   3D NÁHLED (three.js)
+==================================================================== */
+let renderer, scene3, camera, blindGroup, dirLight;
+let orb={theta:.55, phi:1.22, r:3, auto:true};
+let camTarget=new THREE.Vector3(0,1.1,0);
+
+function init3D(){
+  const canvas=$('gl');
+  renderer=new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(2,window.devicePixelRatio||1));
+  renderer.shadowMap.enabled=true;
+  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  renderer.outputEncoding=THREE.sRGBEncoding;
+
+  scene3=new THREE.Scene();
+  camera=new THREE.PerspectiveCamera(38,1.15,.05,60);
+
+  scene3.add(new THREE.HemisphereLight(0xffffff,0xcfc9c0,.95));
+  dirLight=new THREE.DirectionalLight(0xffffff,.85);
+  dirLight.position.set(2.4,3.6,2.6);
+  dirLight.castShadow=true;
+  dirLight.shadow.mapSize.set(1024,1024);
+  dirLight.shadow.camera.left=-3; dirLight.shadow.camera.right=3;
+  dirLight.shadow.camera.top=4;  dirLight.shadow.camera.bottom=-1;
+  scene3.add(dirLight);
+
+  const ground=new THREE.Mesh(new THREE.CircleGeometry(4,48), new THREE.ShadowMaterial({opacity:.16}));
+  ground.rotation.x=-Math.PI/2; ground.receiveShadow=true;
+  scene3.add(ground);
+  const disc=new THREE.Mesh(new THREE.CircleGeometry(2.2,48),
+    new THREE.MeshBasicMaterial({color:0xdadde1, transparent:true, opacity:.5}));
+  disc.rotation.x=-Math.PI/2; disc.position.y=-.002;
+  scene3.add(disc);
+
+  // ovládání otáčení + zoom
+  const el=canvas; let drag=false,px=0,py=0,pinch=0;
+  el.addEventListener('pointerdown',e=>{drag=true;orb.auto=false;$('hint360').style.display='none';px=e.clientX;py=e.clientY;el.setPointerCapture(e.pointerId)});
+  el.addEventListener('pointermove',e=>{
+    if(!drag)return;
+    orb.theta-=(e.clientX-px)*.008;
+    orb.phi=clamp(orb.phi-(e.clientY-py)*.006,.25,1.55);
+    px=e.clientX;py=e.clientY;
+  });
+  el.addEventListener('pointerup',()=>drag=false);
+  el.addEventListener('pointercancel',()=>drag=false);
+  el.addEventListener('wheel',e=>{e.preventDefault();orb.r=clamp(orb.r*(1+e.deltaY*.001),1,7)},{passive:false});
+  el.addEventListener('touchstart',e=>{if(e.touches.length===2){pinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY)}},{passive:true});
+  el.addEventListener('touchmove',e=>{
+    if(e.touches.length===2){
+      const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+      if(pinch>0) orb.r=clamp(orb.r*(pinch/d),1,7);
+      pinch=d; drag=false;
+    }
+  },{passive:true});
+
+  window.addEventListener('resize',resize3D);
+  resize3D();
+  requestAnimationFrame(loop3D);
 }
-function dimChip(x,y,text){
+function resize3D(){
+  const w=$('previewBox').clientWidth;
+  const h=Math.round(clamp(w*.72,240,400));
+  renderer.setSize(w,h,false);
+  $('gl').style.height=h+'px';
+  camera.aspect=w/h; camera.updateProjectionMatrix();
+  if(state.view==='facade') $('facadeSvg').style.minHeight='';
+}
+function loop3D(){
+  if(state.view==='3d'){
+    if(orb.auto) orb.theta+=.0035;
+    const sp=Math.sin(orb.phi);
+    camera.position.set(
+      camTarget.x+orb.r*sp*Math.sin(orb.theta),
+      camTarget.y+orb.r*Math.cos(orb.phi),
+      camTarget.z+orb.r*sp*Math.cos(orb.theta));
+    camera.lookAt(camTarget);
+    renderer.render(scene3,camera);
+  }
+  requestAnimationFrame(loop3D);
+}
+function disposeGroup(g){
+  g.traverse(o=>{
+    if(o.geometry)o.geometry.dispose();
+    if(o.material){Array.isArray(o.material)?o.material.forEach(m=>m.dispose()):o.material.dispose()}
+  });
+}
+function build3D(){
+  if(blindGroup){scene3.remove(blindGroup);disposeGroup(blindGroup)}
+  blindGroup=new THREE.Group();
+  const win=aw(), m=MODELS[state.model];
+  const W=win.w/1000, H=win.h/1000;
+  const boxH=BOX_MM/1000, boxD=.15, railW=.028, railD=.05, frameP=.07, frameD=.075;
+  const baseY=.45;                                  // spodní hrana okna nad zemí
+  const under=state.mount==='plaster';
+
+  const alu=hex=>new THREE.MeshStandardMaterial({color:new THREE.Color(hex),metalness:.35,roughness:.45});
+  const slatMat=alu(slatHex());
+  const frameMat=alu(frameHex());
+  const winMat=new THREE.MeshStandardMaterial({color:0x33383d,metalness:.3,roughness:.5});
+  const plasterMat=new THREE.MeshStandardMaterial({color:0xe9e6df,roughness:.95});
+  const glassMat=new THREE.MeshStandardMaterial({color:0xaecbdc,transparent:true,opacity:.32,roughness:.12,metalness:.1,side:THREE.DoubleSide});
+
+  const add=(geo,mat,x,y,z,shadow=true)=>{
+    const M=new THREE.Mesh(geo,mat);
+    M.position.set(x,y,z); M.castShadow=shadow; M.receiveShadow=false;
+    blindGroup.add(M); return M;
+  };
+
+  // rám okna
+  add(new THREE.BoxGeometry(W+2*frameP,frameP,frameD),winMat,0,baseY+H+frameP/2,0);
+  add(new THREE.BoxGeometry(W+2*frameP,frameP,frameD),winMat,0,baseY-frameP/2,0);
+  add(new THREE.BoxGeometry(frameP,H,frameD),winMat,-(W+frameP)/2,baseY+H/2,0);
+  add(new THREE.BoxGeometry(frameP,H,frameD),winMat,(W+frameP)/2,baseY+H/2,0);
+  // sklo + příčle
+  add(new THREE.PlaneGeometry(W,H),glassMat,0,baseY+H/2,0,false);
+  add(new THREE.BoxGeometry(.02,H,.02),winMat,0,baseY+H/2,.005,false);
+
+  // box: přiznaný = před oknem (zasahuje do výhledu), podomítkový = nad oknem
+  const boxW=W+2*frameP+2*railW+.02;
+  const boxY = under ? baseY+H+frameP+boxH/2 : baseY+H+frameP-boxH/2;
+  const boxZ = frameD/2+boxD/2+.005;
+  add(new THREE.BoxGeometry(boxW,boxH,boxD), under?plasterMat:frameMat, 0, boxY, under?boxZ-.04:boxZ);
+  if(under){ // naznačení omítky — tenká deska kolem skrytého boxu
+    add(new THREE.BoxGeometry(boxW+.12,boxH+.06,.012),plasterMat,0,boxY,boxZ+boxD/2-.03);
+  }
+
+  // vodicí lišty
+  const railTop = under ? baseY+H+frameP : baseY+H+frameP-boxH;
+  const railH = railTop-baseY+frameP;
+  const railZ = frameD/2+railD/2+.004;
+  add(new THREE.BoxGeometry(railW,railH,railD),frameMat,-(W+2*frameP+railW)/2,baseY-frameP+railH/2,railZ);
+  add(new THREE.BoxGeometry(railW,railH,railD),frameMat,(W+2*frameP+railW)/2,baseY-frameP+railH/2,railZ);
+  // mezilišty
+  const n=win.sections;
+  for(let i=1;i<n;i++){
+    add(new THREE.BoxGeometry(railW,railH,railD),frameMat,-W/2+i*(W/n),baseY-frameP+railH/2,railZ);
+  }
+
+  // lamely (instancované)
+  const pitch=m.pitch/1000, slatDep=m.slatW/1000, slatT=.0016;
+  const secW=(W+2*frameP-(n-1)*railW)/n;
+  const slatZ=railZ;
+  const startY=railTop-pitch*.6;
+  const dropLen=state.drop*(startY-baseY+frameP*.5);
+  const per=Math.max(0,Math.floor(dropLen/pitch));
+  const rotX=THREE.MathUtils.degToRad((1-state.tilt/90)*78);
+  if(per>0){
+    const inst=new THREE.InstancedMesh(new THREE.BoxGeometry(secW-.012,slatT,slatDep),slatMat,per*n);
+    inst.castShadow=true;
+    const M=new THREE.Matrix4(),Q=new THREE.Quaternion(),E=new THREE.Euler(rotX,0,0),S=new THREE.Vector3(1,1,1);
+    Q.setFromEuler(E);
+    let idx=0;
+    for(let si=0;si<n;si++){
+      const cxs=-(W+2*frameP)/2+secW/2+si*(secW+railW);
+      for(let i=0;i<per;i++){
+        M.compose(new THREE.Vector3(cxs,startY-i*pitch,slatZ),Q,S);
+        inst.setMatrixAt(idx++,M);
+      }
+    }
+    blindGroup.add(inst);
+    // spodní profil
+    add(new THREE.BoxGeometry(W+2*frameP-.01,.014,slatDep*.75),slatMat,0,startY-(per-.35)*pitch,slatZ);
+  }
+  // paket vytažených lamel pod boxem
+  if(state.drop<.97){
+    const packH=clamp((1-state.drop)*.09,.012,.09);
+    add(new THREE.BoxGeometry(W+2*frameP-.01,packH,slatDep*.9),slatMat,0,railTop-packH/2,slatZ);
+  }
+  // klika
+  if(state.control==='crank'){
+    const cx=(W+2*frameP+railW)/2+.04;
+    add(new THREE.CylinderGeometry(.007,.007,H*.55),frameMat,cx,baseY+H*.55,railZ);
+    add(new THREE.SphereGeometry(.016),frameMat,cx,baseY+H*.26,railZ);
+  }
+
+  scene3.add(blindGroup);
+  const totalH=H+boxH+frameP*2;
+  camTarget.set(0,baseY+ (under? (H+boxH)/2 : H/2),0);
+  const fit=Math.max(W*1.15,totalH)*1.55+.65;
+  if(orb.auto||Math.abs(fit-(orb.lastFit??fit))>.02) orb.r=fit;   // re-fit při změně rozměrů
+  orb.lastFit=fit;
+  orb.r=clamp(orb.r,1,Math.max(7,fit));
+  $('dimChip').textContent=`${win.w} × ${win.h} mm${n>1?` · ${n} pole`:''} · lamela ${m.name}`;
+}
+
+/* ====================================================================
+   2D FASÁDA (SVG) — pohled s tažným sluncem
+==================================================================== */
+const SKY_H=180;
+function facadeChip(x,y,text){
   const w=text.length*8.5+22;
   return `<g><rect x="${x-w/2}" y="${y-15}" width="${w}" height="30" rx="8" fill="#fff" filter="url(#soft)"/>
     <text x="${x}" y="${y+5}" text-anchor="middle" font-size="15" font-weight="700" fill="#1c1e21">${text}</text></g>`;
 }
-const SKY_H=180;
-function renderScene(){
-  const m=MODELS[state.model];
-  const s=Math.min(430/state.width, 320/state.height);          // px na mm
-  const winW=state.width*s, winH=state.height*s;
-  const cx=450, top=270;
-  const wx=cx-winW/2, wy=top;
+function renderFacade(){
+  const win=aw(), m=MODELS[state.model];
+  const s=Math.min(430/win.w, 320/win.h);
+  const winW=win.w*s, winH=win.h*s;
+  const cx=450, wy=270;
+  const wx=cx-winW/2;
   const railW=Math.max(7,25*s*2.2);
-  const boxH=Math.max(24,Math.min(52,300*s));
+  const boxH=Math.max(24,Math.min(52,BOX_MM*s));
   const fc=frameHex(), sc=slatHex();
   const night=state.night, t=state.sun;
-
-  // slunce: poloha, teplota světla, směr stínů
-  const noon=Math.sin(Math.PI*t);                 // 1 v poledne, 0 na krajích
-  const warm=1-noon;                              // ráno/večer teplé světlo
+  const noon=Math.sin(Math.PI*t), warm=1-noon;
   const sunX=80+740*t, sunY=SKY_H-30-noon*110;
-  const shDx=(0.5-t)*110;                         // slunce vlevo → stín vpravo
-  const shDy=8+warm*20;
+  const shDx=(0.5-t)*110, shDy=8+warm*20;
   const shOp=night?.06:.10+noon*.10;
-
-  // barvy scény
   let skyTop, skyHor, facade;
   if(night){ skyTop='#141b28'; skyHor='#2e3b52'; facade='#aab0bb'; }
   else{
@@ -438,148 +651,179 @@ function renderScene(){
     <linearGradient id="boxg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(fc,.22)}"/><stop offset="1" stop-color="${shade(fc,-.2)}"/></linearGradient>
   </defs>`;
 
-  // obloha + slunce/měsíc (tažné)
   svg+=`<rect width="900" height="${SKY_H}" fill="url(#sky)"/>`;
   if(night) svg+=`<circle cx="120" cy="46" r="2" fill="#fff" opacity=".8"/><circle cx="300" cy="70" r="1.6" fill="#fff" opacity=".7"/>
     <circle cx="520" cy="38" r="1.8" fill="#fff" opacity=".75"/><circle cx="700" cy="86" r="1.5" fill="#fff" opacity=".6"/><circle cx="820" cy="52" r="2" fill="#fff" opacity=".8"/>`;
-  svg+=`<g id="sunHandle" style="cursor:grab">
+  svg+=`<g style="cursor:grab">
     <circle cx="${sunX}" cy="${sunY}" r="52" fill="url(#sung)" opacity="${night?.5:.9}"/>
     <circle cx="${sunX}" cy="${sunY}" r="21" fill="${night?'#e8edf5':'#ffd24d'}"/>
     ${night?`<circle cx="${sunX+8}" cy="${sunY-6}" r="17" fill="${skyTop}"/>`:''}
   </g>`;
-  // atika / římsa domu
   svg+=`<rect x="0" y="${SKY_H-8}" width="900" height="14" fill="${shade(facade,-.28)}"/>`;
-  // fasáda
   svg+=`<rect x="0" y="${SKY_H+6}" width="900" height="${660-SKY_H-6}" fill="url(#wall)"/>`;
-  // stín atiky na fasádě dle slunce
   svg+=`<rect x="0" y="${SKY_H+6}" width="900" height="${6+shDy}" fill="#000" opacity="${shOp}"/>`;
 
-  // vržený stín celé žaluzie na fasádu
   const bx=wx-8-railW-2, bw=winW+16+railW*2+4, boxY=wy-10-boxH;
   svg+=`<g filter="url(#blur6)" opacity="${shOp+.06}">
     <rect x="${bx+shDx}" y="${boxY+shDy}" width="${bw}" height="${boxH+winH+26}" fill="#000"/>
   </g>`;
-
-  // ostění + okno
   svg+=`<rect x="${wx-14}" y="${wy-14}" width="${winW+28}" height="${winH+28}" rx="4" fill="${shade(facade2,-.18)}"/>`;
   svg+=`<rect x="${wx-8}" y="${wy-8}" width="${winW+16}" height="${winH+16}" rx="3" fill="${night?'#3c4148':'#4a4f55'}"/>`;
   svg+=`<rect x="${wx}" y="${wy}" width="${winW}" height="${winH}" fill="url(#glass)"/>`;
   svg+=`<line x1="${cx}" y1="${wy}" x2="${cx}" y2="${wy+winH}" stroke="${night?'#3c4148':'#4a4f55'}" stroke-width="6"/>`;
   if(night) svg+=`<rect x="${wx}" y="${wy}" width="${winW}" height="${winH}" fill="#ffb54d" opacity=".28"/>`;
   else svg+=`<circle cx="${wx+winW*clamp(t,.15,.85)}" cy="${wy+winH*.3}" r="${winW*.18}" fill="#fff" opacity="${.14+noon*.1}"/>`;
-
-  // parapet
   svg+=`<rect x="${wx-16}" y="${wy+winH+8}" width="${winW+32}" height="9" rx="2" fill="${shade(facade,.3)}"/>
     <rect x="${wx-16+shDx*.35}" y="${wy+winH+17}" width="${winW+32}" height="${5+shDy*.5}" fill="#000" opacity="${shOp}" filter="url(#blur6)"/>`;
-
-  // vodicí lišty krajní
   svg+=`<rect x="${wx-8-railW}" y="${wy-8}" width="${railW}" height="${winH+16}" rx="3" fill="${shade(fc,-.12)}"/>`;
   svg+=`<rect x="${wx+winW+8}" y="${wy-8}" width="${railW}" height="${winH+16}" rx="3" fill="${shade(fc,-.12)}"/>`;
 
-  // lamely
   const pitchPx=Math.max(5,m.pitch*s);
   const open=state.tilt/90;
   const slatH=Math.max(2,pitchPx*(1-open*.82));
   const dropPx=winH*state.drop;
-  const slatX=wx-8-railW+2, slatW=winW+16+railW*2-4;
+  const slatX=wx-8-railW+2, slatW2=winW+16+railW*2-4;
   const glow=night?'#ffd98a':'none';
   let y=wy-4, slats='';
   while(y+slatH<=wy+dropPx){
-    if(night&&open>0.12) slats+=`<rect x="${slatX+3}" y="${y+slatH}" width="${slatW-6}" height="${Math.max(1,pitchPx-slatH-1)}" fill="${glow}" opacity=".5"/>`;
-    slats+=`<rect x="${slatX}" y="${y}" width="${slatW}" height="${slatH}" rx="${state.model[0]==='c'?slatH/2.4:1.5}" fill="url(#slat)"/>`;
-    if(state.model[0]==='z'&&slatH>5) slats+=`<line x1="${slatX}" y1="${y+slatH*.55}" x2="${slatX+slatW}" y2="${y+slatH*.55}" stroke="${shade(sc,-.35)}" stroke-width="1"/>`;
+    if(night&&open>0.12) slats+=`<rect x="${slatX+3}" y="${y+slatH}" width="${slatW2-6}" height="${Math.max(1,pitchPx-slatH-1)}" fill="${glow}" opacity=".5"/>`;
+    slats+=`<rect x="${slatX}" y="${y}" width="${slatW2}" height="${slatH}" rx="${state.model[0]==='c'?slatH/2.4:1.5}" fill="url(#slat)"/>`;
+    if(state.model[0]==='z'&&slatH>5) slats+=`<line x1="${slatX}" y1="${y+slatH*.55}" x2="${slatX+slatW2}" y2="${y+slatH*.55}" stroke="${shade(sc,-.35)}" stroke-width="1"/>`;
     y+=pitchPx;
   }
   svg+=slats;
-  // paket vytažených lamel
   const packH=(1-state.drop)*Math.min(46,winH*.16);
-  if(packH>1.5) svg+=`<rect x="${slatX}" y="${wy-6}" width="${slatW}" height="${packH}" rx="2" fill="url(#slat)" opacity=".95"/>`;
+  if(packH>1.5) svg+=`<rect x="${slatX}" y="${wy-6}" width="${slatW2}" height="${packH}" rx="2" fill="url(#slat)" opacity=".95"/>`;
 
-  // mezilišty dělených polí
   const midW=Math.max(6,railW*.8);
-  for(let i=1;i<state.sections;i++){
-    const mx=wx+i*(winW/state.sections)-midW/2;
+  for(let i=1;i<win.sections;i++){
+    const mx=wx+i*(winW/win.sections)-midW/2;
     svg+=`<rect x="${mx}" y="${wy-8}" width="${midW}" height="${winH+16}" rx="2" fill="${shade(fc,-.12)}"/>`;
   }
 
-  // box
   if(state.mount==='plaster'){
     svg+=`<rect x="${bx}" y="${boxY}" width="${bw}" height="${boxH}" rx="3" fill="${facade}" stroke="${shade(facade2,-.25)}" stroke-dasharray="6 5" stroke-width="2"/>`;
     svg+=`<text x="${cx}" y="${boxY+boxH/2+4}" text-anchor="middle" font-size="12.5" fill="#8a8f98">skrytý box pod omítkou</text>`;
   }else{
-    svg+=`<rect x="${bx}" y="${boxY}" width="${bw}" height="${boxH}" rx="5" fill="url(#boxg)" filter="url(#soft)"/>`;
+    svg+=`<rect x="${bx}" y="${boxY+boxH}" width="${bw}" height="0" fill="none"/>`;
+    svg+=`<rect x="${bx}" y="${wy-8}" width="${bw}" height="${boxH}" rx="5" fill="url(#boxg)" filter="url(#soft)"/>`;
   }
 
-  // klika
   if(state.control==='crank'){
     svg+=`<line x1="${wx+winW+8+railW+7}" y1="${wy+20}" x2="${wx+winW+8+railW+7}" y2="${wy+winH*.72}" stroke="${shade(fc,-.2)}" stroke-width="5" stroke-linecap="round"/>
     <circle cx="${wx+winW+8+railW+7}" cy="${wy+winH*.72}" r="6" fill="${shade(fc,-.3)}"/>`;
   }
 
-  // kóty
   svg+=`<line x1="${wx}" y1="${wy+winH+44}" x2="${wx+winW}" y2="${wy+winH+44}" stroke="#565b62" stroke-width="1.6"/>
     <line x1="${wx}" y1="${wy+winH+36}" x2="${wx}" y2="${wy+winH+52}" stroke="#565b62" stroke-width="1.6"/>
     <line x1="${wx+winW}" y1="${wy+winH+36}" x2="${wx+winW}" y2="${wy+winH+52}" stroke="#565b62" stroke-width="1.6"/>`;
-  svg+=dimChip(cx,wy+winH+44,(state.width/1000).toLocaleString('cs-CZ')+' m'+(state.sections>1?` / ${state.sections} pole`:''));
+  svg+=facadeChip(cx,wy+winH+44,(win.w/1000).toLocaleString('cs-CZ')+' m'+(win.sections>1?` / ${win.sections} pole`:''));
   const hx=wx+winW+8+railW+26;
   svg+=`<line x1="${hx}" y1="${wy}" x2="${hx}" y2="${wy+winH}" stroke="#565b62" stroke-width="1.6"/>
     <line x1="${hx-8}" y1="${wy}" x2="${hx+8}" y2="${wy}" stroke="#565b62" stroke-width="1.6"/>
     <line x1="${hx-8}" y1="${wy+winH}" x2="${hx+8}" y2="${wy+winH}" stroke="#565b62" stroke-width="1.6"/>`;
-  svg+=dimChip(Math.min(hx+8,858),wy+winH/2,(state.height/1000).toLocaleString('cs-CZ')+' m');
+  svg+=facadeChip(Math.min(hx+8,858),wy+winH/2,(win.h/1000).toLocaleString('cs-CZ')+' m');
 
-  $('scene').innerHTML=svg;
+  $('facadeSvg').innerHTML=svg;
 }
-
-/* =============== TAŽENÍ SLUNCE =============== */
+/* tažení slunce ve fasádním pohledu */
 let dragSun=false;
-function svgX(e){
-  const r=$('scene').getBoundingClientRect();
-  return (e.clientX-r.left)*(900/r.width);
-}
-function svgY(e){
-  const r=$('scene').getBoundingClientRect();
-  return (e.clientY-r.top)*(900/r.width);
-}
-$('scene').addEventListener('pointerdown',e=>{
-  if(svgY(e)<SKY_H+20){
-    dragSun=true;
-    $('scene').setPointerCapture(e.pointerId);
-    setSun((svgX(e)-80)/740);
-    e.preventDefault();
-  }
+function fSvgX(e){const r=$('facadeSvg').getBoundingClientRect();return (e.clientX-r.left)*(900/r.width)}
+function fSvgY(e){const r=$('facadeSvg').getBoundingClientRect();return (e.clientY-r.top)*(900/r.width)}
+$('facadeSvg').addEventListener('pointerdown',e=>{
+  if(fSvgY(e)<SKY_H+20){dragSun=true;$('facadeSvg').setPointerCapture(e.pointerId);setSun((fSvgX(e)-80)/740);e.preventDefault()}
 });
-$('scene').addEventListener('pointermove',e=>{if(dragSun){setSun((svgX(e)-80)/740);e.preventDefault()}});
-$('scene').addEventListener('pointerup',()=>dragSun=false);
-$('scene').addEventListener('pointercancel',()=>dragSun=false);
-function sunLabel(t){
-  const h=Math.round(6+t*14);          // 6:00–20:00
-  return t>.42&&t<.58?'poledne':`${h}:00`;
-}
+$('facadeSvg').addEventListener('pointermove',e=>{if(dragSun){setSun((fSvgX(e)-80)/740);e.preventDefault()}});
+$('facadeSvg').addEventListener('pointerup',()=>dragSun=false);
+function sunLabel(t){const h=Math.round(6+t*14);return t>.42&&t<.58?'poledne':`${h}:00`}
 function setSun(t){
   state.sun=clamp(t,0,1);
   $('sunRange').value=Math.round(state.sun*100);
   $('sunVal').textContent=sunLabel(state.sun);
-  renderScene();
+  if(state.view==='facade') renderFacade();
 }
 function onSun(v){setSun(v/100)}
 
+/* =============== PŘEPÍNÁNÍ POHLEDŮ =============== */
+function setView(v){
+  state.view=v;
+  $('tab3d').classList.toggle('sel',v==='3d');
+  $('tabFas').classList.toggle('sel',v==='facade');
+  $('gl').style.display=v==='3d'?'block':'none';
+  $('facadeSvg').style.display=v==='facade'?'block':'none';
+  $('sunLab').style.display=v==='facade'?'block':'none';
+  $('nightBtn').style.display=v==='facade'?'flex':'none';
+  $('hint360').style.display=v==='3d'&&orb.auto?'block':'none';
+  $('dimChip').style.display=v==='3d'?'block':'none';
+  if(v==='facade') renderFacade(); else resize3D();
+}
+function toggleNight(){
+  state.night=!state.night;
+  $('nightBtn').textContent=state.night?'☀️':'🌙';
+  renderFacade();
+}
+
 /* =============== RENDER UI =============== */
+function modelIcon(key){
+  const shape=key[0];
+  if(shape==='z') return '<svg width="46" height="36" viewBox="0 0 58 42">'+
+    [0,1,2,3].map(i=>`<path d="M8 ${7+i*9} l14 4 l14 -4 l14 4" fill="none" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
+  if(shape==='c') return '<svg width="46" height="36" viewBox="0 0 58 42">'+
+    [0,1,2,3].map(i=>`<path d="M8 ${9+i*9} q21 -6 42 0" fill="none" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
+  return '<svg width="46" height="36" viewBox="0 0 58 42">'+
+    [0,1,2,3].map(i=>`<line x1="8" y1="${8+i*9}" x2="50" y2="${8+i*9}" stroke="#4a5158" stroke-width="3.4" stroke-linecap="round"/>`).join('')+'</svg>';
+}
 function renderMount(){
   $('mountList').innerHTML=Object.entries(MOUNTS).map(([k,m])=>`
     <button class="opt-row ${state.mount===k?'sel':''}" onclick="state.mount='${k}';update()">
       <span class="thumb">${k==='visible'
-        ?'<svg width="58" height="42" viewBox="0 0 58 42"><rect x="8" y="6" width="42" height="10" rx="3" fill="#4a5158"/><rect x="12" y="18" width="34" height="20" rx="2" fill="#c9d4dc"/><rect x="10" y="18" width="3" height="20" fill="#4a5158"/><rect x="45" y="18" width="3" height="20" fill="#4a5158"/></svg>'
-        :'<svg width="58" height="42" viewBox="0 0 58 42"><rect x="8" y="6" width="42" height="10" rx="3" fill="none" stroke="#9aa3ab" stroke-width="2" stroke-dasharray="4 3"/><rect x="12" y="18" width="34" height="20" rx="2" fill="#c9d4dc"/><rect x="10" y="18" width="3" height="20" fill="#4a5158"/><rect x="45" y="18" width="3" height="20" fill="#4a5158"/></svg>'}</span>
+        ?'<svg width="46" height="36" viewBox="0 0 58 42"><rect x="8" y="4" width="42" height="10" rx="3" fill="#4a5158"/><rect x="12" y="16" width="34" height="22" rx="2" fill="#c9d4dc"/><rect x="10" y="16" width="3" height="22" fill="#4a5158"/><rect x="45" y="16" width="3" height="22" fill="#4a5158"/></svg>'
+        :'<svg width="46" height="36" viewBox="0 0 58 42"><rect x="8" y="3" width="42" height="9" rx="3" fill="none" stroke="#9aa3ab" stroke-width="2" stroke-dasharray="4 3"/><rect x="12" y="15" width="34" height="23" rx="2" fill="#c9d4dc"/><rect x="10" y="15" width="3" height="23" fill="#4a5158"/><rect x="45" y="15" width="3" height="23" fill="#4a5158"/></svg>'}</span>
       <span><span class="t">${m.name}</span>${m.badge?`<span class="badge">✔ ${m.badge}</span>`:''}<div class="d">${m.desc}</div></span>
     </button>`).join('');
+  $('mountNote').className='note '+(state.mount==='visible'?'warn2':'ok');
+  $('mountNote').innerHTML=state.mount==='visible'
+    ?`⚠️ Přiznaný box se montuje před horní část okna — zabere ~${BOX_MM} mm z výhledu a opticky sníží prosklení.`
+    :`✔ Podomítkový box (vlastní výroba) je skrytý v nadpraží <b>nad oknem</b> — výhled z okna zůstává celý.`;
 }
-function renderSections(){
-  $('sectionSeg').innerHTML=[1,2,3].map(n=>`
-    <button class="${state.sections===n?'sel':''}" onclick="setSections(${n})">${n} ${n===1?'pole':'pole'}</button>`).join('');
+function renderWindows(){
+  $('winCountVal').textContent=state.windows.length;
+  $('winMinus').disabled=state.windows.length<=1;
   const m=MODELS[state.model];
-  $('sectionNote').innerHTML=state.sections===1
-    ?`Jedno pole do šířky ${m.maxW.toLocaleString('cs-CZ')} mm (lamela ${m.name}). Širší sestavu rozdělte na více polí.`
-    :`${state.sections} pole se společným boxem a mezilištami — celkem až ${maxWidth().toLocaleString('cs-CZ')} mm. Každé pole má vlastní pohon.`;
+  $('winList').innerHTML=state.windows.map((win,i)=>{
+    if(i!==state.active) return `
+      <div class="win-row">
+        <button class="head" onclick="state.active=${i};update()">
+          <span class="t">Okno ${i+1}</span>
+          <span class="s">${win.w} × ${win.h} mm · ${win.sections} pole ›</span>
+        </button>
+      </div>`;
+    const maxW=maxWidth(win);
+    return `
+      <div class="win-row sel">
+        <div class="head"><span class="t">Okno ${i+1}</span><span class="s">upravujete · zobrazeno v náhledu</span></div>
+        <div class="win-body">
+          <div class="dim">
+            <div class="lbl"><b>Šířka</b> · ${MIN_W}–${maxW.toLocaleString('cs-CZ')} mm</div>
+            <div class="dim-line">
+              <input type="range" min="${MIN_W}" max="${maxW}" value="${win.w}" oninput="setWinDim(${i},'w',this.value)">
+              <input type="number" value="${win.w}" onchange="setWinDim(${i},'w',this.value)">
+            </div>
+          </div>
+          <div class="dim">
+            <div class="lbl"><b>Výška</b> · ${MIN_H}–${m.maxH.toLocaleString('cs-CZ')} mm</div>
+            <div class="dim-line">
+              <input type="range" min="${MIN_H}" max="${m.maxH}" value="${win.h}" oninput="setWinDim(${i},'h',this.value)">
+              <input type="number" value="${win.h}" onchange="setWinDim(${i},'h',this.value)">
+            </div>
+          </div>
+          <div class="pole-line">
+            <span class="lb">Dělení:</span>
+            <div class="seg">${[1,2,3].map(x=>`<button class="${win.sections===x?'sel':''}" onclick="setWinSections(${i},${x})">${x} pole</button>`).join('')}</div>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
 }
 function renderModels(){
   $('modelList').innerHTML=Object.entries(MODELS).map(([k,m])=>`
@@ -587,16 +831,6 @@ function renderModels(){
       <span class="thumb">${modelIcon(k)}</span>
       <span><span class="t">Lamela ${m.name}</span><div class="d">${m.desc}</div></span>
     </button>`).join('');
-}
-function renderDims(){
-  const m=MODELS[state.model], maxW=maxWidth();
-  $('wMinLbl').textContent=MIN_W+' mm'; $('wMaxLbl').textContent=maxW.toLocaleString('cs-CZ')+' mm';
-  $('hMinLbl').textContent=MIN_H+' mm'; $('hMaxLbl').textContent=m.maxH+' mm';
-  $('wRange').min=MIN_W; $('wRange').max=maxW; $('wRange').value=state.width;
-  $('hRange').min=MIN_H; $('hRange').max=m.maxH; $('hRange').value=state.height;
-  $('wNum').value=state.width; $('hNum').value=state.height;
-  $('areaLbl').textContent=((state.width/1000)*(state.height/1000)).toLocaleString('cs-CZ',{maximumFractionDigits:2})+' m²';
-  $('perSectionLbl').textContent=state.sections>1?`šířka pole: ${Math.round(state.width/state.sections).toLocaleString('cs-CZ')} mm`:'';
 }
 function swatchHTML(sel,customHex,onPick,onCustom){
   return RALS.map(c=>`
@@ -619,11 +853,22 @@ function renderColors(){
 function renderControls(){
   $('controlList').innerHTML=Object.entries(CONTROLS).map(([k,c])=>`
     <button class="opt-row ${state.control===k?'sel':''}" onclick="setControl('${k}')">
-      <span class="thumb" style="font-size:26px">${c.icon}</span>
+      <span class="thumb">${c.icon}</span>
       <span><span class="t">${c.name}</span><div class="d">${c.desc}${c.price?` · +${czk(c.price)}/pole`:''}</div></span>
     </button>`).join('');
-  const area=(state.width/state.sections/1000)*(state.height/1000);
+  const win=aw();
+  const area=(win.w/win.sections/1000)*(win.h/1000);
   $('crankWarn').classList.toggle('show',state.control==='crank'&&area>4.5);
+}
+function renderElektro(){
+  const motor=state.control!=='crank';
+  $('elektroCard').style.display=motor?'block':'none';
+  if(!motor) return;
+  $('elektroList').innerHTML=Object.entries(ELEKTRO).map(([k,e])=>`
+    <button class="opt-row ${state.elektro===k?'sel':''}" onclick="state.elektro='${k}';update()">
+      <span class="thumb">${e.icon}</span>
+      <span><span class="t">${e.name}</span><div class="d">${e.desc}${e.price?` · +${czk(e.price)}/okno (demo)`:''}</div></span>
+    </button>`).join('');
 }
 function renderAcc(){
   const avail=Object.entries(ACCESSORIES).filter(([k,a])=>a.controls.includes(state.control));
@@ -641,36 +886,50 @@ function renderAcc(){
 function renderSvc(){
   $('svcList').innerHTML=Object.entries(SERVICES).map(([k,v])=>`
     <button class="opt-row ${state.svc[k]?'sel':''}" onclick="state.svc['${k}']=!state.svc['${k}'];update()">
-      <span class="thumb" style="font-size:24px">${k==='survey'?'📐':k==='install'?'🛠️':'🚚'}</span>
-      <span><span class="t">${v.name}</span><div class="d">${v.desc} · ${v.price?czk(v.price)+' '+v.per:v.per}</div></span>
+      <span class="thumb">${v.icon}</span>
+      <span><span class="t">${v.name}</span><div class="d">${v.desc} · ${czk(v.price)} ${v.per}</div></span>
     </button>`).join('');
 }
 function renderPrice(){
-  const t=totalPrice();
-  $('priceVal').textContent=czk(t);
-  $('priceBar').textContent=czk(t);
-  $('qtyVal').textContent=state.qty;
-  $('qtyMinus').disabled=state.qty<=1;
+  const txt=rangeTxt();
+  $('priceVal').textContent=txt;
+  $('priceBar').textContent=txt;
   $('cartCount').textContent=cart.length;
 }
 
 /* =============== AKCE =============== */
 function setModel(k){
   state.model=k;
-  state.width=Math.min(state.width,maxWidth());
-  state.height=Math.min(state.height,MODELS[k].maxH);
+  for(const win of state.windows){
+    win.w=Math.min(win.w,maxWidth(win));
+    win.h=Math.min(win.h,MODELS[k].maxH);
+  }
   update();
 }
-function setSections(n){
-  state.sections=n;
-  state.width=Math.min(state.width,maxWidth());
+function winCount(d){
+  if(d>0&&state.windows.length<8){
+    const last=state.windows[state.windows.length-1];
+    state.windows.push({...last});
+    state.active=state.windows.length-1;
+  }else if(d<0&&state.windows.length>1){
+    state.windows.pop();
+    state.active=Math.min(state.active,state.windows.length-1);
+  }
   update();
 }
-function setDim(dim,val){
-  const m=MODELS[state.model];
+function setWinDim(i,dim,val){
+  const win=state.windows[i], m=MODELS[state.model];
   let v=parseInt(val,10)||0;
-  if(dim==='width') state.width=clamp(v,MIN_W,maxWidth());
-  else state.height=clamp(v,MIN_H,m.maxH);
+  if(dim==='w') win.w=clamp(v,MIN_W,maxWidth(win));
+  else win.h=clamp(v,MIN_H,m.maxH);
+  state.active=i;
+  update();
+}
+function setWinSections(i,n){
+  const win=state.windows[i];
+  win.sections=n;
+  win.w=Math.min(win.w,maxWidth(win));
+  state.active=i;
   update();
 }
 function pickSlat(k){state.slatColor=k;update()}
@@ -691,18 +950,13 @@ function setControl(k){
   update();
 }
 function setAcc(k,d){state.acc[k]=Math.max(0,state.acc[k]+d);update()}
-function setQty(d){state.qty=Math.max(1,state.qty+d);update()}
 function onSim(){
   state.drop=$('dropRange').value/100;
   state.tilt=+$('tiltRange').value;
   $('dropVal').textContent=$('dropRange').value+' %';
   $('tiltVal').textContent=state.tilt+'°';
-  renderScene();
-}
-function toggleNight(){
-  state.night=!state.night;
-  $('nightBtn').textContent=state.night?'☀️':'🌙';
-  renderScene();
+  build3D();
+  if(state.view==='facade') renderFacade();
 }
 
 /* =============== KOŠÍK =============== */
@@ -716,29 +970,32 @@ function openCart(){renderCart();$('cartModal').classList.add('open')}
 function closeCart(){$('cartModal').classList.remove('open')}
 function renderCart(){
   const body=$('cartBody');
-  if(!cart.length){body.innerHTML='<div class="empty">Poptávka je zatím prázdná.<br>Nakonfigurujte žaluzii a přidejte ji tlačítkem dole.</div>';return}
-  let total=0;
+  if(!cart.length){body.innerHTML='<div class="empty">Poptávka je zatím prázdná.<br>Nakonfigurujte žaluzie a přidejte je tlačítkem dole.</div>';return}
+  let lo=0,hi=0;
   const items=cart.map((it,i)=>{
-    const t=totalPrice(it); total+=t;
+    const[a,b]=priceRange(it); lo+=a; hi+=b;
+    const wins=it.windows.map((w,j)=>`<li>Okno ${j+1} <b>${w.w} × ${w.h} mm${w.sections>1?` · ${w.sections} pole`:''}</b></li>`).join('');
     const accs=Object.entries(it.acc).filter(([k,v])=>v>0).map(([k,v])=>`${v}× ${ACCESSORIES[k].name}`).join(', ');
-    const svcs=Object.entries(it.svc).filter(([k,v])=>v).map(([k])=>SERVICES[k].name).join(', ');
+    const svcs=[...Object.entries(it.svc).filter(([k,v])=>v).map(([k])=>SERVICES[k].name)];
     return `<div class="cart-item">
-      <div class="head"><span>${it.qty}× NEVA — lamela ${MODELS[it.model].name}</span><button onclick="removeItem(${i})">Odebrat</button></div>
+      <div class="head"><span>${it.windows.length}× okno — NEVA ${MODELS[it.model].name}</span><button onclick="removeItem(${i})">Odebrat</button></div>
       <ul>
-        <li>Rozměr <b>${it.width} × ${it.height} mm</b></li>
-        <li>Box <b>${MOUNTS[it.mount].name}</b></li>
-        <li>Dělení <b>${it.sections} pole</b></li>
+        ${wins}
+        <li>Box <b>${MOUNTS[it.mount].name}${it.mount==='plaster'?' (vlastní výroba)':''}</b></li>
         <li>Barva lamel <b>${colName(it.slatColor,it.slatCustom)}</b></li>
         <li>Lišty a box <b>${it.frameMode==='same'?'stejná jako lamely':colName(it.frameColor,it.frameCustom)}</b></li>
         <li>Ovládání <b>${CONTROLS[it.control].name}</b></li>
+        ${it.control!=='crank'?`<li>Elektřina <b>${ELEKTRO[it.elektro].name}</b></li>`:''}
         ${accs?`<li>Příslušenství <b>${accs}</b></li>`:''}
-        ${svcs?`<li>Služby <b>${svcs}</b></li>`:''}
-        <li>Orientační cena <b>${czk(t)}</b></li>
+        <li>Zaměření <b>zdarma — provádí se vždy</b></li>
+        ${svcs.length?`<li>Služby <b>${svcs.join(', ')}</b></li>`:''}
+        <li>Orientačně <b>${a.toLocaleString('cs-CZ')} – ${b.toLocaleString('cs-CZ')} Kč</b></li>
       </ul>
     </div>`;
   }).join('');
   body.innerHTML=items+`
-    <div class="cart-total"><span>Celkem (orientačně)</span><span>${czk(total)}</span></div>
+    <div class="cart-total"><span>Celkem orientačně</span><span>${lo.toLocaleString('cs-CZ')} – ${hi.toLocaleString('cs-CZ')} Kč</span></div>
+    <p class="price-note" style="text-align:center;margin-bottom:4px">Přesná cena bude upřesněna finální kalkulací po bezplatném zaměření.</p>
     <form class="form" onsubmit="submitInquiry(event)">
       <input required placeholder="Jméno a příjmení">
       <input required type="email" placeholder="E-mail">
@@ -753,15 +1010,18 @@ function submitInquiry(e){
   e.preventDefault();
   $('cartBody').innerHTML=`<div class="thanks"><div class="ok">✅</div>
     <h3 style="justify-content:center">Děkujeme za poptávku!</h3>
-    <p>V produkční verzi by nyní odešel e-mail obchodníkovi<br>a zákazníkovi rekapitulace konfigurace.</p></div>`;
+    <p>Ozveme se vám a domluvíme <b>bezplatné zaměření</b> —<br>na jeho základě dostanete finální kalkulaci.<br><small>(V produkci by nyní odešel e-mail obchodníkovi.)</small></p></div>`;
   cart.length=0; renderPrice();
 }
 
 /* =============== UPDATE =============== */
 function update(){
-  renderMount(); renderSections(); renderModels(); renderDims(); renderColors();
-  renderControls(); renderAcc(); renderSvc(); renderPrice(); renderScene();
+  renderMount(); renderWindows(); renderModels(); renderColors();
+  renderControls(); renderElektro(); renderAcc(); renderSvc(); renderPrice();
+  build3D();
+  if(state.view==='facade') renderFacade();
 }
+init3D();
 $('sunVal').textContent=sunLabel(state.sun);
 update();
 </script>
