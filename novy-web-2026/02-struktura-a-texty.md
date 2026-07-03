@@ -79,8 +79,13 @@ Obsah, který lidi zastaví. A značku posune tam, kam má namířeno.
 Svět se zrychlil. Web, logo i kampaň dnes vygeneruje kdokoli za odpoledne — a přesně tak taky vypadají.
 Důvěra se ale vygenerovat nedá. Ta se buduje: směrem, vkusem a řemeslem.
 
+# POCTIVÁ PRÁCE JE VIDĚT.
+# TA NEPOCTIVÁ TAKY.
+
+Jsme digitální dílna, ne fabrika. Každý projekt má u nás svého mistra, každý detail projde rukama. Proto se pod práci podepisujeme.
+
 **AI je náš nejrychlejší junior. Kreativní ředitel je pořád člověk.**
-Nástroje nám zrychlily ruce. Hlavu necháváme zapnutou.
+Nástroje se mění, řemeslo zůstává. AI nám zrychlila ruce — hlavu necháváme zapnutou.
 
 ### Sekce: Vybrané práce (3–4 case studies)
 [MOTION] velkoformátové covery, paralaxa, hover reveal výsledku
@@ -144,7 +149,10 @@ Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme spole�
 [ALT] **LOGO JE MÁLO.** / [ALT 2] **ZNAČKY, KTERÉ STOJÍ.** *(dvojsmysl: stojí pevně / stojí za to)*
 
 ### Blok: Jak to probíhá (partner, ne dodavatel)
-**Nezačínáme v grafickém editoru.** Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Strategie, kterou spolu nastavíme, pak řídí každé další rozhodnutí — od loga po kampaň.
+# MĚŘÍME DVAKRÁT.
+# ŘEŽEME JEDNOU.
+
+**Nezačínáme v grafickém editoru.** Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Strategie, kterou spolu nastavíme, pak řídí každé další rozhodnutí — od loga po kampaň. Jako v dobré dílně: nejdřív míra, pak řez.
 
 ### Blok: Co dostanete
 - Strategie značky: positioning, hodnoty, architektura, tón hlasu
@@ -190,6 +198,7 @@ S AI stavíme rychleji a levněji než dřív — a ušetřený čas vracíme ta
 
 ### Blok: Proces (5 kroků s čísly)
 01 Konzultace zdarma → 02 Strategie & wireframe → 03 Design, který schválíte srdcem → 04 Vývoj & animace → 05 Spuštění + péče dál.
+Mikrocopy pod procesem: *Detaily pilujeme, dokud nesedí. Mikroanimace, načítání, každý pixel — řemeslo se pozná v tom, co ostatní ošidí.*
 
 ### Blok: Reference z webů (3 case + loga)
 ### Blok: Cena
@@ -282,6 +291,12 @@ Debono je studio pár lidí, kteří u projektů sedí osobně — od první ski
 ### Blok: Příběh & jméno
 **Debono — z latinského „de bono", o dobrém.** Dobro máme v názvu, tak se snažíme, aby po nás zůstávalo. V práci i ve spolupráci.
 
+### Blok: Rukopis (řemeslo)
+# MÁME SVŮJ RUKOPIS.
+# POZNÁTE HO I BEZ PODPISU.
+
+Říkáme tomu digitální řemeslo: strategii měříme, design pilujeme, animace ladíme do posledního detailu. Vygenerovat se dá ledacos. Rukopis ne.
+
 ### Blok: Čemu věříme (vizionářský manifest, scroll-reveal)
 1. **Průměr je největší konkurent.** Ne AI, ne ceny. Průměr.
 2. **Technologie sprintují, principy stojí.** Důvěra, příběh, řemeslo.
@@ -363,6 +378,14 @@ Vraťte se na hlavní stránku — tam je to lepší. **[Zpátky]**
 - OBSAH BEZ PRODUKCE JE JEN SLIB.
 - PACIENT SI VÁS VYŠETŘÍ DŘÍV, NEŽ VY JEHO.
 - DŮVĚRA SE NEDÁ PŘEDEPSAT. DÁ SE NAVRHNOUT.
+
+**Řemeslo:**
+- POCTIVÁ PRÁCE JE VIDĚT. TA NEPOCTIVÁ TAKY.
+- MÁME SVŮJ RUKOPIS. POZNÁTE HO I BEZ PODPISU.
+- MĚŘÍME DVAKRÁT. ŘEŽEME JEDNOU.
+- ŘEMESLO SE NEDÁ STÁHNOUT.
+- DÍLNA, NE FABRIKA.
+- NÁSTROJE SE MĚNÍ. ŘEMESLO ZŮSTÁVÁ.
 
 **Lidskost & studio:**
 - JSME MALÍ SCHVÁLNĚ.

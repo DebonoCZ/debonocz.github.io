@@ -42,6 +42,7 @@ Pro ambiciózní firmy a kliniky, které vědí, že první dojem rozhoduje, je 
 - **Sebevědomý s nadsázkou, mírně drzý.** Odvaha říct „nejsme pro každého". Nikdy arogantní vůči klientovi — drzost míří na průměr, ne na lidi.
 - **Lidský.** Za studiem jsou vidět konkrétní lidé, jména, ruce. Píšeme, jak mluvíme. **Vykáme** — míříme na větší klienty a do zdravotnictví; drzost zůstává v obsahu, ne ve familiárnosti. (Výjimka: Kariéra, kde mluvíme k budoucím kolegům.)
 - **Krátké údery místo odstavců.** Velká typografická hesla s dvojsmyslem, detail dovysvětlí menší text. (Inspirace Beneš & Michl ano, ale méně textu.)
+- **Řemeslný.** Mluvíme jazykem dílny, ne fabriky: měřit, pilovat, ladit, rukopis, poctivá práce. Řemeslo je protipól „vygenerovaného průměru" — dává drzosti pokoru a AI manifestu důvěryhodnost (nástroje se mění, řemeslo zůstává).
 
 ### AI manifest (jak komunikovat AI)
 Jedna jasná věta, opakovaná napříč webem:
