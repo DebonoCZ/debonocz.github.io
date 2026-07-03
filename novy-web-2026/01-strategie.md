@@ -71,3 +71,17 @@ Web má jediný primární cíl: **domluvená úvodní konzultace** (call/kafe).
 - **Velká typografická hesla** = nízká hustota textu = kontrast vůči benes-michl.cz (líbí se nám pozice, ne upovídanost).
 - **Drzost míří na průměr** („průměr je největší konkurent"), ne na klienta → sympatické, ne odrazující.
 - **AI přiznaná jako nástroj** nás odlišuje od agentur, které o AI mlčí (působí zaspalé), i od těch, které AI prodávají jako kouzlo (působí lacině).
+
+---
+
+## 5. Co potvrdila rešerše trhu (detail v `03-reserse-konkurence-ai.md`)
+
+**Pozice „hrdě lidské řemeslo, akcelerované AI" je v češtině volná.** Trh se rozpadl na tři tábory: enterprise hráči prodávají „AI transformaci" jako službu (Beneš & Michl, Actum, Pixelmate), Justmighty jede AI thought-leadership o rozpočtech, a malá studia včetně celé české Webflow scény (The Compote, Semibold) o AI mlčí. Náš manifest „AI je náš nejrychlejší junior" tuhle mezeru obsazuje. Mezinárodně jde o nejsilnější vzorec roku: WPP staví na „verifiable human creativity", běží „human-made" backlash a heslo zní „taste is the only moat" — vkus je jediná hradba.
+
+**Tři příležitosti navíc, které z rešerše vyplynuly:**
+
+1. **Produkce jako anti-AI trumf.** V době záplavy syntetického obsahu je vlastní foto/video produkce nečekaná zbraň: reálné fotky místo stocku zvedají čas na webu o ~34 % a snižují bounce o ~18 %. Nabídnout „web + skutečné vizuály vaší firmy natočené lidmi" jako balíček — z malých studií to nedělá nikdo. (Na LP Produkce a Pro kliniky už zapracováno.)
+2. **Ekonomický argument po vzoru Justmighty, ale pro weby:** „AI nám zlevnila rutinu — úsporu vracíme do strategie, designu a animací, ne do marže." U webů to česky nikdo neříká. Souvisí s trendem konce hodinovky („time-and-materials is dead") → cenit za výstup/výsledek.
+3. **AEO jako nová služba.** Webflow má nativní Answer Engine Optimization — „aby vás doporučil i ChatGPT" je srozumitelná, prodejná služba, kterou česky skoro nikdo nenabízí. Zvážit jako blok na LP Tvorba webů, případně samostatnou mikro-LP.
+
+**Čeho se vyvarovat:** generické „AI-powered" bez důkazu (už je to klišé) a nepřipravenost na otázku „proč nestačí Lovable za 20 dolarů" — odpověď (struktura, CMS, SEO/AEO, konverze, značka, vkus) mít veřejně na webu, např. ve FAQ na LP Tvorba webů.
