@@ -1,8 +1,10 @@
-# Debono 2026 — Struktura webu a texty
+# Debono 2026 — Struktura webu a texty (v2)
 
 > Texty jsou psané rovnou „na čisto" — připravené k nalití do šablony Alture.
 > Poznámky `[MOTION]` = doporučení pro animaci, `[ALT]` = alternativní varianta textu.
-> Tykáme. Hesla se sazí VELKOU typografií, doprovodné texty malé a krátké.
+> **Vykáme** (větší klienti, zdravotnictví). Jediná výjimka: Kariéra — tam mluvíme k budoucím kolegům, tykání je na místě.
+> Hesla se sazí VELKOU typografií, doprovodné texty malé a krátké.
+> **Rámec v2:** Debono = strategický partner. Strategii nastavujeme s klientem společně; web, identita, kampaň nebo video jsou média, kterými ji umíme dodat.
 
 ---
 
@@ -13,8 +15,8 @@
 | Homepage | `/` | Home |
 | Studio (o nás + AI manifest) | `/studio` | Studio |
 | Služby — rozcestník | `/sluzby` | Works layout (grid) nebo vlastní |
-| LP Tvorba webů | `/sluzby/tvorba-webu` | duplikát Studio/Works layoutu |
-| LP Vizuální identita | `/sluzby/vizualni-identita` | dtto |
+| LP Značka & strategie | `/sluzby/znacka-a-strategie` | duplikát Studio/Works layoutu |
+| LP Tvorba webů | `/sluzby/tvorba-webu` | dtto |
 | LP Produkce foto & video | `/sluzby/produkce` | dtto |
 | LP Social media & kampaně | `/sluzby/social-media` | dtto |
 | Weby pro kliniky (segment) | `/pro-kliniky` | dtto |
@@ -33,17 +35,17 @@
 ## 1. HOMEPAGE
 
 ### Hero
-[MOTION] Slova hesla nabíhají po řádcích, „dojem" se pak přepíše/rozpadne a složí zpět — ukázka typografické hry hned v prvních 3 vteřinách. Custom cursor trail ze šablony ponechat.
+[MOTION] Slova hesla nabíhají po řádcích; otazník se vykreslí jako poslední (tah linky). Custom cursor trail ze šablony ponechat.
 
-# NEDĚLÁME WEBY.
-# DĚLÁME DOJEM.
+# NEJSTE PRŮMĚRNÍ.
+# TAK PROČ TAK VYPADAT?
 
-Značky, weby a kampaně pro firmy, které nechtějí být průměrné.
+Jsme strategický partner značek, které chtějí vyčnívat. Směr nastavíme společně — a pak ho dodáme v médiu, které dává smysl: značka, web, kampaň, video.
 
 **[Začít projekt]**   [Podívat se na práci ↓]
 
-[ALT hero 1] **PRŮMĚR SI VYGENERUJEŠ SÁM.** / My umíme to ostatní.
-[ALT hero 2] **K NEPŘEHLÉDNUTÍ.** / Značky a weby, které si dovolí vyčnívat.
+[ALT hero 1] **VYČNÍVAT NENÍ DRZOST. JE TO STRATEGIE.**
+[ALT hero 2] **PRŮMĚR SI VYGENERUJETE SAMI.** / My umíme to ostatní.
 
 ### Pás důvěry (hned pod hero)
 [MOTION] nekonečný marquee log
@@ -51,29 +53,31 @@ Značky, weby a kampaně pro firmy, které nechtějí být průměrné.
 
 > **9 z 10 poptávek u nás končí spoluprací.** Ne proto, že bychom byli levní.
 
-### Sekce: Co děláme (4 dlaždice → LP)
+### Sekce: Jak pracujeme (strategie → média)
+Úvodní věta sekce (malá): *Nezačínáme u webu. Začínáme u otázky, kam chcete značku dostat. Teprve pak vybíráme média.*
+
 [MOTION] dlaždice s hover video-preview, čísla 01–04
 
-**01 — Weby**
-Rychlé, krásné a konverzní. Ve Webflow, bez kompromisů.
+**01 — Značka & strategie**
+Směr, příběh a identita. Základ, ze kterého roste všechno ostatní.
 
-**02 — Vizuální identita**
-Značka, kterou poznáte i bez loga.
+**02 — Weby & digitální produkty**
+Strategie přeložená do média, které prodává 24/7. Ve Webflow, bez kompromisů.
 
 **03 — Produkce**
 Foto, video a výroba. Vlastníma rukama, ne přes tři dodavatele.
 
 **04 — Social media & kampaně**
-Obsah, který lidi zastaví. A značku posune.
+Obsah, který lidi zastaví. A značku posune tam, kam má namířeno.
 
 ### Sekce: Proč Debono (manifest)
-[MOTION] velké věty se odhalují při scrollu (scroll-triggered reveal, jedna věta = jedna obrazovka nebo scrub)
+[MOTION] velké věty se odhalují při scrollu (scroll-triggered reveal)
 
 # VYČNÍVAT NENÍ DRZOST.
 # JE TO STRATEGIE.
 
-Svět se zrychlil. Web dnes vygeneruje kdokoli za odpoledne — a přesně tak taky vypadá.
-Důvěra se ale vygenerovat nedá. Ta se buduje: vkusem, příběhem a řemeslem.
+Svět se zrychlil. Web, logo i kampaň dnes vygeneruje kdokoli za odpoledne — a přesně tak taky vypadají.
+Důvěra se ale vygenerovat nedá. Ta se buduje: směrem, vkusem a řemeslem.
 
 **AI je náš nejrychlejší junior. Kreativní ředitel je pořád člověk.**
 Nástroje nám zrychlily ruce. Hlavu necháváme zapnutou.
@@ -89,17 +93,17 @@ CTA: [Všechny práce →]
 # DODAVATELE VYMĚNÍTE.
 # PARTNERA NE.
 
-Nefakturujeme hodiny, stavíme značky. Od první skici po výrobu — návrh, web, fotky, video i tisk pod jednou střechou. Proto s námi klienti zůstávají roky.
+Dodavatel splní zadání. Partner se ptá, jestli je to zadání správně. Strategii tvoříme s vámi — a neseme za ni spoluzodpovědnost od první skici po výrobu: návrh, web, fotky, video i tisk pod jednou střechou.
 
-→ mini-timeline spolupráce: **Ozveš se → do 24 h voláme → do týdne víš, co, kdy a za kolik.**
+→ mini-timeline spolupráce: **Ozvete se → do 24 hodin voláme → do týdne víte, co, kdy a za kolik.**
 
 ### Sekce: Kdo za tím je (lidskost)
 [MOTION] fotky týmu z natáčení/studia, syrové, ne stock; hover přepne na „behind the scenes" záběr
 
 # ŽÁDNÁ AGENTURNÍ MAŠINA.
-# LIDI, CO TO ŽEROU.
+# LIDI, KTEŘÍ TO ŽEROU.
 
-Jsme malé studio. To znamená: mluvíš přímo s lidmi, kteří tvůj projekt opravdu dělají. Žádný account manager na telefonu, žádná tichá pošta.
+Jsme malé studio. To znamená: mluvíte přímo s lidmi, kteří váš projekt opravdu dělají. Žádný account manager na telefonu, žádná tichá pošta.
 
 ### Závěrečné CTA
 # TAK CO,
@@ -115,33 +119,65 @@ První schůzka je nezávazná. Kafe platíme my.
 
 ## 2. SLUŽBY — rozcestník `/sluzby`
 
-# UMÍME TOHO DOST.
-# ALE NE VŠECHNO PRO KAŽDÉHO.
+# NEJDŘÍV SMĚR.
+# PAK MÉDIUM.
 
-Nejsme full-service supermarket. Děláme čtyři věci — a děláme je pořádně.
+Neprodáváme hodiny ani šablony. Nejdřív spolu nastavíme, kam má vaše značka dojít — a teprve pak vybereme, čím se tam dostane: web, identita, kampaň, video.
 
-→ 4 velké bloky (weby / identita / produkce / social) s heslem, 3 body a odkazem na LP.
-→ Dole: „Nevíš, co přesně potřebuješ? Od toho je první schůzka. **[Probrat záměr]**"
+→ 4 velké bloky (značka & strategie / weby / produkce / social) s heslem, 3 body a odkazem na LP.
+→ Dole: „Nevíte, co přesně potřebujete? Přesně od toho je první schůzka. **[Probrat záměr]**"
 
 ---
 
-## 3. LP TVORBA WEBŮ `/sluzby/tvorba-webu`
+## 3. LP ZNAČKA & STRATEGIE `/sluzby/znacka-a-strategie`
 
-*Nejdůležitější stránka webu — největší divize.*
+*Vlajková loď positioningu „strategický partner" — vizuální identita je tu součástí většího celku.*
+
+### Hero
+# ZNAČKA NENÍ LOGO.
+# JE TO ROZHODNUTÍ.
+
+Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme společně — a pak mu dáme tvář: identitu, tón hlasu a příběh, který se pozná.
+
+**[Chci silnou značku]**
+
+[ALT] **LOGO JE MÁLO.** / [ALT 2] **ZNAČKY, KTERÉ STOJÍ.** *(dvojsmysl: stojí pevně / stojí za to)*
+
+### Blok: Jak to probíhá (partner, ne dodavatel)
+**Nezačínáme v grafickém editoru.** Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Strategie, kterou spolu nastavíme, pak řídí každé další rozhodnutí — od loga po kampaň.
+
+### Blok: Co dostanete
+- Strategie značky: positioning, hodnoty, architektura, tón hlasu
+- Vizuální identita: logo, barvy, typografie, vizuální jazyk
+- Brandbook, podle kterého se dá skutečně pracovat
+- Aplikace do světa: web, socky, tiskoviny, prostor — umíme vyrobit vše, co navrhneme
+
+### Blok: Heslo
+# NEJDŘÍV BUDEME POSLOUCHAT MY VÁS.
+# PAK TRH VÁS.
+
+### Reference: Nepanikař (rebrand appky, 10 000+ uživatelů), Albistech, KM Publicity, Zlatá Studna…
+### Cena od, FAQ, CTA **[Probrat značku]**
+
+---
+
+## 4. LP TVORBA WEBŮ `/sluzby/tvorba-webu`
+
+*Obchodně nejsilnější stránka — ale i tady: web je médium strategie, ne produkt sám o sobě.*
 
 ### Hero
 # WEB JE VÁŠ NEJPILNĚJŠÍ OBCHODNÍK.
 # NENECHTE HO KOKTAT.
 
-Tvoříme weby ve Webflow, které vzbuzují důvěru na první pohled a prodávají, i když spíte.
+Tvoříme weby ve Webflow, které vzbuzují důvěru na první pohled a prodávají, i když spíte. Postavené na strategii, ne na pocitu.
 
 **[Chci konverzní web]**
 
 [ALT] **WEBY, KTERÉ SE NEČERVENAJÍ.** / Rychlé, krásné, konverzní.
 
 ### Blok: Pro koho to je / není (drzý filtr — šetří čas oběma stranám)
-**Jsi tu správně, pokud:** chceš vyčnívat · web je pro tebe obchodní nástroj, ne vizitka · zajímá tě výsledek, ne počet revizí.
-**Nejsi tu správně, pokud:** hledáš nejlevnější nabídku · chceš kopii konkurence · potřebuješ to „do pátku".
+**Jste tu správně, pokud:** chcete vyčnívat · web je pro vás obchodní nástroj, ne vizitka · zajímá vás výsledek, ne počet revizí.
+**Nejste tu správně, pokud:** hledáte nejlevnější nabídku · chcete kopii konkurence · potřebujete to „do pátku".
 
 ### Blok: Proč Webflow (stručně, 4 karty)
 Rychlost načtení · Bezpečnost bez pluginů · Snadná správa obsahu · Animace, které WordPress neumí.
@@ -150,40 +186,17 @@ Rychlost načtení · Bezpečnost bez pluginů · Snadná správa obsahu · Anim
 # AI NÁM PÍŠE KÓD.
 # CO NAPSAT, ŘÍKÁME MY.
 
-S AI stavíme rychleji a levněji než dřív — a ten čas navíc investujeme tam, kde AI nestačí: do strategie, textů a designu, který se pozná.
+S AI stavíme rychleji a levněji než dřív — a ušetřený čas vracíme tam, kde AI nestačí: do strategie, textů a designu, který se pozná. Do naší marže ne.
 
 ### Blok: Proces (5 kroků s čísly)
-01 Konzultace zdarma → 02 Strategie & wireframe → 03 Design, který schválíš srdcem → 04 Vývoj & animace → 05 Spuštění + péče dál.
+01 Konzultace zdarma → 02 Strategie & wireframe → 03 Design, který schválíte srdcem → 04 Vývoj & animace → 05 Spuštění + péče dál.
 
 ### Blok: Reference z webů (3 case + loga)
 ### Blok: Cena
-**Web od 150 000 Kč.** Přesně podle rozsahu — po první schůzce dostaneš nabídku na míru do týdne. *(částku doplnit dle reality)*
+**Web od 150 000 Kč.** Přesně podle rozsahu — po první schůzce dostanete nabídku na míru do týdne. *(částku doplnit dle reality)*
 
-### FAQ (5–6 otázek: termíny, správa, SEO, texty, co když mám logo…)
+### FAQ (5–6 otázek: termíny, správa, SEO/AEO, texty, „proč nestačí AI builder za pár dolarů"…)
 ### CTA: **[Začít projekt]** + kalendář
-
----
-
-## 4. LP VIZUÁLNÍ IDENTITA `/sluzby/vizualni-identita`
-
-### Hero
-# LOGO JE MÁLO.
-
-Stavíme značky, které poznáte i bez něj. Barvy, typografie, tón hlasu — celý charakter.
-
-**[Chci silnou značku]**
-
-[ALT] **ZNAČKY, KTERÉ STOJÍ.** *(dvojsmysl: stojí pevně / stojí za to)*
-
-### Bloky
-- **Co dostaneš:** logo & logomanuál · barevnost & typografie · tone of voice · šablony (prezentace, socky, tiskoviny) · brandbook, podle kterého se dá skutečně pracovat.
-- **Proces:** poznání firmy (workshop) → koncepty → rozpracování → manuál → aplikace do světa (web, tisk, prostor).
-- **Dvojsmysl sekce:**
-  # NEJDŘÍV VÁS BUDEME POSLOUCHAT.
-  # PAK VÁS BUDE POSLOUCHAT TRH.
-- **Reference:** Nepanikař (rebrand appky, 10 000+ uživatelů), Albistech, KM Publicity, Zlatá Studna…
-- **Návaznost:** „Identita bez aplikace je jen PDF. Rovnou ji oblečeme na web, socky i fasádu." → propojení na produkci/weby.
-- Cena od, FAQ, CTA.
 
 ---
 
@@ -203,6 +216,7 @@ Vlastní produkce od moodboardu po finální spot. A když je potřeba polep, ba
 - **Heslo sekce:**
   # OBSAH BEZ PRODUKCE
   # JE JEN SLIB.
+- **Anti-AI trumf:** V záplavě vygenerovaného obsahu jsou skutečné fotky vašich lidí a prostor konkurenční výhoda. Natočené lidmi, u vás.
 - Ukázky (video grid s hover-play), reference, cena od, CTA.
 
 ---
@@ -215,18 +229,18 @@ Vlastní produkce od moodboardu po finální spot. A když je potřeba polep, ba
 
 Obsah, který lidi zastaví palcem. Strategie, produkce i správa sítí — s vlastním foto/video zázemím.
 
-**[Chci obsah, co zastaví]**
+**[Chci obsah, který zastaví]**
 
 ### Bloky
-- Co dostaneš: obsahová strategie · plán & výroba obsahu (vlastní produkce!) · správa profilů · reporting bez balastu.
-- Heslo: **„Pokud nechceš platit velkou produkci, ale chceš dobrej content — napiš nám."** *(už používáte na sockách, funguje)*
+- Co dostanete: obsahová strategie · plán & výroba obsahu (vlastní produkce!) · správa profilů · reporting bez balastu.
+- Heslo: **„Nechcete platit velkou produkci, ale chcete dobrý content? Napište nám."**
 - Reference (Laptime…), ukázky formátů, cena od, CTA.
 
 ---
 
 ## 7. SEGMENT: WEBY PRO KLINIKY `/pro-kliniky`
 
-*Mluvíme jazykem zdravotnictví, ne jazykem agentury.*
+*Mluvíme jazykem zdravotnictví, ne jazykem agentury. Vykání je tu zásadní.*
 
 ### Hero
 # PACIENT SI VÁS VYŠETŘÍ DŘÍV,
@@ -286,9 +300,9 @@ X let · Y projektů · 9/10 poptávek → spolupráce · klienti od startupů p
 
 ## 9. PRÁCE `/prace` + case study šablona
 
-Intro: # MLUVIT UMÍ KAŽDÝ. UKAZUJEME.
+Intro: # MLUVIT UMÍ KAŽDÝ. MY UKAZUJEME.
 
-Filtry: Weby · Identita · Produkce · Kampaně · Zdravotnictví
+Filtry: Značka & strategie · Weby · Produkce · Kampaně · Zdravotnictví
 
 **Case study (CMS šablona):**
 1. Hero cover + klient, rok, služby
@@ -305,9 +319,9 @@ Prioritní case studies k sepsání: IKEM Online · Škoda Auto · Nepanikař ·
 # NEKOUSNEME.
 # NAOPAK — KAFE PLATÍME MY.
 
-Napiš nám pár vět o svém záměru. Do 24 hodin se ozveme, do týdne víš, co, kdy a za kolik.
+Napište nám pár vět o svém záměru. Do 24 hodin se ozveme, do týdne víte, co, kdy a za kolik.
 
-**Formulář (3 pole):** Jméno · E-mail/telefon · „Co tě pálí?"
+**Formulář (3 pole):** Jméno · E-mail/telefon · „Co vás pálí?"
 **Vedle:** přímá rezervace termínu (kalendář) + telefon a mail na Jirku s fotkou.
 Mikrocopy pod tlačítkem: *Žádný spam, žádný obchodní kolotoč. Ozve se člověk.*
 
@@ -315,7 +329,7 @@ Mikrocopy pod tlačítkem: *Žádný spam, žádný obchodní kolotoč. Ozve se 
 
 ## 11. KARIÉRA `/kariera`
 
-Zachovat současné (funguje skvěle, ladí s novým tónem):
+Zachovat současné — jediná stránka, kde tykáme (mluvíme k budoucím kolegům, ne ke klientům):
 # NEHLEDÁME DALŠÍ KOLEČKO DO AGENTURNÍ MAŠINY.
 Hledáme lidi, kteří chtějí dělat práci, která je vidět.
 
@@ -326,24 +340,33 @@ Hledáme lidi, kteří chtějí dělat práci, která je vidět.
 # TAHLE STRÁNKA JE PRŮMĚRNÁ.
 # PROTO JSME JI SMAZALI.
 
-Vrať se na hlavní stránku — tam je to lepší. **[Zpátky]**
+Vraťte se na hlavní stránku — tam je to lepší. **[Zpátky]**
 
 ---
 
 ## 13. Zásobník hesel (dvojsmysly k dalšímu použití)
 
-- NEDĚLÁME WEBY. DĚLÁME DOJEM.
-- PRŮMĚR SI VYGENERUJEŠ SÁM.
-- NEJSME PRO KAŽDÉHO. NAŠTĚSTÍ.
-- ZNAČKY, KTERÉ STOJÍ.
+**Strategická (hlavní úroveň):**
+- NEJSTE PRŮMĚRNÍ. TAK PROČ TAK VYPADAT?
 - VYČNÍVAT NENÍ DRZOST. JE TO STRATEGIE.
-- AI NÁM ZRYCHLILA RUCE. HLAVU NECHÁVÁME ZAPNUTOU.
-- ROBOTI POMÁHAJÍ. PODEPISUJEME SE MY.
+- PRŮMĚR SI VYGENERUJETE SAMI.
+- NEJDŘÍV SMĚR. PAK MÉDIUM.
+- ZNAČKA NENÍ LOGO. JE TO ROZHODNUTÍ.
 - DODAVATELE VYMĚNÍTE. PARTNERA NE.
+- NEJDŘÍV BUDEME POSLOUCHAT MY VÁS. PAK TRH VÁS.
+- ZNAČKY, KTERÉ STOJÍ.
+
+**Servisní (úroveň LP):**
+- WEB JE VÁŠ NEJPILNĚJŠÍ OBCHODNÍK. NENECHTE HO KOKTAT.
+- AI NÁM PÍŠE KÓD. CO NAPSAT, ŘÍKÁME MY.
+- AI NÁM ZRYCHLILA RUCE. HLAVU NECHÁVÁME ZAPNUTOU.
+- OBSAH BEZ PRODUKCE JE JEN SLIB.
 - PACIENT SI VÁS VYŠETŘÍ DŘÍV, NEŽ VY JEHO.
 - DŮVĚRA SE NEDÁ PŘEDEPSAT. DÁ SE NAVRHNOUT.
-- LOGO JE MÁLO.
-- OBSAH BEZ PRODUKCE JE JEN SLIB.
-- MLUVIT UMÍ KAŽDÝ. UKAZUJEME.
-- DOBRO MÁME V NÁZVU.
+
+**Lidskost & studio:**
 - JSME MALÍ SCHVÁLNĚ.
+- ŽÁDNÁ AGENTURNÍ MAŠINA. LIDI, KTEŘÍ TO ŽEROU.
+- MLUVIT UMÍ KAŽDÝ. MY UKAZUJEME.
+- DOBRO MÁME V NÁZVU.
+- NEKOUSNEME. NAOPAK — KAFE PLATÍME MY.

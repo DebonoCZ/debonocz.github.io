@@ -23,12 +23,14 @@ Když si průměrný web vygeneruje kdokoli za odpoledne, klient už neplatí za
 ## 2. Pozice: Partner pro ty, kdo nechtějí být průměrní
 
 ### Hlavní myšlenka (big idea)
-**„Průměr si dnes vygeneruješ sám. My děláme to ostatní."**
+**„Průměr si dnes vygenerujete sami. My umíme to ostatní."**
 
 Neboli: nekonkurujeme AI builderům cenou ani rychlostí — hrajeme jinou ligu. Debono je pro firmy, které chtějí vyčnívat. To přesně sedí na brief: *„pokud nechceš být průměrný, jsi tu správně."*
 
+**Hierarchie sdělení (v2):** Debono je především **strategický partner**. Strategie je něco, co s klientem společně nastavíme a vytvoříme — web, identita, kampaň či video jsou pak média, kterými ji umíme dodat (a díky vlastní produkci i vyrobit). Hlavní hesla proto mluví o směru, značce a vyčnívání; „webová" hesla patří až na úroveň servisních landing pages.
+
 ### Positioning statement (interní, ne na web)
-Pro ambiciózní firmy a kliniky, které vědí, že první dojem rozhoduje, je Debono kreativní partner, který spojuje strategii, design a produkci do značek a webů budících důvěru na první pohled. Na rozdíl od AI nástrojů a webových fabrik neprodáváme hodiny ani šablony — neseme spoluzodpovědnost za výsledek.
+Pro ambiciózní firmy a kliniky, které vědí, že první dojem rozhoduje, je Debono strategický a kreativní partner: společně nastavíme směr značky a pak ho dodáme v médiích, která dávají smysl — identita, web, kampaň, produkce. Na rozdíl od AI nástrojů a webových fabrik neprodáváme hodiny ani šablony — neseme spoluzodpovědnost za výsledek.
 
 ### Tři pilíře přidané hodnoty (proč my, když je AI)
 1. **Vkus se nedá vygenerovat.** AI nástroje používáme denně — zrychlují nám ruce, ne úsudek. Rozdíl mezi „hotovo" a „wow" je pořád lidská práce.
@@ -38,7 +40,7 @@ Pro ambiciózní firmy a kliniky, které vědí, že první dojem rozhoduje, je 
 ### Tón hlasu (tone of voice)
 - **Vizionářský, ne buzzwordový.** Mluvíme o tom, kam svět jde, ale konkrétně.
 - **Sebevědomý s nadsázkou, mírně drzý.** Odvaha říct „nejsme pro každého". Nikdy arogantní vůči klientovi — drzost míří na průměr, ne na lidi.
-- **Lidský.** Za studiem jsou vidět konkrétní lidé, jména, ruce. Píšeme, jak mluvíme. Tykáme.
+- **Lidský.** Za studiem jsou vidět konkrétní lidé, jména, ruce. Píšeme, jak mluvíme. **Vykáme** — míříme na větší klienty a do zdravotnictví; drzost zůstává v obsahu, ne ve familiárnosti. (Výjimka: Kariéra, kde mluvíme k budoucím kolegům.)
 - **Krátké údery místo odstavců.** Velká typografická hesla s dvojsmyslem, detail dovysvětlí menší text. (Inspirace Beneš & Michl ano, ale méně textu.)
 
 ### AI manifest (jak komunikovat AI)
