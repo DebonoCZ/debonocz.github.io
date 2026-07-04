@@ -191,6 +191,17 @@
   body.js .ring{ display:block; width:38px; height:38px; border:1.5px solid var(--accent); opacity:.5; transform:translate(-50%,-50%); }
   @media (hover:none){ .dot,.ring{ display:none !important; } }
 
+
+  /* FAQ akordeon (bez JS) */
+  .faq{ margin-top:36px; border-top:1px dotted var(--dot); }
+  .faq details{ border-bottom:1px dotted var(--dot); }
+  .faq summary{ cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;
+    gap:16px; padding:22px 4px; font-weight:700; font-size:1.05rem; letter-spacing:-.01em; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{ content:"+"; font-weight:400; font-size:1.5rem; color:var(--accent); transition:transform .25s ease; flex:none; }
+  .faq details[open] summary::after{ transform:rotate(45deg); }
+  .faq details p{ margin:0 0 22px; padding:0 4px; color:var(--muted); font-size:.97rem; }
+
   .stat{ font-size:1.05rem; margin-top:22px; }
   .stat b{ color:var(--accent); }
   .crumb{ display:inline-flex; align-items:center; gap:10px; font:600 .72rem/1 ui-monospace,Menlo,monospace;
@@ -474,9 +485,17 @@
   <div class="wrap">
     <a class="crumb" href="#sluzby">← Služby / Vizuální identita</a>
     <h1 class="display h-hero rv">Logo <span class="alt">je málo.</span></h1>
-    <span class="anno">HERO LP · Kolem hesla se postupně poskládají prvky identity (barva, typografie, vzor) — ukázka, že značka je víc než logo.</span>
-    <p class="lede rv d1">Identita, kterou lidé poznají i bez loga: barvy, typografie, vizuální jazyk. Konzistentně všude — od webu po fasádu.</p>
-    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci být k poznání</a></div>
+    <span class="anno">HERO LP · Kolem hesla se postupně poskládají prvky identity (barva, typografie, vzor) — značka je víc než logo.</span>
+    <p class="lede rv d1">Identita, kterou lidé poznají i bez loga: barvy, typografie, vizuální jazyk a tón hlasu. Konzistentně všude — od webu po fasádu.</p>
+    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci být k poznání</a><a class="btn ghost" href="#prace">Ukázky identit</a></div>
+  </div>
+</section>
+<section class="paper">
+  <div class="wrap">
+    <p class="eyebrow rv">Proč to děláme jinak</p>
+    <h2 class="display h-big rv">Značku stavíme tam,<br>kde bude žít: <span class="alt">na webu.</span></h2>
+    <span class="anno">WEB-FIRST BRANDING · Přístup po vzoru Refokus („web-first approach"): identita se navrhuje rovnou v aplikaci na web, ne v teoretickém PDF. Vizuál sekce: split-screen — vlevo mrtvá stránka manuálu, vpravo živý web z ní.</span>
+    <p class="lede rv d1">Většina manuálů vznikne v PDF a rozpadne se při prvním použití. My identitu navrhujeme rovnou tam, kde se s ní vaši zákazníci potkají nejčastěji — na webu, na sítích, na obalu. Co neobstojí v praxi, nejde do manuálu.</p>
   </div>
 </section>
 <section>
@@ -490,12 +509,34 @@
     </div>
   </div>
 </section>
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Co dostanete do ruky</p>
+    <span class="anno">DELIVERABLES · Refokus vzor: konkrétní seznam, žádné mlžení. Vizuál: fotka vytištěného brandbooku a aplikací — ne mockupy ze stocku.</span>
+    <div class="cols">
+      <div class="panel rv"><h4>Základ značky</h4><ul class="list ok"><li>Logo a jeho verze pro všechna použití</li><li>Barevnost a typografie (s licencí písem)</li><li>Vizuální jazyk: grafické prvky, fotostyl</li></ul></div>
+      <div class="panel rv d1"><h4>Hlas značky</h4><ul class="list ok"><li>Tón hlasu s příklady, jak psát</li><li>Klíčová sdělení pro web i obchod</li></ul></div>
+      <div class="panel rv d2"><h4>Do praxe</h4><ul class="list ok"><li>Brandbook, podle kterého se dá pracovat</li><li>Šablony: prezentace, socky, tiskoviny</li><li>Aplikace na web — rovnou v návrhu</li></ul></div>
+    </div>
+  </div>
+</section>
 <section class="paper">
   <div class="wrap">
-    <h2 class="display h-big rv">Nejdřív budeme poslouchat my vás.<br><span style="color:var(--accent-deep)">Pak trh vás.</span></h2>
-    <span class="anno">HESLO · Dvě části hesla přijedou proti sobě (první zleva, druhá zprava) a „zaklapnou" na místo.</span>
-    <p class="rv d1">Reference: Nepanikař (rebrand aplikace, 10 000+ uživatelů) · Albistech · KM Publicity · Zlatá Studna</p>
-    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat identitu</a><a class="btn ghost" href="#prace">Ukázky práce</a></div>
+    <h2 class="display h-big rv">Nejdřív budeme poslouchat my vás.<br><span class="alt">Pak trh vás.</span></h2>
+    <p class="lede rv d1">Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Návrh stavíme z vás, ne z trendů — proto se v něm poznáte.</p>
+    <p class="rv d1" style="color:#A9A9B2">Reference: Nepanikař (rebrand aplikace, 10 000+ uživatelů) · Albistech · KM Publicity · Zlatá Studna</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Na co se ptáte</p>
+    <div class="faq rv">
+      <details><summary>Máme logo, potřebujeme jen „zbytek". Jde to?</summary><p>Jde. Uděláme audit toho, co máte, logo zachováme a dostavíme systém okolo — barvy, typografii, jazyk, šablony.</p></details>
+      <details><summary>Jak dlouho identita trvá?</summary><p>4–8 týdnů podle rozsahu. Workshop → koncepty → rozpracování → brandbook a šablony.</p></details>
+      <details><summary>Poznáme se v novém vizuálu?</summary><p>Ano — právě proto začínáme u vás, ne u trendů. Návrh vždy umíme obhájit: každé rozhodnutí má důvod opřený o strategii.</p></details>
+      <details><summary>Kolik to stojí?</summary><p>Od X Kč podle rozsahu. Po první schůzce dostanete do týdne nabídku na míru. <em>(doplnit)</em></p></details>
+    </div>
+    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat identitu</a></div>
   </div>
 </section>
 </article>
@@ -505,9 +546,24 @@
   <div class="wrap">
     <a class="crumb" href="#sluzby">← Služby / Tvorba webů</a>
     <h1 class="display h-hero rv">Web je váš nejpilnější obchodník.<br><span class="alt">Nenechte ho koktat.</span></h1>
-    <span class="anno">HERO LP · Druhý řádek se vypisuje jako text s kurzorem a jednou „koktavě" zadrhne + opraví se (typewriter s backspace) — dvojsmysl v motion podobě.</span>
-    <p class="lede rv d1">Tvoříme weby ve Webflow, které vzbuzují důvěru na první pohled a prodávají, i když spíte. Postavené na strategii, ne na pocitu.</p>
-    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci konverzní web</a></div>
+    <span class="anno">HERO LP · Druhý řádek jako typewriter, jednou „koktavě" zadrhne a opraví se. Pod hero pás mini-důkazů.</span>
+    <p class="lede rv d1">Tvoříme weby ve Webflow, které vzbuzují důvěru na první pohled a prodávají, i když spíte. Krásný a konverzní není protiklad — je to zadání.</p>
+    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci konverzní web</a><a class="btn ghost" href="#prace">Ukázky webů</a></div>
+    <p class="stat rv d3"><b>9/10</b> poptávek → spolupráce · weby pro <b>IKEM</b> i rodinné firmy · od návrhu po spuštění <b>pod jednou střechou</b></p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Co všechno váš web umí mít</p>
+    <span class="anno">SCHOPNOSTI · À la Refokus: grid karet psaných přes přínos. Na hover mikroukázka (GIF/video) dané schopnosti — např. u animací se karta sama rozanimuje.</span>
+    <div class="cols">
+      <div class="panel rv"><h4>Design, který prodává</h4><p style="font-size:.92rem">Každá sekce má obchodní úkol. Vedeme oko návštěvníka tam, kam potřebujete — k poptávce.</p></div>
+      <div class="panel rv d1"><h4>Animace &amp; mikrointerakce</h4><p style="font-size:.92rem">Od jemných detailů po velké momenty. Wow efekt, který neshodí rychlost.</p></div>
+      <div class="panel rv d2"><h4>Správa bez programátora</h4><p style="font-size:.92rem">Webflow CMS zvládne i recepce. Texty, ceníky a novinky si měníte sami — zaškolíme vás.</p></div>
+      <div class="panel rv"><h4>SEO &amp; AEO</h4><p style="font-size:.92rem">Aby vás našel Google — a doporučil i ChatGPT. Struktura a data připravená na AI vyhledávání.</p></div>
+      <div class="panel rv d1"><h4>Napojení, které šetří práci</h4><p style="font-size:.92rem">Formuláře, rezervace, CRM, fakturace. Web, který zapadne do vašich procesů.</p></div>
+      <div class="panel rv d2"><h4>Rychlost a bezpečí</h4><p style="font-size:.92rem">Žádné pluginy, žádné záplaty. Načtení pod 2 vteřiny i s animacemi.</p></div>
+    </div>
   </div>
 </section>
 <section>
@@ -521,20 +577,19 @@
         <li>hledáte nejlevnější nabídku</li><li>chcete kopii konkurence</li><li>potřebujete to „do pátku"</li>
       </ul></div>
     </div>
-    <span class="anno">FILTR · Panely se odhalí současně jako dvě karty; u „✕" jemné zatřesení na hover. Sekce šetří čas — kvalifikuje poptávky.</span>
   </div>
 </section>
 <section class="paper">
   <div class="wrap">
     <p class="eyebrow rv">AI upřímně</p>
-    <h2 class="display h-big rv">AI nám píše kód.<br>Co napsat, říkáme my.</h2>
-    <p class="rv d1">S AI stavíme rychleji a levněji než dřív — a ušetřený čas vracíme tam, kde AI nestačí: do strategie, textů a designu, který se pozná. Do naší marže ne.</p>
-    <span class="anno">AI BLOK · Na pozadí proudí jemný „kód" (nízký kontrast), který se při scrollu složí do čisté typografie — z šumu vzniká řád.</span>
+    <h2 class="display h-big rv">AI nám píše kód.<br><span class="alt">Co napsat, říkáme my.</span></h2>
+    <p class="lede rv d1">S AI stavíme rychleji a levněji než dřív — a ušetřený čas vracíme tam, kde AI nestačí: do strategie, textů a designu, který se pozná. Do naší marže ne.</p>
   </div>
 </section>
 <section>
   <div class="wrap">
-    <p class="eyebrow rv">Proces</p>
+    <p class="eyebrow rv">Jak web vzniká</p>
+    <span class="anno">PROCES · Kartičky přes sebe (sticky stacking) — stejný vzor jako metoda MÍRA na homepage, tady v 5 krocích.</span>
     <div class="timeline">
       <div class="tstep rv"><span class="no">01</span><p>Konzultace zdarma</p></div>
       <div class="tstep rv d1"><span class="no">02</span><p>Strategie &amp; wireframe</p></div>
@@ -542,11 +597,28 @@
       <div class="tstep rv d3"><span class="no">04</span><p>Vývoj &amp; animace</p></div>
       <div class="tstep rv d3"><span class="no">05</span><p>Spuštění + péče dál</p></div>
     </div>
-    <p class="muted rv" style="margin-top:18px">Detaily pilujeme, dokud nesedí. Mikroanimace, načítání, každý pixel — řemeslo se pozná v tom, co ostatní ošidí.</p>
-    <h3 class="display h-mid rv" style="margin-top:60px">Cena: web od 150 000 Kč</h3>
-    <span class="anno">CENA · Využít tmavou kartu „Transparent pricing model" z Alture — nadpis „Ceny bez překvapení", tlačítko „Jak počítáme cenu" → sekce/FAQ s vysvětlením, co cenu tvoří.</span>
-    <p class="rv d1">Přesně podle rozsahu — po první schůzce dostanete nabídku na míru do týdne. <span class="muted">(částku upravit dle reality)</span></p>
-    <span class="anno">FAQ · Akordeon (5–6 otázek: termíny, správa, SEO/AEO, texty, „proč nestačí AI builder za pár dolarů"). Otevírání s pružinovým easingem, ikona +→×.</span>
+    <p class="muted rv" style="margin-top:18px">Detaily pilujeme, dokud nesedí. Mikroanimace, načítání, každý pixel — <span class="mark-y">řemeslo se pozná v tom, co ostatní ošidí</span>.</p>
+  </div>
+</section>
+<section class="paper">
+  <div class="wrap">
+    <p class="eyebrow rv">Ceny bez překvapení</p>
+    <h2 class="display h-big rv">Web od 150 000 Kč.</h2>
+    <p class="lede rv d1">Cena roste s rozsahem, ne s počtem hodin. Po první schůzce dostanete do týdne nabídku na míru — a ta platí. <span class="muted">(částku doplnit dle reality)</span></p>
+    <div class="cta-row rv"><a class="btn" style="background:#fff;color:#111" href="#kontakt">Chci nabídku</a></div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Na co se ptáte</p>
+    <span class="anno">FAQ · Akordeon (details/summary — funguje bez JS). Otázky = reálné námitky z poptávek, včetně té AI. Strukturovaná data (FAQPage schema) pro SEO/AEO.</span>
+    <div class="faq rv">
+      <details><summary>Proč nestačí AI builder za pár dolarů?</summary><p>Na rychlé MVP stačí — a klidně vám ho doporučíme. Jenže web, který má prodávat, potřebuje strategii, texty, strukturu, SEO/AEO, rychlost a napojení na vaše procesy. A hlavně nesmí vypadat jako tisíc dalších vygenerovaných.</p></details>
+      <details><summary>Jak dlouho trvá udělat web?</summary><p>Landing page 3–4 týdny, firemní web 6–10 týdnů. Přesný termín víte do týdne od první schůzky — a držíme ho.</p></details>
+      <details><summary>Zvládneme si web pak spravovat sami?</summary><p>Ano. Webflow CMS je dělané pro lidi, ne programátory. Zaškolíme vás a první měsíc jsme na telefonu.</p></details>
+      <details><summary>Nemáme texty ani fotky. Co s tím?</summary><p>Texty píšeme s vámi (rozhovor → návrh → ladění) a fotky či video nafotíme vlastní technikou u vás. Žádné stocky.</p></details>
+      <details><summary>Co když už máme značku a manuál?</summary><p>Skvělé — navážeme na ně. A pokud manuál nesedí na digitál, upravíme ho, ať web nevypadá jako výjimka z pravidel.</p></details>
+    </div>
     <div class="cta-row rv"><a class="btn" href="#kontakt">Začít projekt</a></div>
   </div>
 </section>

@@ -169,9 +169,23 @@ Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme spole�
 ### Hero
 # LOGO JE MÁLO.
 
-Identita, kterou lidé poznají i bez loga: barvy, typografie, vizuální jazyk. Konzistentně všude — od webu po fasádu.
+Identita, kterou lidé poznají i bez loga: barvy, typografie, vizuální jazyk a tón hlasu. Konzistentně všude — od webu po fasádu.
 
 **[Chci být k poznání]**
+
+### Blok: Web-first branding (diferenciace, po vzoru Refokus)
+# ZNAČKU STAVÍME TAM, KDE BUDE ŽÍT: NA WEBU.
+
+Většina manuálů vznikne v PDF a rozpadne se při prvním použití. My identitu navrhujeme rovnou tam, kde se s ní vaši zákazníci potkají nejčastěji — na webu, na sítích, na obalu. Co neobstojí v praxi, nejde do manuálu.
+
+### Blok: Co dostanete do ruky (konkrétní deliverables)
+Základ značky: logo + verze, barevnost, typografie s licencí, vizuální jazyk a fotostyl · Hlas značky: tone of voice s příklady, klíčová sdělení · Do praxe: brandbook, šablony (prezentace, socky, tiskoviny), aplikace na web rovnou v návrhu.
+
+### FAQ identity
+1. Máme logo, chceme „zbytek" → audit, logo zachováme, dostavíme systém.
+2. Jak dlouho? → 4–8 týdnů dle rozsahu.
+3. Poznáme se v tom? → Začínáme u vás, ne u trendů; každé rozhodnutí umíme obhájit strategií.
+4. Cena? → od X Kč, nabídka do týdne.
 
 ### Blok: Co vám to přinese
 - **Budou si vás pamatovat** — jednotný vzhled na webu, sítích, tiskovinách i v prostoru.
@@ -206,8 +220,8 @@ Tvoříme weby ve Webflow, které vzbuzují důvěru na první pohled a prodáva
 **Jste tu správně, pokud:** chcete vyčnívat · web je pro vás obchodní nástroj, ne vizitka · zajímá vás výsledek, ne počet revizí.
 **Nejste tu správně, pokud:** hledáte nejlevnější nabídku · chcete kopii konkurence · potřebujete to „do pátku".
 
-### Blok: Proč Webflow (stručně, 4 karty)
-Rychlost načtení · Bezpečnost bez pluginů · Snadná správa obsahu · Animace, které WordPress neumí.
+### Blok: Co všechno váš web umí mít (schopnosti — Refokus vzor, psáno přes přínos)
+Design, který prodává (každá sekce má obchodní úkol) · Animace & mikrointerakce (wow, který neshodí rychlost) · Správa bez programátora (CMS zvládne i recepce) · SEO & AEO (najde vás Google i ChatGPT) · Napojení, které šetří práci (CRM, rezervace, formuláře) · Rychlost a bezpečí (bez pluginů, načtení pod 2 s).
 
 ### Blok: AI upřímně
 # AI NÁM PÍŠE KÓD.
@@ -223,7 +237,12 @@ Mikrocopy pod procesem: *Detaily pilujeme, dokud nesedí. Mikroanimace, načít�
 ### Blok: Cena
 **Web od 150 000 Kč.** Přesně podle rozsahu — po první schůzce dostanete nabídku na míru do týdne. *(částku doplnit dle reality)*
 
-### FAQ (5–6 otázek: termíny, správa, SEO/AEO, texty, „proč nestačí AI builder za pár dolarů"…)
+### FAQ (akordeon, otázky = reálné námitky z poptávek; FAQPage schema pro SEO/AEO)
+1. Proč nestačí AI builder za pár dolarů? → Na MVP stačí. Web, který má prodávat, potřebuje strategii, texty, SEO/AEO, rychlost, napojení — a nesmí vypadat jako tisíc dalších.
+2. Jak dlouho trvá web? → LP 3–4 týdny, firemní web 6–10 týdnů. Termín víte do týdne a držíme ho.
+3. Zvládneme správu sami? → Ano, Webflow CMS + zaškolení, první měsíc na telefonu.
+4. Nemáme texty ani fotky → Texty píšeme s vámi, fotky/video nafotíme vlastní technikou. Žádné stocky.
+5. Máme značku a manuál → Navážeme; když nesedí na digitál, upravíme.
 ### CTA: **[Začít projekt]** + kalendář
 
 ---
