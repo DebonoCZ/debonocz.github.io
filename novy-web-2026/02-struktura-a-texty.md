@@ -91,13 +91,28 @@ CTA: [Všechny práce →]
 
 AI nástroje používáme každý den — zrychlily nám wireframy, kód i střih. Ušetřený čas vracíme do práce, kterou za nás neudělají: do strategie, textů a designu. Proto naše weby nevypadají jako všechny ostatní.
 
-### Sekce: Jak se s námi pracuje (lidské, konkrétní)
-Nadpis (plain): **Jak se s námi pracuje**
+### Sekce: Jak se s námi pracuje → METODA MÍRA (proces jako příběh)
+Inspirace gorillaspace.cz (kolo CIRCLE) + hotové bloky šablony Alture.
 
-Jsme studio pár lidí. Mluvíte přímo s těmi, kdo váš projekt opravdu dělají — od první skici po spuštění. Řekneme vám i to, co se neposlouchá dobře; proto s námi klienti zůstávají roky.
+**Kolo metody** (z ORBIT bloku Alture „A strong team of experts" — místo avatarů obíhají kroky):
+Střed: **Metoda MÍRA** — „Agilní kolo, kterým projde každý projekt. Jako v dílně: nejdřív míra, pak řez."
+Obíhá: Změříme → Navrhneme → Vyrobíme → Vyladíme → (dokola)
 
-Timeline: **01 Ozvete se → 02 Do 24 hodin voláme → 03 Do týdne víte, co, kdy a za kolik**
-[MOTION] kartičky přes sebe (sticky stacking)
+**4 kroky jako příběh** (štítek „X. krok" jako samolepka + velké slovo + věta se zvýrazněním fixou + čmáraná šipka mezi kroky):
+1. **ZMĚŘÍME** — Poznáme váš byznys, zákazníky a čísla. Workshop, data, konkurence — žádné kreslení naslepo.
+2. **NAVRHNEME** — Strategie a koncept, který schválíte srdcem i tabulkou. Víte přesně, co se staví a proč.
+3. **VYROBÍME** — Design, web, fotky i video — vlastníma rukama, pod jednou střechou. Práci vidíte průběžně, ne až na konci.
+4. **VYLADÍME** — Spustíme, měříme a poznatky vracíme zpět do návrhu. Každou otáčkou je značka silnější — proto je to kolo, ne pás.
+
+**Srovnání (dvě natočené karty):**
+„Na co jste možná zvyklí": pošlete brief, přijde nabídka · tři měsíce ticho · hotový web „berte, nebo nechte" · každá změna = vícepráce · na video a tisk někdo další.
+„S Debonem": kafe a workshop · do týdne víte, co, kdy a za kolik · práci vidíte průběžně · spuštěním to nekončí · značka, web, video i výroba u jedné party.
+
+**Kreativní využití hotových bloků Alture:**
+- ORBIT blok → kolo metody MÍRA (homepage) NEBO tým ve Studiu (reálné tváře kolem „Jsme malí schválně") — nepoužívat obojí.
+- CHAT blok („Real-time collaboration") → Kontakt: reálná anonymizovaná konverzace s klientem (rychlost, vlastní produkce, lidskost beze slov o nich).
+- Tmavá karta „Transparent pricing model" → „Ceny bez překvapení" na LP Weby.
+
 
 ### Závěrečné CTA (plain, lidské)
 Máte před sebou nový web, rebrand nebo kampaň?

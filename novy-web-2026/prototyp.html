@@ -153,6 +153,53 @@
   body.js .ring{ display:block; width:38px; height:38px; border:1.5px solid var(--accent); opacity:.55; transform:translate(-50%,-50%); }
   @media (hover:none){ .dot,.ring{ display:none !important; } }
 
+
+  /* ── Metoda MÍRA — kolo procesu ── */
+  .wheel-wrap{ display:grid; place-items:center; margin:44px auto 10px; position:relative; max-width:440px; }
+  .wheel{ width:100%; height:auto; display:block; animation:spin 36s linear infinite; }
+  .wheel text{ font:700 26px "Arial Black",sans-serif; text-transform:uppercase; letter-spacing:.14em; fill:var(--ink); }
+  .paper .wheel text{ fill:var(--paper-ink); }
+  .wheel-wrap:hover .wheel{ animation-play-state:paused; }
+  @media (prefers-reduced-motion: reduce){ .wheel{ animation:none; } }
+  @keyframes spin{ to{ transform:rotate(360deg);} }
+  .wheel-center{ position:absolute; inset:0; display:grid; place-items:center; text-align:center; pointer-events:none; }
+  .wheel-center > div{ max-width:240px; }
+  .wheel-center .display{ font-size:1.9rem; }
+  .wheel-center p{ font-size:.85rem; margin:.6em auto 0; }
+
+  .chips{ display:flex; flex-direction:column; align-items:center; gap:0; margin:70px 0 18px; }
+  .chip{ font:600 .95rem/1 "Helvetica Neue",sans-serif; border:1.5px solid currentColor; border-radius:999px;
+    padding:10px 20px; background:var(--bg); transform:rotate(-2deg); }
+  .chip.small{ font-size:.75rem; transform:rotate(1.5deg) translateY(-6px); opacity:.75; }
+  .paper .chip{ background:#fff; }
+  .story-step{ text-align:center; }
+  .story-step .display{ font-size:clamp(2.4rem,6vw,4.2rem); }
+  .story-step .lede{ margin-inline:auto; max-width:46ch; }
+
+  .mark-y{ background:var(--anno); color:var(--anno-ink); border-radius:6px; padding:0 .25em; box-decoration-break:clone; }
+  .mark-b{ background:var(--accent); color:#fff; border-radius:6px; padding:0 .25em; box-decoration-break:clone; }
+
+  .tilt-l{ transform:rotate(-2deg); } .tilt-r{ transform:rotate(1.6deg); }
+
+  .vs{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px; margin-top:40px; }
+  .vs .panel{ padding:30px; }
+  .vs .panel.old{ background:var(--bg2); color:var(--muted); transform:rotate(-1.2deg); }
+  .paper .vs .panel.old{ background:#E7E6DE; color:#5B5B66; border-color:#D5D4CA; }
+  .vs .panel.new{ background:var(--accent); color:#fff; border-color:var(--accent); transform:rotate(1deg); }
+  .vs .panel.new h4, .vs .panel.new p{ color:#fff; }
+  .vs ul{ margin:0; padding-left:1.2em; } .vs li{ margin:.6em 0; font-size:.95rem; }
+  .sketch-arrow{ display:block; margin:26px auto -8px; width:56px; }
+  .sketch-arrow path{ stroke:currentColor; stroke-width:3; fill:none; stroke-linecap:round; }
+
+
+  /* ── Chat blok (Alture real-time collaboration) ── */
+  .chat{ border:1px solid var(--line); border-radius:18px; padding:26px; background:var(--bg2); display:grid; gap:10px; max-width:560px; }
+  .paper .chat{ background:#E9E8E0; border-color:#D5D4CA; }
+  .msg{ padding:12px 18px; border-radius:22px; font-size:.95rem; max-width:80%; width:fit-content; }
+  .msg.them{ background:#fff; color:#15151B; border-bottom-left-radius:6px; justify-self:start; }
+  .msg.us{ background:var(--accent); color:#fff; border-bottom-right-radius:6px; justify-self:end; }
+  .chat .who{ font:600 .68rem/1 ui-monospace,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:6px 0 0; }
+
   .stat{ font-size:1.05rem; margin-top:22px; }
   .stat b{ color:var(--accent); }
   .crumb{ font:600 .74rem/1 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); text-decoration:none; display:inline-block; margin-bottom:30px; }
@@ -198,7 +245,7 @@
 <section>
   <div class="wrap">
     <p class="eyebrow rv">Proč zrovna teď</p>
-    <p class="rv d1" style="font-size:1.35rem; line-height:1.55; max-width:56ch">Za posledních pár let se změnilo všechno a nic. Nástroje jsou nové — AI píše, kreslí i kóduje. Ale zákazník se rozhoduje pořád stejně: <strong>podle toho, komu věří.</strong> A protože průměrný obsah dnes vzniká na kliknutí, důvěra je vzácnější než kdy dřív.</p>
+    <p class="rv d1" style="font-size:1.35rem; line-height:1.55; max-width:56ch">Za posledních pár let se změnilo všechno a nic. Nástroje jsou nové — AI píše, kreslí i kóduje. Ale zákazník se rozhoduje pořád stejně: <strong>podle toho, komu <span class="mark-y">věří</span>.</strong> A protože průměrný obsah dnes vzniká na kliknutí, důvěra je vzácnější než kdy dřív.</p>
     <p class="rv d2" style="font-size:1.35rem; line-height:1.55; max-width:56ch">Dobrá zpráva? Dá se navrhnout. Naše práce je udělat z prvního dojmu váš nejsilnější argument.</p>
     <span class="anno">O DOBĚ · Záměrně žádné heslo — vizionářský blok jako klidný text s větší sazbou. Odstavce se odhalují po větách při scrollu; slovo „věří" jemně podtrhne tah linky.</span>
   </div>
@@ -229,9 +276,9 @@
       <a class="work rv d2" href="#case"><div class="thumb"><b>Nepanikař</b></div><div class="meta"><span>rebrand · aplikace</span><span class="res">10 000+ uživatelů</span></div></a>
     </div>
     <div class="cols">
-      <div class="panel rv"><h4 style="font-size:2rem">9/10</h4><p style="font-size:.9rem">poptávek u nás končí spoluprací.</p></div>
+      <div class="panel rv tilt-l"><h4 style="font-size:2rem">9/10</h4><p style="font-size:.9rem">poptávek u nás končí spoluprací.</p></div>
       <div class="panel rv d1"><h4 style="font-size:2rem">X let</h4><p style="font-size:.9rem">stavíme značky a weby. Od startupů po Škodovku.</p></div>
-      <div class="panel rv d2"><h4 style="font-size:2rem">Y+</h4><p style="font-size:.9rem">projektů, pod které jsme se podepsali.</p></div>
+      <div class="panel rv d2 tilt-r"><h4 style="font-size:2rem">Y+</h4><p style="font-size:.9rem">projektů, pod které jsme se podepsali.</p></div>
       <div class="panel rv d3"><h4 style="font-size:2rem">Z roky</h4><p style="font-size:.9rem">s námi klienti průměrně zůstávají.</p></div>
     </div>
     <div class="cta-row rv"><a class="btn ghost" href="#prace">Všechny práce →</a></div>
@@ -247,16 +294,74 @@
   </div>
 </section>
 
-<section>
+<section class="paper">
   <div class="wrap">
     <p class="eyebrow rv">Jak se s námi pracuje</p>
-    <p class="lede rv">Jsme studio pár lidí. Mluvíte přímo s těmi, kdo váš projekt opravdu dělají — od první skici po spuštění. Řekneme vám i to, co se neposlouchá dobře; proto s námi klienti zůstávají roky.</p>
-    <span class="anno">PROCES · Kartičky přes sebe (à la gorillaspace.cz): každý krok = karta, při scrollu se lepí pod sebe (position: sticky), nová kartu předchozí mírně zasune a zmenší (scale .96). Vedle textu syrové fotky týmu — žádný stock.</span>
-    <div class="timeline">
-      <div class="tstep rv"><span class="no">01</span><p>Ozvete se</p></div>
-      <div class="tstep rv d1"><span class="no">02</span><p>Do 24 hodin voláme</p></div>
-      <div class="tstep rv d2"><span class="no">03</span><p>Do týdne víte, co, kdy a za kolik</p></div>
+    <p class="lede rv">Náš proces není pás, kde na konci vypadne hotovo. Je to kolo — točí se s vámi tak dlouho, dokud značka neroste sama.</p>
+    <span class="anno">METODA MÍRA · Ve Webflow postavit z hotového ORBIT bloku šablony („A strong team of experts") — místo avatarů obíhají 4 kroky metody, uprostřed claim. Alternativně text po kružnici (SVG textPath) jako zde: otáčka 36 s, na hover stop. Doplnit ručně kreslenou šipku vedoucí ke kolu + později reálné číslo do středu.</span>
+    <div class="wheel-wrap rv">
+      <svg class="wheel" viewBox="0 0 440 440" aria-hidden="true">
+        <defs><path id="circPath" d="M220,220 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0"/></defs>
+        <text><textPath href="#circPath">Změříme → Navrhneme → Vyrobíme → Vyladíme → Změříme → Navrhneme → Vyrobíme → Vyladíme →&#160;</textPath></text>
+      </svg>
+      <div class="wheel-center"><div>
+        <p class="display">Metoda<br>MÍRA</p>
+        <p>Agilní kolo, kterým projde každý projekt. Jako v dílně: nejdřív míra, pak řez.</p>
+      </div></div>
     </div>
+
+    <div class="chips rv"><span class="chip">1. krok</span><span class="chip small">metody MÍRA</span></div>
+    <div class="story-step rv">
+      <h3 class="display">Změříme</h3>
+      <p class="lede">Poznáme váš byznys, zákazníky a čísla. Workshop, data, konkurence — <span class="mark-y">žádné kreslení naslepo</span>.</p>
+    </div>
+    <span class="anno" style="display:table;margin-inline:auto">KROKY · Každý krok: štítek „X. krok" (mírně natočený, jako samolepka), velké slovo, jedna věta s fixou zvýrazněným spojením. Mezi kroky ručně kreslená klikatá šipka (SVG stroke draw při scrollu). Ke každému kroku jednoduchá čmáraná vizualizace jako u Gorilly (např. u Změříme: kóty a čísla, u Vyrobíme: ruce/nářadí).</span>
+
+    <svg class="sketch-arrow rv" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 4 C 44 14, 16 26, 30 36 C 40 43, 32 50, 30 54 M 22 46 L 30 56 L 38 47"/></svg>
+    <div class="chips rv"><span class="chip">2. krok</span></div>
+    <div class="story-step rv">
+      <h3 class="display">Navrhneme</h3>
+      <p class="lede">Strategie a koncept, který schválíte <span class="mark-y">srdcem i tabulkou</span>. Víte přesně, co se staví a proč.</p>
+    </div>
+
+    <svg class="sketch-arrow rv" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 4 C 16 14, 44 26, 30 36 C 20 43, 28 50, 30 54 M 22 46 L 30 56 L 38 47"/></svg>
+    <div class="chips rv"><span class="chip">3. krok</span></div>
+    <div class="story-step rv">
+      <h3 class="display">Vyrobíme</h3>
+      <p class="lede">Design, web, fotky i video — <span class="mark-y">vlastníma rukama</span>, pod jednou střechou. Práci vidíte průběžně, ne až na konci.</p>
+    </div>
+
+    <svg class="sketch-arrow rv" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 4 C 44 14, 16 26, 30 36 C 40 43, 32 50, 30 54 M 22 46 L 30 56 L 38 47"/></svg>
+    <div class="chips rv"><span class="chip">4. krok</span></div>
+    <div class="story-step rv">
+      <h3 class="display">Vyladíme</h3>
+      <p class="lede">Spustíme, měříme a poznatky vracíme zpět do návrhu. <span class="mark-y">Každou otáčkou je značka silnější</span> — proto je to kolo, ne pás.</p>
+    </div>
+
+    <div class="vs rv">
+      <div class="panel old">
+        <h4>Na co jste možná zvyklí</h4>
+        <ul>
+          <li>Pošlete brief, přijde nabídka</li>
+          <li>Pak tři měsíce ticho</li>
+          <li>Hotový web stylem „berte, nebo nechte"</li>
+          <li>Každá změna = vícepráce</li>
+          <li>Na video a tisk si najděte někoho dalšího</li>
+        </ul>
+      </div>
+      <div class="panel new">
+        <h4>S Debonem</h4>
+        <ul>
+          <li>Kafe a workshop — nejdřív vás posloucháme</li>
+          <li>Do týdne víte, co, kdy a za kolik</li>
+          <li>Práci vidíte průběžně a mluvíte do ní</li>
+          <li>Spuštěním to nekončí — ladíme dál</li>
+          <li>Značka, web, video i výroba u jedné party</li>
+        </ul>
+      </div>
+    </div>
+    <span class="anno">SROVNÁNÍ · Dvě mírně natočené karty (šedá × modrá) à la „Na co jste zvyklí / S Gorillou". Odrážky nalétají postupně; u modré karty odškrtávací animace ✓.</span>
+    <p class="lede rv" style="margin-top:40px">A hlavně: mluvíte přímo s těmi, kdo váš projekt dělají. Řekneme vám i to, co se neposlouchá dobře — proto s námi klienti zůstávají roky.</p>
   </div>
 </section>
 
@@ -398,6 +503,7 @@
     </div>
     <p class="muted rv" style="margin-top:18px">Detaily pilujeme, dokud nesedí. Mikroanimace, načítání, každý pixel — řemeslo se pozná v tom, co ostatní ošidí.</p>
     <h3 class="display h-mid rv" style="margin-top:60px">Cena: web od 150 000 Kč</h3>
+    <span class="anno">CENA · Využít tmavou kartu „Transparent pricing model" z Alture — nadpis „Ceny bez překvapení", tlačítko „Jak počítáme cenu" → sekce/FAQ s vysvětlením, co cenu tvoří.</span>
     <p class="rv d1">Přesně podle rozsahu — po první schůzce dostanete nabídku na míru do týdne. <span class="muted">(částku upravit dle reality)</span></p>
     <span class="anno">FAQ · Akordeon (5–6 otázek: termíny, správa, SEO/AEO, texty, „proč nestačí AI builder za pár dolarů"). Otevírání s pružinovým easingem, ikona +→×.</span>
     <div class="cta-row rv"><a class="btn" href="#kontakt">Začít projekt</a></div>
@@ -506,7 +612,7 @@
     <p class="eyebrow rv">Studio</p>
     <h1 class="display h-hero rv">Jsme malí <span class="alt">schválně.</span></h1>
     <p class="lede rv d1">Debono je studio pár lidí, kteří u projektů sedí osobně — od první skici po spuštění. Žádná tichá pošta mezi odděleními.</p>
-    <span class="anno">HERO STUDIO · Za typografií koláž fotek týmu, které se při pohybu myši mírně rozestupují (parallax vrstvy, max 12 px).</span>
+    <span class="anno">HERO STUDIO · Za typografií koláž fotek týmu s parallaxem (max 12 px). Alternativa: ORBIT blok z Alture — reálné tváře týmu obíhají kolem „Jsme malí schválně" (pokud se orbit nepoužije pro metodu MÍRA na homepage — nepoužívat 2×).</span>
   </div>
 </section>
 <section class="tight">
@@ -598,6 +704,15 @@
     <h1 class="display h-hero rv">Nekousneme.<br><span class="alt">Naopak — kafe platíme my.</span></h1>
     <p class="lede rv d1">Napište nám pár vět o svém záměru. Do 24 hodin se ozveme, do týdne víte, co, kdy a za kolik.</p>
     <span class="anno">KONTAKT · Nejjednodušší Contact layout z Alture. Formulář jen 3 pole; po odeslání konfety NE — jen klidné potvrzení „Ozve se člověk. Do 24 hodin." Vedle formuláře vložený kalendář (Cal.com) a přímý kontakt s fotkou.</span>
+    <div class="chat rv" style="margin-top:34px">
+      <p class="msg them">Dobrý den, za 6 týdnů otevíráme novou pobočku a web na to není připravený…</p>
+      <p class="who">Klient · 14:02</p>
+      <p class="msg us">Dobrý den! To se dá stihnout. Zítra v 9:00 krátký hovor?</p>
+      <p class="who" style="justify-self:end">Jirka · 14:19</p>
+      <p class="msg them">Super. Jen nemáme žádné fotky prostoru.</p>
+      <p class="msg us">Nevadí — nafotíme sami, techniku máme. Vezmeme to při workshopu.</p>
+    </div>
+    <span class="anno">CHAT BLOK · Využít hotový „Real-time collaboration" blok z Alture — přepsat na reálnou (anonymizovanou) konverzaci. Bubliny nalétají postupně s psacím indikátorem („…"). Ukazuje rychlost (do 24 h), vlastní produkci a lidský tón — beze slov o nich.</span>
     <div class="cols">
       <form class="form" onsubmit="event.preventDefault(); this.innerHTML='<p><strong>Díky!</strong> Ozve se člověk. Do 24 hodin.</p>';">
         <input type="text" placeholder="Jméno" aria-label="Jméno" required>
