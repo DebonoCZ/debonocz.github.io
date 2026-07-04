@@ -4,7 +4,7 @@
 > Poznámky `[MOTION]` = doporučení pro animaci, `[ALT]` = alternativní varianta textu.
 > **Vykáme** (větší klienti, zdravotnictví). Jediná výjimka: Kariéra — tam mluvíme k budoucím kolegům, tykání je na místě.
 > Hesla se sazí VELKOU typografií, doprovodné texty malé a krátké.
-> **Rámec v2:** Debono = strategický partner. Strategii nastavujeme s klientem společně; web, identita, kampaň nebo video jsou média, kterými ji umíme dodat.
+> **Rámec v3:** Debono = strategický partner. Strategii nastavujeme s klientem společně; web, identita, kampaň nebo video jsou pak to, čím ji dodáme. Popisy služeb píšeme přes přínosy — co z toho klient má. Slovo „médium" nepoužíváme.
 
 ---
 
@@ -15,7 +15,8 @@
 | Homepage | `/` | Home |
 | Studio (o nás + AI manifest) | `/studio` | Studio |
 | Služby — rozcestník | `/sluzby` | Works layout (grid) nebo vlastní |
-| LP Značka & strategie | `/sluzby/znacka-a-strategie` | duplikát Studio/Works layoutu |
+| LP Strategie značky | `/sluzby/strategie-znacky` | duplikát Studio/Works layoutu |
+| LP Vizuální identita | `/sluzby/vizualni-identita` | dtto |
 | LP Tvorba webů | `/sluzby/tvorba-webu` | dtto |
 | LP Produkce foto & video | `/sluzby/produkce` | dtto |
 | LP Social media & kampaně | `/sluzby/social-media` | dtto |
@@ -58,20 +59,23 @@ Za posledních pár let se změnilo všechno a nic. Nástroje jsou nové — AI 
 
 Dobrá zpráva? Dá se navrhnout. Naše práce je udělat z prvního dojmu váš nejsilnější argument.
 
-### Sekce: Co s tím uděláme spolu (služby — konkrétně)
-Intro: *Nezačínáme u webu. Nejdřív spolu nastavíme směr — pak ho dodáme v médiu, které dává smysl.*
+### Sekce: Co s tím uděláme spolu (služby — psáno přes přínosy)
+Intro: *Nezačínáme u webu. Nejdřív spolu nastavíme směr — a pak postavíme to, co vás k němu dostane.*
 
-**01 — Značka & strategie**
-Positioning, vizuální identita, tón hlasu. Základ, který rozhoduje, jestli si vás trh zapamatuje.
+**01 — Strategie značky**
+Získáte jasno: kým jste, pro koho a proč zrovna vy. Každé další rozhodnutí — od loga po kampaň — je pak jednodušší a levnější.
 
-**02 — Weby**
-Návrh a vývoj ve Webflow. Rychlé, konverzní a s animacemi, které z návštěvy udělají zážitek.
+**02 — Vizuální identita**
+Budou si vás pamatovat. Jednotný vzhled všude, kam značka přijde — a brandbook, díky kterému už nemusíte hlídat každou grafiku.
 
-**03 — Produkce**
-Foto a video vlastní technikou, výroba od polepu po 3D logo na fasádu. Bez subdodavatelů.
+**03 — Weby**
+Web, který přivádí poptávky, ne jen návštěvy. Rychlý, ve Webflow — obsah si pak spravujete sami, bez programátora.
 
-**04 — Social & kampaně**
-Obsahová strategie, výroba i správa sítí. Obsah, který lidi zastaví a značku posune.
+**04 — Produkce**
+Fotky a videa, které jsou opravdu vaše — žádné stocky. Natočíme, nafotíme a vyrobíme vše od spotu po polep výlohy.
+
+**05 — Social & kampaně**
+Značka viditelná každý týden, aniž byste na to museli myslet. Obsah naplánujeme, vyrobíme i vyhodnotíme.
 
 ### Sekce: Práce + čísla (sloučeno — důkazy pohromadě)
 Nadpis (plain): **Posuďte podle výsledků**
@@ -108,53 +112,70 @@ Napište nám pár vět. Do 24 hodin se ozve člověk — a kafe platíme my.
 ## 2. SLUŽBY — rozcestník `/sluzby`
 
 # NEJDŘÍV SMĚR.
-# PAK MÉDIUM.
+# PAK VŠECHNO OSTATNÍ.
 
-Neprodáváme hodiny ani šablony. Nejdřív spolu nastavíme, kam má vaše značka dojít — a teprve pak vybereme, čím se tam dostane: web, identita, kampaň, video.
+Neprodáváme hodiny ani šablony. Nejdřív spolu nastavíme, kam má vaše značka dojít — a teprve pak vybereme, čím se tam dostane: strategie, identita, web, kampaň, video.
 
-→ 4 velké bloky (značka & strategie / weby / produkce / social) s heslem, 3 body a odkazem na LP.
+→ 5 velkých bloků (strategie / identita / weby / produkce / social), každý s přínosem, 3 body a odkazem na LP.
 → Dole: „Nevíte, co přesně potřebujete? Přesně od toho je první schůzka. **[Probrat záměr]**"
 
 ---
 
-## 3. LP ZNAČKA & STRATEGIE `/sluzby/znacka-a-strategie`
+## 3a. LP STRATEGIE ZNAČKY `/sluzby/strategie-znacky`
 
-*Vlajková loď positioningu „strategický partner" — vizuální identita je tu součástí většího celku.*
+*Vlajková loď positioningu „strategický partner".*
 
 ### Hero
 # ZNAČKA NENÍ LOGO.
 # JE TO ROZHODNUTÍ.
 
-Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme společně — a pak mu dáme tvář: identitu, tón hlasu a příběh, který se pozná.
+Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme společně — a vám se pak rozhoduje o všem ostatním mnohem snáz.
 
-**[Chci silnou značku]**
+**[Chci mít jasno]**
 
-[ALT] **LOGO JE MÁLO.** / [ALT 2] **ZNAČKY, KTERÉ STOJÍ.** *(dvojsmysl: stojí pevně / stojí za to)*
+### Blok: Co vám to přinese
+- **Jasný směr** — víte, kým jste, pro koho a proč zrovna vy. Konec marketingu naslepo.
+- **Rychlejší a levnější rozhodování** — každé další zadání (logo, web, kampaň) má o co se opřít.
+- **Jednotnou řeč** — obchod, marketing i majitel říkají totéž. Tón hlasu dostanete popsaný.
+- **Zadání, se kterým umí pracovat každý** — dokument strategie poslouží i dalším dodavatelům.
 
-### Blok: Jak to probíhá (partner, ne dodavatel)
+### Blok: Jak to probíhá
 # MĚŘÍME DVAKRÁT.
 # ŘEŽEME JEDNOU.
 
-**Nezačínáme v grafickém editoru.** Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Strategie, kterou spolu nastavíme, pak řídí každé další rozhodnutí — od loga po kampaň. Jako v dobré dílně: nejdřív míra, pak řez.
+**Nezačínáme v grafickém editoru.** Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Strategie, kterou spolu nastavíme, pak řídí každé další rozhodnutí. Jako v dobré dílně: nejdřív míra, pak řez.
 
-### Blok: Co dostanete
-- Strategie značky: positioning, hodnoty, architektura, tón hlasu
-- Vizuální identita: logo, barvy, typografie, vizuální jazyk
-- Brandbook, podle kterého se dá skutečně pracovat
-- Aplikace do světa: web, socky, tiskoviny, prostor — umíme vyrobit vše, co navrhneme
+### Reference, cena od, FAQ, CTA **[Probrat značku]**
+
+---
+
+## 3b. LP VIZUÁLNÍ IDENTITA `/sluzby/vizualni-identita`
+
+### Hero
+# LOGO JE MÁLO.
+
+Identita, kterou lidé poznají i bez loga: barvy, typografie, vizuální jazyk. Konzistentně všude — od webu po fasádu.
+
+**[Chci být k poznání]**
+
+### Blok: Co vám to přinese
+- **Budou si vás pamatovat** — jednotný vzhled na webu, sítích, tiskovinách i v prostoru.
+- **Konec hlídání každé grafiky** — brandbook, podle kterého se dá skutečně pracovat, uhlídá konzistenci za vás.
+- **Důvěru na první pohled** — konzistentní značka působí jako firma, která má věci v pořádku. Protože je má.
+- **Identitu rovnou v akci** — vše, co navrhneme, umíme i vyrobit: web, socky, polepy, 3D logo.
 
 ### Blok: Heslo
 # NEJDŘÍV BUDEME POSLOUCHAT MY VÁS.
 # PAK TRH VÁS.
 
 ### Reference: Nepanikař (rebrand appky, 10 000+ uživatelů), Albistech, KM Publicity, Zlatá Studna…
-### Cena od, FAQ, CTA **[Probrat značku]**
+### Cena od, FAQ, CTA **[Probrat identitu]**
 
 ---
 
 ## 4. LP TVORBA WEBŮ `/sluzby/tvorba-webu`
 
-*Obchodně nejsilnější stránka — ale i tady: web je médium strategie, ne produkt sám o sobě.*
+*Obchodně nejsilnější stránka — ale i tady platí: web stojí na strategii, není to produkt sám o sobě.*
 
 ### Hero
 # WEB JE VÁŠ NEJPILNĚJŠÍ OBCHODNÍK.
@@ -300,7 +321,7 @@ X let · Y projektů · 9/10 poptávek → spolupráce · klienti od startupů p
 
 Intro: # MLUVIT UMÍ KAŽDÝ. MY UKAZUJEME.
 
-Filtry: Značka & strategie · Weby · Produkce · Kampaně · Zdravotnictví
+Filtry: Strategie · Identita · Weby · Produkce · Kampaně · Zdravotnictví
 
 **Case study (CMS šablona):**
 1. Hero cover + klient, rok, služby

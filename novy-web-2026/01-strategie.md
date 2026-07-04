@@ -27,10 +27,10 @@ Když si průměrný web vygeneruje kdokoli za odpoledne, klient už neplatí za
 
 Neboli: nekonkurujeme AI builderům cenou ani rychlostí — hrajeme jinou ligu. Debono je pro firmy, které chtějí vyčnívat. To přesně sedí na brief: *„pokud nechceš být průměrný, jsi tu správně."*
 
-**Hierarchie sdělení (v2):** Debono je především **strategický partner**. Strategie je něco, co s klientem společně nastavíme a vytvoříme — web, identita, kampaň či video jsou pak média, kterými ji umíme dodat (a díky vlastní produkci i vyrobit). Hlavní hesla proto mluví o směru, značce a vyčnívání; „webová" hesla patří až na úroveň servisních landing pages.
+**Hierarchie sdělení (v2):** Debono je především **strategický partner**. Strategie je něco, co s klientem společně nastavíme a vytvoříme — web, identita, kampaň či video jsou pak to, čím ji dodáme (a díky vlastní produkci i vyrobíme). Hlavní hesla proto mluví o směru, značce a vyčnívání; „webová" hesla patří až na úroveň servisních landing pages. Strategie a vizuální identita jsou dvě samostatné hlavní služby. Slovo „médium" v textech nepoužíváme, popisy služeb píšeme přes přínosy pro klienta.
 
 ### Positioning statement (interní, ne na web)
-Pro ambiciózní firmy a kliniky, které vědí, že první dojem rozhoduje, je Debono strategický a kreativní partner: společně nastavíme směr značky a pak ho dodáme v médiích, která dávají smysl — identita, web, kampaň, produkce. Na rozdíl od AI nástrojů a webových fabrik neprodáváme hodiny ani šablony — neseme spoluzodpovědnost za výsledek.
+Pro ambiciózní firmy a kliniky, které vědí, že první dojem rozhoduje, je Debono strategický a kreativní partner: společně nastavíme směr značky a pak postavíme, co ji k němu dostane — identita, web, kampaň, produkce. Na rozdíl od AI nástrojů a webových fabrik neprodáváme hodiny ani šablony — neseme spoluzodpovědnost za výsledek.
 
 ### Tři pilíře přidané hodnoty (proč my, když je AI)
 1. **Vkus se nedá vygenerovat.** AI nástroje používáme denně — zrychlují nám ruce, ne úsudek. Rozdíl mezi „hotovo" a „wow" je pořád lidská práce.
