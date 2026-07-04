@@ -32,92 +32,75 @@
 
 ---
 
-## 1. HOMEPAGE
+## 1. HOMEPAGE (v3 — směr „Doba se zrychlila", disciplína: max 2 velká hesla)
+
+> Diagnóza předchozí verze: moc chytrých hesel vedle sebe + generické agenturní věty.
+> Pravidlo v3: **dvě velká typografická hesla na stránku** (hero + AI manifest). Všechno ostatní jsou normální lidské věty s konkréty. Vizionářský tón = mluvíme o klientově světě a době, ne o sobě.
 
 ### Hero
-[MOTION] Slova hesla nabíhají po řádcích; otazník se vykreslí jako poslední (tah linky). Custom cursor trail ze šablony ponechat.
+[MOTION] První řádek nabíhá rychle (doba se zrychlila), druhý řádek „DŮVĚRA NE." přijde schválně s prodlevou a pomalu — animace hraje význam. Cursor trail ponechat.
 
-# NEJSTE PRŮMĚRNÍ.
-# TAK PROČ TAK VYPADAT?
+# DOBA SE ZRYCHLILA.
+# DŮVĚRA NE.
 
-Jsme strategický partner značek, které chtějí vyčnívat. Směr nastavíme společně — a pak ho dodáme v médiu, které dává smysl: značka, web, kampaň, video.
+Web si dnes vygenerujete za odpoledne. Jenže důvěra zákazníků se vygenerovat nedá — ta se pořád buduje: značkou, webem a obsahem, které někdo promyslel. Přesně tam začínáme my.
 
 **[Začít projekt]**   [Podívat se na práci ↓]
 
-[ALT hero 1] **VYČNÍVAT NENÍ DRZOST. JE TO STRATEGIE.**
-[ALT hero 2] **PRŮMĚR SI VYGENERUJETE SAMI.** / My umíme to ostatní.
-
-### Pás důvěry (hned pod hero)
-[MOTION] nekonečný marquee log
+### Pás důvěry
+[MOTION] marquee log, na hover zpomalí
 Škoda Auto · Kooperativa · IKEM · Westfield Chodov · Telly · St. Nicolaus · NEVA · Nepanikař …
 
-> **9 z 10 poptávek u nás končí spoluprací.** Ne proto, že bychom byli levní.
+### Sekce: O době (vizionářský blok — plain text, žádné heslo)
+Malý nadpis: **Proč zrovna teď**
 
-### Sekce: Jak pracujeme (strategie → média)
-Úvodní věta sekce (malá): *Nezačínáme u webu. Začínáme u otázky, kam chcete značku dostat. Teprve pak vybíráme média.*
+Za posledních pár let se změnilo všechno a nic. Nástroje jsou nové — AI píše, kreslí i kóduje. Ale zákazník se rozhoduje pořád stejně: podle toho, komu věří. A protože průměrný obsah dnes vzniká na kliknutí, důvěra je vzácnější než kdy dřív.
 
-[MOTION] dlaždice s hover video-preview, čísla 01–04
+Dobrá zpráva? Dá se navrhnout. Naše práce je udělat z prvního dojmu váš nejsilnější argument.
+
+### Sekce: Co s tím uděláme spolu (služby — konkrétně)
+Intro: *Nezačínáme u webu. Nejdřív spolu nastavíme směr — pak ho dodáme v médiu, které dává smysl.*
 
 **01 — Značka & strategie**
-Směr, příběh a identita. Základ, ze kterého roste všechno ostatní.
+Positioning, vizuální identita, tón hlasu. Základ, který rozhoduje, jestli si vás trh zapamatuje.
 
-**02 — Weby & digitální produkty**
-Strategie přeložená do média, které prodává 24/7. Ve Webflow, bez kompromisů.
+**02 — Weby**
+Návrh a vývoj ve Webflow. Rychlé, konverzní a s animacemi, které z návštěvy udělají zážitek.
 
 **03 — Produkce**
-Foto, video a výroba. Vlastníma rukama, ne přes tři dodavatele.
+Foto a video vlastní technikou, výroba od polepu po 3D logo na fasádu. Bez subdodavatelů.
 
-**04 — Social media & kampaně**
-Obsah, který lidi zastaví. A značku posune tam, kam má namířeno.
+**04 — Social & kampaně**
+Obsahová strategie, výroba i správa sítí. Obsah, který lidi zastaví a značku posune.
 
-### Sekce: Proč Debono (manifest)
-[MOTION] velké věty se odhalují při scrollu (scroll-triggered reveal)
+### Sekce: Práce + čísla (sloučeno — důkazy pohromadě)
+Nadpis (plain): **Posuďte podle výsledků**
+[MOTION] karty prací s hover-reveal výsledku; pod nimi 4 count-up čísla (kartičky přes sebe při scrollu)
 
-# VYČNÍVAT NENÍ DRZOST.
-# JE TO STRATEGIE.
-
-Svět se zrychlil. Web, logo i kampaň dnes vygeneruje kdokoli za odpoledne — a přesně tak taky vypadají.
-Důvěra se ale vygenerovat nedá. Ta se buduje: směrem, vkusem a řemeslem.
-
-# POCTIVÁ PRÁCE JE VIDĚT.
-# TA NEPOCTIVÁ TAKY.
-
-Jsme digitální dílna, ne fabrika. Každý projekt má u nás svého mistra, každý detail projde rukama. Proto se pod práci podepisujeme.
-
-**AI je náš nejrychlejší junior. Kreativní ředitel je pořád člověk.**
-Nástroje se mění, řemeslo zůstává. AI nám zrychlila ruce — hlavu necháváme zapnutou.
-
-### Sekce: Vybrané práce (3–4 case studies)
-[MOTION] velkoformátové covery, paralaxa, hover reveal výsledku
-
-Nadpis: **PRÁCE, KTERÁ SE NESTYDÍ.**
-U každého projektu: klient / co jsme dělali / jeden výsledek číslem.
+Case karty: IKEM Online (+X % online objednávek) · Škoda Auto (celonárodní kampaň) · Nepanikař (10 000+ uživatelů)
+Čísla studia: 9/10 poptávek → spolupráce · X let · Y projektů · Z roky průměrná délka spolupráce
 CTA: [Všechny práce →]
 
-### Sekce: Partner, ne dodavatel
-# DODAVATELE VYMĚNÍTE.
-# PARTNERA NE.
+### Sekce: AI upřímně (druhé a poslední velké heslo)
+# AI JE NÁŠ NEJRYCHLEJŠÍ JUNIOR.
+# KREATIVNÍ ŘEDITEL JE POŘÁD ČLOVĚK.
 
-Dodavatel splní zadání. Partner se ptá, jestli je to zadání správně. Strategii tvoříme s vámi — a neseme za ni spoluzodpovědnost od první skici po výrobu: návrh, web, fotky, video i tisk pod jednou střechou.
+AI nástroje používáme každý den — zrychlily nám wireframy, kód i střih. Ušetřený čas vracíme do práce, kterou za nás neudělají: do strategie, textů a designu. Proto naše weby nevypadají jako všechny ostatní.
 
-→ mini-timeline spolupráce: **Ozvete se → do 24 hodin voláme → do týdne víte, co, kdy a za kolik.**
+### Sekce: Jak se s námi pracuje (lidské, konkrétní)
+Nadpis (plain): **Jak se s námi pracuje**
 
-### Sekce: Kdo za tím je (lidskost)
-[MOTION] fotky týmu z natáčení/studia, syrové, ne stock; hover přepne na „behind the scenes" záběr
+Jsme studio pár lidí. Mluvíte přímo s těmi, kdo váš projekt opravdu dělají — od první skici po spuštění. Řekneme vám i to, co se neposlouchá dobře; proto s námi klienti zůstávají roky.
 
-# ŽÁDNÁ AGENTURNÍ MAŠINA.
-# LIDI, KTEŘÍ TO ŽEROU.
+Timeline: **01 Ozvete se → 02 Do 24 hodin voláme → 03 Do týdne víte, co, kdy a za kolik**
+[MOTION] kartičky přes sebe (sticky stacking)
 
-Jsme malé studio. To znamená: mluvíte přímo s lidmi, kteří váš projekt opravdu dělají. Žádný account manager na telefonu, žádná tichá pošta.
-
-### Závěrečné CTA
-# TAK CO,
-# JDEME DO TOHO?
-
-První schůzka je nezávazná. Kafe platíme my.
+### Závěrečné CTA (plain, lidské)
+Máte před sebou nový web, rebrand nebo kampaň?
+Napište nám pár vět. Do 24 hodin se ozve člověk — a kafe platíme my.
 **[Začít projekt]**
 
-### Patička — heslo
+### Patička — heslo (malé)
 *Debono. Dobro máme v názvu.* (de bono = latinsky „o dobrém")
 
 ---
