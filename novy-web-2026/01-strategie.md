@@ -88,3 +88,19 @@ Web má jediný primární cíl: **domluvená úvodní konzultace** (call/kafe).
 3. **AEO jako nová služba.** Webflow má nativní Answer Engine Optimization — „aby vás doporučil i ChatGPT" je srozumitelná, prodejná služba, kterou česky skoro nikdo nenabízí. Zvážit jako blok na LP Tvorba webů, případně samostatnou mikro-LP.
 
 **Čeho se vyvarovat:** generické „AI-powered" bez důkazu (už je to klišé) a nepřipravenost na otázku „proč nestačí Lovable za 20 dolarů" — odpověď (struktura, CMS, SEO/AEO, konverze, značka, vkus) mít veřejně na webu, např. ve FAQ na LP Tvorba webů.
+
+---
+
+## 6. Inspirace gorillaspace.cz — co převzít a co ne
+
+Menší senior tým z Prahy (performance marketing), který působí důvěryhodně upřímností: vlastní fotky, konkrétní čísla, „nebereme všechno".
+
+**Co převzít (a už je v prototypu/textech):**
+1. **Čísla jako důkaz.** Používají „průměrně +217 % konverzí za 90 dní", návratnost 16×/22×, case studies s výsledky. Pro Debono: sekce „Čísla, ne sliby" na homepage (9/10 poptávek, roky, projekty, průměrná délka spolupráce) + povinné výsledkové číslo v každé case study. Pravidlo: **každé číslo musí mít větu kontextu a musí být reálné** — jedno vymyšlené číslo zabije důvěru všech ostatních.
+2. **Kartičky přes sebe (scroll-stacking).** Funguje pro proces a služby — zapracováno do motion zadání (timeline na homepage, proces na LP Weby).
+3. **Pojmenovaná metoda.** Jejich „CIRCLE" dělá z procesu produkt. Návrh pro Debono: pojmenovat náš proces **„MÍRA"** (Mapování → Identita → Realizace → Akcelerace) — sedí k „Měříme dvakrát, řežeme jednou" i k řemeslné lince. K rozmyšlení.
+4. **Upřímnost jako vrstva.** Vlastní fotky, lidský mikrocopy, přiznání „nejsme pro každého" — potvrzuje náš směr (poctivá práce, BTS fotky, drzý filtr).
+
+**Co nepřevzít:**
+- **Revenue-first tón.** Oni prodávají výkon (ROAS, prodeje) — u nás by to shodilo pozici strategického partnera a vizionářský tón. Čísla u nás podpírají důvěru, nejsou hlavní sdělení.
+- **Světlý „friendly" vizuál.** Jejich cesta k důvěře je civilnost; naše je wow + řemeslo. Bereme si vrstvu upřímnosti, ne vzhled.
