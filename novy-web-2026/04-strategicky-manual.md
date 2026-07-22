@@ -116,7 +116,7 @@ Tón podle kanálu: web vyká, sebevědomě klidný · LinkedIn názorový a oso
 Vizionářsky. Lidsky. S nadsázkou. Drzost míří na průměr, nikdy na klienta. Na webu vykáme; osobně tykání. Ano: „Do týdne víte, co, kdy a za kolik." / „Rutinu za nás dělá AI. Co napsat, říkáme my." / „Kolečko připomínek proběhne u nás, ne u vás." / „Nafotíme skutečné lidi ve skutečném prostoru." Ne: „Komplexní řešení na klíč." / „Nejmodernější AI technologie." / „Individuální přístup." / „Prémiový vizuální obsah na míru."
 
 ### SLIDE 24 · SWOT
-S: 9/10 · první iterace · samostatnost · in-house produkce · B2B/technické obory · reference · esence konzistentní s praxí. W: kapacita/bus factor · inbound na doporučeních · case bez čísel · nízká awareness · claimy bez důkazů v číslech · procesy [OVĚŘIT]. O: „externí tým místo interních" · AEO · kliniky · human-made backlash (68 %) · přesun rozpočtů do strategie · value pricing · thought-leadership · veřejná AI governance první v ČR. T: komoditizace webů · enterprise AI (Actum, Etnetera) · Symbio drží AI-éra narativ · Justmighty překryv · škrty · koncentrace příjmů [OVĚŘIT] · přetížení · platform-risk Webflow.
+S: 9/10 · první iterace · samostatnost · in-house produkce · B2B/technické obory · reference · esence konzistentní s praxí. W: kapacita/bus factor · inbound na doporučeních · case bez čísel · nízká awareness · claimy bez důkazů v číslech · procesy [OVĚŘIT]. O: „externí tým místo interních" · AEO · kliniky · human-made backlash (68 %) · přesun rozpočtů do strategie · value pricing · thought-leadership · veřejná AI governance první v ČR. T: komoditizace webů · enterprise AI (Actum, Etnetera) · Symbio drží AI-éra narativ · Justmighty překryv · škrty · největší klient ~25 % obratu (hlídat strop 30 %) · přetížení · platform-risk Webflow.
 
 ### SLIDE 25 · ŠEST TAHŮ
 Důkazy (3 case s čísly + měření revizí) · Diferenciace (důvěra + „revize u nás"; AI přes odpovědnost, ne nástroj — odlišení od Symbia) · Kliniky hrot (balíček + outreach 10) · AEO (poctivě rámované) · PR tah (vlastní čísla dřív než konkurence) · Systemizace (PONOR checklisty; obsah 1×/měs).
@@ -125,11 +125,11 @@ Důkazy (3 case s čísly + měření revizí) · Diferenciace (důvěra + „re
 M1 ZÁKLADY (Jirka + [doplnit]): 3 case studies · měření revizí + metodika 9/10 · obsah webu dle architektury · nafotit tým · analytika. Hotovo: case schválené, měření běží, texty finální.
 M2 LAUNCH ([doplnit]): web + LP kliniky · stránka „Jak u nás pracuje AI" · A/B hero claim · LinkedIn + PR. Hotovo: web živý, konverze se měří, PR publikováno.
 M3 RŮST ([doplnit]): AEO v nabídce · outreach 10 klinik · vyhodnocení KPI a A/B · rozhodnutí o kapacitě · rytmus potvrzen. Hotovo: 3+ schůzky s klinikami, KPI dashboard, rozhodnutí padlo.
-KPI: poptávky [DOPLNIT]/měs · konverze ≥ 85 % · reakce < 24 h · 2+ služeb růst · průměr revizí publikovat · zmínky v AI asistentech kvartálně.
+KPI: kvalifikované poptávky cíl 8/měs · konverze ≥ 85 % · reakce < 24 h · 2+ služeb růst · průměr revizí publikovat · zmínky v AI asistentech kvartálně.
 
 ### SLIDE 27 · ZÁVĚR
 # Po nás zůstává dobro.
 Z dobra roste důvěra. Z důvěry rostou vztahy. **Rosteme s klienty, ne na klientech.**
 
 ### SLIDE 28 · PŘÍLOHA — OTEVŘENÉ OTÁZKY
-(a) Hero claim webu — A/B „Doba se zrychlila. Důvěra ne." vs. „Důvěra se nedá vygenerovat." (b) Vlastníci v roadmapě. (c) Cíl kvalifikovaných poptávek/měs. (d) Ověřit [OVĚŘIT] položky.
+(a) Hero claim webu — A/B „Doba se zrychlila. Důvěra ne." vs. „Důvěra se nedá vygenerovat." (b) Vlastníci v roadmapě. (c) ✓ cíl poptávek 8/měs. (d) ✓ koncentrace ~25 %. Zbývá: metodika „9 z 10", vlastníci roadmapy, dokumentace procesů, hero A/B.
