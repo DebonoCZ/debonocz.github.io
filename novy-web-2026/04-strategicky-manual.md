@@ -1,4 +1,4 @@
-# Debono Interactive — Strategický manuál značky (v1, červenec 2026)
+# Debono Interactive — Strategický manuál značky (v2, červenec 2026)
 
 > Interní dokument. Navazuje na 01-strategie.md a 03-reserse-konkurence-ai.md.
 > Položky označené **[OVĚŘIT]** jsou kvalifikované odhady — doplnit reálná data.
@@ -28,9 +28,10 @@ Jeden zdroj pravdy pro každého, kdo za Debono mluví, píše, navrhuje nebo pr
 
 ## 4. Brand positioning
 
-**Positioning statement (interní):** Pro ambiciózní firmy a kliniky, které vědí, že první dojem rozhoduje, je Debono strategický a kreativní partner: společně nastavíme směr značky a postavíme vše, co ji k němu dostane — identitu, web, kampaň i produkci. Na rozdíl od AI nástrojů a webových fabrik neprodáváme hodiny ani šablony; neseme spoluzodpovědnost za výsledek.
+**Positioning statement (interní):** Pro střední a velké firmy, instituce a značky, u kterých rozhoduje důvěra (typu IKEM, Kooperativa, Škoda), je Debono strategický kreativní partner: hlídáme směr a rukopis značky a umíme je dotáhnout až do výroby — bez aparátu velké agentury, s její kvalitou. Neprodáváme hodiny ani šablony; neseme spoluzodpovědnost za výsledek.
 
-**Big idea:** „Průměr si vygenerujete sami. My umíme to ostatní."
+**Big idea (interní kompas):** „Rychlost dnes mají všichni. Rozdíl dělá rukopis."
+*(Pozn.: dřívější „Průměr si vygenerujete sami" míří na DIY/SMB publikum a kategorizuje nás níž — u středních a větších klientů nepoužívat. Éru AI komunikujeme nepřímo: obsah vzniká na kliknutí → vzácný je úsudek, rukopis a důvěra.)*
 **Veřejný claim (web):** „Doba se zrychlila. Důvěra ne."
 
 **Tři pilíře hodnoty:**
@@ -44,7 +45,20 @@ Jeden zdroj pravdy pro každého, kdo za Debono mluví, píše, navrhuje nebo pr
 
 ## 5. Cílové skupiny
 
-### Persona A — „Ambiciózní majitel" (primární, ~50 % poptávek [OVĚŘIT])
+**Zacílení v2: střední a větší organizace** — firmy a instituce, kde o značce rozhodují lidé s vlastními týmy a rozpočty. Obsah si negenerují sami; nakupují úsudek, rukopis a spolehlivost. Pořadí person je nové: korporátní marketing první.
+
+### Persona A (v2 primární) — „Marketing lead větší firmy"
+Brand/marketing manažer korporace či větší firmy (finance, automotive, FMCG, media), 28–45 let. **Bolest:** velké agentury pomalé a drahé; interní tým nestíhá produkci; hodně dodavatelů = rozpadá se konzistence. **Spouštěč:** kampaň s termínem, launch, mikrosite, content. **Rozhoduje:** spolehlivost, tempo, reference velkých značek; obavy „malé studio to neutáhne", procurement. **Sdělení:** kvalita velké agentury, tempo malého studia; produkce in-house; pilotní projekt jako vstup.
+
+### Persona B — „Ředitel/ka kliniky či instituce" (růstová)
+Beze změny (viz níže), reference IKEM/Westfield jsou pro tuto personu klíčové.
+
+### Persona C (dříve A) — „Majitel střední firmy" (30–250 lidí)
+Firma vyrostla rychleji než její značka; chce prezentaci na úrovni firmy, jakou vybudoval, a partnera, který proces povede za něj.
+
+### Původní znění person (v1, pro kontext):
+
+#### Persona v1-A — „Ambiciózní majitel"
 Majitel/jednatel firmy 10–50 lidí (služby, výroba, gastro, reality), 32–50 let. **Bolest:** firma vyrostla, ale značka a web zůstaly „z garáže" — stydí se poslat odkaz. **Spouštěč:** expanze, nová pobočka, investor, silvestrovské předsevzetí „už to musíme udělat pořádně". **Rozhoduje podle:** důvěra, reference, osobní chemie; cena až na druhém místě. **Bariéry:** strach z agenturního kolotoče a víceprací. **Kde ho zasáhnout:** doporučení, Google („tvorba webu praha"), Instagram/LinkedIn. **Klíčové sdělení:** „Nejste průměrní. Tak proč tak vypadat?" + Dodavatele vyměníte, partnera ne.
 
 ### Persona B — „Ředitelka kliniky" (růstová, cílově ~25 %)
