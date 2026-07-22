@@ -1,4 +1,4 @@
-# Debono Interactive — Strategický manuál značky (v2, červenec 2026)
+# Debono Interactive — Strategický manuál značky (v3, červenec 2026)
 
 > Interní dokument. Navazuje na 01-strategie.md a 03-reserse-konkurence-ai.md.
 > Položky označené **[OVĚŘIT]** jsou kvalifikované odhady — doplnit reálná data.
@@ -28,10 +28,17 @@ Jeden zdroj pravdy pro každého, kdo za Debono mluví, píše, navrhuje nebo pr
 
 ## 4. Brand positioning
 
-**Positioning statement (interní):** Pro střední a velké firmy, instituce a značky, u kterých rozhoduje důvěra (typu IKEM, Kooperativa, Škoda), je Debono strategický kreativní partner: hlídáme směr a rukopis značky a umíme je dotáhnout až do výroby — bez aparátu velké agentury, s její kvalitou. Neprodáváme hodiny ani šablony; neseme spoluzodpovědnost za výsledek.
+**Positioning statement (interní):** Pro firmy a instituce, u kterých rozhoduje důvěra (typu IKEM, Kooperativa, Škoda), jsme **prodloužené ruce marketingu a externí kreativní tým**: strategie, design, web i produkce od lidí, se kterými klient mluví přímo. Bez aparátu velké agentury, s její kvalitou. Neprodáváme hodiny ani šablony; neseme spoluzodpovědnost za výsledek.
 
-**Big idea (interní kompas):** „Rychlost dnes mají všichni. Rozdíl dělá rukopis."
-*(Pozn.: dřívější „Průměr si vygenerujete sami" míří na DIY/SMB publikum a kategorizuje nás níž — u středních a větších klientů nepoužívat. Éru AI komunikujeme nepřímo: obsah vzniká na kliknutí → vzácný je úsudek, rukopis a důvěra.)*
+**Klíčové argumenty (v3):**
+1. **Externí tým místo interních zaměstnanců.** Pro firmu, která nechrlí tuny materiálů, se interní marketér nevyplatí — za srovnatelné peníze má u nás celý seniorní tým (stratég, designér, vývojář, produkce), který škáluje oběma směry.
+2. **Prodloužené ruce marketingového oddělení.** Kde interní tým existuje, jsme jeho kapacita navíc — pracujeme samostatně, nezdržujeme.
+3. **Trefujeme se na první dobrou.** Připomínkové kolečko probíhá u nás interně; klientovi jde verze, která většinou sedí. Umíme to díky důkladnému vyzpovídání na startu (metoda PONOR) a samostatné rešerši.
+4. **B2B a technické obory.** Prokoušeme se dokumentací, pochopíme produkt, mluvíme s inženýry jejich jazykem.
+5. **Dodáváme víc, než je domluveno.** Každého klienta si vážíme; overdelivery je součást kultury.
+
+**Big idea (interní kompas):** „Rosteme s klienty, ne na klientech."
+Když se daří klientovi, daří se i nám — proto dodáváme často víc, než je domluveno, a vztahy měříme na roky. *(Pozn.: dřívější varianty „Průměr si vygenerujete sami" a „Rozdíl dělá rukopis" nepoužívat — první míří na DIY publikum, druhá stavěla na rukopisu, na kterém se nechceme točit. Éru AI komunikujeme nepřímo: obsahu je dost, smysl je vzácný.)*
 **Veřejný claim (web):** „Doba se zrychlila. Důvěra ne."
 
 **Tři pilíře hodnoty:**
@@ -83,7 +90,7 @@ Rychlost a MVP; omezený rozpočet. Brát jen při dobrém fitu (drzý filtr „
 **Co z toho plyne (strategické tahy):**
 1. S→O: Nasadit AI manifest + produkci jako hlavní diferenciaci nového webu (běží).
 2. W→O: Do 90 dnů sepsat 3 case studies s čísly (IKEM, Škoda, Nepanikař) — léčí slabinu důkazů.
-3. W→T: Systemizovat procesy (metoda MÍRA interně = checklisty), snížit bus factor.
+3. W→T: Systemizovat procesy (metoda PONOR interně = checklisty), snížit bus factor.
 4. S→O: Spustit balíček „Web kliniky na klíč" a cílený outreach na 10 klinik.
 5. O: Přidat AEO do nabídky webů (blok na LP, později mikro-LP).
 6. W: Zapnout pravidelný obsah (1 case study nebo AI/branding článek měsíčně) → inbound.
@@ -92,7 +99,7 @@ Rychlost a MVP; omezený rozpočet. Brát jen při dobrém fitu (drzý filtr „
 
 **Archetyp:** Tvůrce s prvky Mudrce — řemeslník, který ví, kam svět jde.
 **Charakter:** vizionářský, sebevědomý s nadsázkou, řemeslný, lidský. Drzost míří na průměr, nikdy na klienta.
-**Pravidla psaní:** vykáme (výjimka: Kariéra) · max 2 velká hesla na stránku · přínosy místo činností · konkréta místo adjektiv · slovník dílny (měřit, pilovat, ladit, rukopis) · zakázaná slova: „médium", generické „AI-powered", „full-service", „komplexní řešení", superlativy bez důkazu.
+**Pravidla psaní:** na webu vykáme (výjimka: Kariéra); osobně rychle přecházíme na tykání — blízkost je součást partnerství · max 2 velká hesla na stránku · přínosy místo činností · konkréta místo adjektiv · slovník dílny (měřit, pilovat, ladit, rukopis) · zakázaná slova: „médium", generické „AI-powered", „full-service", „komplexní řešení", superlativy bez důkazu.
 **Do:** „Do týdne víte, co, kdy a za kolik." **Don't:** „Nabízíme komplexní řešení na klíč."
 **Do:** „AI nám píše kód. Co napsat, říkáme my." **Don't:** „Využíváme nejmodernější AI technologie."
 

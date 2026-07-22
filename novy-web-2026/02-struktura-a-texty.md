@@ -91,25 +91,25 @@ CTA: [Všechny práce →]
 
 AI nástroje používáme každý den — zrychlily nám wireframy, kód i střih. Ušetřený čas vracíme do práce, kterou za nás neudělají: do strategie, textů a designu. Proto naše weby nevypadají jako všechny ostatní.
 
-### Sekce: Jak se s námi pracuje → METODA MÍRA (proces jako příběh)
+### Sekce: Jak se s námi pracuje → METODA PONOR (proces jako příběh)
 Inspirace gorillaspace.cz (kolo CIRCLE) + hotové bloky šablony Alture.
 
 **Kolo metody** (z ORBIT bloku Alture „A strong team of experts" — místo avatarů obíhají kroky):
-Střed: **Metoda MÍRA** — „Agilní kolo, kterým projde každý projekt. Jako v dílně: nejdřív míra, pak řez."
-Obíhá: Změříme → Navrhneme → Vyrobíme → Vyladíme → (dokola)
+Střed: **Metoda PONOR** — „Nejdřív se ponoříme, pak tvoříme. Kolo, které se točí s vámi dál."
+Obíhá: Ponoříme se → Navrhneme → Otestujeme → Ladíme → (dokola)
 
 **4 kroky jako příběh** (štítek „X. krok" jako samolepka + velké slovo + věta se zvýrazněním fixou + čmáraná šipka mezi kroky):
-1. **ZMĚŘÍME** — Poznáme váš byznys, zákazníky a čísla. Workshop, data, konkurence — žádné kreslení naslepo.
-2. **NAVRHNEME** — Strategie a koncept, který schválíte srdcem i tabulkou. Víte přesně, co se staví a proč.
-3. **VYROBÍME** — Design, web, fotky i video — vlastníma rukama, pod jednou střechou. Práci vidíte průběžně, ne až na konci.
-4. **VYLADÍME** — Spustíme, měříme a poznatky vracíme zpět do návrhu. Každou otáčkou je značka silnější — proto je to kolo, ne pás.
+1. **PONOŘÍME SE** — Vyzpovídáme vás a do tématu se prokoušeme sami, i toho technického. Maximum si dohledáme, ať vás nezdržujeme.
+2. **NAVRHNEME** — Strategie a koncept se smyslem, který schválíte srdcem i tabulkou. Víte přesně, co se staví a proč.
+3. **OTESTUJEME** — Kolečko úprav a připomínek proběhne u nás interně. K vám jde verze, která většinou sedí napoprvé.
+4. **LADÍME** — Spuštěním to nekončí — rozvíjíme dál. Rosteme s klienty, ne na klientech.
 
 **Srovnání (dvě natočené karty):**
 „Na co jste možná zvyklí": pošlete brief, přijde nabídka · tři měsíce ticho · hotový web „berte, nebo nechte" · každá změna = vícepráce · na video a tisk někdo další.
 „S Debonem": kafe a workshop · do týdne víte, co, kdy a za kolik · práci vidíte průběžně · spuštěním to nekončí · značka, web, video i výroba u jedné party.
 
 **Kreativní využití hotových bloků Alture:**
-- ORBIT blok → kolo metody MÍRA (homepage) NEBO tým ve Studiu (reálné tváře kolem „Jsme malí schválně") — nepoužívat obojí.
+- ORBIT blok → kolo metody PONOR (homepage) NEBO tým ve Studiu (reálné tváře kolem „Jsme malí schválně") — nepoužívat obojí.
 - CHAT blok („Real-time collaboration") → Kontakt: reálná anonymizovaná konverzace s klientem (rychlost, vlastní produkce, lidskost beze slov o nich).
 - Tmavá karta „Transparent pricing model" → „Ceny bez překvapení" na LP Weby.
 
@@ -155,8 +155,8 @@ Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme spole�
 - **Zadání, se kterým umí pracovat každý** — dokument strategie poslouží i dalším dodavatelům.
 
 ### Blok: Jak to probíhá
-# MĚŘÍME DVAKRÁT.
-# ŘEŽEME JEDNOU.
+# NEJDŘÍV SE PONOŘÍME.
+# PAK NAVRHUJEME.
 
 **Nezačínáme v grafickém editoru.** Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Strategie, kterou spolu nastavíme, pak řídí každé další rozhodnutí. Jako v dobré dílně: nejdřív míra, pak řez.
 
@@ -420,7 +420,9 @@ Vraťte se na hlavní stránku — tam je to lepší. **[Zpátky]**
 **Řemeslo:**
 - POCTIVÁ PRÁCE JE VIDĚT. TA NEPOCTIVÁ TAKY.
 - MÁME SVŮJ RUKOPIS. POZNÁTE HO I BEZ PODPISU.
-- MĚŘÍME DVAKRÁT. ŘEŽEME JEDNOU.
+- NEJDŘÍV SE PONOŘÍME. PAK NAVRHUJEME.
+- VÍTE, KOLIKRÁT VERZUJEME? (většinou se trefíme napoprvé)
+- ROSTEME S KLIENTY, NE NA KLIENTECH.
 - ŘEMESLO SE NEDÁ STÁHNOUT.
 - DÍLNA, NE FABRIKA.
 - NÁSTROJE SE MĚNÍ. ŘEMESLO ZŮSTÁVÁ.
