@@ -1,134 +1,135 @@
-# Debono Interactive — Strategický manuál značky (v3, červenec 2026)
+# DEBONO — Strategický manuál značky v4.0
 
-> Interní dokument. Navazuje na 01-strategie.md a 03-reserse-konkurence-ai.md.
-> Položky označené **[OVĚŘIT]** jsou kvalifikované odhady — doplnit reálná data.
+*Pracovní textový podklad slide po slidu, nasazený do slide decku (Debono-strategicky-manual-slidy.pdf).*
+*Zapracováno: feedback kolegyně + strategická rešerše trhu (18 CZ agentur, AI transformace 2025–2026).*
+*Poznámky `[ZMĚNA]` vysvětlují, co se změnilo a proč — v PDF nejsou, tady zůstávají pro kontext.*
 
 ---
 
-## 1. K čemu manuál slouží
+## ČÁST I — ZÁKLAD ZNAČKY
 
-Jeden zdroj pravdy pro každého, kdo za Debono mluví, píše, navrhuje nebo prodává. Když si nejste jistí rozhodnutím (nabídka, post, návrh, nový klient), odpověď hledejte tady. Co je v rozporu s manuálem, nejde ven — nebo se nejdřív změní manuál.
+### SLIDE 01 · COVER
+**DEBONO.** / Strategický manuál značky. / Styčný bod pro veškerou komunikaci. Co je v rozporu s manuálem, nejde ven — nebo se nejdřív změní manuál. / V4.0 · 2026 · Interní
 
-## 2. Východiska
+### SLIDE 02 · ESENCE ZNAČKY
+# Dobro máme v názvu.
+de bono — latinsky „o dobrém". Není to slovní hříčka, je to náš základ: děláme věci dobře a v dobrém. Poctivá práce, férové vztahy, výsledky, za které se podepíšeme.
+**Esence značky: Po nás zůstává dobro.**
+Z dobra roste všechno ostatní: kvalita práce → důvěra klientů → dlouhé vztahy. Proto rosteme s klienty, ne na klientech.
+`[ZMĚNA] Dobro přesunuto z posledního slidu na druhý — výchozí bod, ze kterého se odvozuje zbytek. Formulována esence jednou větou.`
 
-**Fakta o firmě:** kreativní studio z Prahy (Jiří Flachs); hlavní divize: tvorba webů (Webflow) a vizuální identity; dále vlastní foto/video produkce, řízení výroby (tisk, značení, POS) a správa sociálních sítí. Reference: Škoda Auto, Kooperativa, IKEM, Očkovací centrum Westfield Chodov, Telly, St. Nicolaus, NEVA, Nepanikař, Albistech, KM Publicity, Maso Pelikán, Zlatá Studna, Laptime. **9 z 10 poptávek končí spoluprací.**
+### SLIDE 03 · KDE STOJÍME
+# Malé studio. Velké značky.
+Kreativní studio z Prahy: strategie, identity, weby ve Webflow, vlastní foto/video produkce a výroba. Pracujeme pro instituce a značky, u kterých rozhoduje důvěra.
+REFERENCE: Škoda Auto · Kooperativa · IKEM · Westfield Chodov · Telly · St. Nicolaus · NEVA · Nepanikař | 9 Z 10 poptávek u nás končí spoluprací. Ne proto, že bychom byli levní. *(interně: doložit počtem a obdobím)* | POD JEDNOU STŘECHOU: Od strategie po výrobu — návrh, web, foto, video, tisk. Jedna parta, jedna zodpovědnost.
+`[ZMĚNA] Vypuštěno „často dodáme víc, než je domluveno" — podhodnocuje práci; proaktivita nově v hodnotě „Myslíme za roh".`
 
-**Kontext trhu 2026:** AI zlevnila výrobu — „nějaký web" vznikne za odpoledne, průměrný obsah na kliknutí. Hodnota se přesouvá z výroby do strategie, vkusu a důvěry. 76 % webdesignérů vidí AI jako hrozbu svého byznysu; my ji používáme jako páku. Česká scéna AI komunikuje třemi způsoby (služba / thought-leadership / mlčení) — pozice „hrdě lidské řemeslo, akcelerované AI" je volná. Sílí „human-made" backlash a AEO (viditelnost v AI vyhledávání).
+### SLIDE 04 · KONTEXT 2026
+# Doba se zrychlila. Důvěra ne.
+Obsah dnes vzniká na kliknutí — vyrábět umí každý, rychleji než kdy dřív. Jenže čím víc obsahu svět produkuje, tím vzácnější je to, co se vygenerovat nedá: promyšlená práce, úsudek a značka, které lidé věří.
 
-## 3. Vize, mise, hodnoty
+### SLIDE 05 · CO TO ZNAMENÁ PRO ZNAČKY
+# Obsahu je dost. Smysl je vzácný.
+ZÁPLAVA VÝSTUPŮ: Kanálů přibývá a značky bez pevného směru se rozpadají na sérii nesourodých materiálů, které nikam nevedou. | TLAK NA TEMPO: Marketingové týmy mají vyrábět víc a rychleji — často s několika dodavateli najednou. Koordinace žere čas, který měl jít do přemýšlení. | DŮVĚRA ROZHODUJE: Zákazník pozná, co je odbyté — a začíná poznávat, co je vygenerované. První dojem je dnes nejsilnější obchodní argument.
+`[ZMĚNA] Doplněno „co je vygenerované" — realita 2026 (68 % spotřebitelů dle Gartneru pochybuje o pravosti obsahu online).`
 
-**Vize:** Být v Česku první volbou pro firmy, které nechtějí být průměrné.
-**Mise:** Děláme z prvního dojmu nejsilnější obchodní argument našich klientů — značkou, webem a obsahem, které někdo promyslel.
-**Hodnoty:**
-1. **Poctivé řemeslo.** Detail projde rukama. Pod práci se podepisujeme.
-2. **Partnerství.** Neseme spoluzodpovědnost za výsledek; říkáme i to, co se neposlouchá dobře.
-3. **Vkus před trendem.** Návrhy stavíme z klienta, ne z Dribbblu.
-4. **Technologie jako páka.** AI je náš nejrychlejší junior; kreativní ředitel je pořád člověk.
-5. **Lidskost.** Malé studio schválně — klient mluví s tvůrci.
+### SLIDE 06 · POSITIONING
+# Kdo jsme, jednou větou.
+**Debono je externí kreativní tým pro značky, u kterých rozhoduje důvěra — strategie, design, web i produkce od jednoho týmu, který se ponoří, pracuje samostatně a trefuje se napoprvé.**
+Tři věci, které z té věty nikdy nevypadnou: **Důvěra** — území, na kterém hrajeme. **Jeden tým** — žádné subdodávky, jedna odpovědnost. **Napoprvé** — samostatnost, která šetří klientův čas.
+`[ZMĚNA] Pozice do jedné věty; vypuštěno „prodloužené ruce" (rámovalo nás jako kapacitu — a kapacitu AI zlevňuje) i „bez aparátu velké agentury" (nedefinujeme se přes konkurenci).`
 
-## 4. Brand positioning
+### SLIDE 07 · KOMPAS ZNAČKY
+ESENCE: Po nás zůstává dobro. | INTERNÍ BIG IDEA: Rosteme s klienty, ne na klientech. | VEŘEJNÝ CLAIM: Doba se zrychlila. Důvěra ne. | AI POSTOJ: Rutinu dělá AI. Podepisuje se člověk. | PROCES: Metoda PONOR — Ponoříme se → Navrhneme → Otestujeme → Ladíme | VIZE: Být prvním jménem, které padne, když česká značka potřebuje, aby jí lidé věřili. | MISE: Děláme z prvního dojmu nejsilnější obchodní argument našich klientů.
+`[ZMĚNA] Přidána esence. AI postoj přeformulován z „nejrychlejší junior" („junior" má datum spotřeby; „AI generuje, člověk kurátoruje" drží v ČR Symbio; „podepisuje se člověk" nezestárne a míří na odpovědnost). Vize přepsána na území důvěry. Mise zkrácena.`
 
-**Positioning statement (interní):** Pro firmy a instituce, u kterých rozhoduje důvěra (typu IKEM, Kooperativa, Škoda), jsme **prodloužené ruce marketingu a externí kreativní tým**: strategie, design, web i produkce od lidí, se kterými klient mluví přímo. Bez aparátu velké agentury, s její kvalitou. Neprodáváme hodiny ani šablony; neseme spoluzodpovědnost za výsledek.
+### SLIDE 08 · HODNOTY
+# Na čem stojíme — a jak to poznáte.
+Hodnota, která není vidět v komunikaci, neexistuje. Každá hodnota: co znamená → jak se projevuje → jak ji komunikujeme.
+**01 · POCTIVÁ PRÁCE S MYŠLENKOU** — Každý výstup se opírá o důvod. / Ke každému návrhu zdůvodnění; bez důvodu nejde ven. / V case studies „proč", ne jen „co"; neprodáváme počet výstupů.
+**02 · PARTNER, NE DODAVATEL** — Rosteme s klienty, ne na klientech. / Vztahy na roky; doporučíme i řešení, které nám krátkodobě nevydělá. / Klienti jménem a s výsledky, ne loga v patičce.
+**03 · SAMOSTATNOST** — Zadáte a nemusíte řídit každý krok. / Kolečko revizí proběhne u nás, ne u vás. / Číslem — měříme a publikujeme průměr revizních koleček.
+**04 · MYSLÍME ZA ROH** — Domluvené je základ; když výsledku pomůže něco navíc, řekneme to. / Aktivní doporučení nad rámec zadání; práce navíc má jméno a cenu. / „Hlídáme výsledek, ne jen zadání." Nikdy práci zdarma.
+**05 · ODPOVĚDNOST S PODPISEM** — Za výstupem stojí člověk, který se podepíše; AI je nástroj. / U projektů uvádíme autory; chyby opravujeme na svůj účet. / Tváře a jména na webu; stránka „Jak u nás pracuje AI".
+`[ZMĚNA] Nový slide dle feedbacku „chybí hodnoty — co a jak komunikovat". „Víc, než je domluveno" nahrazeno „Myslíme za roh". „Práce má mít smysl" žije v hodnotě 01 jako interní princip.`
 
-**Klíčové argumenty (v3):**
-1. **Externí tým místo interních zaměstnanců.** Pro firmu, která nechrlí tuny materiálů, se interní marketér nevyplatí — za srovnatelné peníze má u nás celý seniorní tým (stratég, designér, vývojář, produkce), který škáluje oběma směry.
-2. **Prodloužené ruce marketingového oddělení.** Kde interní tým existuje, jsme jeho kapacita navíc — pracujeme samostatně, nezdržujeme.
-3. **Trefujeme se na první dobrou.** Připomínkové kolečko probíhá u nás interně; klientovi jde verze, která většinou sedí. Umíme to díky důkladnému vyzpovídání na startu (metoda PONOR) a samostatné rešerši.
-4. **B2B a technické obory.** Prokoušeme se dokumentací, pochopíme produkt, mluvíme s inženýry jejich jazykem.
-5. **Dodáváme víc, než je domluveno.** Každého klienta si vážíme; overdelivery je součást kultury.
+### SLIDE 09 · NÁŠ POSTOJ K AI
+# Rutinu dělá AI. Podepisuje se člověk.
+POUŽÍVÁME JI DENNĚ: wireframy, kód, střih, rešerše. | ÚSPORU VRACÍME DO PRÁCE: do kreativy a strategie, ne do marže. | NIKDY BEZ PODPISU: finální kreativa, texty a fotografie lidí mají vždy lidského autora; „AI-powered" neříkáme.
+**Veřejný závazek:** stránka „Jak u nás pracuje AI" — co AI dělá, co nikdy, kdo odpovídá. Pro zdravotnictví a finance nákupní argument, který jim nikdo v ČR nedává.
 
-**Big idea (interní kompas):** „Rosteme s klienty, ne na klientech."
-Když se daří klientovi, daří se i nám — proto dodáváme často víc, než je domluveno, a vztahy měříme na roky. *(Pozn.: dřívější varianty „Průměr si vygenerujete sami" a „Rozdíl dělá rukopis" nepoužívat — první míří na DIY publikum, druhá stavěla na rukopisu, na kterém se nechceme točit. Éru AI komunikujeme nepřímo: obsahu je dost, smysl je vzácný.)*
-**Veřejný claim (web):** „Doba se zrychlila. Důvěra ne."
+### SLIDE 10 · METODA PONOR
+Nejdřív se ponoříme, pak tvoříme. 01 PONOŘÍME SE: vyzpovídáme vás a do tématu se prokoušeme sami — maximum si dohledáme. | 02 NAVRHNEME: strategie a koncept se smyslem. | 03 OTESTUJEME: kolečko úprav proběhne u nás interně; k vám jde verze, která většinou sedí napoprvé. | 04 LADÍME: spuštěním to nekončí — měříme, rozvíjíme, rosteme spolu.
 
-**Tři pilíře hodnoty:**
-1. Vkus se nedá vygenerovat (řemeslo, rukopis, detail).
-2. Od nápadu po výrobu (jedna parta: strategie → design → web → foto/video → tisk).
-3. Partner, ne dodavatel (spoluzodpovědnost, dlouhé vztahy, 9/10 poptávek → spolupráce).
+### SLIDE 11 · VÍTE, KOLIKRÁT VERZUJEME?
+Většinou se trefíme na první dobrou. Připomínkové kolečko proběhne u nás interně — ne na vašem stole. Vy řešíte byznys, ne revize.
+**Interní úkol:** od M1 měřit počet revizních koleček; cíl nahradit „většinou" konkrétním číslem.
 
-**Diferenciátory (proč my):** web-first branding (značka navržená tam, kde žije) · in-house produkce jako anti-AI trumf (skutečné fotky vaší firmy) · metoda MÍRA (Změříme → Navrhneme → Vyrobíme → Vyladíme) · AI manifest (transparentně: úsporu vracíme do práce, ne do marže) · zdravotnická expertiza (IKEM, Westfield).
+## ČÁST II — TRH A ZÁKAZNÍCI
 
-**Konkurenční mapa (zjednodušená):** enterprise „AI transformace" (Actum, B&M, Pixelmate — jiná liga, jiný klient) · butik thought-leadership (Justmighty — nejblíž tónem, jiné težiště: kampaně) · mlčící řemeslníci a Webflow studia (The Compote, Semibold — nejpřímější konkurence, bez AI narativu a bez produkce). **Naše pole:** malé studio s velkou produkční šíří + jasným AI postojem.
+### SLIDE 12 · TŘI DRUHY DODAVATELŮ. MY JSME ČTVRTÝ.
+VELKÁ AGENTURA / AI TRANSFORMACE (Actum, Etnetera, Symbio): kvalita a technologie, ale aparát a ceny od milionů; AI jako IT projekt. | SPECIALIZOVANÉ STUDIO (Najbrt; Semibold, The Compote; produkční domy): špička v oboru, ale klient koordinuje tři dodavatele. | FULL-SERVICE PARTA (Loosers, Fairy Tailors, Better): šířka bez hloubky ve webu; většinou bez vlastní produkce.
+**Naše pozice: všechno, co klient potřebuje, od jednoho týmu, který se ponoří.** Strategie + design + web + vlastní produkce pod jednou střechou — pro velké značky to v ČR nekomunikuje nikdo jiný.
+`[ZMĚNA] Přepsán nesrozumitelný „Mezera je uprostřed"; doplněno Symbio a sledování Justmighty.`
 
-## 5. Cílové skupiny
+### SLIDE 13 · KOMU POMÁHÁME
+A · FIRMA S MARKETINGOVÝM ODDĚLENÍM: marketing lead je náš komunikační článek — jsme jeho externí tým. | B · FIRMA BEZ INTERNÍHO MARKETINGU: interní člověk se nevyplatí; jsme celý jejich tým. | C · KLINIKA ČI INSTITUCE — NÁŠ HROT: prostředí, kterému rozumíme (IKEM, Nepanikař); tady stavíme awareness, odsud se reference přelévá do A i B.
 
-**Zacílení v2: střední a větší organizace** — firmy a instituce, kde o značce rozhodují lidé s vlastními týmy a rozpočty. Obsah si negenerují sami; nakupují úsudek, rukopis a spolehlivost. Pořadí person je nové: korporátní marketing první.
+### SLIDE 14 · PERSONA A (primární) — Marketing lead s vlastním oddělením
+28–45, finance/automotive/FMCG/B2B tech. Kampaň s termínem, launch, mikrosite; tým vytížený, nábor neprojde. Nakupuje přes reference, doporučení, pilot. Usnadní život: zadá a neřídí; první verze sedí; vše u jednoho týmu; senior kvalita bez náboru. Drží zpátky: „malé studio to neutáhne"; procurement; hlídání dodavatelů; konzistence s manuálem.
+**Klíčové sdělení: Externí tým, který nemusíte řídit. Revize proběhnou u nás — vy řešíte byznys.**
 
-### Persona A (v2 primární) — „Marketing lead větší firmy"
-Brand/marketing manažer korporace či větší firmy (finance, automotive, FMCG, media), 28–45 let. **Bolest:** velké agentury pomalé a drahé; interní tým nestíhá produkci; hodně dodavatelů = rozpadá se konzistence. **Spouštěč:** kampaň s termínem, launch, mikrosite, content. **Rozhoduje:** spolehlivost, tempo, reference velkých značek; obavy „malé studio to neutáhne", procurement. **Sdělení:** kvalita velké agentury, tempo malého studia; produkce in-house; pilotní projekt jako vstup.
+### SLIDE 15 · PERSONA B — Majitel/ředitel firmy, která nechrlí tuny materiálů
+Střední firma, často B2B/technický obor. Usnadní život: celý tým za rozumnější peníze než interní člověk; pochopíme i technický produkt; jasná cena a termín. Drží zpátky: strach z kolotoče a víceprací; „nemám čas vysvětlovat" — proto PONOR; špatné zkušenosti.
+**Klíčové sdělení: Tým místo zaměstnance. Jedna cena, jeden termín, jedna odpovědnost — a ponoříme se sami, vysvětlování je na nás.**
 
-### Persona B — „Ředitel/ka kliniky či instituce" (růstová)
-Beze změny (viz níže), reference IKEM/Westfield jsou pro tuto personu klíčové.
+### SLIDE 16 · PERSONA C (hrot) — Ředitel/ka kliniky nebo instituce
+První kontakt s pacientem probíhá na webu. Usnadní život: objednání bez telefonování; srozumitelnost bez latiny; reálné fotky — nafotíme sami, žádné stocky, žádná AI těla; GDPR, přístupnost.
+**Klíčové sdělení: „Pacient si vás vyšetří dřív, než vy jeho." Balíček Web kliniky na klíč. A všechno, co pacient uvidí, je skutečné.**
 
-### Persona C (dříve A) — „Majitel střední firmy" (30–250 lidí)
-Firma vyrostla rychleji než její značka; chce prezentaci na úrovni firmy, jakou vybudoval, a partnera, který proces povede za něj.
+### SLIDE 17 · TÝM MÍSTO ZAMĚSTNANCE
+INTERNÍ ČLOVĚK: jedna specializace · fixní náklad · nábor, vedení, dovolená · grafiku, web a video stejně poptáte externě. | DEBONO: stratég, designér, vývojář i produkce · platíte jen práci · nastupujeme hned · jedna zodpovědnost.
 
-### Původní znění person (v1, pro kontext):
+### SLIDE 18 · KLÍČOVÝ POSUN
+„Musím dodavatele hlídat, urgovat a všechno jim vysvětlovat." → **„Mám tým, který se ponoří, pracuje sám a trefí se napoprvé."**
+Neprodáváme weby ani loga. **Prodáváme klid člověka, který za značku odpovídá** — a čas, který místo revizí věnuje svému byznysu.
 
-#### Persona v1-A — „Ambiciózní majitel"
-Majitel/jednatel firmy 10–50 lidí (služby, výroba, gastro, reality), 32–50 let. **Bolest:** firma vyrostla, ale značka a web zůstaly „z garáže" — stydí se poslat odkaz. **Spouštěč:** expanze, nová pobočka, investor, silvestrovské předsevzetí „už to musíme udělat pořádně". **Rozhoduje podle:** důvěra, reference, osobní chemie; cena až na druhém místě. **Bariéry:** strach z agenturního kolotoče a víceprací. **Kde ho zasáhnout:** doporučení, Google („tvorba webu praha"), Instagram/LinkedIn. **Klíčové sdělení:** „Nejste průměrní. Tak proč tak vypadat?" + Dodavatele vyměníte, partnera ne.
+## ČÁST III — CO, KDE A JAK KOMUNIKUJEME
 
-### Persona B — „Ředitelka kliniky" (růstová, cílově ~25 %)
-Ředitel/ka nebo lékař-majitel soukromé kliniky či sítě ambulancí, 38–55 let. **Bolest:** pacienti volají místo online objednání, web nepůsobí důvěryhodně, konkurence (estetika, stomatologie) je vizuálně dál; nábor lékařů vázne. **Spouštěč:** nová pobočka/služba, akreditace, negativní recenze, nábor. **Rozhoduje podle:** důvěra, reference ze zdravotnictví, citlivost k oboru, GDPR. **Bariéry:** čas, legislativa, „agentury nám nerozumí". **Kde:** doporučení mezi lékaři, LinkedIn, oborové konference. **Sdělení:** „Pacient si vás vyšetří dřív, než vy jeho." + balíček Web kliniky na klíč + IKEM/Westfield.
+### SLIDE 19 · PĚT SLUŽEB, JEDEN TÝM
+01 Strategie značky | 02 Vizuální identita (web-first) | 03 Weby (vlajková loď; SEO/AEO — „aby vás doporučil i ChatGPT") | 04 Produkce (skuteční lidé, skutečné prostory — žádné stocky, žádná AI těla) | 05 Social & kampaně.
+**Cena za výstup, ne za hodiny.** Strategii a kreativní vedení naceňujeme samostatně — úsudek není zdarma v ceně produkce. Návaznosti: strategie → identita → web → produkce → social; cíl 2+ služeb a retainer.
 
-### Persona C — „Marketingová manažerka větší firmy" (výnosová)
-Brand/marketing manažer korporace či větší firmy (pojišťovnictví, automotive, FMCG, TV), 28–45 let. **Bolest:** velké agentury jsou pomalé a drahé, interní tým nestíhá produkci; potřebuje spolehlivého partnera na mikrosite, kampaň, content. **Spouštěč:** kampaň s termínem, product launch, event. **Rozhoduje podle:** rychlost, spolehlivost, reference velkých značek (Škoda, Kooperativa), cena vs. velká agentura. **Kde:** LinkedIn, doporučení, poptávková řízení. **Sdělení:** kvalita velké agentury, tempo a ceny malého studia; produkce in-house.
+### SLIDE 20 · ARCHITEKTURA SDĚLENÍ
+Území: DŮVĚRA (navenek), vyrůstá z esence „dobro" (uvnitř). Vrstvy: Vrchní claim „Doba se zrychlila. Důvěra ne." (podpis značky) · Hero A/B „Důvěra se nedá vygenerovat." (hero webu/kampaň) · AI postoj „Rutinu dělá AI. Podepisuje se člověk." · Servisní důkaz „Kolečko revizí proběhne u nás, ne u vás." (doložit číslem) · Produkce „Skuteční lidé, skutečné prostory. Žádné stocky, žádná AI těla." · Kliniky „Pacient si vás vyšetří dřív, než vy jeho." · Interní „Rosteme s klienty, ne na klientech." / „Po nás zůstává dobro."
+Pozn.: „trefujeme se napoprvé" jen ve větách, ne jako heslo (blízko Najbrt „Jenom jednou.").
 
-### Persona D — „Founder startupu" (sekundární, výběrově)
-Rychlost a MVP; omezený rozpočet. Brát jen při dobrém fitu (drzý filtr „nejste tu správně, pokud hledáte nejlevnější nabídku") — nebo nasměrovat na menší balíček/AI builder s naší strategií. Chrání pozici i kapacitu.
+### SLIDE 21 · CO KOMU ŘÍKÁME
+A: Externí tým, který nemusíte řídit + číslo revizí, reference, pilot. | B: Tým místo zaměstnance + nabídka, která platí; case s čísly; PONOR. | C: Pacient si vás vyšetří dřív… + IKEM/Nepanikař, reálné fotky, GDPR, balíček.
+**Pravidlo: žádné sdělení bez důkazu vedle sebe.**
 
-## 6. SWOT
+### SLIDE 22 · KANÁLY: KAŽDÝ MÁ JEDNU PRÁCI
+Web (konverzní stroj s důkazy; case 1×/měs) · Doporučení (po každém projektu + follow-up 3 měs) · LinkedIn Jirka (názor a čísla; 2×/měs) · Instagram (důkaz human-made; 2–4×/měs) · PR Médiář/MAM (legitimizace; kvartálně; vlastní čísla o AI úsporách) · Outreach kliniky (hrot; M2–M3).
+Tón podle kanálu: web vyká, sebevědomě klidný · LinkedIn názorový a osobní · Instagram lidský · PR věcné s čísly.
 
-**Silné stránky:** 9/10 poptávek → spolupráce (obchodní chemie + kvalita) · in-house produkce foto/video + výroba (vzácné u malých studií) · seniorní Webflow expertiza · reference velkých značek i zdravotnictví · malý tým = rychlost, klient mluví s tvůrci · AI-akcelerované procesy = konkurenceschopná cena bez ztráty kvality.
+### SLIDE 23 · JAK ZNÍME
+Vizionářsky. Lidsky. S nadsázkou. Drzost míří na průměr, nikdy na klienta. Na webu vykáme; osobně tykání. Ano: „Do týdne víte, co, kdy a za kolik." / „Rutinu za nás dělá AI. Co napsat, říkáme my." / „Kolečko připomínek proběhne u nás, ne u vás." / „Nafotíme skutečné lidi ve skutečném prostoru." Ne: „Komplexní řešení na klíč." / „Nejmodernější AI technologie." / „Individuální přístup." / „Prémiový vizuální obsah na míru."
 
-**Slabé stránky:** kapacita malého týmu, úzké hrdlo na klíčové osobě [bus factor] · inbound závislý na doporučeních, malý organický přísun · case studies bez tvrdých čísel · pozice a ceny dosud komunikované nejasně (řeší nový web) · nízká awareness mimo okruh · žádné awards/PR · interní procesy málo zdokumentované [OVĚŘIT].
+### SLIDE 24 · SWOT
+S: 9/10 · první iterace · samostatnost · in-house produkce · B2B/technické obory · reference · esence konzistentní s praxí. W: kapacita/bus factor · inbound na doporučeních · case bez čísel · nízká awareness · claimy bez důkazů v číslech · procesy [OVĚŘIT]. O: „externí tým místo interních" · AEO · kliniky · human-made backlash (68 %) · přesun rozpočtů do strategie · value pricing · thought-leadership · veřejná AI governance první v ČR. T: komoditizace webů · enterprise AI (Actum, Etnetera) · Symbio drží AI-éra narativ · Justmighty překryv · škrty · koncentrace příjmů [OVĚŘIT] · přetížení · platform-risk Webflow.
 
-**Příležitosti:** volná pozice „lidské řemeslo × AI" v ČR · AEO jako nová služba („aby vás doporučil i ChatGPT") · produktizovaný balíček pro kliniky · přesun rozpočtů z produkce do strategie (Justmighty efekt) · human-made backlash → hodnota vlastní produkce roste · value pricing místo hodinovky · thought-leadership obsah na AI téma · partnerství (Webflow, lékařské asociace, koupě kapacit).
+### SLIDE 25 · ŠEST TAHŮ
+Důkazy (3 case s čísly + měření revizí) · Diferenciace (důvěra + „revize u nás"; AI přes odpovědnost, ne nástroj — odlišení od Symbia) · Kliniky hrot (balíček + outreach 10) · AEO (poctivě rámované) · PR tah (vlastní čísla dřív než konkurence) · Systemizace (PONOR checklisty; obsah 1×/měs).
 
-**Hrozby:** komoditizace webů (Lovable, Framer AI) tlačí ceny dolů · enterprise hráči obsazují „AI" v hlavách klientů · škrty rozpočtů v recesi · koncentrace příjmů u málo klientů [OVĚŘIT] · přetížení/vyhoření malého týmu · platform-risk Webflow (ceny, změny).
+### SLIDE 26 · ROADMAPA 90 DNÍ
+M1 ZÁKLADY (Jirka + [doplnit]): 3 case studies · měření revizí + metodika 9/10 · obsah webu dle architektury · nafotit tým · analytika. Hotovo: case schválené, měření běží, texty finální.
+M2 LAUNCH ([doplnit]): web + LP kliniky · stránka „Jak u nás pracuje AI" · A/B hero claim · LinkedIn + PR. Hotovo: web živý, konverze se měří, PR publikováno.
+M3 RŮST ([doplnit]): AEO v nabídce · outreach 10 klinik · vyhodnocení KPI a A/B · rozhodnutí o kapacitě · rytmus potvrzen. Hotovo: 3+ schůzky s klinikami, KPI dashboard, rozhodnutí padlo.
+KPI: poptávky [DOPLNIT]/měs · konverze ≥ 85 % · reakce < 24 h · 2+ služeb růst · průměr revizí publikovat · zmínky v AI asistentech kvartálně.
 
-**Co z toho plyne (strategické tahy):**
-1. S→O: Nasadit AI manifest + produkci jako hlavní diferenciaci nového webu (běží).
-2. W→O: Do 90 dnů sepsat 3 case studies s čísly (IKEM, Škoda, Nepanikař) — léčí slabinu důkazů.
-3. W→T: Systemizovat procesy (metoda PONOR interně = checklisty), snížit bus factor.
-4. S→O: Spustit balíček „Web kliniky na klíč" a cílený outreach na 10 klinik.
-5. O: Přidat AEO do nabídky webů (blok na LP, později mikro-LP).
-6. W: Zapnout pravidelný obsah (1 case study nebo AI/branding článek měsíčně) → inbound.
+### SLIDE 27 · ZÁVĚR
+# Po nás zůstává dobro.
+Z dobra roste důvěra. Z důvěry rostou vztahy. **Rosteme s klienty, ne na klientech.**
 
-## 7. Osobnost značky a tone of voice
-
-**Archetyp:** Tvůrce s prvky Mudrce — řemeslník, který ví, kam svět jde.
-**Charakter:** vizionářský, sebevědomý s nadsázkou, řemeslný, lidský. Drzost míří na průměr, nikdy na klienta.
-**Pravidla psaní:** na webu vykáme (výjimka: Kariéra); osobně rychle přecházíme na tykání — blízkost je součást partnerství · max 2 velká hesla na stránku · přínosy místo činností · konkréta místo adjektiv · slovník dílny (měřit, pilovat, ladit, rukopis) · zakázaná slova: „médium", generické „AI-powered", „full-service", „komplexní řešení", superlativy bez důkazu.
-**Do:** „Do týdne víte, co, kdy a za kolik." **Don't:** „Nabízíme komplexní řešení na klíč."
-**Do:** „AI nám píše kód. Co napsat, říkáme my." **Don't:** „Využíváme nejmodernější AI technologie."
-
-## 8. Architektura služeb a cenotvorba
-
-**5 služeb** (každá s vlastní LP): Strategie značky · Vizuální identita · Tvorba webů (vlajková loď) · Produkce foto & video · Social media & kampaně. **Segmenty:** Pro kliniky (první), později developeři/výrobní firmy.
-**Princip cen:** cena za výstup a hodnotu, ne za hodiny („cena roste s rozsahem, ne s počtem hodin — a nabídka platí"). Ceny „od" veřejně na webu (filtr poptávek): web od 150 000 Kč [OVĚŘIT], identita od X, kliniky balíček od X. Úspora z AI jde do kvality, ne do marže — říkat nahlas.
-**Prodejní logika:** každá služba vede k dalším (strategie → identita → web → produkce → social = celoroční vztah). Cíl: zvyšovat podíl klientů se 2+ službami a retainerem [metrika].
-
-## 9. Marketingová strategie
-
-**Funnel:** Doporučení + obsah + SEO/AEO → web (wow + důkazy) → konzultace do 24 h → nabídka do týdne → zakázka → case study → doporučení.
-**Kanály podle priority:**
-1. **Vlastní web** — konverzní stroj, case studies s čísly, FAQ s AEO schématy.
-2. **Doporučení systematicky** — po každém projektu říct si o intro + recenzi; program odměn [zvážit].
-3. **LinkedIn (Jirka osobně)** — 2× měsíčně: AI manifest v praxi, před/po ukázky, čísla z projektů.
-4. **Instagram** — vizuální BTS z produkce a dílny (lidskost, human-made).
-5. **PR/thought-leadership** — 1 výstup kvartálně (MAM, CzechCrunch téma „řemeslo v době AI").
-6. **Cílený outreach kliniky** — 10 vytipovaných, personalizovaný audit webu zdarma.
-**KPI (měsíčně):** počet poptávek · fit-rate poptávek · konverze poptávka→schůzka→zakázka (drží 90 %?) · průměrná hodnota zakázky · podíl klientů s 2+ službami · délka spolupráce · konverze webu (návštěva→poptávka) · čas první reakce < 24 h.
-
-## 10. Roadmapa 90 dní
-
-**Měsíc 1 — Základy:** dokončit obsah webu (texty v3, ceny, tým nafotit) · 3 case studies s čísly · nastavit analytiku a měření KPI · doplnit čísla do manuálu ([OVĚŘIT] položky).
-**Měsíc 2 — Launch:** spustit nový web + LP Pro kliniky · oznámit (LinkedIn série, PR výstup „AI je náš nejrychlejší junior") · zapnout obsahový rytmus (IG BTS, LI 2×/měs).
-**Měsíc 3 — Růst:** spustit AEO nabídku · outreach 10 klinik · vyhodnotit KPI, upravit ceny/balíčky · rozhodnout kapacity (freelance síť vs. hire).
-
-## 11. Přílohy
-
-- Zásobník hesel: viz 02-struktura-a-texty.md, sekce 13.
-- Konkurenční rešerše: 03-reserse-konkurence-ai.md.
-- Web copy a struktura: 02-struktura-a-texty.md + prototyp.html.
+### SLIDE 28 · PŘÍLOHA — OTEVŘENÉ OTÁZKY
+(a) Hero claim webu — A/B „Doba se zrychlila. Důvěra ne." vs. „Důvěra se nedá vygenerovat." (b) Vlastníci v roadmapě. (c) Cíl kvalifikovaných poptávek/měs. (d) Ověřit [OVĚŘIT] položky.
