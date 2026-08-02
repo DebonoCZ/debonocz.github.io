@@ -66,7 +66,22 @@
   .btn:hover{ background:#000; transform:translateY(-2px); }
   .btn.ghost{ background:var(--card); border:1px solid var(--card-line); color:var(--ink); }
   .btn.ghost:hover{ border-color:var(--ink); background:var(--card); }
-  @media (max-width:820px){ .nav a:not(.keep){ display:none; } }
+  .burger{ display:none; width:46px; height:46px; border-radius:14px; border:1px solid var(--card-line);
+    background:var(--card); cursor:pointer; z-index:75; position:relative; flex-direction:column;
+    align-items:center; justify-content:center; gap:6px; }
+  .burger span{ display:block; width:20px; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s ease; }
+  #menuT:checked ~ header .burger span:first-child{ transform:translateY(4px) rotate(45deg); }
+  #menuT:checked ~ header .burger span:last-child{ transform:translateY(-4px) rotate(-45deg); }
+  @media (max-width:860px){
+    .bar{ backdrop-filter:none; background:var(--bg); }
+    .burger{ display:flex; }
+    .nav{ position:fixed; inset:0; background:var(--bg); display:none; flex-direction:column;
+      justify-content:center; align-items:flex-start; gap:6px; padding:100px 34px 40px; z-index:60; }
+    .nav a{ display:block; font-family:"Mona Sans",sans-serif; font-stretch:125%; font-weight:900;
+      font-size:2rem; letter-spacing:-.02em; text-transform:none; color:var(--ink); padding:8px 0; }
+    .nav a.keep{ margin-top:26px; font-size:1rem; font-weight:600; font-stretch:100%; color:#fff; padding:15px 24px; }
+    #menuT:checked ~ header .nav{ display:flex; }
+  }
 
   /* ── popisky (default skryté — finální UI) ── */
   .anno{ display:inline-flex; gap:8px; align-items:flex-start; background:var(--anno); color:var(--anno-ink);
@@ -321,6 +336,7 @@
 <body>
 
 <input type="checkbox" id="annoT" checked>
+<input type="checkbox" id="menuT" style="position:absolute; left:-9999px">
 
 <header class="bar">
   <a class="logo" href="#home" aria-label="Debono" style="display:flex; align-items:center"><svg height="26" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.3261 34.3893V25.9278H8.62692V17.359H0V0C0.314927 0 0.619528 0 0.922408 0C7.91963 0.00851431 14.9186 0 21.9158 0.0272458C31.7078 0.0647088 39.648 8.45641 39.0664 18.1287C38.5553 26.6191 32.3583 33.2739 23.7744 34.3501C21.6921 34.6107 19.5495 34.3893 17.3261 34.3893ZM17.4173 17.2296V25.6945C19.3981 25.6945 21.3204 25.9312 23.1617 25.6485C27.7875 24.9367 30.6976 20.8924 30.2467 16.1346C29.8578 12.0222 26.0116 8.72376 21.5802 8.71525C17.5671 8.70844 13.5556 8.71355 9.54245 8.71525C9.29291 8.71525 9.0451 8.74079 8.79041 8.75612V17.2313H17.4156L17.4173 17.2296Z" fill="#0E0E0F"/></svg></a>
@@ -333,6 +349,7 @@
     <a href="#studio">Studio</a>
     <a class="btn keep" href="#kontakt">Začít projekt</a>
   </nav>
+  <label class="burger" for="menuT" aria-label="Menu"><span></span><span></span></label>
 </header>
 
 <main>
@@ -1078,6 +1095,8 @@ let io = new IntersectionObserver(es=>{
 },{threshold:.18});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 addEventListener('hashchange', ()=>scrollTo(0,0));
+const menuT = document.getElementById('menuT');
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click', ()=>{ if(menuT) menuT.checked = false; }));
 
 document.addEventListener('click', e=>{
   if (e.target.classList && e.target.classList.contains('pillbtn')){
