@@ -97,7 +97,7 @@ Neprodáváme weby ani loga. **Prodáváme klid člověka, který za značku odp
 ## ČÁST III — CO, KDE A JAK KOMUNIKUJEME
 
 ### SLIDE 19 · PĚT SLUŽEB, JEDEN TÝM
-01 Strategie značky | 02 Vizuální identita (web-first) | 03 Weby (vlajková loď; SEO/AEO — „aby vás doporučil i ChatGPT") | 04 Produkce (skuteční lidé, skutečné prostory — žádné stocky, žádná AI těla) | 05 Social & kampaně.
+01 Strategie a značka | 02 Vizuální identita (web-first) | 03 Weby (vlajková loď; SEO/AEO — „aby vás doporučil i ChatGPT") | 04 Produkce (skuteční lidé, skutečné prostory — žádné stocky, žádná AI těla) | 05 Social & kampaně.
 **Cena za výstup, ne za hodiny.** Strategii a kreativní vedení naceňujeme samostatně — úsudek není zdarma v ceně produkce. Návaznosti: strategie → identita → web → produkce → social; cíl 2+ služeb a retainer.
 
 ### SLIDE 20 · ARCHITEKTURA SDĚLENÍ

@@ -15,7 +15,7 @@
 | Homepage | `/` | Home |
 | Studio (o nás + AI manifest) | `/studio` | Studio |
 | Služby — rozcestník | `/sluzby` | Works layout (grid) nebo vlastní |
-| LP Strategie značky | `/sluzby/strategie-znacky` | duplikát Studio/Works layoutu |
+| LP Strategie a značka | `/sluzby/strategie-a-znacka` | duplikát Studio/Works layoutu |
 | LP Vizuální identita | `/sluzby/vizualni-identita` | dtto |
 | LP Tvorba webů | `/sluzby/tvorba-webu` | dtto |
 | LP Produkce foto & video | `/sluzby/produkce` | dtto |
@@ -62,7 +62,7 @@ Dobrá zpráva? Dá se navrhnout. Naše práce je udělat z prvního dojmu váš
 ### Sekce: Co s tím uděláme spolu (služby — psáno přes přínosy)
 Intro: *Nezačínáme u webu. Nejdřív spolu nastavíme směr — a pak postavíme to, co vás k němu dostane.*
 
-**01 — Strategie značky**
+**01 — Strategie a značka**
 Získáte jasno: kým jste, pro koho a proč zrovna vy. Každé další rozhodnutí — od loga po kampaň — je pak jednodušší a levnější.
 
 **02 — Vizuální identita**
@@ -136,7 +136,7 @@ Neprodáváme hodiny ani šablony. Nejdřív spolu nastavíme, kam má vaše zna
 
 ---
 
-## 3a. LP STRATEGIE ZNAČKY `/sluzby/strategie-znacky`
+## 3a. LP STRATEGIE A ZNAČKA `/sluzby/strategie-a-znacka`
 
 *Vlajková loď positioningu „strategický partner".*
 
