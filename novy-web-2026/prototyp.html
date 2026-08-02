@@ -248,6 +248,24 @@
   /* homepage bez vstupní animace (působila jako loader) */
   body.js #home .rv{ opacity:1; transform:none; transition:none; }
 
+
+  /* Ukázka výstupu strategie */
+  .toc3{ counter-reset:part; }
+  .toc3 .panel b.part{ font:600 .68rem/1 ui-monospace,Menlo,monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:10px; }
+  .poscross{ background:var(--card); border:1px solid var(--card-line); border-radius:22px; padding:26px; }
+  .poscross svg{ width:100%; height:auto; display:block; }
+  .poscross .cap{ font-size:.82rem; color:var(--muted); margin-top:12px; }
+  .mini-tone{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--card-line); border-radius:22px; overflow:hidden; background:var(--card); }
+  .mini-tone > div{ padding:22px; }
+  .mini-tone > div:first-child{ border-right:1px dotted var(--dot); }
+  .mini-tone h5{ margin:0 0 10px; font:600 .68rem/1 ui-monospace,Menlo,monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+  .mini-tone li{ font-size:.85rem; margin-bottom:6px; }
+  .pers{ display:flex; gap:12px; flex-wrap:wrap; }
+  .pers .pcard{ flex:1 1 150px; background:var(--card); border:1px solid var(--card-line); border-radius:18px; padding:18px; }
+  .pers .pcard .ava{ width:38px; height:38px; border-radius:50%; background:var(--ink); color:var(--accent); display:grid; place-items:center; font-weight:900; margin-bottom:10px; }
+  .pers .pcard h5{ margin:0 0 6px; font-size:.95rem; font-weight:700; }
+  .pers .pcard p{ font-size:.8rem; color:var(--muted); margin:0; }
+
   .stat{ font-size:1.05rem; margin-top:22px; }
   .stat b{ color:var(--accent); }
   .crumb{ display:inline-flex; align-items:center; gap:10px; font:600 .72rem/1 ui-monospace,Menlo,monospace;
@@ -562,6 +580,53 @@
     <div class="cols" style="margin-top:34px">
       <div class="panel rv" style="border-left:4px solid var(--accent)"><h4>Strategii už máte?</h4><p style="font-size:.92rem">Skvělé — nezačínáme od nuly. Projdeme ji spolu, ověříme, že sedí s tím, kam chcete směřovat, a doplníme, co chybí. Většinou stačí jeden workshop.</p></div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Co dostanete do ruky · ukázka výstupu</p>
+    <p class="lede rv">Strategie od nás nejsou desítky stran teorie. Je to praktický dokument o třech částech, který se používá — od porady po zadání kampaně.</p>
+    <span class="anno">OSNOVA · Reálná struktura našich dodávek (anonymizováno z projektů typu autoservis / prodejce aut). Ve Webflow: 3 karty + možnost rozkliknout ukázkové slidy (lightbox s vybranými stranami PDF).</span>
+    <div class="cols toc3">
+      <div class="panel rv"><b class="part">Část I</b><h4>Základ značky</h4><ul class="list ok">
+        <li>DNA a hodnoty značky</li><li>Čemu (ne)věříme</li><li>Osobnost — značka jako člověk</li><li>Positioning a slib značky</li><li>Tón hlasu: jak zníme a jak ne</li></ul></div>
+      <div class="panel rv d1"><b class="part">Část II</b><h4>Zákazníci a sdělení</h4><ul class="list ok">
+        <li>Persony a jejich očekávání</li><li>Klíčové sdělení pro každou skupinu</li><li>Zákaznická cesta: od prvního kontaktu po „už jinam nepůjdu"</li></ul></div>
+      <div class="panel rv d2"><b class="part">Část III</b><h4>Komunikace v praxi</h4><ul class="list ok">
+        <li>Obsahové pilíře a rubriky</li><li>Kanály, formáty a rytmus publikování</li><li>KPI a měření úspěchu</li><li>Harmonogram a odpovědnosti</li></ul></div>
+    </div>
+
+    <div class="cols" style="grid-template-columns:1.2fr 1fr; align-items:start">
+      <div class="poscross rv">
+        <svg viewBox="0 0 520 380" aria-label="Positioning mapa">
+          <line x1="260" y1="24" x2="260" y2="356" stroke="#DDDDE1" stroke-width="2"/>
+          <line x1="30" y1="190" x2="490" y2="190" stroke="#DDDDE1" stroke-width="2"/>
+          <text x="260" y="14" text-anchor="middle" font-size="12" font-family="Courier New" fill="#6E6E74" letter-spacing="2">PRÉMIOVÉ</text>
+          <text x="260" y="374" text-anchor="middle" font-size="12" font-family="Courier New" fill="#6E6E74" letter-spacing="2">DOSTUPNÉ</text>
+          <text x="26" y="182" font-size="12" font-family="Courier New" fill="#6E6E74" letter-spacing="2">TRADIČNÍ</text>
+          <text x="490" y="182" text-anchor="end" font-size="12" font-family="Courier New" fill="#6E6E74" letter-spacing="2">VIZIONÁŘSKÉ</text>
+          <circle cx="150" cy="250" r="9" fill="#C7C7CC"/><text x="150" y="274" text-anchor="middle" font-size="11" font-family="Arial" fill="#6E6E74">Konkurent A</text>
+          <circle cx="200" cy="110" r="9" fill="#C7C7CC"/><text x="200" y="92" text-anchor="middle" font-size="11" font-family="Arial" fill="#6E6E74">Konkurent B</text>
+          <circle cx="330" cy="280" r="9" fill="#C7C7CC"/><text x="330" y="304" text-anchor="middle" font-size="11" font-family="Arial" fill="#6E6E74">Konkurent C</text>
+          <circle cx="392" cy="96" r="14" fill="#E5FF03" stroke="#0E0E0F" stroke-width="3"/>
+          <text x="392" y="70" text-anchor="middle" font-size="13" font-family="Arial" font-weight="bold" fill="#0E0E0F">VY</text>
+        </svg>
+        <p class="cap">Positioning mapa: kde stojí konkurence — a kde je volné místo pro vás.</p>
+      </div>
+      <div style="display:grid; gap:14px">
+        <div class="pers rv">
+          <div class="pcard"><span class="ava">A</span><h5>Znalec</h5><p>Čeká odbornou argumentaci, ne prodejní fráze.</p></div>
+          <div class="pcard"><span class="ava">B</span><h5>Nadšenec</h5><p>Čeká přátelský tón s odborným zákulisím.</p></div>
+          <div class="pcard"><span class="ava">C</span><h5>Nováček</h5><p>Čeká lidské vysvětlení krok za krokem.</p></div>
+        </div>
+        <div class="mini-tone rv">
+          <div><h5>✓ Takhle zníme</h5><ul class="list ok"><li>„Poradíme vám s výběrem."</li><li>„Tohle za ty peníze nestojí."</li></ul></div>
+          <div><h5>✕ Takhle ne</h5><ul class="list no-list"><li>„Jsme jednička na trhu."</li><li>„Komplexní portfolio služeb."</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <span class="anno">GRAFICKÉ NÁSTROJE · Positioning kříž (líbil se z reálných dodávek): osy jsou ukázkové, ve Webflow animovat — konkurenti nalétají šedě, „VY" dopadne limetkově naposled. Persony a tón hlasu jako mini-náhledy dalších nástrojů z dokumentu. Vše anonymizované ukázky, ne šablona.</span>
   </div>
 </section>
 
