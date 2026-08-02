@@ -144,7 +144,7 @@ Neprodáváme hodiny ani šablony. Nejdřív spolu nastavíme, kam má vaše zna
 # ZNAČKA NENÍ LOGO.
 # JE TO ROZHODNUTÍ.
 
-Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme společně — a vám se pak rozhoduje o všem ostatním mnohem snáz.
+Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme společně — a vám se pak rozhoduje o všem ostatním mnohem snáz. Není to jen strategie na papíře: je to kompletní **nastavení značky** — hodnoty, vize a mise, positioning i tone of voice.
 
 **[Chci mít jasno]**
 
