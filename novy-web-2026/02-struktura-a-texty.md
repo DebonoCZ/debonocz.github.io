@@ -153,6 +153,7 @@ Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme spole�
 - **Rychlejší a levnější rozhodování** — každé další zadání (logo, web, kampaň) má o co se opřít.
 - **Jednotnou řeč** — obchod, marketing i majitel říkají totéž. Tón hlasu dostanete popsaný.
 - **Zadání, se kterým umí pracovat každý** — dokument strategie poslouží i dalším dodavatelům.
+- **Podklad pro AI** — strategie je kontext pro AI nástroje: nakrmíte jí ChatGPT či firemní AI a generované texty zní jako vy, ne jako robot.
 
 ### Blok: Jak to probíhá
 # NEJDŘÍV SE PONOŘÍME.
