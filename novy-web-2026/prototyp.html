@@ -220,6 +220,34 @@
   .faq details[open] summary::after{ transform:rotate(45deg); }
   .faq details p{ margin:0 0 22px; padding:0 4px; color:var(--muted); font-size:.97rem; }
 
+
+  /* LP Strategie — wireframe prvky */
+  .secnav{ display:flex; flex-wrap:wrap; gap:8px; margin-top:30px; }
+  .secnav span{ font:600 .72rem/1 ui-monospace,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted); border:1px solid var(--card-line); background:var(--card); border-radius:999px; padding:9px 14px; }
+  .quote-card{ border-radius:calc(var(--r) + 6px); padding:56px 48px; color:#fff; margin-top:44px; position:relative; overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(14,14,15,.05) 0%, rgba(14,14,15,.9) 88%),
+      radial-gradient(60% 55% at 50% 0%, rgba(229,255,3,.7), transparent 62%),
+      radial-gradient(70% 60% at 10% 20%, rgba(255,64,40,.75), transparent 62%),
+      radial-gradient(70% 60% at 90% 22%, rgba(255,110,40,.7), transparent 62%),
+      #0E0E0F; }
+  .quote-card blockquote{ margin:0; font-family:"Mona Sans",sans-serif; font-stretch:125%; font-weight:700;
+    font-size:clamp(1.3rem,2.6vw,1.8rem); line-height:1.35; letter-spacing:-.01em; max-width:34ch; text-wrap:balance; }
+  .quote-card .who{ margin-top:26px; font-size:.95rem; }
+  .quote-card .who small{ display:block; color:rgba(255,255,255,.65); }
+  .stepx{ display:grid; grid-template-columns:1fr 340px; gap:24px; padding:34px 0; border-bottom:1px dotted var(--dot); }
+  .stepx:last-of-type{ border-bottom:none; }
+  .stepx .no-big{ font:700 .8rem/1 ui-monospace,Menlo,monospace; color:var(--muted); letter-spacing:.14em; }
+  .stepx h3{ font-family:"Mona Sans",sans-serif; font-stretch:125%; font-weight:900; letter-spacing:-.01em; font-size:1.5rem; margin:10px 0 10px; }
+  .stepx p{ font-size:.97rem; color:var(--muted); max-width:56ch; }
+  .stepx .gain{ background:var(--card); border:1px solid var(--card-line); border-radius:18px; padding:20px 22px; align-self:start; }
+  .stepx .gain b{ font:600 .68rem/1 ui-monospace,Menlo,monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:10px; }
+  .stepx .gain li{ font-size:.9rem; margin-bottom:8px; }
+  @media (max-width:820px){ .stepx{ grid-template-columns:1fr; } }
+  /* homepage bez vstupní animace (působila jako loader) */
+  body.js #home .rv{ opacity:1; transform:none; transition:none; }
+
   .stat{ font-size:1.05rem; margin-top:22px; }
   .stat b{ color:var(--accent); }
   .crumb{ display:inline-flex; align-items:center; gap:10px; font:600 .72rem/1 ui-monospace,Menlo,monospace;
@@ -277,18 +305,12 @@
 <input type="checkbox" id="annoT" checked>
 
 <header class="bar">
-  <a class="logo" href="#home" aria-label="Debono" style="display:flex; align-items:center"><svg height="22"  viewBox="0 0 169 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.3261 34.3893V25.9278H8.62692V17.359H0V0C0.314927 0 0.619528 0 0.922408 0C7.91963 0.00851431 14.9186 0 21.9158 0.0272458C31.7078 0.0647088 39.648 8.45641 39.0664 18.1287C38.5553 26.6191 32.3583 33.2739 23.7744 34.3501C21.6921 34.6107 19.5495 34.3893 17.3261 34.3893ZM17.4173 17.2296V25.6945C19.3981 25.6945 21.3204 25.9312 23.1617 25.6485C27.7875 24.9367 30.6976 20.8924 30.2467 16.1346C29.8578 12.0222 26.0116 8.72376 21.5802 8.71525C17.5671 8.70844 13.5556 8.71355 9.54245 8.71525C9.29291 8.71525 9.0451 8.74079 8.79041 8.75612V17.2313H17.4156L17.4173 17.2296Z" fill="#0E0E0F"/>
-<path d="M92.9316 26.2693V9.07892C94.3204 9.07892 95.6593 9.06189 96.9999 9.08232C99.0323 9.11468 101.073 9.08232 103.095 9.2458C105.36 9.42971 107.017 10.8601 107.403 12.7724C107.783 14.6643 107.152 16.1696 105.458 17.2986C106.596 17.9542 107.453 18.8176 107.838 20.0539C108.724 22.8925 107.012 25.4553 103.801 26.065C103.157 26.1876 102.495 26.2557 101.841 26.2608C98.8929 26.2812 95.945 26.2693 92.9334 26.2693H92.9316ZM96.9775 19.1122V22.8449C98.1443 22.8449 99.256 22.8602 100.368 22.8397C101.108 22.8261 101.863 22.8466 102.581 22.7018C103.596 22.4958 104.033 21.7959 103.961 20.764C103.899 19.8734 103.335 19.1718 102.402 19.1343C100.61 19.0611 98.8137 19.1139 96.9775 19.1139V19.1122ZM96.9758 15.7592C98.6778 15.7592 100.306 15.8154 101.927 15.7388C102.977 15.6894 103.476 15.0934 103.489 14.1739C103.503 13.2509 102.93 12.5545 101.903 12.5068C100.28 12.4336 98.6537 12.488 96.9741 12.488V15.7592H96.9758Z" fill="#0E0E0F"/>
-<path d="M119.212 8.70679C123.435 8.7119 126.608 10.7042 127.87 14.2564C128.673 16.5229 128.689 18.8269 127.882 21.09C126.717 24.3578 124.232 26.0504 120.865 26.5834C119.117 26.861 117.369 26.7673 115.686 26.2156C112.249 25.09 110.373 22.6635 109.814 19.1607C109.193 15.273 110.91 11.5131 114.142 9.81025C115.691 8.99458 117.357 8.64889 119.212 8.70509V8.70679ZM119.12 23.0193C122.254 23.0193 124.299 20.9333 124.319 17.7149C124.34 14.5084 122.239 12.3475 119.077 12.3288C116.004 12.31 113.889 14.488 113.887 17.6724C113.887 20.9333 115.928 23.0193 119.12 23.0193Z" fill="#0E0E0F"/>
-<path d="M158.742 8.70735C163.246 8.71757 166.509 10.9398 167.643 14.7729C168.804 18.6963 167.581 22.8173 164.617 24.9646C161.062 27.5427 155.097 27.2532 152.005 24.3532C149.416 21.9267 148.575 17.6235 149.984 14.0271C151.244 10.8104 154.323 8.78057 158.055 8.70735C158.284 8.70224 158.513 8.70735 158.742 8.70735ZM158.666 23.0199C161.852 23.0199 163.948 20.893 163.925 17.6814C163.903 14.4562 161.805 12.3327 158.641 12.331C155.576 12.331 153.466 14.526 153.478 17.7053C153.49 20.9169 155.543 23.0182 158.666 23.0199Z" fill="#0E0E0F"/>
-<path d="M57.9712 26.2169V9.23592C58.0349 9.18143 58.0779 9.11161 58.1192 9.11331C61.2616 9.19335 64.447 8.9873 67.536 9.43515C71.427 9.9988 73.7554 13.018 73.9877 16.9363C74.146 19.5978 73.5644 22.0074 71.5939 23.9452C70.2189 25.299 68.5049 26.0891 66.6136 26.1811C63.7638 26.319 60.9019 26.2169 57.9712 26.2169ZM62.1496 12.5872V22.6783C63.2131 22.6783 64.2147 22.6783 65.2145 22.6783C67.5033 22.6749 69.1554 21.4097 69.713 19.2368C70.3531 16.7353 69.4325 14.2406 67.4809 13.2359C67.154 13.0674 66.8012 12.8715 66.4467 12.8426C65.0321 12.7251 63.6106 12.6672 62.1496 12.5854V12.5872Z" fill="#0E0E0F"/>
-<path d="M131.132 26.2162V9.13647C131.378 9.11604 131.599 9.08028 131.819 9.08028C136.522 9.07687 141.225 9.08369 145.929 9.06836C146.448 9.06836 146.722 9.16202 146.717 9.75802C146.674 15.1493 146.653 20.5405 146.622 25.9301C146.622 26.0101 146.586 26.0885 146.553 26.2196H142.643V12.5132C141.279 12.5132 139.997 12.5132 138.715 12.5132C137.825 12.5132 136.934 12.5558 136.049 12.4996C135.335 12.4537 135.121 12.6886 135.127 13.4004C135.159 17.346 135.142 21.2915 135.142 25.237V26.2145H131.132V26.2162Z" fill="#0E0E0F"/>
-<path d="M76.7603 26.2113V9.12305H89.9028V12.5066H80.7734V15.7574H87.8601V19.5905H80.7596V22.7953H89.9011V26.2113H76.762H76.7603Z" fill="#0E0E0F"/>
-</svg></a>
+  <a class="logo" href="#home" aria-label="Debono" style="display:flex; align-items:center"><svg height="26" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.3261 34.3893V25.9278H8.62692V17.359H0V0C0.314927 0 0.619528 0 0.922408 0C7.91963 0.00851431 14.9186 0 21.9158 0.0272458C31.7078 0.0647088 39.648 8.45641 39.0664 18.1287C38.5553 26.6191 32.3583 33.2739 23.7744 34.3501C21.6921 34.6107 19.5495 34.3893 17.3261 34.3893ZM17.4173 17.2296V25.6945C19.3981 25.6945 21.3204 25.9312 23.1617 25.6485C27.7875 24.9367 30.6976 20.8924 30.2467 16.1346C29.8578 12.0222 26.0116 8.72376 21.5802 8.71525C17.5671 8.70844 13.5556 8.71355 9.54245 8.71525C9.29291 8.71525 9.0451 8.74079 8.79041 8.75612V17.2313H17.4156L17.4173 17.2296Z" fill="#0E0E0F"/></svg></a>
   <nav class="nav">
     <a href="#prace">Práce</a>
     <a href="#sluzby">Služby</a>
+    <a href="#strategie">Strategie</a>
+    <a href="#identita">Identita</a>
     <a href="#kliniky">Pro kliniky</a>
     <a href="#studio">Studio</a>
     <a class="btn keep" href="#kontakt">Začít projekt</a>
@@ -479,30 +501,108 @@
   <div class="wrap">
     <a class="crumb" href="#sluzby">← Služby / Strategie značky</a>
     <h1 class="display h-hero rv">Značka není logo.<br>Je to <span class="alt">rozhodnutí.</span></h1>
-    <span class="anno">HERO LP · Slovo „rozhodnutí" se vysází razítkovým dopadem (scale 1.15→1 + mikro otřes).</span>
+    <span class="anno">01 ÚVOD · Hero beze změny (schválené heslo). Sekční navigace pod hero — ve Webflow jako sticky kotvy s čísly (01–06), tady jen vizuálně.</span>
     <p class="lede rv d1">Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme společně — a vám se pak rozhoduje o všem ostatním mnohem snáz.</p>
-    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci mít jasno</a></div>
+    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci mít jasno</a><a class="btn ghost" href="#prace">Ukázky práce</a></div>
+    <div class="secnav rv d3">
+      <span>01 / Úvod</span><span>02 / Proces</span><span>03 / Proč strategie</span><span>04 / Proč Debono</span><span>05 / Reference</span><span>06 / Mám zájem</span>
+    </div>
   </div>
 </section>
+
 <section>
   <div class="wrap">
     <p class="eyebrow rv">Co vám to přinese</p>
-    <span class="anno">PŘÍNOSY · Karty psané z pohledu klienta („získáte", „konec…"), ne výčtem deliverables.</span>
     <div class="cols">
       <div class="panel rv"><h4>Jasný směr</h4><p style="font-size:.92rem">Víte, kým jste, pro koho a proč zrovna vy. Konec marketingu naslepo.</p></div>
       <div class="panel rv d1"><h4>Levnější rozhodování</h4><p style="font-size:.92rem">Každé další zadání — logo, web, kampaň — má o co se opřít. Ušetříte na revizích i slepých uličkách.</p></div>
       <div class="panel rv d2"><h4>Jednotná řeč</h4><p style="font-size:.92rem">Obchod, marketing i majitel říkají totéž. Tón hlasu dostanete popsaný.</p></div>
       <div class="panel rv d3"><h4>Použitelné zadání</h4><p style="font-size:.92rem">Dokument strategie poslouží každému, kdo pro vás bude kdy pracovat.</p></div>
     </div>
+    <div class="quote-card rv">
+      <blockquote>„Značky málokdy krachují na špatném logu. Krachují na tom, že každý měsíc říkají něco jiného. Strategie je to, co vás udrží u jedné myšlenky — i když je lákavé skočit po každém trendu."</blockquote>
+      <p class="who"><b>Markéta Schreierová</b><small>Marketing Specialist, Debono</small></p>
+    </div>
+    <span class="anno">MOUDRO · Gradientová karta s citací Markéty — reálná fotka (nafotit!), ne avatar. Ve Webflow z quote bloku šablony. Citace se může obměňovat (CMS kolekce „moudra"), na každé servisní LP jedno.</span>
   </div>
 </section>
+
 <section class="paper">
   <div class="wrap">
-    <p class="eyebrow rv">Jak to probíhá</p>
+    <p class="eyebrow rv">02 · Jak strategie vzniká</p>
     <h2 class="display h-big rv">Nejdřív se ponoříme.<br>Pak navrhujeme.</h2>
-    <span class="anno">PONOR · U hesla animace „ponoření" — nadpis se vynoří zpod hladiny (maska + jemná vlna). Motiv se vrací u case studies.</span>
-    <p class="rv d1"><strong>Nezačínáme v grafickém editoru.</strong> Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Strategie, kterou spolu nastavíme, pak řídí každé další rozhodnutí — a díky důkladnému startu vás dál nezdržujeme: pracujeme samostatně a trefujeme se napoprvé.</p>
-    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat značku</a><a class="btn ghost" href="#identita">Vizuální identita →</a></div>
+    <p class="lede rv d1">Čtyři kroky, žádná magie. Většinu práce odvedeme sami — vy investujete jeden workshop a pár schválení.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="anno">PROCES · Kroky jako řádky s panelem „Přínos pro vás" (vzor Justmighty, vlastní obsah). Ve Webflow: sticky číslo vlevo, kartičky přes sebe při scrollu.</span>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 01</span><h3>Strategický workshop</h3>
+      <p>Půl dne s vámi a s lidmi, kteří vaši firmu žijí. Kam směřujete, co vám vydělává, kdo jsou vaši zákazníci a proč nakupují — a co vás dnes brzdí. Ptáme se tak dlouho, dokud tomu nerozumíme.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Pohled na vlastní firmu zvenčí</li><li>Poznáte lidi, kteří budou projekt dělat</li><li>Jeden blok času — víc od vás nepotřebujeme</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 02</span><h3>Ponor a analýza</h3>
+      <p>Teď pracujeme my. Projdeme čísla, trh a konkurenci, promluvíme si s vašimi zákazníky nebo obchodem. Do tématu se prokoušeme sami — i toho technického. Vy mezitím řešíte byznys.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Rozhodnutí stojí na faktech, ne na dojmech</li><li>Nezdržujeme — maximum si dohledáme sami</li><li>Průběžně víte, na čem jsme</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 03</span><h3>Strategie značky</h3>
+      <p>Positioning, persony, tón hlasu, klíčová sdělení a priority kanálů. Návrh nejdřív otestujeme interně — k vám jde verze, která většinou sedí napoprvé. Prezentujeme osobně a ladíme spolu.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Dokument, který řídí rozhodování — ne šuplík</li><li>Každé doporučení má zdůvodnění</li><li>Revizní kolečko proběhlo u nás</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 04</span><h3>Do praxe</h3>
+      <p>Strategie má hodnotu, až když se promítne do práce. Rovnou ji přeložíme do identity, webu nebo kampaní — nebo ji předáme vašemu týmu a dodavatelům jako srozumitelné zadání.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Strategie žije — v obsahu, webu i kampaních</li><li>Funguje i jako zadání pro třetí strany</li><li>Rosteme s vámi dál</li></ul></div>
+    </div>
+    <div class="cols" style="margin-top:34px">
+      <div class="panel rv" style="border-left:4px solid var(--accent)"><h4>Strategii už máte?</h4><p style="font-size:.92rem">Skvělé — nezačínáme od nuly. Projdeme ji spolu, ověříme, že sedí s tím, kam chcete směřovat, a doplníme, co chybí. Většinou stačí jeden workshop.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="paper">
+  <div class="wrap">
+    <p class="eyebrow rv">03 · Proč strategii</p>
+    <h2 class="display h-big rv">Většina strategií skončí v šuplíku.<br><span class="alt">Ta vaše bude řídit firmu.</span></h2>
+    <span class="anno">PROČ STRATEGIE · Druhé (poslední) velké heslo stránky — drzost míří na průměr (šuplíkové strategie), ne na klienta. Tón po vzoru ANT studia, vlastní formulace.</span>
+    <div class="cols">
+      <div class="panel rv"><h4>Směr</h4><p style="font-size:.92rem">Když víte, kam jdete, přestanete platit za nahodilé aktivity, které nikam nevedou.</p></div>
+      <div class="panel rv d1"><h4>Cílení</h4><p style="font-size:.92rem">Mluvíte k lidem, kteří u vás opravdu nakupují — jejich jazykem a o jejich problémech.</p></div>
+      <div class="panel rv d2"><h4>Úspora</h4><p style="font-size:.92rem">Rozpočet jde tam, kde má smysl. A každé další zadání je rychlejší a levnější.</p></div>
+      <div class="panel rv d3"><h4>Konzistence</h4><p style="font-size:.92rem">Jedna myšlenka napříč kanály. To je to, co dělá ze jména značku.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">04 · Proč s Debonem</p>
+    <div class="cols">
+      <div class="panel rv"><h4>Pohled zvenčí + zkušenosti</h4><p style="font-size:.92rem">Váš obor známe míň než vy — a přesně to je naše výhoda. Přinášíme nestranný pohled a vzorce, které fungují napříč obory od zdravotnictví po B2B techniku.</p></div>
+      <div class="panel rv d1"><h4>Ponoříme se sami</h4><p style="font-size:.92rem">Nemusíte nám nic dlouze vysvětlovat. Vyzpovídáme vás jednou pořádně a zbytek si dohledáme.</p></div>
+      <div class="panel rv d2"><h4>Trefujeme se napoprvé</h4><p style="font-size:.92rem">Kolečko připomínek proběhne u nás interně. K vám jde verze, která většinou sedí.</p></div>
+      <div class="panel rv d3"><h4>Umíme ji i vyrobit</h4><p style="font-size:.92rem">Strategií u nás práce nekončí, ale začíná: identita, web, produkce i kampaně pod stejnou střechou.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <p class="eyebrow rv">05 · Reference</p>
+    <p class="stat rv">Strategii jsme stavěli pro <b>NEVA</b>, <b>Nepanikař</b>, <b>KM Publicity</b> a další. <a href="#prace" style="color:var(--ink)">Prohlédněte si práci →</a></p>
+    <span class="anno">REFERENCE · Ve Webflow pás log + 1–2 case karty s výsledkem. Doplnit reálný počet zpracovaných strategií, až bude spočítaný.</span>
+  </div>
+</section>
+
+<section class="heslo-mid">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow rv" style="justify-content:center">06 · Mám zájem</p>
+    <p class="lede rv" style="margin-inline:auto; font-size:1.3rem">Do 24 hodin se ozve člověk. Do týdne víte, co, kdy a za kolik.</p>
+    <div class="cta-row rv d2" style="justify-content:center"><a class="btn" href="#kontakt">Chci mít jasno</a></div>
   </div>
 </section>
 </article>
@@ -910,9 +1010,8 @@ document.body.classList.add('js');
 let io = new IntersectionObserver(es=>{
   es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
 },{threshold:.18});
-function watch(){ document.querySelectorAll('.page:target .rv, .page.default .rv').forEach(el=>io.observe(el)); }
-watch();
-addEventListener('hashchange', ()=>{ scrollTo(0,0); watch(); });
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+addEventListener('hashchange', ()=>scrollTo(0,0));
 
 document.addEventListener('click', e=>{
   if (e.target.classList && e.target.classList.contains('pillbtn')){
