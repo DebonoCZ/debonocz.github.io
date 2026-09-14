@@ -331,6 +331,29 @@
   .msg.them{ background:#fff; color:#15151B; border-bottom-left-radius:6px; justify-self:start; }
   .msg.us{ background:var(--ink); color:#fff; border-bottom-right-radius:6px; justify-self:end; }
   .chat .who{ font:600 .68rem/1 ui-monospace,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; color:#8D8778; margin:4px 0 0; }
+
+  /* tabulka dodávky (identita) */
+  .tbl{ margin-top:36px; border-top:1px solid var(--dark-line); }
+  .tbl .tr{ display:grid; grid-template-columns:1.1fr 1fr; gap:18px; padding:16px 0; border-bottom:1px solid var(--dark-line); font-size:.97rem; }
+  .tbl .tr.th{ font:600 .72rem/1 ui-monospace,Menlo,monospace; letter-spacing:.14em; text-transform:uppercase; color:#A9A9B2; }
+  .tbl .tr > div:last-child{ color:#A9A9B2; }
+  @media (max-width:640px){ .tbl .tr{ grid-template-columns:1fr; gap:4px; } }
+  /* demo přepínač (identita) — CSS radio, bez JS */
+  .demo{ margin-top:36px; border:1px solid var(--card-line); border-radius:var(--r); background:var(--card); padding:26px; }
+  .demo-tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:22px; }
+  .demo-tabs input{ position:absolute; opacity:0; width:0; height:0; }
+  .demo-tabs label{ cursor:pointer; padding:10px 18px; border-radius:999px; border:1px solid var(--card-line); font-size:.9rem; font-weight:600; }
+  .demo-tabs input:focus-visible + label{ outline:2px solid var(--ink); outline-offset:2px; }
+  #demo-a:checked ~ label[for=demo-a], #demo-b:checked ~ label[for=demo-b]{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .demo-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:26px; }
+  .demo-out{ background:var(--beige); border-radius:var(--r); padding:24px; }
+  .demo-out p{ margin:0 0 12px; font-size:.97rem; color:#15151B; }
+  .demo-out .who{ font:600 .68rem/1 ui-monospace,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; color:#8D8778; margin-bottom:14px; }
+  .demo-b{ display:none; } .demo:has(#demo-b:checked) .demo-a{ display:none; } .demo:has(#demo-b:checked) .demo-b{ display:block; }
+  .demo-notes h4{ margin:0 0 10px; }
+  .demo-notes li b{ color:var(--ink); }
+  .demo-note{ margin-top:18px; font-size:.8rem; color:var(--muted); }
+  @media (max-width:760px){ .demo-grid{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -347,7 +370,7 @@
     <a href="prototyp.html#identita">Identita</a>
     <a href="prototyp.html#kliniky">Pro kliniky</a>
     <a href="prototyp.html#studio">Studio</a>
-    <a class="btn keep" href="prototyp.html#kontakt">Začít projekt</a>
+    <a class="btn keep" href="prototyp.html#kontakt">Probrat projekt</a>
   </nav>
   <label class="burger" for="menuT" aria-label="Menu"><span></span><span></span></label>
 </header>
@@ -359,9 +382,9 @@
     <h1 class="display h-hero rv">Značka není logo.<br>Je to <span class="alt">rozhodnutí.</span></h1>
     <span class="anno">01 ÚVOD · Hero beze změny (schválené heslo). Sekční navigace pod hero — ve Webflow jako sticky kotvy s čísly (01–06), tady jen vizuálně.</span>
     <p class="lede rv d1">Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme společně — a vám se pak rozhoduje o všem ostatním mnohem snáz. Není to jen strategie na papíře: je to kompletní <strong>nastavení značky</strong> — hodnoty, vize a mise, positioning i tone of voice.</p>
-    <div class="cta-row rv d2"><a class="btn" href="prototyp.html#kontakt">Chci mít jasno</a><a class="btn ghost" href="prototyp.html#prace">Ukázky práce</a></div>
+    <div class="cta-row rv d2"><a class="btn" href="prototyp.html#kontakt">Probrat směr značky</a><a class="btn ghost" href="prototyp.html#prace">Ukázky práce</a></div>
     <div class="secnav rv d3">
-      <span>01 / Úvod</span><span>02 / Proces</span><span>03 / Proč strategie</span><span>04 / Proč Debono</span><span>05 / Reference</span><span>06 / Mám zájem</span>
+      <span>01 / Úvod</span><span>02 / Co dostanete</span><span>03 / Proces</span><span>04 / Proč strategie</span><span>05 / Proč Debono</span><span>06 / Reference</span><span>07 / Mám zájem</span>
     </div>
   </div>
 </section>
@@ -374,7 +397,7 @@
       <div class="panel rv d1"><h4>Levnější rozhodování</h4><p style="font-size:.92rem">Každé další zadání — logo, web, kampaň — má o co se opřít. Ušetříte na revizích i slepých uličkách.</p></div>
       <div class="panel rv d2"><h4>Jednotná řeč</h4><p style="font-size:.92rem">Obchod, marketing i majitel říkají totéž. Tón hlasu dostanete popsaný.</p></div>
       <div class="panel rv d3"><h4>Použitelné zadání</h4><p style="font-size:.92rem">Dokument strategie poslouží každému, kdo pro vás bude kdy pracovat.</p></div>
-      <div class="panel rv d3" style="border-left:4px solid var(--accent)"><h4>Podklad pro AI</h4><p style="font-size:.92rem">Strategie je přesně ten kontext, který AI nástroje potřebují. Nakrmíte jí ChatGPT nebo firemní AI — a texty, které s ní váš tým vygeneruje, zní jako vy, ne jako robot.</p></div>
+      <div class="panel rv d3" style="border-left:4px solid var(--accent)"><h4>Podklad pro AI</h4><p style="font-size:.92rem">Kontext firmy, publikum, klíčová sdělení, příklady tónu a hranice toho, co o sobě tvrdíte — přesně to, co AI nástroje potřebují jako zadání. Kvalitu výstupu pak hlídáte kontrolou, podklady ji nezaručí samy.</p></div>
     </div>
     <div class="quote-card rv">
       <blockquote>„Značky málokdy krachují na špatném logu. Krachují na tom, že každý měsíc říkají něco jiného. Strategie je to, co vás udrží u jedné myšlenky — i když je lákavé skočit po každém trendu."</blockquote>
@@ -384,46 +407,9 @@
   </div>
 </section>
 
-<section class="paper">
-  <div class="wrap">
-    <p class="eyebrow rv">02 · Jak strategie vzniká</p>
-    <h2 class="display h-big rv">Nejdřív se ponoříme.<br>Pak navrhujeme.</h2>
-    <p class="lede rv d1">Čtyři kroky, žádná magie. Většinu práce odvedeme sami — vy investujete jeden workshop a pár schválení.</p>
-  </div>
-</section>
-
 <section>
   <div class="wrap">
-    <span class="anno">PROCES · Kroky jako řádky s panelem „Přínos pro vás" (vzor Justmighty, vlastní obsah). Ve Webflow: sticky číslo vlevo, kartičky přes sebe při scrollu.</span>
-    <div class="stepx rv">
-      <div><span class="no-big">KROK 01</span><h3>Strategický workshop</h3>
-      <p>Půl dne s vámi a s lidmi, kteří vaši firmu žijí. Kam směřujete, co vám vydělává, kdo jsou vaši zákazníci a proč nakupují — a co vás dnes brzdí. Ptáme se tak dlouho, dokud tomu nerozumíme.</p></div>
-      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Pohled na vlastní firmu zvenčí</li><li>Poznáte lidi, kteří budou projekt dělat</li><li>Jeden blok času — víc od vás nepotřebujeme</li></ul></div>
-    </div>
-    <div class="stepx rv">
-      <div><span class="no-big">KROK 02</span><h3>Ponor a analýza</h3>
-      <p>Teď pracujeme my. Projdeme čísla, trh a konkurenci, promluvíme si s vašimi zákazníky nebo obchodem. Do tématu se prokoušeme sami — i toho technického. Vy mezitím řešíte byznys.</p></div>
-      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Rozhodnutí stojí na faktech, ne na dojmech</li><li>Nezdržujeme — maximum si dohledáme sami</li><li>Průběžně víte, na čem jsme</li></ul></div>
-    </div>
-    <div class="stepx rv">
-      <div><span class="no-big">KROK 03</span><h3>Strategie a značka</h3>
-      <p>Kompletní nastavení značky: vize a mise, hodnoty, positioning, persony, tone of voice a klíčová sdělení s prioritami kanálů. Návrh nejdřív otestujeme interně — k vám jde verze, která většinou sedí napoprvé. Prezentujeme osobně a ladíme spolu.</p></div>
-      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Dokument, který řídí rozhodování — ne šuplík</li><li>Každé doporučení má zdůvodnění</li><li>Revizní kolečko proběhlo u nás</li></ul></div>
-    </div>
-    <div class="stepx rv">
-      <div><span class="no-big">KROK 04</span><h3>Do praxe</h3>
-      <p>Strategie má hodnotu, až když se promítne do práce. Rovnou ji přeložíme do identity, webu nebo kampaní — nebo ji předáme jako srozumitelné zadání vašemu týmu, dodavatelům i AI nástrojům, se kterými pracujete.</p></div>
-      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Strategie žije — v obsahu, webu i kampaních</li><li>Funguje i jako zadání pro třetí strany</li><li>Rosteme s vámi dál</li></ul></div>
-    </div>
-    <div class="cols" style="margin-top:34px">
-      <div class="panel rv" style="border-left:4px solid var(--accent)"><h4>Strategii už máte?</h4><p style="font-size:.92rem">Skvělé — nezačínáme od nuly. Projdeme ji spolu, ověříme, že sedí s tím, kam chcete směřovat, a doplníme, co chybí. Většinou stačí jeden workshop.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow rv">Co dostanete do ruky · ukázka výstupu</p>
+    <p class="eyebrow rv">02 · Co dostanete do ruky</p>
     <p class="lede rv">Strategie od nás nejsou desítky stran teorie. Je to praktický dokument o třech částech, který se používá — od porady po zadání kampaně.</p>
     <span class="anno">OSNOVA · Reálná struktura našich dodávek (anonymizováno z projektů typu autoservis / prodejce aut). Ve Webflow: 3 karty + možnost rozkliknout ukázkové slidy (lightbox s vybranými stranami PDF).</span>
     <div class="cols toc3">
@@ -468,23 +454,56 @@
     <div class="rv" style="margin-top:34px; background:var(--accent); border-radius:calc(var(--r) + 6px); padding:44px 46px; color:var(--accent-ink)">
       <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:36px; align-items:center">
         <div>
-          <h3 class="display" style="font-size:clamp(1.5rem,3.4vw,2.2rem)">Zašleme vám ukázku strategie zdarma.</h3>
-          <p style="margin-top:12px; font-size:1.02rem">Ať nekupujete zajíce v pytli — pošleme vám anonymizovanou strategii z reálného projektu. Uvidíte přesně, co za své peníze dostanete.</p>
+          <h3 class="display" style="font-size:clamp(1.5rem,3.4vw,2.2rem)">Chcete vidět skutečnou strategii?</h3>
+          <p style="margin-top:12px; font-size:1.02rem">Ať nekupujete zajíce v pytli — na vyžádání vám ukážeme anonymizovanou strategii z reálného projektu.</p>
         </div>
-        <form onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;font-weight:700&quot;>Díky! Ukázka letí do vaší schránky.</p>';" style="display:grid; gap:12px">
-          <input type="email" required placeholder="Váš pracovní e-mail" aria-label="E-mail" style="background:#fff; border:none; border-radius:14px; padding:16px 18px; font:inherit">
-          <button class="btn" type="submit" style="justify-content:center">Poslat ukázku</button>
-          <p style="font-size:.78rem; margin:0; opacity:.75">Jeden e-mail s PDF. Žádný spam, žádný obchodní kolotoč.</p>
-        </form>
+        <div><a class="btn" href="mailto:jirka@debono.cz?subject=Uk%C3%A1zka%20strategie">Napsat si o ukázku</a></div>
       </div>
     </div>
-    <span class="anno">LEAD MAGNET · „Zajíc v pytli" — nízkoprahová konverze pro návštěvníky, kteří ještě nejsou připravení poptat. Ve Webflow: formulář → e-mail s anonymizovaným PDF (Autobeky/Laptime po anonymizaci) + notifikace Jirkovi; follow-up za 3 dny („Dávala vám ukázka smysl?"). Získaný e-mail = kvalifikovaný lead na strategii.</span>
+    <span class="anno">UKÁZKA · Automatické zasílání PDF zapnout až po přípravě anonymizované ukázky a funkčním doručení (CONTENT_TODO.md). Interní manuál Debona se nezveřejňuje.</span>
+  </div>
+</section>
+<section class="paper">
+  <div class="wrap">
+    <p class="eyebrow rv">03 · Jak strategie vzniká</p>
+    <h2 class="display h-big rv">Nejdřív se ponoříme.<br>Pak navrhujeme.</h2>
+    <p class="lede rv d1">Čtyři kroky, žádná magie. Většinu práce odvedeme sami — vy investujete jeden workshop a pár schválení.</p>
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <span class="anno">PROCES · Kroky jako řádky s panelem „Přínos pro vás" (vzor Justmighty, vlastní obsah). Ve Webflow: sticky číslo vlevo, kartičky přes sebe při scrollu.</span>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 01</span><h3>Strategický workshop</h3>
+      <p>Půl dne s vámi a s lidmi, kteří vaši firmu žijí. Kam směřujete, co vám vydělává, kdo jsou vaši zákazníci a proč nakupují — a co vás dnes brzdí. Ptáme se tak dlouho, dokud tomu nerozumíme.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Pohled na vlastní firmu zvenčí</li><li>Poznáte lidi, kteří budou projekt dělat</li><li>Jeden blok času — víc od vás nepotřebujeme</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 02</span><h3>Ponor a analýza</h3>
+      <p>Teď pracujeme my. Projdeme čísla, trh a konkurenci, promluvíme si s vašimi zákazníky nebo obchodem. Do tématu se prokoušeme sami — i toho technického. Vy mezitím řešíte byznys.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Rozhodnutí stojí na faktech, ne na dojmech</li><li>Nezdržujeme — maximum si dohledáme sami</li><li>Průběžně víte, na čem jsme</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 03</span><h3>Strategie a značka</h3>
+      <p>Kompletní nastavení značky: vize a mise, hodnoty, positioning, persony, tone of voice a klíčová sdělení s prioritami kanálů. Návrh nejdřív otestujeme interně — k vám jde verze, která většinou sedí napoprvé. Prezentujeme osobně a ladíme spolu.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Dokument, který řídí rozhodování — ne šuplík</li><li>Každé doporučení má zdůvodnění</li><li>Revizní kolečko proběhlo u nás</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 04</span><h3>Do praxe</h3>
+      <p>Strategie má hodnotu, až když se promítne do práce. Rovnou ji přeložíme do identity, webu nebo kampaní — nebo ji předáme jako srozumitelné zadání vašemu týmu, dodavatelům i AI nástrojům, se kterými pracujete.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Strategie žije — v obsahu, webu i kampaních</li><li>Funguje i jako zadání pro třetí strany</li><li>Rosteme s vámi dál</li></ul></div>
+    </div>
+    <div class="cols" style="margin-top:34px">
+      <div class="panel rv" style="border-left:4px solid var(--accent)"><h4>Strategii už máte?</h4><p style="font-size:.92rem">Skvělé — nezačínáme od nuly. Projdeme ji spolu, ověříme, že sedí s tím, kam chcete směřovat, a doplníme, co chybí. Většinou stačí jeden workshop.</p></div>
+    </div>
+  </div>
+</section>
+
+
 <section class="paper">
   <div class="wrap">
-    <p class="eyebrow rv">03 · Proč strategii</p>
+    <p class="eyebrow rv">04 · Proč strategii</p>
     <h2 class="display h-big rv">Většina strategií skončí v šuplíku.<br><span class="alt">Ta vaše bude řídit firmu.</span></h2>
     <span class="anno">PROČ STRATEGIE · Druhé (poslední) velké heslo stránky — drzost míří na průměr (šuplíkové strategie), ne na klienta. Tón po vzoru ANT studia, vlastní formulace.</span>
     <div class="cols">
@@ -498,7 +517,7 @@
 
 <section>
   <div class="wrap">
-    <p class="eyebrow rv">04 · Proč s Debonem</p>
+    <p class="eyebrow rv">05 · Proč s Debonem</p>
     <div class="cols">
       <div class="panel rv"><h4>Pohled zvenčí + zkušenosti</h4><p style="font-size:.92rem">Váš obor známe míň než vy — a přesně to je naše výhoda. Přinášíme nestranný pohled a vzorce, které fungují napříč obory od zdravotnictví po B2B techniku.</p></div>
       <div class="panel rv d1"><h4>Ponoříme se sami</h4><p style="font-size:.92rem">Nemusíte nám nic dlouze vysvětlovat. Vyzpovídáme vás jednou pořádně a zbytek si dohledáme.</p></div>
@@ -510,17 +529,17 @@
 
 <section class="tight">
   <div class="wrap">
-    <p class="eyebrow rv">05 · Reference</p>
-    <p class="stat rv">Strategii jsme stavěli pro <b>NEVA</b>, <b>Nepanikař</b>, <b>KM Publicity</b> a další. <a href="prototyp.html#prace" style="color:var(--ink)">Prohlédněte si práci →</a></p>
-    <span class="anno">REFERENCE · Ve Webflow pás log + 1–2 case karty s výsledkem. Doplnit reálný počet zpracovaných strategií, až bude spočítaný.</span>
+    <p class="eyebrow rv">06 · Reference</p>
+    <p class="stat rv">Strategii a nastavení značky jsme připravovali například pro <b>Autobeky</b> a <b>Laptime</b>. <a href="prototyp.html#prace" style="color:var(--ink)">Prohlédněte si práci →</a></p>
+    <span class="anno">REFERENCE · Jen doložené strategické projekty (Autobeky, Laptime — PDF existují). Vizuální realizace nevydávat za strategii.</span>
   </div>
 </section>
 
 <section class="heslo-mid">
   <div class="wrap" style="text-align:center">
-    <p class="eyebrow rv" style="justify-content:center">06 · Mám zájem</p>
+    <p class="eyebrow rv" style="justify-content:center">07 · Mám zájem</p>
     <p class="lede rv" style="margin-inline:auto; font-size:1.3rem">Do 24 hodin se ozve člověk. Do týdne víte, co, kdy a za kolik.</p>
-    <div class="cta-row rv d2" style="justify-content:center"><a class="btn" href="prototyp.html#kontakt">Chci mít jasno</a></div>
+    <div class="cta-row rv d2" style="justify-content:center"><a class="btn" href="prototyp.html#kontakt">Probrat směr značky</a></div>
   </div>
 </section>
 </article></main>

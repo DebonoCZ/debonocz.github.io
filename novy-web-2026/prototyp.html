@@ -331,6 +331,29 @@
   .msg.them{ background:#fff; color:#15151B; border-bottom-left-radius:6px; justify-self:start; }
   .msg.us{ background:var(--ink); color:#fff; border-bottom-right-radius:6px; justify-self:end; }
   .chat .who{ font:600 .68rem/1 ui-monospace,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; color:#8D8778; margin:4px 0 0; }
+
+  /* tabulka dodávky (identita) */
+  .tbl{ margin-top:36px; border-top:1px solid var(--dark-line); }
+  .tbl .tr{ display:grid; grid-template-columns:1.1fr 1fr; gap:18px; padding:16px 0; border-bottom:1px solid var(--dark-line); font-size:.97rem; }
+  .tbl .tr.th{ font:600 .72rem/1 ui-monospace,Menlo,monospace; letter-spacing:.14em; text-transform:uppercase; color:#A9A9B2; }
+  .tbl .tr > div:last-child{ color:#A9A9B2; }
+  @media (max-width:640px){ .tbl .tr{ grid-template-columns:1fr; gap:4px; } }
+  /* demo přepínač (identita) — CSS radio, bez JS */
+  .demo{ margin-top:36px; border:1px solid var(--card-line); border-radius:var(--r); background:var(--card); padding:26px; }
+  .demo-tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:22px; }
+  .demo-tabs input{ position:absolute; opacity:0; width:0; height:0; }
+  .demo-tabs label{ cursor:pointer; padding:10px 18px; border-radius:999px; border:1px solid var(--card-line); font-size:.9rem; font-weight:600; }
+  .demo-tabs input:focus-visible + label{ outline:2px solid var(--ink); outline-offset:2px; }
+  #demo-a:checked ~ label[for=demo-a], #demo-b:checked ~ label[for=demo-b]{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .demo-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:26px; }
+  .demo-out{ background:var(--beige); border-radius:var(--r); padding:24px; }
+  .demo-out p{ margin:0 0 12px; font-size:.97rem; color:#15151B; }
+  .demo-out .who{ font:600 .68rem/1 ui-monospace,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; color:#8D8778; margin-bottom:14px; }
+  .demo-b{ display:none; } .demo:has(#demo-b:checked) .demo-a{ display:none; } .demo:has(#demo-b:checked) .demo-b{ display:block; }
+  .demo-notes h4{ margin:0 0 10px; }
+  .demo-notes li b{ color:var(--ink); }
+  .demo-note{ margin-top:18px; font-size:.8rem; color:var(--muted); }
+  @media (max-width:760px){ .demo-grid{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -347,7 +370,7 @@
     <a href="#identita">Identita</a>
     <a href="#kliniky">Pro kliniky</a>
     <a href="#studio">Studio</a>
-    <a class="btn keep" href="#kontakt">Začít projekt</a>
+    <a class="btn keep" href="#kontakt">Probrat projekt</a>
   </nav>
   <label class="burger" for="menuT" aria-label="Menu"><span></span><span></span></label>
 </header>
@@ -359,10 +382,10 @@
     <p class="eyebrow rv">Debono · značky · weby · produkce</p>
     <h1 class="display h-hero rv d1">Doba se zrychlila.<br><span class="alt">Důvěra ne.</span></h1>
     <span class="anno">HERO · Disciplína v3: na celé stránce jen 2 velká hesla (toto + AI manifest). První řádek nabíhá rychle, druhý „DŮVĚRA NE." přijde schválně s prodlevou a pomalu — animace hraje význam. Cursor trail ponechat.</span>
-    <p class="lede rv d2">Web si dnes vygenerujete za odpoledne. Jenže důvěra zákazníků se vygenerovat nedá — ta se pořád buduje: značkou, webem a obsahem, které někdo promyslel. Přesně tam začínáme my.</p>
+    <p class="lede rv d2">Strategie, identity, weby a obsah od jednoho týmu. AI používáme každý den. Vaší značce nastavíme směr a připravíme podklady, se kterými můžete dál tvořit i sami.</p>
     <div class="cta-row rv d3">
-      <a class="btn" href="#kontakt">Začít projekt</a>
-      <a class="btn ghost" href="#prace">Podívat se na práci ↓</a>
+      <a class="btn" href="#kontakt">Probrat projekt</a>
+      <a class="btn ghost" href="#prace">Prohlédnout práci</a>
     </div>
     <div class="hero-visual rv d3">
       <span class="hero-tag">WE ARE DEBONO®</span>
@@ -396,8 +419,7 @@
       <a class="tile rv" href="#strategie"><span class="no">01</span><h3>Strategie a značka</h3><p>Získáte jasno: kým jste, pro koho a proč zrovna vy. Každé další rozhodnutí je pak jednodušší a levnější.</p></a>
       <a class="tile rv d1" href="#identita"><span class="no">02</span><h3>Vizuální identita</h3><p>Budou si vás pamatovat. Jednotný vzhled všude — a brandbook, díky kterému už nemusíte hlídat každou grafiku.</p></a>
       <a class="tile rv d2" href="#weby"><span class="no">03</span><h3>Weby</h3><p>Web, který přivádí poptávky, ne jen návštěvy. Rychlý, ve Webflow — obsah si spravujete sami, bez programátora.</p></a>
-      <a class="tile rv d3" href="#produkce"><span class="no">04</span><h3>Produkce</h3><p>Fotky a videa, které jsou opravdu vaše — žádné stocky. Natočíme, nafotíme a vyrobíme vše od spotu po polep.</p></a>
-      <a class="tile rv d3" href="#social"><span class="no">05</span><h3>Social &amp; kampaně</h3><p>Značka viditelná každý týden, aniž byste na to museli myslet. Obsah naplánujeme, vyrobíme i vyhodnotíme.</p></a>
+      <a class="tile rv d3" href="#social"><span class="no">04</span><h3>Sociální sítě</h3><p>Rozjezd pro váš tým, kompletní správa nebo kampaň — s vlastní foto a video produkcí. Obsah naplánujeme, vyrobíme i vyhodnotíme.</p></a>
     </div>
   </div>
 </section>
@@ -405,17 +427,16 @@
 <section class="paper">
   <div class="wrap">
     <p class="eyebrow rv">Posuďte podle výsledků</p>
-    <span class="anno">DŮKAZY · Práce a čísla v jedné sekci — důkazy pohromadě. Karty s hover-reveal výsledku; čísla count-up při scrollu (tabulární číslice). Hodnoty X/Y/Z doplnit z reálných dat — každé číslo musí mít větu kontextu.</span>
+    <span class="anno">DŮKAZY · Karty vedou jen na doložené projekty. Statistiky (konverze poptávek, počty let/projektů) jsou skryté, dokud nebude doložená metodika — viz CONTENT_TODO.md.</span>
     <div class="works">
-      <a class="work rv" href="#case"><div class="thumb"><b>IKEM Online</b></div><div class="meta"><span>UX · web · zdravotnictví</span><span class="res">+X % online objednávek</span></div></a>
-      <a class="work rv d1" href="#case"><div class="thumb"><b>Škoda Auto</b></div><div class="meta"><span>kampaň · produkce</span><span class="res">celonárodní kampaň</span></div></a>
+      <a class="work rv" href="#case"><div class="thumb"><b>IKEM Online</b></div><div class="meta"><span>UX · web · zdravotnictví</span><span class="res">nové UX a web</span></div></a>
+      <a class="work rv d1" href="#case"><div class="thumb"><b>Škoda Auto</b></div><div class="meta"><span>kampaň · produkce</span><span class="res">kampaň a produkce</span></div></a>
       <a class="work rv d2" href="#case"><div class="thumb"><b>Nepanikař</b></div><div class="meta"><span>rebrand · aplikace</span><span class="res">10 000+ uživatelů</span></div></a>
     </div>
     <div class="cols">
-      <div class="panel rv tilt-l"><h4 style="font-size:2rem">9/10</h4><p style="font-size:.9rem">poptávek u nás končí spoluprací.</p></div>
-      <div class="panel rv d1"><h4 style="font-size:2rem">X let</h4><p style="font-size:.9rem">stavíme značky a weby. Od startupů po Škodovku.</p></div>
-      <div class="panel rv d2 tilt-r"><h4 style="font-size:2rem">Y+</h4><p style="font-size:.9rem">projektů, pod které jsme se podepsali.</p></div>
-      <div class="panel rv d3"><h4 style="font-size:2rem">Z roky</h4><p style="font-size:.9rem">s námi klienti průměrně zůstávají.</p></div>
+      <div class="panel rv"><h4>Na začátku poznáme firmu</h4><p style="font-size:.92rem">Workshop a rozhovory s lidmi, kteří firmu žijí. Ptáme se, dokud tomu nerozumíme.</p></div>
+      <div class="panel rv d1"><h4>Průběžně koordinujeme specialisty</h4><p style="font-size:.92rem">Strategie, design, web i produkce pod jednou odpovědností. Vy schvalujete směr a klíčové kroky.</p></div>
+      <div class="panel rv d2"><h4>Předáme použitelný výsledek</h4><p style="font-size:.92rem">Podklady, šablony a zaškolení — abyste mohli tvořit dál sami, nebo nám realizaci svěřili dlouhodobě.</p></div>
     </div>
     <div class="cta-row rv"><a class="btn ghost" href="#prace">Všechny práce →</a></div>
   </div>
@@ -426,7 +447,7 @@
     <p class="eyebrow rv">AI upřímně</p>
     <h2 class="display h-big rv">AI je náš nejrychlejší junior.<br><span class="alt">Kreativní ředitel je pořád člověk.</span></h2>
     <span class="anno">AI MANIFEST · Druhé (a poslední) velké heslo stránky. Jemný scramble efekt na slově „junior" — jediné místo s AI estetikou na webu.</span>
-    <p class="lede rv d1">AI nástroje používáme každý den — zrychlily nám wireframy, kód i střih. Ušetřený čas vracíme do práce, kterou za nás neudělají: do strategie, textů a designu. Proto naše weby nevypadají jako všechny ostatní.</p>
+    <p class="lede rv d1">AI používáme každý den — na nápady, texty, design i vývoj. Naše práce je to, co z návrhů udělá výsledek: zjistit kontext, vybrat směr, připravit systém, posoudit návrhy, ověřit fakta, dotáhnout realizaci a odpovídat za předanou práci. A když chcete tvořit dál sami, připravíme vám podklady, se kterými to půjde.</p>
   </div>
 </section>
 
@@ -505,7 +526,7 @@
   <div class="wrap" style="text-align:center">
     <p class="lede rv" style="margin-inline:auto; font-size:1.3rem">Máte před sebou nový web, rebrand nebo kampaň?</p>
     <p class="rv d1" style="margin-inline:auto; max-width:52ch">Napište nám pár vět. Do 24 hodin se ozve člověk — a kafe platíme my.</p>
-    <div class="cta-row rv d2" style="justify-content:center"><a class="btn" href="#kontakt">Začít projekt</a></div>
+    <div class="cta-row rv d2" style="justify-content:center"><a class="btn" href="#kontakt">Probrat projekt</a></div>
     <span class="anno">CTA · Záměrně bez hesla — po AI manifestu už stránka nekřičí. Tlačítko s magnetickým hoverem (max 8 px).</span>
   </div>
 </section>
@@ -522,8 +543,8 @@
       <a class="tile rv" href="#strategie"><span class="no">01</span><h3>Strategie a značka</h3><p>Získáte jasno: kým jste, pro koho a proč zrovna vy. Konec marketingu naslepo.</p></a>
       <a class="tile rv" href="#identita"><span class="no">02</span><h3>Vizuální identita</h3><p>Budou si vás pamatovat — jednotný vzhled všude, kam značka přijde.</p></a>
       <a class="tile rv" href="#weby"><span class="no">03</span><h3>Tvorba webů</h3><p>Web, který přivádí poptávky, ne jen návštěvy. A spravujete si ho sami.</p></a>
-      <a class="tile rv" href="#produkce"><span class="no">04</span><h3>Produkce foto &amp; video</h3><p>Vizuály, které jsou opravdu vaše. Od spotu po polep výlohy, bez subdodavatelů.</p></a>
-      <a class="tile rv" href="#social"><span class="no">05</span><h3>Social media &amp; kampaně</h3><p>Značka viditelná každý týden, aniž byste na to museli myslet.</p></a>
+      <a class="tile rv" href="#produkce"><span class="no">04</span><h3>Produkce foto &amp; video</h3><p>Vizuály, které jsou opravdu vaše — od spotu po polep výlohy. Jedna odpovědnost, koordinace uvnitř týmu.</p></a>
+      <a class="tile rv" href="#social"><span class="no">05</span><h3>Sociální sítě</h3><p>Značka viditelná každý týden, aniž byste na to museli myslet.</p></a>
     </div>
     <p class="lede rv" style="margin-top:44px">Nevíte, co přesně potřebujete? Přesně od toho je první schůzka.</p>
     <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat záměr</a></div>
@@ -538,9 +559,9 @@
     <h1 class="display h-hero rv">Značka není logo.<br>Je to <span class="alt">rozhodnutí.</span></h1>
     <span class="anno">01 ÚVOD · Hero beze změny (schválené heslo). Sekční navigace pod hero — ve Webflow jako sticky kotvy s čísly (01–06), tady jen vizuálně.</span>
     <p class="lede rv d1">Kým chcete být, pro koho a proč zrovna vy. Tohle rozhodnutí uděláme společně — a vám se pak rozhoduje o všem ostatním mnohem snáz. Není to jen strategie na papíře: je to kompletní <strong>nastavení značky</strong> — hodnoty, vize a mise, positioning i tone of voice.</p>
-    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci mít jasno</a><a class="btn ghost" href="#prace">Ukázky práce</a></div>
+    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Probrat směr značky</a><a class="btn ghost" href="#prace">Ukázky práce</a></div>
     <div class="secnav rv d3">
-      <span>01 / Úvod</span><span>02 / Proces</span><span>03 / Proč strategie</span><span>04 / Proč Debono</span><span>05 / Reference</span><span>06 / Mám zájem</span>
+      <span>01 / Úvod</span><span>02 / Co dostanete</span><span>03 / Proces</span><span>04 / Proč strategie</span><span>05 / Proč Debono</span><span>06 / Reference</span><span>07 / Mám zájem</span>
     </div>
   </div>
 </section>
@@ -553,7 +574,7 @@
       <div class="panel rv d1"><h4>Levnější rozhodování</h4><p style="font-size:.92rem">Každé další zadání — logo, web, kampaň — má o co se opřít. Ušetříte na revizích i slepých uličkách.</p></div>
       <div class="panel rv d2"><h4>Jednotná řeč</h4><p style="font-size:.92rem">Obchod, marketing i majitel říkají totéž. Tón hlasu dostanete popsaný.</p></div>
       <div class="panel rv d3"><h4>Použitelné zadání</h4><p style="font-size:.92rem">Dokument strategie poslouží každému, kdo pro vás bude kdy pracovat.</p></div>
-      <div class="panel rv d3" style="border-left:4px solid var(--accent)"><h4>Podklad pro AI</h4><p style="font-size:.92rem">Strategie je přesně ten kontext, který AI nástroje potřebují. Nakrmíte jí ChatGPT nebo firemní AI — a texty, které s ní váš tým vygeneruje, zní jako vy, ne jako robot.</p></div>
+      <div class="panel rv d3" style="border-left:4px solid var(--accent)"><h4>Podklad pro AI</h4><p style="font-size:.92rem">Kontext firmy, publikum, klíčová sdělení, příklady tónu a hranice toho, co o sobě tvrdíte — přesně to, co AI nástroje potřebují jako zadání. Kvalitu výstupu pak hlídáte kontrolou, podklady ji nezaručí samy.</p></div>
     </div>
     <div class="quote-card rv">
       <blockquote>„Značky málokdy krachují na špatném logu. Krachují na tom, že každý měsíc říkají něco jiného. Strategie je to, co vás udrží u jedné myšlenky — i když je lákavé skočit po každém trendu."</blockquote>
@@ -563,46 +584,9 @@
   </div>
 </section>
 
-<section class="paper">
-  <div class="wrap">
-    <p class="eyebrow rv">02 · Jak strategie vzniká</p>
-    <h2 class="display h-big rv">Nejdřív se ponoříme.<br>Pak navrhujeme.</h2>
-    <p class="lede rv d1">Čtyři kroky, žádná magie. Většinu práce odvedeme sami — vy investujete jeden workshop a pár schválení.</p>
-  </div>
-</section>
-
 <section>
   <div class="wrap">
-    <span class="anno">PROCES · Kroky jako řádky s panelem „Přínos pro vás" (vzor Justmighty, vlastní obsah). Ve Webflow: sticky číslo vlevo, kartičky přes sebe při scrollu.</span>
-    <div class="stepx rv">
-      <div><span class="no-big">KROK 01</span><h3>Strategický workshop</h3>
-      <p>Půl dne s vámi a s lidmi, kteří vaši firmu žijí. Kam směřujete, co vám vydělává, kdo jsou vaši zákazníci a proč nakupují — a co vás dnes brzdí. Ptáme se tak dlouho, dokud tomu nerozumíme.</p></div>
-      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Pohled na vlastní firmu zvenčí</li><li>Poznáte lidi, kteří budou projekt dělat</li><li>Jeden blok času — víc od vás nepotřebujeme</li></ul></div>
-    </div>
-    <div class="stepx rv">
-      <div><span class="no-big">KROK 02</span><h3>Ponor a analýza</h3>
-      <p>Teď pracujeme my. Projdeme čísla, trh a konkurenci, promluvíme si s vašimi zákazníky nebo obchodem. Do tématu se prokoušeme sami — i toho technického. Vy mezitím řešíte byznys.</p></div>
-      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Rozhodnutí stojí na faktech, ne na dojmech</li><li>Nezdržujeme — maximum si dohledáme sami</li><li>Průběžně víte, na čem jsme</li></ul></div>
-    </div>
-    <div class="stepx rv">
-      <div><span class="no-big">KROK 03</span><h3>Strategie a značka</h3>
-      <p>Kompletní nastavení značky: vize a mise, hodnoty, positioning, persony, tone of voice a klíčová sdělení s prioritami kanálů. Návrh nejdřív otestujeme interně — k vám jde verze, která většinou sedí napoprvé. Prezentujeme osobně a ladíme spolu.</p></div>
-      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Dokument, který řídí rozhodování — ne šuplík</li><li>Každé doporučení má zdůvodnění</li><li>Revizní kolečko proběhlo u nás</li></ul></div>
-    </div>
-    <div class="stepx rv">
-      <div><span class="no-big">KROK 04</span><h3>Do praxe</h3>
-      <p>Strategie má hodnotu, až když se promítne do práce. Rovnou ji přeložíme do identity, webu nebo kampaní — nebo ji předáme jako srozumitelné zadání vašemu týmu, dodavatelům i AI nástrojům, se kterými pracujete.</p></div>
-      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Strategie žije — v obsahu, webu i kampaních</li><li>Funguje i jako zadání pro třetí strany</li><li>Rosteme s vámi dál</li></ul></div>
-    </div>
-    <div class="cols" style="margin-top:34px">
-      <div class="panel rv" style="border-left:4px solid var(--accent)"><h4>Strategii už máte?</h4><p style="font-size:.92rem">Skvělé — nezačínáme od nuly. Projdeme ji spolu, ověříme, že sedí s tím, kam chcete směřovat, a doplníme, co chybí. Většinou stačí jeden workshop.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow rv">Co dostanete do ruky · ukázka výstupu</p>
+    <p class="eyebrow rv">02 · Co dostanete do ruky</p>
     <p class="lede rv">Strategie od nás nejsou desítky stran teorie. Je to praktický dokument o třech částech, který se používá — od porady po zadání kampaně.</p>
     <span class="anno">OSNOVA · Reálná struktura našich dodávek (anonymizováno z projektů typu autoservis / prodejce aut). Ve Webflow: 3 karty + možnost rozkliknout ukázkové slidy (lightbox s vybranými stranami PDF).</span>
     <div class="cols toc3">
@@ -647,23 +631,56 @@
     <div class="rv" style="margin-top:34px; background:var(--accent); border-radius:calc(var(--r) + 6px); padding:44px 46px; color:var(--accent-ink)">
       <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:36px; align-items:center">
         <div>
-          <h3 class="display" style="font-size:clamp(1.5rem,3.4vw,2.2rem)">Zašleme vám ukázku strategie zdarma.</h3>
-          <p style="margin-top:12px; font-size:1.02rem">Ať nekupujete zajíce v pytli — pošleme vám anonymizovanou strategii z reálného projektu. Uvidíte přesně, co za své peníze dostanete.</p>
+          <h3 class="display" style="font-size:clamp(1.5rem,3.4vw,2.2rem)">Chcete vidět skutečnou strategii?</h3>
+          <p style="margin-top:12px; font-size:1.02rem">Ať nekupujete zajíce v pytli — na vyžádání vám ukážeme anonymizovanou strategii z reálného projektu.</p>
         </div>
-        <form onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;font-weight:700&quot;>Díky! Ukázka letí do vaší schránky.</p>';" style="display:grid; gap:12px">
-          <input type="email" required placeholder="Váš pracovní e-mail" aria-label="E-mail" style="background:#fff; border:none; border-radius:14px; padding:16px 18px; font:inherit">
-          <button class="btn" type="submit" style="justify-content:center">Poslat ukázku</button>
-          <p style="font-size:.78rem; margin:0; opacity:.75">Jeden e-mail s PDF. Žádný spam, žádný obchodní kolotoč.</p>
-        </form>
+        <div><a class="btn" href="mailto:jirka@debono.cz?subject=Uk%C3%A1zka%20strategie">Napsat si o ukázku</a></div>
       </div>
     </div>
-    <span class="anno">LEAD MAGNET · „Zajíc v pytli" — nízkoprahová konverze pro návštěvníky, kteří ještě nejsou připravení poptat. Ve Webflow: formulář → e-mail s anonymizovaným PDF (Autobeky/Laptime po anonymizaci) + notifikace Jirkovi; follow-up za 3 dny („Dávala vám ukázka smysl?"). Získaný e-mail = kvalifikovaný lead na strategii.</span>
+    <span class="anno">UKÁZKA · Automatické zasílání PDF zapnout až po přípravě anonymizované ukázky a funkčním doručení (CONTENT_TODO.md). Interní manuál Debona se nezveřejňuje.</span>
+  </div>
+</section>
+<section class="paper">
+  <div class="wrap">
+    <p class="eyebrow rv">03 · Jak strategie vzniká</p>
+    <h2 class="display h-big rv">Nejdřív se ponoříme.<br>Pak navrhujeme.</h2>
+    <p class="lede rv d1">Čtyři kroky, žádná magie. Většinu práce odvedeme sami — vy investujete jeden workshop a pár schválení.</p>
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <span class="anno">PROCES · Kroky jako řádky s panelem „Přínos pro vás" (vzor Justmighty, vlastní obsah). Ve Webflow: sticky číslo vlevo, kartičky přes sebe při scrollu.</span>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 01</span><h3>Strategický workshop</h3>
+      <p>Půl dne s vámi a s lidmi, kteří vaši firmu žijí. Kam směřujete, co vám vydělává, kdo jsou vaši zákazníci a proč nakupují — a co vás dnes brzdí. Ptáme se tak dlouho, dokud tomu nerozumíme.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Pohled na vlastní firmu zvenčí</li><li>Poznáte lidi, kteří budou projekt dělat</li><li>Jeden blok času — víc od vás nepotřebujeme</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 02</span><h3>Ponor a analýza</h3>
+      <p>Teď pracujeme my. Projdeme čísla, trh a konkurenci, promluvíme si s vašimi zákazníky nebo obchodem. Do tématu se prokoušeme sami — i toho technického. Vy mezitím řešíte byznys.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Rozhodnutí stojí na faktech, ne na dojmech</li><li>Nezdržujeme — maximum si dohledáme sami</li><li>Průběžně víte, na čem jsme</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 03</span><h3>Strategie a značka</h3>
+      <p>Kompletní nastavení značky: vize a mise, hodnoty, positioning, persony, tone of voice a klíčová sdělení s prioritami kanálů. Návrh nejdřív otestujeme interně — k vám jde verze, která většinou sedí napoprvé. Prezentujeme osobně a ladíme spolu.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Dokument, který řídí rozhodování — ne šuplík</li><li>Každé doporučení má zdůvodnění</li><li>Revizní kolečko proběhlo u nás</li></ul></div>
+    </div>
+    <div class="stepx rv">
+      <div><span class="no-big">KROK 04</span><h3>Do praxe</h3>
+      <p>Strategie má hodnotu, až když se promítne do práce. Rovnou ji přeložíme do identity, webu nebo kampaní — nebo ji předáme jako srozumitelné zadání vašemu týmu, dodavatelům i AI nástrojům, se kterými pracujete.</p></div>
+      <div class="gain"><b>Přínos pro vás</b><ul class="list ok"><li>Strategie žije — v obsahu, webu i kampaních</li><li>Funguje i jako zadání pro třetí strany</li><li>Rosteme s vámi dál</li></ul></div>
+    </div>
+    <div class="cols" style="margin-top:34px">
+      <div class="panel rv" style="border-left:4px solid var(--accent)"><h4>Strategii už máte?</h4><p style="font-size:.92rem">Skvělé — nezačínáme od nuly. Projdeme ji spolu, ověříme, že sedí s tím, kam chcete směřovat, a doplníme, co chybí. Většinou stačí jeden workshop.</p></div>
+    </div>
+  </div>
+</section>
+
+
 <section class="paper">
   <div class="wrap">
-    <p class="eyebrow rv">03 · Proč strategii</p>
+    <p class="eyebrow rv">04 · Proč strategii</p>
     <h2 class="display h-big rv">Většina strategií skončí v šuplíku.<br><span class="alt">Ta vaše bude řídit firmu.</span></h2>
     <span class="anno">PROČ STRATEGIE · Druhé (poslední) velké heslo stránky — drzost míří na průměr (šuplíkové strategie), ne na klienta. Tón po vzoru ANT studia, vlastní formulace.</span>
     <div class="cols">
@@ -677,7 +694,7 @@
 
 <section>
   <div class="wrap">
-    <p class="eyebrow rv">04 · Proč s Debonem</p>
+    <p class="eyebrow rv">05 · Proč s Debonem</p>
     <div class="cols">
       <div class="panel rv"><h4>Pohled zvenčí + zkušenosti</h4><p style="font-size:.92rem">Váš obor známe míň než vy — a přesně to je naše výhoda. Přinášíme nestranný pohled a vzorce, které fungují napříč obory od zdravotnictví po B2B techniku.</p></div>
       <div class="panel rv d1"><h4>Ponoříme se sami</h4><p style="font-size:.92rem">Nemusíte nám nic dlouze vysvětlovat. Vyzpovídáme vás jednou pořádně a zbytek si dohledáme.</p></div>
@@ -689,17 +706,17 @@
 
 <section class="tight">
   <div class="wrap">
-    <p class="eyebrow rv">05 · Reference</p>
-    <p class="stat rv">Strategii jsme stavěli pro <b>NEVA</b>, <b>Nepanikař</b>, <b>KM Publicity</b> a další. <a href="#prace" style="color:var(--ink)">Prohlédněte si práci →</a></p>
-    <span class="anno">REFERENCE · Ve Webflow pás log + 1–2 case karty s výsledkem. Doplnit reálný počet zpracovaných strategií, až bude spočítaný.</span>
+    <p class="eyebrow rv">06 · Reference</p>
+    <p class="stat rv">Strategii a nastavení značky jsme připravovali například pro <b>Autobeky</b> a <b>Laptime</b>. <a href="#prace" style="color:var(--ink)">Prohlédněte si práci →</a></p>
+    <span class="anno">REFERENCE · Jen doložené strategické projekty (Autobeky, Laptime — PDF existují). Vizuální realizace nevydávat za strategii.</span>
   </div>
 </section>
 
 <section class="heslo-mid">
   <div class="wrap" style="text-align:center">
-    <p class="eyebrow rv" style="justify-content:center">06 · Mám zájem</p>
+    <p class="eyebrow rv" style="justify-content:center">07 · Mám zájem</p>
     <p class="lede rv" style="margin-inline:auto; font-size:1.3rem">Do 24 hodin se ozve člověk. Do týdne víte, co, kdy a za kolik.</p>
-    <div class="cta-row rv d2" style="justify-content:center"><a class="btn" href="#kontakt">Chci mít jasno</a></div>
+    <div class="cta-row rv d2" style="justify-content:center"><a class="btn" href="#kontakt">Probrat směr značky</a></div>
   </div>
 </section>
 </article>
@@ -708,59 +725,104 @@
 <section style="padding-top:170px">
   <div class="wrap">
     <a class="crumb" href="#sluzby">← Služby / Vizuální identita</a>
-    <h1 class="display h-hero rv">Logo <span class="alt">je málo.</span></h1>
-    <span class="anno">HERO LP · Kolem hesla se postupně poskládají prvky identity (barva, typografie, vzor) — značka je víc než logo.</span>
-    <p class="lede rv d1">Identita, kterou lidé poznají i bez loga: barvy, typografie, vizuální jazyk a tón hlasu. Konzistentně všude — od webu po fasádu.</p>
-    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci být k poznání</a><a class="btn ghost" href="#prace">Ukázky identit</a></div>
-  </div>
-</section>
-<section class="paper">
-  <div class="wrap">
-    <p class="eyebrow rv">Proč to děláme jinak</p>
-    <h2 class="display h-big rv">Značku stavíme tam,<br>kde bude žít: <span class="alt">na webu.</span></h2>
-    <span class="anno">WEB-FIRST BRANDING · Přístup po vzoru Refokus („web-first approach"): identita se navrhuje rovnou v aplikaci na web, ne v teoretickém PDF. Vizuál sekce: split-screen — vlevo mrtvá stránka manuálu, vpravo živý web z ní.</span>
-    <p class="lede rv d1">Většina manuálů vznikne v PDF a rozpadne se při prvním použití. My identitu navrhujeme rovnou tam, kde se s ní vaši zákazníci potkají nejčastěji — na webu, na sítích, na obalu. Co neobstojí v praxi, nejde do manuálu.</p>
+    <h1 class="display h-hero rv">Vaše značka.<br><span class="alt">I když za vás tvoří AI.</span></h1>
+    <span class="anno">HERO LP · Kolem hesla se postupně poskládají prvky identity (logo, barva, typografie, vzor) — a nakonec šablona příspěvku, do které „zapadnou“. Bez WebGL, při omezeném pohybu statické.</span>
+    <p class="lede rv d1">Navrhneme vizuální identitu a připravíme pravidla, šablony i podklady pro AI. Aby váš tým měl z čeho vycházet při tvorbě webu, prezentací i každodenního obsahu.</p>
+    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Probrat naši značku</a><a class="btn ghost" href="#identita-vybava">Co dostanete</a></div>
   </div>
 </section>
 <section>
   <div class="wrap">
-    <p class="eyebrow rv">Co vám to přinese</p>
-    <div class="cols">
-      <div class="panel rv"><h4>Budou si vás pamatovat</h4><p style="font-size:.92rem">Jednotný vzhled na webu, sítích, tiskovinách i v prostoru.</p></div>
-      <div class="panel rv d1"><h4>Konec hlídání grafik</h4><p style="font-size:.92rem">Brandbook, podle kterého se dá skutečně pracovat, uhlídá konzistenci za vás.</p></div>
-      <div class="panel rv d2"><h4>Důvěra na první pohled</h4><p style="font-size:.92rem">Konzistentní značka působí jako firma, která má věci v pořádku. Protože je má.</p></div>
-      <div class="panel rv d3"><h4>Identita rovnou v akci</h4><p style="font-size:.92rem">Vše, co navrhneme, umíme i vyrobit: web, socky, polepy, 3D logo na fasádu.</p></div>
+    <p class="eyebrow rv">Dvě vstupní situace</p>
+    <span class="anno">DVĚ SITUACE · Dvě rovnocenné karty; druhá je nová nabídka — nikde netvrdíme, že ji už využívají stávající klienti.</span>
+    <div class="cols" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+      <div class="panel rv"><p class="eyebrow">01 · Nová identita</p><h4 style="margin-top:10px">Potřebujete značku, kterou lidé poznají.</h4><p style="font-size:.95rem">Logo, barvy, typografie, vizuální jazyk a aplikace na web, sítě i tisk. Navrhujeme ji rovnou tam, kde bude žít — co neobstojí v praxi, nejde do manuálu.</p><p style="margin-top:14px"><a class="btn ghost" href="#kontakt">Probrat naši značku</a></p></div>
+      <div class="panel rv d1" style="background:var(--accent); border-color:var(--accent); color:var(--accent-ink)"><p class="eyebrow" style="color:var(--accent-ink)">02 · Máte identitu?</p><h4 style="margin-top:10px">Připravíme ji pro práci s AI.</h4><p style="font-size:.95rem">Posoudíme, co z vašeho manuálu a souborů se dá použít, a doplníme kontext značky, tón s příklady, šablony a zadání pro opakované úkoly. Rebrand není podmínkou.</p><p style="margin-top:14px"><a class="btn" href="#kontakt">Probrat podklady pro AI</a></p></div>
     </div>
+  </div>
+</section>
+<section class="paper" id="identita-vybava">
+  <div class="wrap">
+    <p class="eyebrow rv">Co dostanete</p>
+    <h2 class="display h-big rv">Identita, se kterou<br>se dá <span class="alt">dál pracovat.</span></h2>
+    <p class="lede rv d1">Vizuální identita zůstává základ: logo, typografie, barvy, grafické prvky a aplikace. Podklady pro AI jsou její rozšíření — aby z ní tým vycházel i při běžné tvorbě, ne jen při velkých projektech.</p>
+    <span class="anno">TABULKA DODÁVKY · Řádky se objevují postupně při scrollu (stagger 60 ms). Na mobilu se tabulka skládá na dvouřádkové karty. Rozsah = návrh nabídky k potvrzení, bez ceny.</span>
+    <div class="tbl rv d1" role="table" aria-label="Obsah dodávky">
+      <div class="tr th" role="row"><div role="columnheader">Součást</div><div role="columnheader">Přínos pro vás</div></div>
+      <div class="tr" role="row"><div role="cell">Logo, barvy, typografie a vizuální jazyk</div><div role="cell">Rozpoznatelná podoba značky</div></div>
+      <div class="tr" role="row"><div role="cell">Brandbook a referenční aplikace</div><div role="cell">Návod pro tým a další dodavatele</div></div>
+      <div class="tr" role="row"><div role="cell">Kontext značky pro AI</div><div role="cell">Stručně popsaná firma, publikum, nabídka a odlišení</div></div>
+      <div class="tr" role="row"><div role="cell">Tón komunikace s příklady</div><div role="cell">Slovník, styl, vhodné formulace a nepovolená tvrzení</div></div>
+      <div class="tr" role="row"><div role="cell">Editovatelné šablony a značkové soubory</div><div role="cell">Přesné logo, písmo a layout při běžné práci</div></div>
+      <div class="tr" role="row"><div role="cell">Zadání pro opakované úkoly</div><div role="cell">Výchozí postup pro příspěvek, newsletter či prezentaci</div></div>
+      <div class="tr" role="row"><div role="cell">Předání a zaškolení</div><div role="cell">Vyzkoušení na konkrétních úkolech vašeho týmu</div></div>
+    </div>
+    <p class="rv d2" style="color:#A9A9B2; font-size:.92rem; margin-top:18px">Rozsah přizpůsobíme tomu, co už máte. Cenu dostanete po první schůzce podle skutečného rozsahu.</p>
   </div>
 </section>
 <section>
   <div class="wrap">
-    <p class="eyebrow rv">Co dostanete do ruky</p>
-    <span class="anno">DELIVERABLES · Refokus vzor: konkrétní seznam, žádné mlžení. Vizuál: fotka vytištěného brandbooku a aplikací — ne mockupy ze stocku.</span>
-    <div class="cols">
-      <div class="panel rv"><h4>Základ značky</h4><ul class="list ok"><li>Logo a jeho verze pro všechna použití</li><li>Barevnost a typografie (s licencí písem)</li><li>Vizuální jazyk: grafické prvky, fotostyl</li></ul></div>
-      <div class="panel rv d1"><h4>Hlas značky</h4><ul class="list ok"><li>Tón hlasu s příklady, jak psát</li><li>Klíčová sdělení pro web i obchod</li></ul></div>
-      <div class="panel rv d2"><h4>Do praxe</h4><ul class="list ok"><li>Brandbook, podle kterého se dá pracovat</li><li>Šablony: prezentace, socky, tiskoviny</li><li>Aplikace na web — rovnou v návrhu</li></ul></div>
+    <p class="eyebrow rv">Demonstrace</p>
+    <h2 class="display h-big rv">Stejné zadání.<br><span class="alt">Lepší podklady.</span></h2>
+    <p class="lede rv d1">Úkol pro AI: „Napište krátký příspěvek na LinkedIn o tom, že Debono nabízí strategii značky.“ Jednou bez podkladů, podruhé s kontextem značky a tónem komunikace. Přepněte a porovnejte.</p>
+    <span class="anno">DEMO · Přepínač = CSS radio (bez JS). Výstupy jsou předem připravené, žádné načítání ani předstíraný chat. Při přepnutí jen cross-fade 250 ms.</span>
+    <div class="demo rv d1">
+      <div class="demo-tabs" role="tablist" aria-label="Varianta zadání">
+        <input type="radio" name="demo" id="demo-a" checked><label for="demo-a">Bez podkladů značky</label>
+        <input type="radio" name="demo" id="demo-b"><label for="demo-b">S podklady značky</label>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-out">
+          <div class="demo-a">
+            <p class="who">Výstup · bez podkladů</p>
+            <p>🚀 Skvělá zpráva! Debono nově nabízí strategii značky pro firmy všech velikostí. Pomůžeme vám vybudovat silnou značku, oslovit správné zákazníky a odlišit se od konkurence. Naše zkušenosti a inovativní přístup zaručují výsledky. Kontaktujte nás ještě dnes a posuňte svůj byznys na další úroveň! #branding #marketing #strategie</p>
+          </div>
+          <div class="demo-b">
+            <p class="who">Výstup · s podklady</p>
+            <p>Strategie značky není dokument do šuplíku. Je to směr, který drží pohromadě web, identitu i každodenní obsah.</p>
+            <p>V Debonu ji stavíme s vámi: nejdřív poznáme firmu, zákazníky a to, čím se skutečně lišíte. Teprve pak navrhneme, jak to říkat — a připravíme podklady, se kterými váš tým tvoří dál i sám.</p>
+            <p>Chcete probrat směr své značky? Ozvěte se, rádi ukážeme, jak taková strategie vypadá.</p>
+          </div>
+        </div>
+        <div class="demo-notes">
+          <h4>Co podklady změnily</h4>
+          <ul class="list ok">
+            <li><b>Tón.</b> Bez podkladů generický marketingový hlas s emoji a hashtagy; s podklady vykání, klid a věcnost podle tónu komunikace.</li>
+            <li><b>Argumenty.</b> Místo obecného „silná značka, zaručené výsledky“ konkrétní přínos z kontextu značky: společná práce, poznání firmy, podklady pro tým.</li>
+            <li><b>Hranice tvrzení.</b> Zmizela nepovolená slova jako „zaručují“ a „inovativní“; výzva odpovídá skutečné cestě k poptávce.</li>
+          </ul>
+          <p class="demo-note">Ilustrační ukázka s předem připravenými výstupy.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 <section class="paper">
   <div class="wrap">
-    <h2 class="display h-big rv">Nejdřív budeme poslouchat my vás.<br><span class="alt">Pak trh vás.</span></h2>
-    <p class="lede rv d1">Začínáme workshopem: vaše čísla, zákazníci, konkurence, ambice. Návrh stavíme z vás, ne z trendů — proto se v něm poznáte.</p>
-    <p class="rv d1" style="color:#A9A9B2">Reference: Nepanikař (rebrand aplikace, 10 000+ uživatelů) · Albistech · KM Publicity · Zlatá Studna</p>
+    <p class="eyebrow rv">Kde jsou hranice</p>
+    <h2 class="display h-big rv">Podklady drží směr.<br><span class="alt">Kontrola zůstává na lidech.</span></h2>
+    <p class="lede rv d1">Dobré podklady pomáhají AI držet směr značky. Přesné použití loga, písma a rozvržení zajišťují připravené soubory a šablony. Před zveřejněním je potřeba zkontrolovat obsah i výsledek — u nás to dělá tým, u vás váš člověk, kterého na to zaškolíme.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Reference</p>
+    <p class="lede rv" style="margin-top:12px">Identity, které stavíme tak, aby se s nimi dalo dál pracovat: Nepanikař (rebrand aplikace, 10 000+ uživatelů) · Albistech · KM Publicity · Zlatá Studna.</p>
+    <span class="anno">REFERENCE · Ukázky identit z portfolia (existující práce). Nová nabídka podkladů pro AI se zde nepřipisuje žádnému klientovi.</span>
+    <div class="cta-row rv"><a class="btn ghost" href="#prace">Prohlédnout práci</a></div>
   </div>
 </section>
 <section>
   <div class="wrap">
     <p class="eyebrow rv">Na co se ptáte</p>
     <div class="faq rv">
-      <details><summary>Máme logo, potřebujeme jen „zbytek". Jde to?</summary><p>Jde. Uděláme audit toho, co máte, logo zachováme a dostavíme systém okolo — barvy, typografii, jazyk, šablony.</p></details>
-      <details><summary>Jak dlouho identita trvá?</summary><p>4–8 týdnů podle rozsahu. Workshop → koncepty → rozpracování → brandbook a šablony.</p></details>
-      <details><summary>Poznáme se v novém vizuálu?</summary><p>Ano — právě proto začínáme u vás, ne u trendů. Návrh vždy umíme obhájit: každé rozhodnutí má důvod opřený o strategii.</p></details>
-      <details><summary>Kolik to stojí?</summary><p>Od X Kč podle rozsahu. Po první schůzce dostanete do týdne nabídku na míru. <em>(doplnit)</em></p></details>
+      <details><summary>Máme logo a manuál. Musíme dělat rebrand?</summary><p>Ne nutně. Nejdřív posoudíme, jak jsou stávající podklady použitelné, a navrhneme jen to, co chybí — často kontext značky, tón s příklady a šablony.</p></details>
+      <details><summary>Stačí nahrát PDF manuálu do AI?</summary><p>Je to výchozí podklad, nikoli záruka. Pomáhají srozumitelná pravidla, příklady, editovatelné šablony a kontrola výsledku.</p></details>
+      <details><summary>Budeme si moci tvořit sami?</summary><p>Podklady mají umožnit samostatné běžné použití: příspěvek, newsletter, prezentace. Složitější aplikace můžete dál zadávat nám.</p></details>
+      <details><summary>Musíme používat konkrétní AI nástroj?</summary><p>Podklady jsou přenositelné. Jejich praktické použití závisí na možnostech zvoleného nástroje — před předáním je s vámi vyzkoušíme na tom, který používáte.</p></details>
+      <details><summary>Můžete obsah dál připravovat vy?</summary><p>Ano. Samostatná práce vašeho týmu a navazující spolupráce s námi se nevylučují.</p></details>
     </div>
-    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat identitu</a></div>
+    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat naši značku</a></div>
   </div>
 </section>
 </article>
@@ -772,8 +834,8 @@
     <h1 class="display h-hero rv">Web je váš nejpilnější obchodník.<br><span class="alt">Nenechte ho koktat.</span></h1>
     <span class="anno">HERO LP · Druhý řádek jako typewriter, jednou „koktavě" zadrhne a opraví se. Pod hero pás mini-důkazů.</span>
     <p class="lede rv d1">Tvoříme weby ve Webflow, které vzbuzují důvěru na první pohled a prodávají, i když spíte. Krásný a konverzní není protiklad — je to zadání.</p>
-    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci konverzní web</a><a class="btn ghost" href="#prace">Ukázky webů</a></div>
-    <p class="stat rv d3"><b>9/10</b> poptávek → spolupráce · weby pro <b>IKEM</b> i rodinné firmy · od návrhu po spuštění <b>pod jednou střechou</b></p>
+    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Probrat nový web</a><a class="btn ghost" href="#prace">Ukázky webů</a></div>
+    <p class="stat rv d3">Weby pro <b>IKEM</b> i rodinné firmy · od návrhu po spuštění <b>pod jednou odpovědností</b></p>
   </div>
 </section>
 <section>
@@ -784,7 +846,7 @@
       <div class="panel rv"><h4>Design, který prodává</h4><p style="font-size:.92rem">Každá sekce má obchodní úkol. Vedeme oko návštěvníka tam, kam potřebujete — k poptávce.</p></div>
       <div class="panel rv d1"><h4>Animace &amp; mikrointerakce</h4><p style="font-size:.92rem">Od jemných detailů po velké momenty. Wow efekt, který neshodí rychlost.</p></div>
       <div class="panel rv d2"><h4>Správa bez programátora</h4><p style="font-size:.92rem">Webflow CMS zvládne i recepce. Texty, ceníky a novinky si měníte sami — zaškolíme vás.</p></div>
-      <div class="panel rv"><h4>SEO &amp; AEO</h4><p style="font-size:.92rem">Aby vás našel Google — a doporučil i ChatGPT. Struktura a data připravená na AI vyhledávání.</p></div>
+      <div class="panel rv"><h4>SEO &amp; AEO</h4><p style="font-size:.92rem">Struktura, obsah a data srozumitelné pro vyhledávače i AI asistenty. Umístění ani doporučení konkrétním nástrojem neslibujeme — připravíme podmínky.</p></div>
       <div class="panel rv d1"><h4>Napojení, které šetří práci</h4><p style="font-size:.92rem">Formuláře, rezervace, CRM, fakturace. Web, který zapadne do vašich procesů.</p></div>
       <div class="panel rv d2"><h4>Rychlost a bezpečí</h4><p style="font-size:.92rem">Žádné pluginy, žádné záplaty. Načtení pod 2 vteřiny i s animacemi.</p></div>
     </div>
@@ -807,7 +869,7 @@
   <div class="wrap">
     <p class="eyebrow rv">AI upřímně</p>
     <h2 class="display h-big rv">AI nám píše kód.<br><span class="alt">Co napsat, říkáme my.</span></h2>
-    <p class="lede rv d1">S AI stavíme rychleji a levněji než dřív — a ušetřený čas vracíme tam, kde AI nestačí: do strategie, textů a designu, který se pozná. Do naší marže ne.</p>
+    <p class="lede rv d1">S AI navrhujeme, píšeme i stavíme rychleji — vám to přinese kratší termíny a víc variant k rozhodnutí. Za co platíte i při AI vývoji: strukturu, design, obsah, napojení na vaše systémy, kontrolu a spuštění. Odpovědnost za výsledek je naše.</p>
   </div>
 </section>
 <section>
@@ -827,8 +889,8 @@
 <section class="paper">
   <div class="wrap">
     <p class="eyebrow rv">Ceny bez překvapení</p>
-    <h2 class="display h-big rv">Web od 150 000 Kč.</h2>
-    <p class="lede rv d1">Cena roste s rozsahem, ne s počtem hodin. Po první schůzce dostanete do týdne nabídku na míru — a ta platí. <span class="muted">(částku doplnit dle reality)</span></p>
+    <h2 class="display h-big rv">Cena podle rozsahu, ne podle hodin.</h2>
+    <p class="lede rv d1">Rozsah, způsob správy obsahu, jazyky, integrace, hosting i provozní náklady jsou vždy součástí nabídky — dostanete ji do týdne po první schůzce. Bez skrytých položek.</p>
     <div class="cta-row rv"><a class="btn" style="background:#fff;color:#111" href="#kontakt">Chci nabídku</a></div>
   </div>
 </section>
@@ -843,7 +905,7 @@
       <details><summary>Nemáme texty ani fotky. Co s tím?</summary><p>Texty píšeme s vámi (rozhovor → návrh → ladění) a fotky či video nafotíme vlastní technikou u vás. Žádné stocky.</p></details>
       <details><summary>Co když už máme značku a manuál?</summary><p>Skvělé — navážeme na ně. A pokud manuál nesedí na digitál, upravíme ho, ať web nevypadá jako výjimka z pravidel.</p></details>
     </div>
-    <div class="cta-row rv"><a class="btn" href="#kontakt">Začít projekt</a></div>
+    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat projekt</a></div>
   </div>
 </section>
 </article>
@@ -883,24 +945,62 @@
 <article class="page" id="social">
 <section style="padding-top:170px">
   <div class="wrap">
-    <a class="crumb" href="#sluzby">← Služby / Social media &amp; kampaně</a>
-    <h1 class="display h-hero rv">Scrollují. Scrollují.<br><span class="alt">…a stop.</span></h1>
-    <span class="anno">HERO LP · Stránka při načtení sama jemně „scrolluje" feedem karet a na slově STOP se zasekne (scroll-jack jen v hero, 1,5 s, přeskočitelné).</span>
-    <p class="lede rv d1">Obsah, který lidi zastaví palcem. Strategie, produkce i správa sítí — s vlastním foto/video zázemím.</p>
-    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Chci obsah, který zastaví</a></div>
+    <a class="crumb" href="#sluzby">← Služby / Sociální sítě</a>
+    <h1 class="display h-hero rv">Sítě běží každý den.<br><span class="alt">Vy nemusíte.</span></h1>
+    <span class="anno">HERO LP · Feed karet pod heslem se jemně posouvá (1,5 s, jen v hero, přeskočitelné; při omezeném pohybu statický). Text hesla je vždy čitelný bez animace.</span>
+    <p class="lede rv d1">Strategie, vlastní foto a video produkce, koordinace a vyhodnocení. Vyberete si, kolik toho necháte na nás — a my se postaráme, aby sítě žily i v týdnu, kdy na ně nemáte čas.</p>
+    <div class="cta-row rv d2"><a class="btn" href="#kontakt">Probrat naše sítě</a><a class="btn ghost" href="#prace">Prohlédnout práci</a></div>
   </div>
 </section>
 <section>
   <div class="wrap">
+    <p class="eyebrow rv">Reference</p>
+    <p class="lede rv" style="margin-top:12px">Laptime — obsah pro sítě z vlastní produkce. Další ukázky rádi pošleme na vyžádání.</p>
+    <span class="anno">DŮKAZ · Zobrazujeme jen schválené ukázky. Počty příspěvků či sledujících neuvádíme bez doloženého období a rozsahu spolupráce.</span>
+  </div>
+</section>
+<section class="paper">
+  <div class="wrap">
+    <p class="eyebrow rv">Tři způsoby spolupráce</p>
+    <h2 class="display h-big rv">Kolik toho <span class="alt">necháte na nás?</span></h2>
+    <span class="anno">TŘI REŽIMY · Tři karty vedle sebe, na mobilu pod sebou. CTA u každé karty předvybírá službu ve formuláři.</span>
     <div class="cols">
-      <div class="panel rv"><h4>Co dostanete</h4><ul class="list ok">
-        <li>Obsahová strategie</li><li>Plán &amp; výroba obsahu (vlastní produkce!)</li><li>Správa profilů</li><li>Reporting bez balastu</li>
-      </ul></div>
-      <div class="panel rv d1"><h4>Heslo, které už funguje</h4>
-        <p style="font-size:.95rem">„Nechcete platit velkou produkci, ale chcete dobrý content? Napište nám."</p>
-      </div>
+      <div class="panel rv"><p class="eyebrow">01 · Strategie a rozjezd</p><h4 style="margin-top:10px">Pro váš interní tým</h4><p style="font-size:.95rem">Nastavíme obsahovou strategii, témata a formáty. Připravíme šablony, podklady pro AI a zadání pro opakované příspěvky. Předáme do praxe a zaškolíme — dál tvoříte sami.</p><ul class="list ok" style="margin-top:14px"><li>Obsahová strategie a témata</li><li>Šablony a podklady pro AI</li><li>Předání a zaškolení týmu</li></ul></div>
+      <div class="panel rv d1"><p class="eyebrow">02 · Kompletní správa</p><h4 style="margin-top:10px">Přebíráme práci i odpovědnost</h4><p style="font-size:.95rem">Plán, výroba obsahu z vlastní produkce, publikování, community management, koordinace a pravidelné vyhodnocení. Vy schvalujete, my hlídáme, aby to jelo.</p><ul class="list ok" style="margin-top:14px"><li>Plán, produkce a publikování</li><li>Community management</li><li>Vyhodnocení bez balastu</li></ul></div>
+      <div class="panel rv d2"><p class="eyebrow">03 · Kampaň nebo produkce</p><h4 style="margin-top:10px">Jednorázově, když je potřeba</h4><p style="font-size:.95rem">Natočíme a nafotíme obsah pro konkrétní kampaň, produkt nebo sezónu. Vlastní tým, vlastní technika, střih a formáty pro každou síť.</p><ul class="list ok" style="margin-top:14px"><li>Foto a video z vlastní produkce</li><li>Formáty na míru každé síti</li><li>Kampaňový obsah v termínu</li></ul></div>
     </div>
-    <div class="cta-row rv"><a class="btn" href="#kontakt">Napište nám</a></div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Co si vyjasníme na začátku</p>
+    <h2 class="display h-big rv">Rozsah domluvíme<br><span class="alt">před první fakturou.</span></h2>
+    <p class="lede rv d1">Aby nedošlo k překvapení, dohodneme si předem, co spolupráce zahrnuje. Konkrétní objemy a částky nastavíme podle vašich cílů — vymyšlená čísla vám neřekneme.</p>
+    <div class="cols">
+      <div class="panel rv"><h4>Placený mediální rozpočet</h4><p style="font-size:.92rem">Zda a jak spravujeme placenou podporu příspěvků; rozpočet na média je vždy oddělený od naší práce.</p></div>
+      <div class="panel rv d1"><h4>Objem produkce</h4><p style="font-size:.92rem">Kolik natáčecích dní a formátů měsíčně spolupráce obsahuje a co vzniká z jednoho natáčení.</p></div>
+      <div class="panel rv d2"><h4>Kanály</h4><p style="font-size:.92rem">Které sítě dávají pro vaše publikum smysl — raději méně kanálů a pravidelně.</p></div>
+      <div class="panel rv d3"><h4>Community management</h4><p style="font-size:.92rem">Kdo odpovídá na komentáře a zprávy, v jakém čase a s jakými hranicemi.</p></div>
+      <div class="panel rv d4"><h4>Schvalování</h4><p style="font-size:.92rem">Jak a kdy schvalujete plán a obsah, aby publikování nestálo na jednom e-mailu.</p></div>
+    </div>
+  </div>
+</section>
+<section class="paper">
+  <div class="wrap">
+    <p class="eyebrow rv">Jak pracujeme s AI</p>
+    <h2 class="display h-big rv">AI pomáhá s návrhy.<br><span class="alt">Za obsah ručí tým.</span></h2>
+    <p class="lede rv d1">AI používáme každý den: pro návrhy témat, scénářů, textů i vizuálů, stejně jako pro přepisy a formátování. Každý výstup projde kontrolou faktů, výběrem finální podoby a úpravou podle tónu vaší značky. Ven jde jen to, za co se podepíše konkrétní člověk z týmu.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Na co se ptáte</p>
+    <div class="faq rv">
+      <details><summary>Máme interní člověka na sítě. Dává spolupráce smysl?</summary><p>Ano — právě pro něj je určen rozjezd: strategie, šablony, podklady pro AI a zaškolení. Produkci obsahu můžete přidávat podle potřeby.</p></details>
+      <details><summary>Kolik to stojí?</summary><p>Podle zvoleného způsobu spolupráce a rozsahu. Po první schůzce dostanete nabídku s jasně popsaným rozsahem — bez skrytých položek.</p></details>
+      <details><summary>Jak rychle můžeme začít?</summary><p>Termín domluvíme na první schůzce podle rozsahu a kapacity produkce.</p></details>
+    </div>
+    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat naše sítě</a></div>
   </div>
 </section>
 </article>
@@ -936,7 +1036,7 @@
   <div class="wrap">
     <h2 class="display h-big rv">Důvěra se nedá předepsat.<br>Dá se navrhnout.</h2>
     <h3 class="rv" style="margin-top:44px">Web kliniky na klíč</h3>
-    <p class="rv d1">Strategie → texty s lékaři → focení na místě → web ve Webflow → školení recepce. <span class="muted">Od X Kč, do Y týdnů (doplnit).</span></p>
+    <p class="rv d1">Strategie → texty s lékaři → focení na místě → web ve Webflow → školení recepce. <span class="muted">Rozsah, termín a cena podle stavu vašeho webu — v nabídce do týdne.</span></p>
     <span class="anno">BALÍČEK · Kroky balíčku jako horizontální „recept" s razítkem na konci (razítko dopadne při scrollu do view).</span>
     <div class="cta-row rv"><a class="btn" href="#kontakt">Konzultace pro kliniky</a></div>
   </div>
@@ -978,9 +1078,9 @@
 </section>
 <section class="tight">
   <div class="wrap">
-    <p class="stat rv"><b>X let</b> · <b>Y projektů</b> · <b>9/10</b> poptávek → spolupráce · klienti od startupů po Škodovku</p>
-    <span class="anno">ČÍSLA · Count-up při scrollu; hodnoty X/Y doplnit. Pod čísly teaser Kariéry: „Nehledáme další kolečko do agenturní mašiny." (tam jediné tykání).</span>
-    <div class="cta-row rv"><a class="btn" href="#kontakt">Začít projekt</a></div>
+    <p class="stat rv">Klienti od startupů po <b>Škoda Auto</b>, <b>Kooperativu</b> a <b>IKEM</b>. Většina s námi spolupracuje opakovaně.</p>
+    <span class="anno">ČÍSLA · Statistiky zveřejnit až s doloženou metodikou (CONTENT_TODO.md). Pod tím teaser Kariéry.</span>
+    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat projekt</a></div>
   </div>
 </section>
 </article>
@@ -1002,13 +1102,14 @@
     </div>
     <div class="works">
       <a class="work rv" href="#case"><div class="thumb"><b>IKEM Online</b></div><div class="meta"><span>UX · web</span><span class="res">+120 % objednávek</span></div></a>
-      <a class="work rv d1" href="#case"><div class="thumb"><b>Škoda Auto</b></div><div class="meta"><span>kampaň · produkce</span><span class="res">celonárodní kampaň</span></div></a>
+      <a class="work rv d1" href="#case"><div class="thumb"><b>Škoda Auto</b></div><div class="meta"><span>kampaň · produkce</span><span class="res">kampaň a produkce</span></div></a>
       <a class="work rv d2" href="#case"><div class="thumb"><b>Nepanikař</b></div><div class="meta"><span>rebrand · appka</span><span class="res">10 000+ uživatelů</span></div></a>
       <a class="work rv" href="#case"><div class="thumb"><b>NEVA</b></div><div class="meta"><span>web · konfigurátor</span><span class="res">3D konfigurátor žaluzií</span></div></a>
       <a class="work rv d1" href="#case"><div class="thumb"><b>Telly</b></div><div class="meta"><span>kampaň</span><span class="res">—</span></div></a>
       <a class="work rv d2" href="#case"><div class="thumb"><b>St. Nicolaus</b></div><div class="meta"><span>brand · FMCG</span><span class="res">—</span></div></a>
     </div>
-    <p class="muted rv" style="margin-top:26px">Prototyp: všechny karty vedou na ukázkovou case study (IKEM). Výsledková čísla doplnit z reálných dat.</p>
+    <p class="muted rv" style="margin-top:26px">Karty vedou na ukázkovou strukturu case study. Výsledky zveřejňujeme jen po schválení klientem.</p>
+    <div class="cta-row rv"><a class="btn" href="#kontakt">Probrat projekt</a></div>
   </div>
 </section>
 </article>
@@ -1021,14 +1122,12 @@
     <p class="muted rv">2024 · UX · web · zdravotnictví</p>
     <span class="anno">CASE HERO · Cover na celou šířku s paralaxou; meta údaje (rok, služby) přilepené vlevo při scrollu (sticky sidebar).</span>
     <div class="cols" style="margin-top:44px">
-      <div class="panel rv"><h4>Zadání</h4><p style="font-size:.95rem">Institut klinické a experimentální medicíny potřeboval převést objednávání pacientů do digitálu — srozumitelně pro všechny generace.</p></div>
-      <div class="panel rv d1"><h4>Řešení</h4><p style="font-size:.95rem">Navrhli jsme kompletně nové uživatelské rozhraní: intuitivní, přehledné, přístupné. Testované s reálnými pacienty.</p></div>
-      <div class="panel rv d2"><h4>Výsledek</h4><p style="font-size:.95rem"><strong style="color:var(--accent)">+120 % online objednávek</strong> <span class="muted">(placeholder — doplnit reálné číslo)</span></p></div>
+      <div class="panel rv"><h4>Zadání</h4><p style="font-size:.95rem">Nové uživatelské rozhraní pro online služby IKEM — přehledné a srozumitelné pro pacienty všech generací.</p></div>
+      <div class="panel rv d1"><h4>Řešení</h4><p style="font-size:.95rem">Navrhli jsme kompletně nové uživatelské rozhraní — intuitivní, přehledné a přístupné.</p></div>
+      <div class="panel rv d2"><h4>Rozsah</h4><p style="font-size:.95rem">Návrh uživatelského rozhraní a webu. Měřitelné výsledky zveřejníme po schválení klientem.</p></div>
     </div>
     <span class="anno">VÝSLEDEK · Číslo výsledku se napočítá + kóta z výkresu (řemeslný motiv z LP Značka). Následuje citace klienta a velkoformátové screeny.</span>
-    <blockquote class="rv" style="border-left:4px solid var(--accent); margin:44px 0; padding:6px 0 6px 22px; font-size:1.15rem">
-      „Citace klienta — doplnit." <span class="muted">— jméno, pozice, IKEM</span>
-    </blockquote>
+    
     <div class="cta-row rv"><a class="btn ghost" href="#prace">Další projekt →</a><a class="btn" href="#kontakt">Chci podobný výsledek</a></div>
   </div>
 </section>
@@ -1037,10 +1136,10 @@
 <article class="page" id="kontakt">
 <section style="padding-top:170px">
   <div class="wrap">
-    <p class="eyebrow rv">Začít projekt</p>
+    <p class="eyebrow rv">Probrat projekt</p>
     <h1 class="display h-hero rv">Nekousneme.<br><span class="alt">Naopak — kafe platíme my.</span></h1>
     <p class="lede rv d1">Napište nám pár vět o svém záměru. Do 24 hodin se ozveme, do týdne víte, co, kdy a za kolik.</p>
-    <span class="anno">KONTAKT · Nejjednodušší Contact layout z Alture. Formulář jen 3 pole; po odeslání konfety NE — jen klidné potvrzení „Ozve se člověk. Do 24 hodin." Vedle formuláře vložený kalendář (Cal.com) a přímý kontakt s fotkou.</span>
+    <span class="anno">KONTAKT · Společný poptávkový formulář (jméno, e-mail, firma/web volitelně, služba, záměr). Úspěch zobrazit až po potvrzení backendu; při chybě zachovat data a umožnit opakování; bránit duplicitnímu odeslání. Odesílací integrace = BLOKACE ostrého spuštění (CONTENT_TODO.md).</span>
     <div class="chat rv" style="margin-top:34px">
       <p class="chat-label">Takhle s námi budete mluvit</p>
       <p class="msg them">Dobrý den, za 6 týdnů otevíráme novou pobočku a web na to není připravený…</p>
@@ -1052,11 +1151,16 @@
     </div>
     <span class="anno">CHAT BLOK · Využít hotový „Real-time collaboration" blok z Alture — přepsat na reálnou (anonymizovanou) konverzaci. Bubliny nalétají postupně s psacím indikátorem („…"). Ukazuje rychlost (do 24 h), vlastní produkci a lidský tón — beze slov o nich.</span>
     <div class="cols">
-      <form class="form" onsubmit="event.preventDefault(); this.innerHTML='<p><strong>Díky!</strong> Ozve se člověk. Do 24 hodin.</p>';">
+      <form class="form" onsubmit="event.preventDefault(); var n=this.querySelector('.form-note'); n.hidden=false; n.focus();">
         <input type="text" placeholder="Jméno" aria-label="Jméno" required>
         <input type="text" placeholder="E-mail nebo telefon" aria-label="E-mail nebo telefon" required>
         <textarea rows="4" placeholder="Co vás pálí?" aria-label="Co vás pálí?" required></textarea>
+        <label style="font-size:.85rem; color:var(--muted)">Služba, o kterou jde
+          <select name="sluzba" style="display:block; width:100%; margin-top:6px; background:var(--card); border:1px solid var(--card-line); border-radius:14px; padding:14px 16px; font:inherit; color:var(--ink)">
+            <option>Strategie a značka</option><option>Vizuální identita</option><option>Web</option><option>Sociální sítě</option><option>Ještě nevím</option>
+          </select></label>
         <button class="btn" type="submit">Odeslat</button>
+        <p class="form-note" hidden tabindex="-1" role="status" style="font-size:.9rem; margin:0; background:var(--card); border:1px solid var(--card-line); border-radius:14px; padding:14px 16px">Odesílání formuláře v tomto prototypu není napojené. Napište nám prosím na <a href="mailto:jirka@debono.cz">jirka@debono.cz</a> — vaše vyplněné údaje zůstávají v poli.</p>
         <p class="muted" style="font-size:.82rem; margin:0">Žádný spam, žádný obchodní kolotoč. Ozve se člověk.</p>
       </form>
       <div class="contact-card rv">
@@ -1109,6 +1213,9 @@ let io = new IntersectionObserver(es=>{
 },{threshold:.18});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 addEventListener('hashchange', ()=>scrollTo(0,0));
+const TITLES = {home:'Debono — strategie, identity, weby a obsah od jednoho týmu', sluzby:'Služby — Debono', strategie:'Strategie a značka — Debono', identita:'Vizuální identita a podklady pro AI — Debono', weby:'Tvorba webů ve Webflow — Debono', produkce:'Foto a video produkce — Debono', social:'Sociální sítě — Debono', kliniky:'Weby a značky pro kliniky — Debono', studio:'Studio — Debono', prace:'Práce — Debono', case:'Případová studie — Debono', kontakt:'Kontakt — Debono', p404:'Stránka nenalezena — Debono'};
+function setTitle(){ const id = location.hash.replace('#','') || 'home'; if (TITLES[id]) document.title = TITLES[id]; }
+addEventListener('hashchange', setTitle); setTitle();
 const menuT = document.getElementById('menuT');
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click', ()=>{ if(menuT) menuT.checked = false; }));
 

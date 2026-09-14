@@ -4,6 +4,7 @@
 > Poznámky `[MOTION]` = doporučení pro animaci, `[ALT]` = alternativní varianta textu.
 > **Vykáme** (větší klienti, zdravotnictví). Jediná výjimka: Kariéra — tam mluvíme k budoucím kolegům, tykání je na místě.
 > Hesla se sazí VELKOU typografií, doprovodné texty malé a krátké.
+> **Stav 14. 9. 2026:** po zapracování auditu (`DEBONO-claude-code-zadani.md`) je závazným zdrojem textů `prototyp.html` — tento dokument je starší verze a v místech, kde se liší (AI komunikace, CTA, odstraněná čísla a ceny, identita jako pilotní AI landing, tři režimy sítí), platí prototyp. Chybějící podklady eviduje `CONTENT_TODO.md`.
 > **Rámec v3:** Debono = strategický partner. Strategii nastavujeme s klientem společně; web, identita, kampaň nebo video jsou pak to, čím ji dodáme. Popisy služeb píšeme přes přínosy — co z toho klient má. Slovo „médium" nepoužíváme.
 
 ---
